@@ -145,4 +145,4 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CSRF_TRUSTED_ORIGINS = ["https://8000-emerald-guppy-3j180nwg.ws-eu23.gitpod.io"]
+CSRF_TRUSTED_ORIGINS = ["https://8000-emerald-guppy-3j180nwg.ws-eu25.gitpod.io"]
