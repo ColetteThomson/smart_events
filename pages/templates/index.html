@@ -28,8 +28,9 @@
                                     <p class="author">Author: {{ post.author }}</p>
                                 </div>
                             </div>
-                            <!-- post overview -->
-                            <a href="#" class="post-link">
+                            <!-- control statement: post detail url with slug-->
+                            <!-- to enable users to click on blog title or excerpt -->
+                            <a href="{% url 'post_detail' post.slug %}" class="post-link">
                                 <h2 class="card-title">{{ post.blog_title }}</h2>
                                 <p class="card-text">{{ post.excerpt }}</p>
                             </a>
@@ -46,6 +47,7 @@
             </div>
             <div class="row">
             {% endif %}
+            <!-- end 'post in post_list' for loop -->
             {% endfor %}
             </div>
         </div>
