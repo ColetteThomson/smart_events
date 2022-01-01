@@ -1,5 +1,8 @@
 {% extends 'base.html' %} {% block content %}
 
+<!-- load crispy forms -->
+{% load crispy_forms_tags %}
+
 <div class="masthead">
     <div class="container">
         <div class="row g-0">
@@ -74,7 +77,34 @@
         </div>
         <div class="col-md-4 card mb-4  mt-3 ">
             <div class="card-body">
-                <!--  -->
+
+                <!-- if commented (True) then display a message to user -->
+                {% if commented %}
+                <div class="alert alert-success" role="alert">
+                    Your comment is awaiting approval
+                </div>
+                {% else %}
+
+                <!-- if statement: comment box only appears if user is authenticated -->
+                {% if user.is_authenticated %}
+
+                <h3>Leave a comment:</h3>
+                <p>Posting as:  {{ user.username }}</p>
+                <!-- create form with method of post -->
+                <form method="post" style="margin-top: 1.3em;">
+                    <!-- comment form is rendered using Crispy filter -->
+                    {{ comment_form | crispy }}
+                    <!-- csrf to prevent malicious attacks using user credentials -->
+                    {% csrf_token %}
+                    <!-- submit button for comment form -->
+                    <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+                </form>
+
+                <!-- end of if statement: if commented -->
+                {% endif %}
+
+                <!-- end of if statement: user.is_authenticated -->
+                {% endif %}
             </div>
         </div>
     </div>
