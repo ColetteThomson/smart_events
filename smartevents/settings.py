@@ -11,10 +11,12 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-# env.py file doesn't exist in production, is automatically in .gitignore file,
-# so conditional import will prevent app throwing error if unable to locate it
 import os
 import dj_database_url
+# import 'constants as messages' to assign category tags for messages
+from django.contrib.messages import constants as messages
+# env.py file doesn't exist in production, is automatically in .gitignore file,
+# so conditional import will prevent app throwing error if unable to locate it
 if os.path.isfile('env.py'):
     import env
 
@@ -61,6 +63,15 @@ SITE_ID = 1
 # to redirect to home page after login or logout
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+# assign category tags to relevant Bootstrap class
+MESSAGE_TAGS = {
+    messages.DEBUG: 'alert-info',
+    messages.INFO: 'alert-info',
+    messages.SUCCESS: 'alert-success',
+    messages.WARNING: 'alert-warning',
+    messages.ERROR: 'alert-danger',
+}
 
 # Crispy to use bootstrap classes for formatting
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
