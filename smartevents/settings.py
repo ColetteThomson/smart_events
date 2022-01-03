@@ -11,8 +11,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-# env.py file does not exist in production, as is automatically in .gitignore file,
-# so below conditional import will prevent app throwing an error if unable to locate it
+# env.py file doesn't exist in production, is automatically in .gitignore file,
+# so conditional import will prevent app throwing error if unable to locate it
 import os
 import dj_database_url
 if os.path.isfile('env.py'):
@@ -106,7 +106,7 @@ WSGI_APPLICATION = 'smartevents.wsgi.application'
 #     }
 # }
 
-# get database url environment variable, set in env.py and in Heroku config vars
+# get database url environment variable, set in env.py & in Heroku config vars
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
 }
@@ -160,4 +160,5 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# csrf to show current workspace as trusted
 CSRF_TRUSTED_ORIGINS = ["https://8000-emerald-guppy-3j180nwg.ws-eu25.gitpod.io"]

@@ -8,17 +8,17 @@
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
                 <!-- post title -->
-                <h1 class="post-title">{{ post.title }}</h1>
+                <h1 class="post-title">{{ post.blog_title }}</h1>
                 <!-- post author and post's created date -->
                 <p class="post-subtitle"> {{ post.author }} | {{ post.created_on }} </p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <!-- default image if no featured image supplied -->
-                {% if "placeholder" in post.featured_image.url %}
+                {% if "placeholder" in post.blog_image.url %}
                 <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" width="100%">
                 {% else %}
                 <!-- inserts featured image for post into html -->
-                <img src="{{ post.featured_image.url }}" width="100%">
+                <img src="{{ post.blog_image.url }}" width="100%">
                 {% endif %}
             </div>
         </div>
@@ -30,7 +30,7 @@
         <div class="col card mb-4  mt-3 left  top">
             <div class="card-body">
                 <!-- post content displays in card-text - using safe filter -->
-                <p class="card-text ">{{ post.content | safe }}</p>
+                <p class="card-text ">{{ post.blog_content | safe }}</p>
                 <div class="row">
 
                     <div class="col-1">

@@ -5,13 +5,16 @@ from cloudinary.models import CloudinaryField
 # tuple showing status of post
 STATUS = ((0, "Draft"), (1, "Published"))
 
+
 # ERD model for class Post
 class Post(models.Model):
 
     blog_title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
-    # if one-to-many author relationship is deleted, all related records will also be deleted
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts")
+    # if one-to-many author relationship is deleted so will all related records
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="blog_posts"
+    )
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     blog_content = models.TextField()
@@ -33,10 +36,12 @@ class Post(models.Model):
     def number_of_likes(self):
         return self.likes.count()
 
+
 # ERD model for class Comment
 class Comment(models.Model):
-    # if one-to-many author relationship is deleted, all related records will also be deleted
-    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
+    # if one-to-many author relationship is deleted so will all related records
+    post = models.ForeignKey(Post, on_delete=models.CASCADE,
+                             related_name='comments')
     name = models.CharField(max_length=80)
     email = models.EmailField()
     body = models.TextField()
