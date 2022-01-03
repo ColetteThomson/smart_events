@@ -1,5 +1,8 @@
-from django.shortcuts import render, get_object_or_404
+# 'reverse' s/cut allows lookup of a url by name given in urls.py
+from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
+# 'httpResponseRedirect' allows reloading of a template (post_detail)
+from django.http import HttpResponseRedirect
 from .models import Post
 from .forms import CommentForm
 
@@ -53,7 +56,7 @@ class PostDetail(View):
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
-     
+
         # obtain all data posted from form
         comment_form = CommentForm(data=request.POST)
 
@@ -84,3 +87,22 @@ class PostDetail(View):
                 "liked": liked
             },
         )
+
+
+class PostLike(View):
+
+    def post(self, request, slug):
+        # get the relevant post
+        post = get_object_or_404(Post, slug=slug)
+        # toggle the state
+        # filter on user id
+        if post.likes.filter(id=request.user.id).exists():
+            # if exists, then been liked, so can remove it
+            post.likes.remove(request.user)
+        else:
+            # if not already liked, then need to add like
+            post.likes.add(request.user)
+
+        # slug determines which post to load
+        # when post is liked/unliked, page will reload
+        return HttpResponseRedirect(reverse('post_detail', args=[slug]))
