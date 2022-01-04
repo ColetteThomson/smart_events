@@ -34,6 +34,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# to ensure summer note editor works on deployment
+# X_FRAME_OPTIONS = 'SAMEORIGIN'
+
 ALLOWED_HOSTS = ['smart-events.herokuapp.com', 'localhost']
 
 
@@ -55,6 +58,7 @@ INSTALLED_APPS = [
     'django_summernote',
     'crispy_forms',
     'pages',
+    'events',
 ]
 
 # site id number of '1' to allow handling of multiple sites
