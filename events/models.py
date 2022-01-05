@@ -10,3 +10,8 @@ class Event(models.Model):
     manager = models.CharField(max_length=60)
     # set description field to optional
     description = models.TextField(blank=True)
+
+# helper methods for class Event:
+# returns a string representation of an object
+    def __str__(self):
+       return self.event_name
