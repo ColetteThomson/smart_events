@@ -17,13 +17,13 @@ class Venue(models.Model):
         return self.venue_name
 
 
-# ERD model for class Users
-class Users(models.Model):
+# ERD model for class User
+class User(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     user_email = models.EmailField()
 
-    # helper method for class Users:
+    # helper method for class User:
     # returns a string representation of an object
     def __str__(self):
         return self.first_name + " " + self.last_name
@@ -39,7 +39,7 @@ class Event(models.Model):
                               on_delete=models.CASCADE)
     manager = models.CharField(max_length=60)
     # to allow an event to be saved without any attendees
-    attendees = models.ManyToManyField(Users, blank=True)
+    attendees = models.ManyToManyField(User, blank=True)
     # to set description field to optional
     description = models.TextField(blank=True)
 
