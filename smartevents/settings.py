@@ -58,7 +58,7 @@ INSTALLED_APPS = [
     'django_summernote',
     'crispy_forms',
     'pages',
-    'events',
+    'events.apps.EventsConfig',
 ]
 
 # site id number of '1' to allow handling of multiple sites

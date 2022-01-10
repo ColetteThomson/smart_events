@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from datetime import date
 import calendar
 from calendar import HTMLCalendar
+from .models import Event
 
 # function: dynamic title showing current month
 # if year,month not passed to 'calendar' then will default to current month
@@ -17,5 +18,23 @@ def calendar(request, year=date.today().year, month=date.today().month):
     title = "Smart Events Calendar - %s %s" % (month_name, year)
     # retrieve HTML formatted calendar
     cal = HTMLCalendar().formatmonth(year, month)
-    return HttpResponse("<h1>%s</h1><p>%s</p>" % (title, cal))
-    
+    # return HttpResponse("<h1>%s</h1><p>%s</p>" % (title, cal))
+
+    return render(
+        request,
+        "calendar.html",
+        {
+            'title': title,
+            'cal': cal
+        }
+    )
+    # template_name = 'events/templates/index.html'
+
+
+#def all_events(request):
+   # event_list = Event.objects.all()
+    #return render(
+       # request,
+      #  "events/event_list.html",
+      #  {'event_list': event_list}
+  #  )

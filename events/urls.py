@@ -8,7 +8,7 @@ urlpatterns = [
     # path converter if matched to return a string, if not a 404 message
 
     # capture url with year/month format and pass to calendar view
-    path('', views.calendar, name='calendar'),
+    path('calendar', views.calendar, name='calendar'),
     # path('<int:year>/<str:month>/', views.calendar, name='calendar')
 
     # regex comment...p96...

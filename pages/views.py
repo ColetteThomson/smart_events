@@ -13,6 +13,7 @@ class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     # to render html view
     template_name = 'index.html'
+
     # number of posts that appear on front page
     paginate_by = 6
 
