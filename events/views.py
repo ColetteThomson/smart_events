@@ -6,30 +6,46 @@ import calendar
 from calendar import HTMLCalendar
 from .models import Event
 
-# function: dynamic title showing current month
-# if year,month not passed to 'calendar' then will default to current month
 def calendar(request, year=date.today().year, month=date.today().month):
     # convert year and month to integers
     year = int(year)
     month = int(month)
-    # if year is less than 2000 or greater than 2099, set year to this year
-    if year < 2000 or year > 2099: year = date.today().year
+    if year < 1900 or year > 2099:
+        year = date.today().year
     month_name = calendar.month_name[month]
     title = "Smart Events Calendar - %s %s" % (month_name, year)
     # retrieve HTML formatted calendar
     cal = HTMLCalendar().formatmonth(year, month)
+    return HttpResponse("<h1>%s</h1><p>%s</p>" % (title, cal))
+    
+
+# function: dynamic title showing current month
+# if year,month not passed to 'calendar' then will default to current month
+# def calendar(request, year=date.today().year, month=date.today().month):
+    # convert year and month to integers
+    # year = int(year)
+    # month = int(month)
+    # if year is less than 2000 or greater than 2099, set year to this year
+    # if year < 2000 or year > 2099: year = date.today().year
+    # month_name = calendar.month_name[month]
+    # title = "Smart Events Calendar - %s %s" % (month_name, year)
+    # retrieve HTML formatted calendar
+    # cal = HTMLCalendar().formatmonth(year, month)
     # return HttpResponse("<h1>%s</h1><p>%s</p>" % (title, cal))
 
-    return render(
-        request,
-        "calendar.html",
-        {
-            'title': title,
-            'cal': cal
-        }
-    )
-    # template_name = 'events/templates/index.html'
+    # t = date.today()
+    # month = date.strftime(t, '%b')
+    # year = t.year
 
+    # return render(
+     #    request,
+       #  "calendar.html",
+        # {
+          #  'title': title,
+           # 'cal': cal
+        #}
+    #)
+    
 
 #def all_events(request):
    # event_list = Event.objects.all()
