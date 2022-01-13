@@ -7,6 +7,16 @@ import calendar
 from calendar import HTMLCalendar
 from .models import Event
 
+
+def all_events(request):
+    event_list = Event.objects.all()
+           
+    return render(request,
+                  'all_events.html', {
+                                     "event_list": event_list,
+                                    })
+
+
 def event_calendar(request, todays_date=date.today()):
     name = "Marty"
     year = todays_date.year
@@ -32,10 +42,3 @@ def event_calendar(request, todays_date=date.today()):
                                           "current_year": current_year,
                                         })
 
-
-# def all_events(request):
-#     event_list = Event.objects.all()
-#     return render(request,
-#         'events/event_list.html',
-#         {"event_list": event_list}
-#     )

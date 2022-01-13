@@ -40,6 +40,10 @@
                     
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'event_calendar' %}">Calendar</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'all_events' %}">All Events</a>
                     </li> 
 
                     {% if user.is_authenticated %}

@@ -35,15 +35,15 @@ class Event(models.Model):
     event_date = models.DateTimeField()
     # to allow a new event to be added without a venue assigned
     # if one-to-many venue relationship is deleted so will all related records
-    venue = models.ForeignKey(Venue, blank=True, null=True,
-                              on_delete=models.CASCADE)
+    venue = models.ForeignKey(Venue, blank=True, null=True, on_delete=models.CASCADE)
     manager = models.CharField(max_length=60)
+    # to allow an attendee to attend many events and
     # to allow an event to be saved without any attendees
     attendees = models.ManyToManyField(User, blank=True)
     # to set description field to optional
     description = models.TextField(blank=True)
 
-# helper method for class Event:
-# returns a string representation of an object
+    # helper method for class Event:
+    # returns a string representation of an object
     def __str__(self):
         return self.event_name
