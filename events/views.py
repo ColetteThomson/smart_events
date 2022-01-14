@@ -5,8 +5,37 @@ from datetime import date
 from datetime import datetime
 import calendar
 from calendar import HTMLCalendar
+from django.http import HttpResponseRedirect
 from .models import Event
+from .forms import VenueForm
 
+
+
+def add_venue(request):
+    # if form not submitted previously - render empty form
+    submitted = False
+    # if user submitted a completed form (post)
+    if request.method == "POST":
+        # take whatever info entered and post to VenueForm
+        form = VenueForm(request.POST)
+        # determine if entered info is valid
+        if form.is_valid():
+            # if valid save to database
+            form.save()
+            # form is submitted as true
+            return HttpResponseRedirect('/add_venue?submitted=True')
+        # if user didn't complete form
+        else:
+            form = VenueForm
+            # check if user submitted form
+            if 'submitted' in request.GET:
+                submitted = True
+
+            return render(request,
+                          'add_venue.html', {
+                                          'form': form,
+                                          'submitted': submitted,
+                         })
 
 def all_events(request):
     event_list = Event.objects.all()
