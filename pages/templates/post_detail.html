@@ -98,7 +98,7 @@
                     <!-- body of comment -->
                     {{ comment.body | linebreaks }}
                 </div>
-                <!-- end 'comment for comments' for loop -->
+                <!-- end: 'comment for comments' for loop -->
                 {% endfor %}
             </div>
         </div>
@@ -119,7 +119,7 @@
                 <p>Posting as:  {{ user.username }}</p>
                 <!-- create form with method of post -->
                 <form method="post" style="margin-top: 1.3em;">
-                    <!-- comment form is rendered using Crispy filter -->
+                    <!-- render comment form using Crispy filter -->
                     {{ comment_form | crispy }}
                     <!-- csrf to prevent malicious attacks using user credentials -->
                     {% csrf_token %}
@@ -127,10 +127,10 @@
                     <button type="submit" class="btn btn-signup btn-lg">Submit</button>
                 </form>
 
-                <!-- end of if statement: if commented -->
+                <!-- end: if statement: if commented -->
                 {% endif %}
 
-                <!-- end of if statement: user.is_authenticated -->
+                <!-- end: if statement: user.is_authenticated -->
                 {% endif %}
             </div>
         </div>

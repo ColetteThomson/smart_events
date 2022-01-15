@@ -1,5 +1,8 @@
 {% extends "base.html" %}
 
+<!-- load crispy forms -->
+{% load crispy_forms_tags %}
+
 {% block title %}Displaying Model Data{% endblock title %}
 
 {% block content %}
@@ -7,18 +10,24 @@
         <h1>Add Venue to Database</h1>
         <br/><br/>
 
+        <!-- if submitted (True) then display a message to user -->
         {% if submitted %}
-            <p>Your venue was submitted successfully</p>
-
+        <div class="alert alert-success" role="alert">
+            Your venue was submitted successfully
+        </div>
+            
         {% else %}
 
         <form action="" method=POST>
             <!-- csrf to prevent malicious attacks using user credentials -->
             {% csrf_token %}
 
-            {{ form.as_p }}
+            <!-- render add_venue form using Crispy filter -->
+            {{ venue_form | crispy }}
 
-            <input type="submit" value="Submit" class="btn btn-secondary">
+            <!-- submit button for add_venue form -->
+            <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+
         </form>
         <!-- end: if submitted statement  -->
         {% endif %}
