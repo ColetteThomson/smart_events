@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+<!-- load crispy forms -->
+{% load crispy_forms_tags %}
+
+{% block title %}Displaying Model Data{% endblock title %}
+
+{% block content %}
+    <center>
+        <h1>Venues for Smart Events</h1>
+        
+        <h1>Venue Details</h1>
+        {% for venue in venue_list %}
+            <!-- link to individual venue's details -->
+            <a href="{% url 'show_venue' venue.id %}">{{ venue }}></a>
+            <br/>
+            <!-- end for loop: venue -->
+        {% endfor %}
+
+        <!-- for loop: to iterate through each 'venue in venue_list'
+        {% for venue in venue_list %}
+            {{ venue }}<br/>
+         end for loop: venue 
+        {% endfor %} -->
+
+    </center>
+    
+    {% endblock content %}

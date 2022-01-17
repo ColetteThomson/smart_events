@@ -5,9 +5,28 @@ from calendar import HTMLCalendar
 
 from django.shortcuts import render
 from django.views import generic, View
-from .models import Event
+from .models import Event, Venue
 from .forms import VenueForm
 
+
+def show_venue(request, venue_id):
+    # get primary key venue_id from Venue
+    venue = Venue.objects.get(id=venue_id)
+    # show individual venue
+    return render(request,
+                  'venues.html', {
+                                     "venue": venue,
+                                    })
+
+
+# def all_venues(request):
+#     # call all Venue objects from models.py
+#     venue_list = Venue.objects.all()
+#     # list all venues on one page
+#     return render(request,
+#                   'venues.html', {
+#                                      "venue_list": venue_list,
+#                                     })
 
 def add_venue(request):
     # obtain all data posted from form
@@ -25,7 +44,6 @@ def add_venue(request):
                                     'venue_form': venue_form,
                                     'submitted': True,
                                     })
-
     else:
         venue_form = VenueForm()
         # check if user submitted form
@@ -39,8 +57,9 @@ def add_venue(request):
 
 
 def all_events(request):
+    # call all Event objects from models.py
     event_list = Event.objects.all()
-
+    # list all events on one page
     return render(request,
                   'all_events.html', {
                                      "event_list": event_list,
