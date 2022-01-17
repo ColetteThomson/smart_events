@@ -16,5 +16,6 @@ urlpatterns = [
     # add link to show individual venues via venue_id
     path('show_venue/<int:venue_id>/', views.show_venue, name='show_venue'),
     path('update_venue/<int:venue_id>/', views.update_venue, name='update_venue'),
+    path('add_event', views.add_event, name='add_event'),
 
     ]

@@ -6,7 +6,36 @@ from calendar import HTMLCalendar
 from django.shortcuts import render, redirect
 from django.views import generic, View
 from .models import Event, Venue
-from .forms import VenueForm
+from .forms import VenueForm, EventForm
+
+def add_event(request):
+    # obtain all data posted from form
+    venue_form = VenueForm(data=request.POST)
+
+    # if event form is valid (required fields completed)
+    if event_form.is_valid():
+        # save to database
+        new_event = event_form.save(commit=False)
+        # then save the new event
+        new_event.save()
+
+        return render(request,
+                      'add_event.html', {
+                                    'event_form': event_form,
+                                    'submitted': True,
+                                    })
+    else:
+        event_form = EventForm()
+        # check if user submitted form
+        if 'submitted' in request.GET:
+            submitted = True
+
+        return render(request,
+                      'add_event.html', {
+                                       'event_form': event_form,
+                                        })
+
+
 
 def update_venue(request, venue_id):
     # get primary key venue_id from Venue
