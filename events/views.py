@@ -12,21 +12,21 @@ from .forms import VenueForm
 def show_venue(request, venue_id):
     # get primary key venue_id from Venue
     venue = Venue.objects.get(id=venue_id)
-    # show individual venue
+    # show individual venues
     return render(request,
                   'venues.html', {
                                      "venue": venue,
                                     })
 
 
-# def all_venues(request):
-#     # call all Venue objects from models.py
-#     venue_list = Venue.objects.all()
-#     # list all venues on one page
-#     return render(request,
-#                   'venues.html', {
-#                                      "venue_list": venue_list,
-#                                     })
+def all_venues(request):
+    # call all Venue objects from models.py
+    venue_list = Venue.objects.all()
+    # list all venues on one page
+    return render(request,
+                  'venues.html', {
+                                     "venue_list": venue_list,
+                                    })
 
 def add_venue(request):
     # obtain all data posted from form

@@ -12,7 +12,7 @@ urlpatterns = [
     path('<int:year>/<str:month>/', views.event_calendar, name='event_calendar'),
     path('all_events', views.all_events, name='all_events'),
     path('add_venue', views.add_venue, name='add_venue'),
-    # path('all_venues', views.all_venues, name='all_venues'),
+    path('all_venues', views.all_venues, name='all_venues'),
     # add link to show individual venues via primary key venue_id
-    path('<int:venue_id>/', views.show_venue, name='show_venue'),
+    path('show_venue/<int:venue_id>/', views.show_venue, name='show_venue'),
     ]
