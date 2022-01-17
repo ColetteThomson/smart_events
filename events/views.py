@@ -3,10 +3,29 @@ from datetime import date
 import calendar
 from calendar import HTMLCalendar
 
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import generic, View
 from .models import Event, Venue
 from .forms import VenueForm
+
+def update_venue(request, venue_id):
+    # get primary key venue_id from Venue
+    venue = Venue.objects.get(id=venue_id)
+    # if form completed and submitted then Post, or
+    # if not then display empty VenueForm
+    form = VenueForm(request.POST or None, instance=venue)
+    # if venue form is valid (required fields completed)
+    if form.is_valid():
+        # save and send to list_venues
+        form.save()
+        return redirect('list_venues')
+        
+    # update individual venues
+    return render(request,
+                  'update_venue.html', {
+                                     "venue": venue,
+                                     "form" : form,
+                                    })
 
 
 def show_venue(request, venue_id):
@@ -27,6 +46,7 @@ def all_venues(request):
                   'venues.html', {
                                      "venue_list": venue_list,
                                     })
+
 
 def add_venue(request):
     # obtain all data posted from form

@@ -8,20 +8,29 @@
 {% block content %}
     <center>
         <h1>Venues for Smart Events</h1>
-        
-        <h1>Venue Details</h1>
+        <br/>
+        <table class="table table-striped table-hover table-bordered">
         {% for venue in venue_list %}
-            <!-- link to individual venue's details -->
-            <a href="{% url 'show_venue' venue.id %}">{{ venue }}></a>
-            <br/>
-            <!-- end for loop: venue -->
+            <tr>
+                <td>
+                    <!-- link to individual venue's details -->
+                    <a href="{% url 'show_venue' venue.id %}">{{ venue }}></a>
+            </td>
+            <td align="right">
+                <!-- link to update individual venue's details -->
+                <a href="{% url 'update_venue' venue.id %">Update</a></a>
+            </td>
+            </tr>
+        <!-- end for loop: venue -->
         {% endfor %}
+        </table>
 
-        <!-- for loop: to iterate through each 'venue in venue_list'
-        {% for venue in venue_list %}
+
+        <!-- for loop: to iterate through each 'venue in venue_list' -->
+        <!-- {% for venue in venue_list %}
             {{ venue }}<br/>
-         end for loop: venue 
-        {% endfor %} -->
+        end for loop: venue -->
+        <!-- {% endfor %} --> 
 
     </center>
     
