@@ -1,17 +1,17 @@
 from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdmin
-from .models import Event, Venue, SiteUser
+from .models import Project, People, SiteUser
 
 
-# decorator to register Venue admin class for admin site
-@admin.register(Venue)
-class VenueAdmin(admin.ModelAdmin):
+# decorator to register People admin class for admin site
+@admin.register(People)
+class PeopleAdmin(admin.ModelAdmin):
     # customise list view of admin panel
-    list_display = ('venue_name', 'contact_no', 'address', 'venue_email')
-    # order venues alphabetically (ascending)
-    ordering = ('venue_name',)
-    # add search fields for venue name
-    search_fields = ['venue_name']
+    list_display = ('person_name', 'job_title', 'contact_no', 'person_email')
+    # order people alphabetically (ascending)
+    ordering = ('person_name',)
+    # add search fields for person name
+    search_fields = ['person_name']
 
 
 # decorator to register User admin class for admin site
@@ -27,16 +27,16 @@ class UsersAdmin(admin.ModelAdmin):
     list_filter = ('last_name', 'user_email')
 
 
-# decorator to register Event admin class for admin site
-@admin.register(Event)
-class EventAdmin(SummernoteModelAdmin):
+# decorator to register Project admin class for admin site
+@admin.register(Project)
+class ProjectAdmin(SummernoteModelAdmin):
     # customise list view of admin panel
-    list_display = ('event_name', 'venue', 'event_date', 'manager')
-    # order events earliest to latest
-    ordering = ('event_date',)
-    # add search fields for either event or date or manager
-    search_fields = ['event_name', 'event_date', 'manager']
-    # add filter for event date and manager
-    list_filter = ('event_name', 'event_date', 'venue')
-    # summernote formatting to be applied to event's 'description' field
+    list_display = ('project_name', 'project_date', 'people', 'project_manager')
+    # order projects alphabetically
+    ordering = ('project_name',)
+    # add search fields for either project or date or manager
+    search_fields = ['project_name', 'project_date', 'project_manager']
+    # add filter for project date and manager
+    list_filter = ('project_name', 'project_date', 'people')
+    # summernote formatting to be applied to project's 'description' field
     summernote_fields = ('description')

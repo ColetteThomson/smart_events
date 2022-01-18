@@ -3,18 +3,19 @@ from cloudinary.models import CloudinaryField
 from django.contrib.auth.models import User
 
 
-# ERD model for class Venue
-class Venue(models.Model):
-    venue_name = models.CharField(max_length=120)
-    address = models.CharField(max_length=300)
+# ERD model for class People
+class People(models.Model):
+    person_name = models.CharField(max_length=120)
+    job_title = models.CharField(max_length=120)
+    # address = models.CharField(max_length=300)
     contact_no = models.CharField(max_length=20, blank=True)
-    website = models.URLField(blank=True)
-    venue_email = models.EmailField(blank=True)
+    # website = models.URLField(blank=True)
+    person_email = models.EmailField(blank=True)
 
-    # helper method for class Venue:
+    # helper method for class People:
     # returns a string representation of an object
     def __str__(self):
-        return self.venue_name
+        return self.person_name
 
 
 # ERD model for class SiteUser
@@ -29,22 +30,22 @@ class SiteUser(models.Model):
         return self.first_name + " " + self.last_name
 
 
-#  ERD model for class Event
-class Event(models.Model):
-    event_name = models.CharField(max_length=120)
-    event_date = models.DateTimeField()
-    # to allow a new event to be added without a venue assigned
-    # if one-to-many venue relationship is deleted so will all related records
-    venue = models.ForeignKey(Venue, blank=True, null=True, on_delete=models.CASCADE)
+#  ERD model for class Project
+class Project(models.Model):
+    project_name = models.CharField(max_length=120)
+    project_date = models.DateTimeField()
+    # to allow a new project to be added without people assigned
+    # if one-to-many people relationship is deleted so will all related records
+    people = models.ForeignKey(People, blank=True, null=True, on_delete=models.CASCADE)
     # sets manager field to null, should manager cease to be a user
-    manager = models.ForeignKey(User, blank=True, null=True, on_delete=models.SET_NULL)
+    project_manager = models.ForeignKey(User, blank=True, null=True, on_delete=models.SET_NULL)
     # to allow an attendee to attend many events and
     # to allow an event to be saved without any attendees
-    attendees = models.ManyToManyField(SiteUser, blank=True)
+    # ###attendees = models.ManyToManyField(SiteUser, blank=True)
     # to set description field to optional
     description = models.TextField(blank=True)
 
-    # helper method for class Event:
+    # helper method for class Project:
     # returns a string representation of an object
     def __str__(self):
-        return self.event_name
+        return self.project_name

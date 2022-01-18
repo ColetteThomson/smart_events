@@ -7,14 +7,14 @@
 
 {% block content %}
     <center>
-        <h1>Update Venue</h1>
+        <h1>Update People</h1>
         <br>
         <form action="" method=POST>
             <!-- csrf to prevent malicious attacks using user credentials -->
             {% csrf_token %}
 
             <!-- render update_venue form using Crispy filter -->
-            {{ venue_form | crispy }}
+            {{ people_form | crispy }}
         
             <!-- submit button for update_venue form -->
             <button type="submit" class="btn btn-secondary btn-lg">Update</button>

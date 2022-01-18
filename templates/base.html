@@ -43,27 +43,27 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'all_events' %}">Events</a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'all_projects' %}">All Projects</a>
                     </li> 
 
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'add_event' %}">Add Event</a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'add_project' %}">Add Project</a>
                     </li> 
 
                      <li class="nav-item">
-                         <a class="nav-link active" aria-current="page" href="{% url 'all_venues' %}">Venues</a>
+                         <a class="nav-link active" aria-current="page" href="{% url 'all_people' %}">All People</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'show_venue' %}">Venues</a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'show_people' %}">Show People</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'update_venue' %}">Update Venue</a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'update_people' %}">Update People</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'add_venue' %}">Add Venue</a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'add_people' %}">Add People</a>
                     </li>
 
                     {% if user.is_authenticated %}

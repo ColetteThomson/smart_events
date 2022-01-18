@@ -5,113 +5,113 @@ from calendar import HTMLCalendar
 
 from django.shortcuts import render, redirect
 from django.views import generic, View
-from .models import Event, Venue
-from .forms import VenueForm, EventForm
+from .models import Project, People
+from .forms import PeopleForm, ProjectForm
 
-def add_event(request):
+def add_project(request):
     # obtain all data posted from form
-    venue_form = VenueForm(data=request.POST)
+    project_form = ProjectForm(data=request.POST)
 
-    # if event form is valid (required fields completed)
-    if event_form.is_valid():
+    # if project form is valid (required fields completed)
+    if project_form.is_valid():
         # save to database
-        new_event = event_form.save(commit=False)
-        # then save the new event
-        new_event.save()
+        new_project = project_form.save(commit=False)
+        # then save the new project
+        new_project.save()
 
         return render(request,
-                      'add_event.html', {
-                                    'event_form': event_form,
+                      'add_project.html', {
+                                    'project_form': project_form,
                                     'submitted': True,
                                     })
     else:
-        event_form = EventForm()
+        project_form = ProjectForm()
         # check if user submitted form
         if 'submitted' in request.GET:
             submitted = True
 
         return render(request,
-                      'add_event.html', {
-                                       'event_form': event_form,
+                      'add_project.html', {
+                                       'project_form': project_form,
                                         })
 
 
 
-def update_venue(request, venue_id):
-    # get primary key venue_id from Venue
-    venue = Venue.objects.get(id=venue_id)
+def update_people(request, people_id):
+    # get primary key people_id from People
+    people = People.objects.get(id=people_id)
     # if form completed and submitted then Post, or
-    # if not then display empty VenueForm
-    form = VenueForm(request.POST or None, instance=venue)
-    # if venue form is valid (required fields completed)
+    # if not then display empty PeopleForm
+    form = PeopleForm(request.POST or None, instance=people)
+    # if people form is valid (required fields completed)
     if form.is_valid():
-        # save and send to list_venues
+        # save and send to list_people
         form.save()
-        return redirect('list_venues')
+        return redirect('list_people')
         
-    # update individual venues
+    # update individual people
     return render(request,
-                  'update_venue.html', {
-                                     "venue": venue,
-                                     "form" : form,
+                  'update_people.html', {
+                                     "people": people,
+                                     "form": form,
                                     })
 
 
-def show_venue(request, venue_id):
-    # get primary key venue_id from Venue
-    venue = Venue.objects.get(id=venue_id)
-    # show individual venues
+def show_people(request, people_id):
+    # get primary key people_id from People
+    people = People.objects.get(id=people_id)
+    # show individual people
     return render(request,
-                  'venues.html', {
-                                     "venue": venue,
+                  'people.html', {
+                                     "people": people,
                                     })
 
 
-def all_venues(request):
-    # call all Venue objects from models.py
-    venue_list = Venue.objects.all()
-    # list all venues on one page
+def all_people(request):
+    # call all People objects from models.py
+    people_list = People.objects.all()
+    # list all people on one page
     return render(request,
-                  'venues.html', {
-                                     "venue_list": venue_list,
+                  'people.html', {
+                                     "people_list": people_list,
                                     })
 
 
-def add_venue(request):
+def add_people(request):
     # obtain all data posted from form
-    venue_form = VenueForm(data=request.POST)
+    people_form = PeopleForm(data=request.POST)
 
-    # if venue form is valid (required fields completed)
-    if venue_form.is_valid():
+    # if people form is valid (required fields completed)
+    if people_form.is_valid():
         # save to database
-        new_venue = venue_form.save(commit=False)
-        # then save the new venue
-        new_venue.save()
+        new_people = people_form.save(commit=False)
+        # then save the new people
+        new_people.save()
 
         return render(request,
-                      'add_venue.html', {
-                                    'venue_form': venue_form,
+                      'add_people.html', {
+                                    'people_form': people_form,
                                     'submitted': True,
                                     })
     else:
-        venue_form = VenueForm()
+        people_form = PeopleForm()
         # check if user submitted form
         if 'submitted' in request.GET:
             submitted = True
 
         return render(request,
-                      'add_venue.html', {
-                                       'venue_form': venue_form,
+                      'add_people.html', {
+                                       'people_form': people_form,
                                         })
 
 
-def all_events(request):
-    # call all Event objects from models.py
-    event_list = Event.objects.all()
-    # list all events on one page
+def all_projects(request):
+    # call all Project objects from models.py
+    project_list = Project.objects.all()
+    # list all projects on one page
     return render(request,
-                  'all_events.html', {
-                                     "event_list": event_list,
+                  'all_projects.html', {
+                                     "project_list": project_list,
                                     })
 
 

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Displaying Model Data{% endblock title %}
+
+{% block content %}
+    <h3>All Projects</h3>
+
+    <ul>
+        {% for project in project_list %}
+            <li><strong>Project: {{ project.project_name }} </strong>  |  Project Date and Time: {{ project.project_date }}</li>
+            <!-- call venue objects from class Venue -->
+            <li>Project People: {{ project.people  }} {{ project.people.address }}</li>
+            <li>Project Manager: {{ project.project_manager }}</li>
+            <li>Project Description: {{ project.description }}</li>
+            <!-- for loop to list all attendees for this event-->
+            <!-- <li>Attendees:<br/>
+                {% for user in event.attendees.all %}
+                {{ user }}<br/>
+                 end for loop for: list all attendees
+                {% endfor %}
+            </li> -->
+    </ul>
+    <br/>
+        <!-- end for loop for: event_list
+        {% endfor %} -->
+    
+{% endblock content %}

@@ -1,48 +1,45 @@
 from django import forms
 from django.forms import ModelForm
-from .models import Venue, Event
+from .models import People, Project
 
-# create an event form
-class EventForm(ModelForm):
+# create an project form
+class ProjectForm(ModelForm):
     class Meta:
-        model = Event
-        # fields to be imported from class Event
-        fields = ('event_name', 'event_date', 'venue', 'manager', 'attendees', 'description')
+        model = Project
+        # fields to be imported from class Project
+        fields = ('project_name', 'project_date', 'people', 'project_manager', 'description')
         # set the label to none
         labels = {
-            'event_name': '',
-            'event_date': 'YYYY-MM-DD HH:MM:SS',
-            'venue': 'Venue',
-            'manager': 'Manager',
-            'attendees': 'Attendees',
+            'project_name': '',
+            'project_date': 'YYYY-MM-DD HH:MM:SS',
+            'people': 'People',
+            'project_manager': 'Project Manager',
             'description': '',
         }
         widgets = {
-            'event_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Event Name'}),
-            'event_date': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Event Date'}),
-            'venue': forms.Select(attrs={'class': 'form-select', 'placeholder': 'Venue'}),
-            'manager': forms.Select(attrs={'class': 'form-select', 'placeholder': 'Manager'}),
-            'attendees': forms.SelectMultiple(attrs={'class': 'form-control', 'placeholder': 'Attendees'}),
+            'project_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Project Name'}),
+            'project_date': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Project Date'}),
+            'people': forms.Select(attrs={'class': 'form-select', 'placeholder': 'People'}),
+            'project_manager': forms.Select(attrs={'class': 'form-select', 'placeholder': 'Project Manager'}),
             'description': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Description'}),
         }
 
 
-# create a venue form
-class VenueForm(ModelForm):
+# create a people form
+class PeopleForm(ModelForm):
     class Meta:
-        model = Venue
-        # fields to be imported from class Venue
-        fields = ('venue_name', 'address', 'contact_no', 'website', 'venue_email')
+        model = People
+        # fields to be imported from class People
+        fields = ('person_name', 'job_title', 'contact_no', 'person_email')
         labels = {
-            'venue_name': '',
-            'address': '',
+            'person_name': '',
+            'job_title': '',
             'contact_no': '',
-            'website': '',
-            'venue_email': '',
+            'person_email': '',
         }
         widgets = {
-            'venue_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Venue Name'}),
-            'address': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Address'}),
-            'website': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Website'}),
-            'venue_email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Venue Email'}),
+            'person_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Person Name'}),
+            'job_title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Job Title'}),
+            'contact_no': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Contact Number'}),
+            'person_email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Person Email'}),
         }

@@ -7,13 +7,13 @@
 
 {% block content %}
     <center>
-        <h1>Add Event</h1>
-        <br/>
-        
+        <h1>Add People to Database</h1>
+        <br/><br/>
+
         <!-- if submitted (True) then display a message to user -->
         {% if submitted %}
         <div class="alert alert-success" role="alert">
-            Your event was submitted successfully
+            Your People Resource was submitted successfully
         </div>
             
         {% else %}
@@ -23,7 +23,7 @@
             {% csrf_token %}
 
             <!-- render add_venue form using Crispy filter -->
-            {{ venue_form | crispy }}
+            {{ people_form | crispy }}
 
             <!-- submit button for add_venue form -->
             <button type="submit" class="btn btn-signup btn-lg">Submit</button>
@@ -32,8 +32,7 @@
         <!-- end: if submitted statement  -->
         {% endif %}
 
-    
-
     </center>
     
-    {% endblock content %}
+    
+{% endblock content %}

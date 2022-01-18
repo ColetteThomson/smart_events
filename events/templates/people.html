@@ -7,18 +7,18 @@
 
 {% block content %}
     <center>
-        <h1>Venues for Smart Events</h1>
+        <h1>People</h1>
         <br/>
         <table class="table table-striped table-hover table-bordered">
-        {% for venue in venue_list %}
+        {% for people in people_list %}
             <tr>
                 <td>
                     <!-- link to individual venue's details -->
-                    <a href="{% url 'show_venue' venue.id %}">{{ venue }}></a>
+                    <a href="{% url 'show_people' people.id %}">{{ people }}></a>
             </td>
             <td align="right">
                     <!-- link to update individual venue's details -->
-                    <a href="{% url 'update_venue' venue.id %">Update</a></a>
+                    <a href="{% url 'update_people' people.id %">Update</a></a>
             </td>
             </tr>
         <!-- end for loop: venue -->
