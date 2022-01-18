@@ -79,6 +79,17 @@
                     </li>
                     {% endif %}
                 </ul>
+
+                <!-- search box and button -->
+                <form class="d-flex" method="POST" action="{% url 'search_venues' %}">
+
+                    {% csrf_token %}
+
+                    <input class="form-control me-2" type="search" 
+                    placeholder="Search People" aria-label="Search" name="searched">
+                    <button class="btn btn-outline-secondary" type="submit">Search</button>
+                </form>
+
                 <span class="navbar-text text-muted">
                     byline
                 </span>

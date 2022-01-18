@@ -11,23 +11,13 @@ class People(models.Model):
     contact_no = models.CharField(max_length=20, blank=True)
     # website = models.URLField(blank=True)
     person_email = models.EmailField(blank=True)
+    # if one-to-many project relationship is deleted so will all related records
+    projects = models.ForeignKey(Project, blank=True, null=True, on_delete=models.CASCADE)
 
     # helper method for class People:
     # returns a string representation of an object
     def __str__(self):
         return self.person_name
-
-
-# ERD model for class SiteUser
-class SiteUser(models.Model):
-    first_name = models.CharField(max_length=30)
-    last_name = models.CharField(max_length=30)
-    user_email = models.EmailField()
-
-    # helper method for class User:
-    # returns a string representation of an object
-    def __str__(self):
-        return self.first_name + " " + self.last_name
 
 
 #  ERD model for class Project
@@ -49,3 +39,15 @@ class Project(models.Model):
     # returns a string representation of an object
     def __str__(self):
         return self.project_name
+
+
+# ERD model for class SiteUser
+class SiteUser(models.Model):
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
+    user_email = models.EmailField()
+
+    # helper method for class User:
+    # returns a string representation of an object
+    def __str__(self):
+        return self.first_name + " " + self.last_name

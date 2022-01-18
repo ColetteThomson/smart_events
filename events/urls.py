@@ -23,4 +23,8 @@ urlpatterns = [
     path('show_people/<int:people_id>/', views.show_people, name='show_people'),
     path('update_people/<int:people_id>/', views.update_people, name='update_people'),
     path('delete_people/<int:people_id>/', views.delete_people, name='delete_people'),
+
+    # urls paths for searching 'people' and 'projects'
+    path('search_people', views.search_people, name='search_people'),
+
     ]

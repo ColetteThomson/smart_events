@@ -8,6 +8,27 @@ from django.views import generic, View
 from .models import Project, People
 from .forms import PeopleForm, ProjectForm
 
+# search for people
+def search_people(request):
+    # if user clicks 'search' button
+    if request.method == "POST":
+        # variable to contain entered search request
+        searched = request.POST['searched']
+        # search for person_name that contains search request
+        people = People.objects.filter(person_name__contains=searched)
+        # return search result
+        return render(request,
+                      'search_people.html', {
+                                             'searched': searched,
+                                             'people': people,
+                                            })
+    else:
+        # return search result
+        return render(request,
+                      'search_venues.html', 
+                      {})
+
+
 # delete a person from 'people'
 def delete_people(request, people_id):
     # get primary key people_id from People
@@ -28,7 +49,7 @@ def delete_project(request, project_id):
     return redirect('all_projects')
 
 
-# update project
+# update a project
 def update_project(request, project_id):
     # get primary key project_id from Project
     project = Project.objects.get(id=project_id)
@@ -48,7 +69,7 @@ def update_project(request, project_id):
                                      "form": form,
                                     })
 
-# create new project
+# create a new project
 def add_project(request):
     # obtain all data posted from form
     project_form = ProjectForm(data=request.POST)
@@ -112,7 +133,7 @@ def show_people(request, people_id):
 # list all people
 def all_people(request):
     # call all People objects from models.py
-    people_list = People.objects.all()
+    people_list = People.objects.all().order_by('person_name')
     # list all people on one page
     return render(request,
                   'all_people.html', {
@@ -152,7 +173,7 @@ def add_people(request):
 # list all projects
 def all_projects(request):
     # call all Project objects from models.py
-    project_list = Project.objects.all()
+    project_list = Project.objects.all().order_by('project_name', 'project_manager')
     # list all projects on one page
     return render(request,
                   'all_projects.html', {

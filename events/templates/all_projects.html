@@ -9,7 +9,8 @@
         <!-- NOTE: USE BOOTSTRAP 'CARDS' for formatting -->
         {% for project in project_list %}
 
-            <li><strong>Project: {{ project.project_name }} </strong>  |  Project Date and Time: {{ project.project_date }}</li>
+            <li><strong>Project: {{ project.project_name }} </strong></li> 
+            <li>Date and Time: {{ project.project_date }}</li>
             <!-- call venue objects from class Venue -->
             <li>Project People: {{ project.people  }} </li>
             <li>Project Manager: {{ project.project_manager }}</li>
