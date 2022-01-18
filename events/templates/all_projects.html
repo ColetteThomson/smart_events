@@ -6,10 +6,12 @@
     <h3>All Projects</h3>
 
     <ul>
+        <!-- NOTE: USE BOOTSTRAP 'CARDS' for formatting -->
         {% for project in project_list %}
+
             <li><strong>Project: {{ project.project_name }} </strong>  |  Project Date and Time: {{ project.project_date }}</li>
             <!-- call venue objects from class Venue -->
-            <li>Project People: {{ project.people  }} {{ project.people.address }}</li>
+            <li>Project People: {{ project.people  }} </li>
             <li>Project Manager: {{ project.project_manager }}</li>
             <li>Project Description: {{ project.description }}</li>
             <!-- for loop to list all attendees for this event-->
@@ -21,7 +23,15 @@
             </li> -->
     </ul>
     <br/>
-        <!-- end for loop for: event_list
+        <div class="card-footer text-muted">
+            <a href="{% url 'update_project' project.id %"> Update Project</a>
+        </div>
+
+        <div class="card-footer text-muted">
+            <a href="{% url 'delete_project' project.id %"> Delete Project</a>
+        </div>
+
+        <!-- end for loop for: project_list -->
         {% endfor %} -->
     
 {% endblock content %}

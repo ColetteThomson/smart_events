@@ -8,6 +8,47 @@ from django.views import generic, View
 from .models import Project, People
 from .forms import PeopleForm, ProjectForm
 
+# delete a person from 'people'
+def delete_people(request, people_id):
+    # get primary key people_id from People
+    people = People.objects.get(id=people_id)
+    # delete the person
+    people.delete()
+    # redirect back to 'all_people' page
+    return redirect('all_people')
+
+
+# delete a project
+def delete_project(request, project_id):
+    # get primary key project_id from Project
+    project = Project.objects.get(id=project_id)
+    # delete the project
+    project.delete()
+    # redirect back to 'all_projects' page
+    return redirect('all_projects')
+
+
+# update project
+def update_project(request, project_id):
+    # get primary key project_id from Project
+    project = Project.objects.get(id=project_id)
+    # if form completed and submitted then Post, or
+    # if not then display empty ProjectForm
+    form = ProjectForm(request.POST or None, instance=project)
+    # if project form is valid (required fields completed)
+    if form.is_valid():
+        # save and send to all_projects (url)
+        form.save()
+        return redirect('all_projects')
+        
+    # update individual projects
+    return render(request,
+                  'update_project.html', {
+                                     "project": project,
+                                     "form": form,
+                                    })
+
+# create new project
 def add_project(request):
     # obtain all data posted from form
     project_form = ProjectForm(data=request.POST)
@@ -36,7 +77,7 @@ def add_project(request):
                                         })
 
 
-
+# update people
 def update_people(request, people_id):
     # get primary key people_id from People
     people = People.objects.get(id=people_id)
@@ -45,9 +86,9 @@ def update_people(request, people_id):
     form = PeopleForm(request.POST or None, instance=people)
     # if people form is valid (required fields completed)
     if form.is_valid():
-        # save and send to list_people
+        # save and send to all_people (url)
         form.save()
-        return redirect('list_people')
+        return redirect('all_people')
         
     # update individual people
     return render(request,
@@ -57,26 +98,29 @@ def update_people(request, people_id):
                                     })
 
 
+# show individual people
 def show_people(request, people_id):
     # get primary key people_id from People
     people = People.objects.get(id=people_id)
     # show individual people
     return render(request,
-                  'people.html', {
+                  'show_people.html', {
                                      "people": people,
                                     })
 
 
+# list all people
 def all_people(request):
     # call all People objects from models.py
     people_list = People.objects.all()
     # list all people on one page
     return render(request,
-                  'people.html', {
+                  'all_people.html', {
                                      "people_list": people_list,
                                     })
 
 
+# add new people
 def add_people(request):
     # obtain all data posted from form
     people_form = PeopleForm(data=request.POST)
@@ -105,6 +149,7 @@ def add_people(request):
                                         })
 
 
+# list all projects
 def all_projects(request):
     # call all Project objects from models.py
     project_list = Project.objects.all()
@@ -115,6 +160,7 @@ def all_projects(request):
                                     })
 
 
+# project calendar
 def event_calendar(request, todays_date=date.today()):
     name = "Marty"
     year = todays_date.year
