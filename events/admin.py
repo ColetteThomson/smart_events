@@ -31,7 +31,7 @@ class UsersAdmin(admin.ModelAdmin):
 @admin.register(Project)
 class ProjectAdmin(SummernoteModelAdmin):
     # customise list view of admin panel
-    list_display = ('project_name', 'project_date', 'people', 'project_manager')
+    list_display = ('project_name', 'project_date', 'project_manager')
     # order projects alphabetically
     ordering = ('project_name',)
     # add search fields for either project or date or manager

@@ -102,12 +102,12 @@ def add_project(request):
 def update_people(request, people_id):
     # get primary key people_id from People
     people = People.objects.get(id=people_id)
-    # if form completed and submitted then Post, or
+    # if updating then pre-populate existing info (instance)
     # if not then display empty PeopleForm
     form = PeopleForm(request.POST or None, instance=people)
     # if people form is valid (required fields completed)
     if form.is_valid():
-        # save and send to all_people (url)
+        # save and send to all_people page 
         form.save()
         return redirect('all_people')
         

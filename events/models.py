@@ -11,8 +11,9 @@ class People(models.Model):
     contact_no = models.CharField(max_length=20, blank=True)
     # website = models.URLField(blank=True)
     person_email = models.EmailField(blank=True)
+    # projects = models.ManyToOneField(blank=True)
     # if one-to-many project relationship is deleted so will all related records
-    ## projects = models.ForeignKey(Project, blank=True, null=True, on_delete=models.CASCADE)
+    ### projects = models.ForeignKey(Project, blank=True, null=True, on_delete=models.CASCADE)
 
     # helper method for class People:
     # returns a string representation of an object
@@ -26,12 +27,13 @@ class Project(models.Model):
     project_date = models.DateTimeField()
     # to allow a new project to be added without people assigned
     # if one-to-many people relationship is deleted so will all related records
-    people = models.ForeignKey(People, blank=True, null=True, on_delete=models.CASCADE)
+    # people = models.ForeignKey(People, blank=True, null=True, on_delete=models.CASCADE)
+    people = models.ManyToManyField(People, blank=True)
     # sets manager field to null, should manager cease to be a user
     project_manager = models.ForeignKey(User, blank=True, null=True, on_delete=models.SET_NULL)
     # to allow an attendee to attend many events and
     # to allow an event to be saved without any attendees
-    # ###attendees = models.ManyToManyField(SiteUser, blank=True)
+    # attendees = models.ManyToManyField(SiteUser, blank=True)
     # to set description field to optional
     description = models.TextField(blank=True)
 
