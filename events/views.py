@@ -15,17 +15,17 @@ def search_people(request):
         # variable to contain entered search request
         searched = request.POST['searched']
         # search for person_name that contains search request
-        people = People.objects.filter(person_name__contains=searched)
+        saught = People.objects.filter(person_name__contains=searched)
         # return search result
         return render(request,
                       'search_people.html', {
                                              'searched': searched,
-                                             'people': people,
+                                             'saught': saught,
                                             })
     else:
         # return search result
         return render(request,
-                      'search_venues.html', 
+                      'search_people.html', 
                       {})
 
 

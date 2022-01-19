@@ -8,12 +8,12 @@
         {% if searched %}
             <h1>You searched for ...  {{ searched }}</h1>
             <br/>
-            <!-- for loop: iterate through people_list -->
-            {% for people in people_list %}
+            <!-- for loop: iterate through people -->
+            {% for person in people %}
                 <!-- add link to search result/s -->
-                <a href="{% url 'show_people' people.id %}">{{ people }}</a> 
+                <a href="{% url 'show_people' people.id %}">{{ saught }}</a> 
                 <br/>
-            <!-- end for loop: people_list -->
+            <!-- end for loop: people -->
             {% endfor %}
 
         <!-- if no search entered then remind user -->
