@@ -12,7 +12,7 @@ class People(models.Model):
     # website = models.URLField(blank=True)
     person_email = models.EmailField(blank=True)
     # if one-to-many project relationship is deleted so will all related records
-    projects = models.ForeignKey(Project, blank=True, null=True, on_delete=models.CASCADE)
+    ## projects = models.ForeignKey(Project, blank=True, null=True, on_delete=models.CASCADE)
 
     # helper method for class People:
     # returns a string representation of an object

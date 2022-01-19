@@ -9,29 +9,15 @@
     <center>
         <h1>People</h1>
         <br/>
-        <table class="table table-striped table-hover table-bordered">
-        {% for people in people_list %}
-        
+        <!-- <table class="table table-striped table-hover table-bordered"> -->      
         <ul>
-            <li><strong>Name: {{ people.person_name }} </strong></li> 
-            <li>Job Title: {{ people.job_title }}</li>
-            <li>Contact Number {{ people.contact_no  }} </li>
-            <li>Email: {{ people.person_email }}</li>
-            <li>Projects Assigned To: {{ people.projects }}</li>
-        </ul>
-            <tr>
-                <td>
-                    <!-- link to individual venue's details -->
-                    <a href="{% url 'show_people' people.id %}">{{ people }}></a>
-            </td>
-            <td align="right">
-                    <!-- link to update individual venue's details -->
-                    <a href="{% url 'update_people' people.id %">Update</a></a>
-            </td>
-            </tr>
-        <!-- end for loop: venue -->
-        {% endfor %}
-        </table>
+            <li><strong>Name: {{ person.person_name }} </strong></li> 
+            <li>Job Title: {{ person.job_title }}</li>
+            <li>Contact Number {{ person.contact_no  }} </li>
+            <li>Email: {{ person.person_email }}</li>
+            <li>Projects Assigned To: {{ person.projects }}</li>
+        </ul> 
+        <!-- </table> -->
 
 
         <!-- for loop: to iterate through each 'venue in venue_list' -->

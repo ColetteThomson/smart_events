@@ -122,22 +122,22 @@ def update_people(request, people_id):
 # show individual people
 def show_people(request, people_id):
     # get primary key people_id from People
-    people = People.objects.get(id=people_id)
+    person = People.objects.get(id=people_id)
     # show individual people
     return render(request,
                   'show_people.html', {
-                                     "people": people,
+                                     "person": person,
                                     })
 
 
 # list all people
 def all_people(request):
     # call all People objects from models.py
-    people_list = People.objects.all().order_by('person_name')
+    people = People.objects.all().order_by('person_name')
     # list all people on one page
     return render(request,
                   'all_people.html', {
-                                     "people_list": people_list,
+                                     "people": people,
                                     })
 
 

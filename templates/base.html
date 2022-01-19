@@ -55,14 +55,6 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'show_people' %}">Show People</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'update_people' %}">Update People</a>
-                    </li>
-
-                    <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'add_people' %}">Add People</a>
                     </li>
 
@@ -81,7 +73,7 @@
                 </ul>
 
                 <!-- search box and button -->
-                <form class="d-flex" method="POST" action="{% url 'search_venues' %}">
+                <form class="d-flex" method="POST" action="{% url 'search_people' %}">
 
                     {% csrf_token %}
 
