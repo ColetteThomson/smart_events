@@ -8,10 +8,10 @@
         {% if searched %}
             <h1>You searched for ...  {{ searched }}</h1>
             <br/>
-            <!-- for loop: iterate through people -->
-            {% for person in people %}
+            <!-- for loop: iterate through 'persons' (from views.py) -->
+            {% for person in persons %}
                 <!-- add link to search result/s -->
-                <a href="{% url 'show_people' people.id %}">{{ saught }}</a> 
+                <a href="{% url 'show_people' person.id %}">{{ person }}</a> 
                 <br/>
             <!-- end for loop: people -->
             {% endfor %}
