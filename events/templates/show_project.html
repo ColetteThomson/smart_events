@@ -7,32 +7,32 @@
 
 {% block content %}
     <center>
-        <h1>People</h1>
+        <h1>Project Details</h1>
         <br/>
         <table class="table table-striped table-hover table-bordered">    
             <tr>
                 <td>
-                    <strong>Name: {{ person.person_name }} </strong>
+                    <strong>Project: {{ project.project_name }}</strong>
                 </td>
             </tr>
             <tr>
                 <td>
-                    Job Title: {{ person.job_title }}
+                    Date and Time: {{ project.project_date }}
                 </td>
             </tr>
             <tr>
                 <td>
-                    Contact Number {{ person.contact_no  }}
+                    People assigned to project: {{ project.people }}
                 </td>
             </tr>
             <tr>
                 <td>
-                    Email: {{ person.person_email }}
+                    Project Manager: {{ project.project_manager }}
                 </td>
             </tr>
             <tr>
                 <td>
-                    Projects Assigned To: {{ person.projects }}
+                    Project Description: {{ project.description }}
                 </td>
             </tr>
         </table>

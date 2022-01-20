@@ -7,7 +7,6 @@ from django.shortcuts import render, redirect
 from django.views import generic, View
 from .models import Project, People
 from .forms import PeopleForm, ProjectForm
-
 # Pagination
 from django.core.paginator import Paginator
 
@@ -37,7 +36,7 @@ def update_project(request, project_id):
         form.save()
         return redirect('all_projects')
         
-    # update individual projects
+    # update details of a project
     return render(request,
                   'update_project.html', {
                                      "project": project,
@@ -76,12 +75,32 @@ def add_project(request):
 # LIST all projects
 def all_projects(request):
     # call all Project objects from models.py
-    project_list = Project.objects.all().order_by('project_name', 'project_manager')
+    project = Project.objects.all()
+    # project_list = Project.objects.all().order_by('project_name', 'project_manager')
+    # set up pagination, show 2 projects per page
+    p = Paginator(Project.objects.all(), 2)
+    # return the page
+    page = request.GET.get('page')
+    project_list = p.get_page(page)
+
     # list all projects on one page
     return render(request,
                   'all_projects.html', {
+                                     "project": project,
                                      "project_list": project_list,
                                     })
+
+
+# SHOW details of a project
+def show_project(request, project_id):
+    # get unique key project_id from Project
+    project = Project.objects.get(id=project_id)
+    # show individual people
+    return render(request,
+                  'show_project.html', {
+                                     "project": project,
+                                    })
+
 
 # --------------------------------------------------- Functions for 'PEOPLE'
 
@@ -129,7 +148,7 @@ def update_people(request, people_id):
         form.save()
         return redirect('all_people')
         
-    # update individual people
+    # update details of a person
     return render(request,
                   'update_people.html', {
                                      "people": people,
@@ -137,9 +156,9 @@ def update_people(request, people_id):
                                     })
 
 
-# SHOW individual people
+# SHOW details of a person
 def show_people(request, people_id):
-    # get primary key people_id from People
+    # get unique key people_id from People
     person = People.objects.get(id=people_id)
     # show individual people
     return render(request,

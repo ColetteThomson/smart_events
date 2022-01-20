@@ -22,10 +22,10 @@
             <!-- csrf to prevent malicious attacks using user credentials -->
             {% csrf_token %}
 
-            <!-- render add_venue form using Crispy filter -->
+            <!-- render add_project form using Crispy filter -->
             {{ project_form | crispy }}
 
-            <!-- submit button for add_venue form -->
+            <!-- submit button for add_project form -->
             <button type="submit" class="btn btn-signup btn-lg">Submit</button>
 
         </form>
