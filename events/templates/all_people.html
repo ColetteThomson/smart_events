@@ -14,18 +14,42 @@
                     <td>
                         <a href="{% url 'show_people' person.id %}">{{ person.person_name }}</a>
                     </td>
+                    
+                    <!-- update a person link and button -->
                     <td align="right">
                         <a href="{% url 'update_people' person.id %}" 
                         class="btn btn-outline-secondary btn-sm">Update</a>
                     </td>
-              
+
+                    <!-- delete a person link and button -->
+                    <td align="right">
+                        <a href="{% url 'delete_people' person.id %}"
+                        class="btn btn-outline-secondary btn-sm">Delete</a>
+                    </td>
+                    
+        
         <!-- end for loop: venue -->
         {% endfor %}
-        <!-- </table> -->
+        </table>
+        <br/>
+        {{ people_list }}<br/>
+        Has Previous: {{ people_list.has_previous }}
+        <br/>
+        Has Next: {{ people_list.has_next }}
+        <br/>
+        Current Page: {{ people_list.number }}
+        <br/>
+        Number of Pages: {{ people_list.paginator.num_pages }}
+        <hr><br/>
+        <!-- if statement: people_list has a previous page -->
+        {% if people_list.has_previous %}
+            <a href="?page=1">&laquo First</a>
+            <a href="?page={{ people_list.previous_page_number }}">Previous</a>
+
+        {% endif %}
+
+        Page {{ people_list.number }} of {{ people_list.paginator.num_pages }}
+        <br/>
 
 
-        
-
-    
-    
     {% endblock content %}

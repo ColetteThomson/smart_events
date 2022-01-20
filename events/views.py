@@ -8,38 +8,13 @@ from django.views import generic, View
 from .models import Project, People
 from .forms import PeopleForm, ProjectForm
 
-# search for people
-def search_people(request):
-    # if user clicks 'search' button
-    if request.method == "POST":
-        # variable to contain entered search request
-        searched = request.POST['searched']
-        # search for person_name that contains search request
-        persons = People.objects.filter(person_name__contains=searched)
-        # return search result
-        return render(request,
-                      'search_people.html', {
-                                             'searched': searched,
-                                             'persons': persons,
-                                            })
-    else:
-        # return search result
-        return render(request,
-                      'search_people.html', 
-                      {})
+# Pagination
+from django.core.paginator import Paginator
 
 
-# delete a person from 'people'
-def delete_people(request, people_id):
-    # get primary key people_id from People
-    people = People.objects.get(id=people_id)
-    # delete the person
-    people.delete()
-    # redirect back to 'all_people' page
-    return redirect('all_people')
+# --------------------------------------------------- Functions for 'PROJECT'
 
-
-# delete a project
+# DELETE a project
 def delete_project(request, project_id):
     # get primary key project_id from Project
     project = Project.objects.get(id=project_id)
@@ -49,7 +24,7 @@ def delete_project(request, project_id):
     return redirect('all_projects')
 
 
-# update a project
+# UPDATE a project
 def update_project(request, project_id):
     # get primary key project_id from Project
     project = Project.objects.get(id=project_id)
@@ -58,7 +33,7 @@ def update_project(request, project_id):
     form = ProjectForm(request.POST or None, instance=project)
     # if project form is valid (required fields completed)
     if form.is_valid():
-        # save and send to all_projects (url)
+        # save and return to all_projects (url)
         form.save()
         return redirect('all_projects')
         
@@ -69,7 +44,7 @@ def update_project(request, project_id):
                                      "form": form,
                                     })
 
-# create a new project
+# CREATE (add) a new project
 def add_project(request):
     # obtain all data posted from form
     project_form = ProjectForm(data=request.POST)
@@ -98,7 +73,50 @@ def add_project(request):
                                         })
 
 
-# update people
+# LIST all projects
+def all_projects(request):
+    # call all Project objects from models.py
+    project_list = Project.objects.all().order_by('project_name', 'project_manager')
+    # list all projects on one page
+    return render(request,
+                  'all_projects.html', {
+                                     "project_list": project_list,
+                                    })
+
+# --------------------------------------------------- Functions for 'PEOPLE'
+
+# SEARCH for people
+def search_people(request):
+    # if user clicks 'search' button
+    if request.method == "POST":
+        # variable to contain entered search request
+        searched = request.POST['searched']
+        # search for person_name that contains search request
+        persons = People.objects.filter(person_name__contains=searched)
+        # return search result
+        return render(request,
+                      'search_people.html', {
+                                             'searched': searched,
+                                             'persons': persons,
+                                            })
+    else:
+        # return search result
+        return render(request,
+                      'search_people.html', 
+                      {})
+
+
+# DELETE a person from 'people'
+def delete_people(request, people_id):
+    # get primary key people_id from People
+    people = People.objects.get(id=people_id)
+    # delete the person
+    people.delete()
+    # redirect back to 'all_people' page
+    return redirect('all_people')
+
+
+# UPDATE people
 def update_people(request, people_id):
     # get primary key people_id from People
     people = People.objects.get(id=people_id)
@@ -119,7 +137,7 @@ def update_people(request, people_id):
                                     })
 
 
-# show individual people
+# SHOW individual people
 def show_people(request, people_id):
     # get primary key people_id from People
     person = People.objects.get(id=people_id)
@@ -130,18 +148,26 @@ def show_people(request, people_id):
                                     })
 
 
-# list all people
+# LIST all people
 def all_people(request):
     # call all People objects from models.py
-    people = People.objects.all().order_by('person_name')
-    # list all people on one page
+    ###people = People.objects.all().order_by('person_name')
+    people = People.objects.all()
+    # set up pagination, show 2 people per page
+    p = Paginator(People.objects.all(), 2)
+    # return the page
+    page = request.GET.get('page')
+    people_list = p.get_page(page)
+
+    # list all people 
     return render(request,
                   'all_people.html', {
                                      "people": people,
+                                     "people_list": people_list,
                                     })
 
 
-# add new people
+# CREATE (add) new people
 def add_people(request):
     # obtain all data posted from form
     people_form = PeopleForm(data=request.POST)
@@ -168,17 +194,6 @@ def add_people(request):
                       'add_people.html', {
                                        'people_form': people_form,
                                         })
-
-
-# list all projects
-def all_projects(request):
-    # call all Project objects from models.py
-    project_list = Project.objects.all().order_by('project_name', 'project_manager')
-    # list all projects on one page
-    return render(request,
-                  'all_projects.html', {
-                                     "project_list": project_list,
-                                    })
 
 
 # project calendar

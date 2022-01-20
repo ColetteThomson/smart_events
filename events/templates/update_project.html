@@ -16,10 +16,11 @@
             {% csrf_token %}
 
             <!-- render update_venue form using Crispy filter -->
-            {{ project_form | crispy }}
+            {{ form | crispy }}
         
             <!-- submit button for update_venue form -->
             <button type="submit" class="btn btn-secondary btn-lg">Update</button>
+        </form>
 
     </center>
     
