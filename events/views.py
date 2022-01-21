@@ -13,6 +13,27 @@ from django.core.paginator import Paginator
 
 # --------------------------------------------------- Functions for 'PROJECT'
 
+# SEARCH for projects
+def search_projects(request):
+    # if user clicks 'search' button
+    if request.method == "POST":
+        # variable to contain entered search request
+        searched = request.POST['searched']
+        # search for project_name that contains search request
+        projects = Project.objects.filter(project_name__contains=searched)
+        # return search result
+        return render(request,
+                      'search_projects.html', {
+                                             'searched': searched,
+                                             'projects': projects,
+                                            })
+    else:
+        # return search result
+        return render(request,
+                      'search_projects.html', 
+                      {})
+
+
 # DELETE a project
 def delete_project(request, project_id):
     # get primary key project_id from Project

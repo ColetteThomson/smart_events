@@ -27,5 +27,5 @@ urlpatterns = [
 
     # urls paths for SEARCH: 'people' and 'projects'
     path('search_people', views.search_people, name='search_people'),
-
+    path('search_projects', views.search_projects, name='search_projects'),
     ]

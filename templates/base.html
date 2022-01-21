@@ -22,8 +22,7 @@
 
 <body class="d-flex flex-column h-100 main-bg">
 
-    <!-- Navigation -->
-
+    <!-- navigation menu -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">smart</span><span
@@ -34,34 +33,50 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <!-- home page menu item -->
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                     </li>
                     
+                    <!-- display menu items only if user is logged in -->
+                    {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'event_calendar' %}">Calendar</a>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'all_projects' %}">All Projects</a>
-                    </li> 
-
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'add_project' %}">Add Project</a>
-                    </li> 
-
-                     <li class="nav-item">
-                         <a class="nav-link active" aria-current="page" href="{% url 'all_people' %}">All People</a>
+                    <!-- bootstrap dropdown menu for projects -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Projects
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" aria-current="page" href="{% url 'all_projects' %}">All Projects</a>
+                            </li>
+                            <li><a class="dropdown-item" aria-current="page" href="{% url 'add_project' %}">Add Project</a>
+                            </li>
+                        </ul>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'add_people' %}">Add People</a>
+                    <!-- bootstrap dropdown menu for people -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          People
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" aria-current="page" href="{% url 'all_people' %}">All People</a>
+                            </li>
+                            <li><a class="dropdown-item" aria-current="page" href="{% url 'add_people' %}">Add People</a>
+                            </li>
+                        </ul>
                     </li>
-
-                    {% if user.is_authenticated %}
+                    
+                    <!-- logout: displayed only if user is logged in -->
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                     </li>
+
+                    <!-- if user not authenticated: displays 'register' and 'login' -->
                     {% else %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
@@ -69,7 +84,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_login' %}">Login</a>
                     </li>
-                    {% endif %}
                 </ul>
 
                 <!-- search box and button -->
@@ -82,9 +96,13 @@
                     <button class="btn btn-outline-secondary" type="submit">Search</button>
                 </form>
 
-                <span class="navbar-text text-muted">
+                    <!-- endif: if user is authenticated -->
+                    {% endif %}
+
+                <!-- site byline
+                <span align="right" class="navbar-text text-muted">
                     byline
-                </span>
+                </span> -->
             </div>
         </div>
     </nav>
