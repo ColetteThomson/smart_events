@@ -3,7 +3,16 @@
 {% block title %}Displaying Model Data{% endblock title %}
 
 {% block content %}
-    <center>
+   
+    <!-- search box for 'people' -->
+    <form method="POST" action="{% url 'search_people' %}">
+
+        {% csrf_token %}
+
+        <input class="form-control me-2" type="search" 
+        placeholder="search people..." aria-label="Search" name="searched">
+        <br/>
+
         <!-- if statement: search requested by user -->
         {% if searched %}
             <h1>You searched for ...  {{ searched }}</h1>
@@ -18,10 +27,9 @@
 
         <!-- if no search entered then remind user -->
         {% else %}
-            <h1>Please enter search for People</h1>
+            <h6>Please enter search for People</h6>
         <!-- end: search requested -->
         {% endif %}
 
-    </center>
     
 {% endblock content %}
