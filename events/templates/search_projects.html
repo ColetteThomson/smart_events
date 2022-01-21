@@ -4,21 +4,28 @@
 
 {% block content %}
 
-    <!-- search box for 'projects' -->
-    <form method="POST" action="{% url 'search_projects' %}">
+<div class="card" style="width: 50rem;">
+    <div class="card-header">
+        <!-- if statement: search requested by user -->
+        {% if searched %}
+            You searched for ...  {{ searched }}
+        {% else %}
+            Search Projects
+        {% endif %}
+    </div>
+    <div class="card-body">
+
+<!-- search box for 'projects' -->
+<form method="POST" action="{% url 'search_projects' %}">
 
         {% csrf_token %}
 
         <input class="form-control me-2" type="search" 
-        placeholder="search projects..." aria-label="Search" name="searched">
+        placeholder="enter search for project..." aria-label="Search" name="searched">
         <br/>
-        <!-- <button class="btn btn-outline-secondary" type="submit">Search</button>
-    </form> -->
+        <button class="btn btn-outline-secondary" type="submit">Search</button>
+        <br/>
 
-        <!-- if statement: search requested by user -->
-        {% if searched %}
-            <h1>You searched for ...  {{ searched }}</h1>
-            <br/>
             <!-- for loop: iterate through 'projects' (from views.py) -->
             {% for project in projects %}
             <!-- add link to search result/s -->
@@ -26,13 +33,9 @@
             <br/>
             <!-- end for loop: projects -->
             {% endfor %}
-
-        <!-- if no search entered then remind user -->
-        {% else %}
-            <h6>Please enter search for Projects</h6>
-            <!-- end: search requested -->
-        {% endif %}
-
+</form>
+        
+        
    
     
 {% endblock content %}

@@ -3,6 +3,17 @@
 {% block title %}Displaying Model Data{% endblock title %}
 
 {% block content %}
+
+    <div class="card" style="width: 50rem;">
+        <div class="card-header">
+            <!-- if statement: search requested by user -->
+            {% if searched %}
+                You searched for ...  {{ searched }}
+            {% else %}
+                Search People
+            {% endif %}
+        </div>
+        <div class="card-body">
    
     <!-- search box for 'people' -->
     <form method="POST" action="{% url 'search_people' %}">
@@ -10,26 +21,18 @@
         {% csrf_token %}
 
         <input class="form-control me-2" type="search" 
-        placeholder="search people..." aria-label="Search" name="searched">
+        placeholder="enter search for people..." aria-label="Search" name="searched">
+        <br/>
+        <button class="btn btn-outline-secondary" type="submit">Search</button>
         <br/>
 
-        <!-- if statement: search requested by user -->
-        {% if searched %}
-            <h1>You searched for ...  {{ searched }}</h1>
-            <br/>
             <!-- for loop: iterate through 'persons' (from views.py) -->
             {% for person in persons %}
-                <!-- add link to search result/s -->
-                <a href="{% url 'show_people' person.id %}">{{ person }}</a> 
-                <br/>
-            <!-- end for loop: people -->
+            <!-- add link to search result/s -->
+            <a href="{% url 'show_people' person.id %}">{{ person }}</a> 
+            <br/>
+            <!-- end for loop: person -->
             {% endfor %}
-
-        <!-- if no search entered then remind user -->
-        {% else %}
-            <h6>Please enter search for People</h6>
-        <!-- end: search requested -->
-        {% endif %}
-
-    
+    </form>
+ 
 {% endblock content %}
