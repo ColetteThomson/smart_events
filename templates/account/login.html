@@ -1,36 +1,39 @@
 <!-- extends to own base.html -->
 {% extends "base.html" %}
 
+<!-- internalisation tag: allows a single app to read in multiple languages -->
 {% load i18n %}
-{% load account socialaccount %}
 
-{% block head_title %}{% trans "Sign In" %}{% endblock %}
+<!-- translation string -->
+{% block head_title %}{% trans "Log In" %}{% endblock %}
 
 {% block content %}
 
 <div class="container">
   <div class="row">
     <div class="col-md-8 mt-3 offset-md-2">
-      <h3>{% trans "Sign In" %}</h3>
+      <h3>{% trans "Log In" %}</h3>
 
-      <p>{% blocktrans %}Welcome back to the Smart Events blog. 
-        To leave a comment or like a post, please log in. If you
+      <!-- display welcome message with login or register options -->
+      <p>{% blocktrans %}Welcome back to the Smart Events Management System. 
+        To leave a comment or like a chat, please log in. If you
         have not created an account yet, then 
+        <!-- link for new user registration-->
         <a class="link" href="{{ signup_url }}">sign up</a>
         first.{% endblocktrans %}</p>
     </div>
   </div>
   <div class="row">
     <div class="col-md-8 mt-3 offset-md-2">
-      <!-- login form -->
+      <!-- existing user login form (username, password)-->
       <form class="login" method="POST" action="{% url 'account_login' %}">
         {% csrf_token %}
         {{ form.as_p }}
         {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
-        <!-- login button -->
-        <button class="btn btn-signup right" type="submit">{% trans "Sign In" %}</button>
+        <!-- submit button for login form -->
+        <button class="btn btn-signup right" type="submit">{% trans "Log In" %}</button>
       </form>
     </div>
   </div>
