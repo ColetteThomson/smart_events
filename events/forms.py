@@ -1,23 +1,21 @@
 from django import forms
 from django.forms import ModelForm
-from .models import People, Project
+from .models import People, Project, TechSupport
 from datetime import date
 
-# people choices
-# PEOPLE_CHOICES = []
-
-# create an project form
+# create (add) a project form
 class ProjectForm(ModelForm):
     class Meta:
         model = Project
         # fields to be imported from class Project
-        fields = ('project_name', 'project_date', 'people', 'project_manager', 'description')
+        fields = ('project_name', 'project_date', 'people', 'resource_TS','project_manager', 'description')
         # set the label to none
         labels = {
             'project_name': '',
             'project_date': 'YYYY-MM-DD',
             #'job_title': 'job title',
             'people': 'people',
+            'resource_TS': 'Resource: Tech Support',
             'project_manager': 'Project Manager',
             'description': '',
         }
@@ -28,6 +26,8 @@ class ProjectForm(ModelForm):
             #'project_date': forms.DateField(attrs={'class': 'form-control', 'placeholder': 'Project Date'}),
 
             'people': forms.Select(attrs={'class': 'form-select', 'placeholder': 'People'}),
+            'resource_TS': forms.Select(attrs={'class': 'form-select', 'placeholder': 'Resource: Tech Support'}),
+
             #'job_title': forms.Select(attrs={'class': 'form-select', 'placeholder': 'Job Title'}),
             'project_manager': forms.Select(attrs={'class': 'form-select', 'placeholder': 'Project Manager'}),
             'description': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Description'}),
@@ -49,6 +49,24 @@ class PeopleForm(ModelForm):
         widgets = {
             'person_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Person Name'}),
             'job_title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Job Title'}),
+            'contact_no': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Contact Number'}),
+            'person_email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Person Email'}),
+        }
+
+
+# create a 'Resource: Tech Support' form
+class TechSupportForm(ModelForm):
+    class Meta:
+        model = TechSupport
+        # fields to be imported from class TechSupport
+        fields = ('person_name_TS', 'contact_no', 'person_email')
+        labels = {
+            'person_name_TS': '',
+            'contact_no': '',
+            'person_email': '',
+        }
+        widgets = {
+            'person_name_TS': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Person Name'}),
             'contact_no': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Contact Number'}),
             'person_email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Person Email'}),
         }

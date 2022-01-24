@@ -5,8 +5,8 @@ from calendar import HTMLCalendar
 
 from django.shortcuts import render, redirect
 from django.views import generic, View
-from .models import Project, People
-from .forms import PeopleForm, ProjectForm
+from .models import Project, People, TechSupport
+from .forms import PeopleForm, ProjectForm, TechSupportForm
 # Pagination
 from django.core.paginator import Paginator
 
@@ -124,8 +124,7 @@ def show_project(request, project_id):
     return render(request,
                   'show_project.html', {
                                      "project": project,
-                                     #"job_title": job_title,
-                                    })
+                                     })
 
 
 # --------------------------------------------------- Functions for 'PEOPLE'
@@ -200,6 +199,7 @@ def all_people(request):
     # call all People objects from models.py
     ###people = People.objects.all().order_by('person_name')
     people = People.objects.all()
+    tech_support = TechSupport.objects.all()
     # set up pagination, show 2 people per page
     p = Paginator(People.objects.all(), 2)
     # return the page
@@ -210,6 +210,7 @@ def all_people(request):
     return render(request,
                   'all_people.html', {
                                      "people": people,
+                                     "tech_support": tech_support,
                                      "people_list": people_list,
                                     })
 
@@ -241,6 +242,36 @@ def add_people(request):
                       'add_people.html', {
                                        'people_form': people_form,
                                         })
+
+
+# CREATE (add) a Tech Support Resource
+def add_tech_support(request):
+    # obtain all data posted from form
+    tech_support_form = TechSupportForm(data=request.POST)
+
+    # if tech support form is valid (required fields completed)
+    if tech_support_form.is_valid():
+        # save to database
+        new_tech_support = tech_support_form.save(commit=False)
+        # then save the new tech support people
+        new_tech_support.save()
+
+        return render(request,
+                      'add_tech_support.html', {
+                                    'tech_support_form': tech_support_form,
+                                    'submitted': True,
+                                    })
+    else:
+        tech_support_form = TechSupportForm()
+        # check if user submitted form
+        if 'submitted' in request.GET:
+            submitted = True
+
+        return render(request,
+                      'add_tech_support.html', {
+                                       'tech_support_form': tech_support_form,
+                                        })
+
 
 
 # project calendar

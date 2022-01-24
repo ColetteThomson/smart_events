@@ -20,6 +20,7 @@ urlpatterns = [
     
     # urls paths for 'PEOPLE'
     path('add_people', views.add_people, name='add_people'),
+    path('add_tech_support', views.add_tech_support, name='add_tech_support'),
     path('all_people', views.all_people, name='all_people'),
     path('show_people/<int:people_id>/', views.show_people, name='show_people'),
     path('update_people/<int:people_id>/', views.update_people, name='update_people'),

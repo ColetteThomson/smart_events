@@ -3,6 +3,19 @@ from cloudinary.models import CloudinaryField
 from django.contrib.auth.models import User
 
 
+# ERD model for class Tech Support
+class TechSupport(models.Model):
+    person_name_TS = models.CharField(max_length=120)
+    contact_no = models.CharField(max_length=20, blank=True)
+    person_email = models.EmailField(blank=True)
+
+    # helper method for class TechSupport:
+    # returns a string representation of an object
+    def __str__(self):
+        return self.person_name_TS
+
+
+
 # ERD model for class People
 class People(models.Model):
     person_name = models.CharField(max_length=120)
@@ -28,6 +41,7 @@ class Project(models.Model):
     # to allow a new project to be added without people assigned
     # if one-to-many people relationship is deleted so will all related records
     people = models.ForeignKey(People, blank=True, null=True, on_delete=models.CASCADE)
+    resource_TS = models.ForeignKey(TechSupport(), blank=True, null=True, on_delete=models.CASCADE)
         
     ##job_title = models.ForeignKey(People, blank=True, null=True, on_delete=models.CASCADE)
     # sets manager field to null, should manager cease to be a user
