@@ -68,9 +68,9 @@ def update_project(request, project_id):
 def add_project(request):
     # obtain all data posted from form
     project_form = ProjectForm(data=request.POST)
-
     # if project form is valid (required fields completed)
     if project_form.is_valid():
+        print("if block triggered") 
         # save to database
         new_project = project_form.save(commit=False)
         # then save the new project
@@ -81,7 +81,9 @@ def add_project(request):
                                     'project_form': project_form,
                                     'submitted': True,
                                     })
+                              
     else:
+        print("else block triggered")
         project_form = ProjectForm()
         # check if user submitted form
         if 'submitted' in request.GET:
@@ -91,6 +93,8 @@ def add_project(request):
                       'add_project.html', {
                                        'project_form': project_form,
                                         })
+
+
 
 
 # LIST all projects
@@ -120,6 +124,7 @@ def show_project(request, project_id):
     return render(request,
                   'show_project.html', {
                                      "project": project,
+                                     #"job_title": job_title,
                                     })
 
 
@@ -181,10 +186,12 @@ def update_people(request, people_id):
 def show_people(request, people_id):
     # get unique key people_id from People
     person = People.objects.get(id=people_id)
+    #job_title = People.objects.get(job_title)
     # show individual people
     return render(request,
                   'show_people.html', {
                                      "person": person,
+                                     #"job_title": job_title,
                                     })
 
 

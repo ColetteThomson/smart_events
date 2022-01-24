@@ -1,6 +1,10 @@
 from django import forms
 from django.forms import ModelForm
 from .models import People, Project
+from datetime import date
+
+# people choices
+# PEOPLE_CHOICES = []
 
 # create an project form
 class ProjectForm(ModelForm):
@@ -11,15 +15,20 @@ class ProjectForm(ModelForm):
         # set the label to none
         labels = {
             'project_name': '',
-            'project_date': 'YYYY-MM-DD HH:MM:SS',
-            'people': 'People',
+            'project_date': 'YYYY-MM-DD',
+            #'job_title': 'job title',
+            'people': 'people',
             'project_manager': 'Project Manager',
             'description': '',
         }
+        
         widgets = {
             'project_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Project Name'}),
-            'project_date': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Project Date'}),
+            
+            #'project_date': forms.DateField(attrs={'class': 'form-control', 'placeholder': 'Project Date'}),
+
             'people': forms.Select(attrs={'class': 'form-select', 'placeholder': 'People'}),
+            #'job_title': forms.Select(attrs={'class': 'form-select', 'placeholder': 'Job Title'}),
             'project_manager': forms.Select(attrs={'class': 'form-select', 'placeholder': 'Project Manager'}),
             'description': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Description'}),
         }

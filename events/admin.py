@@ -37,6 +37,6 @@ class ProjectAdmin(SummernoteModelAdmin):
     # add search fields for either project or date or manager
     search_fields = ['project_name', 'project_date', 'project_manager']
     # add filter for project date and manager
-    list_filter = ('project_name', 'project_date', 'people')
+    list_filter = ('project_name', 'project_date')
     # summernote formatting to be applied to project's 'description' field
     summernote_fields = ('description')

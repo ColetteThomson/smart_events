@@ -17,16 +17,28 @@
             <div class="card-body">
                 <p class="card-text">Date and Time: {{ project.project_date }}</p>
                 <p class="card-text">People assigned to project: {{ project.people }}</p>
+                <p class="card-text">Job Title: </p>
                 <p class="card-text">Project Manager: {{ project.project_manager }}</p>
                 <p class="card-text">Project Description: {{ project.description }}</p>
-              
-            <!-- button links to 'update' and 'delete a project' -->
-                <a href="{% url 'update_project' project.id %}"
-                class="btn btn-outline-secondary btn-sm">Update a Project</a>
+            
+            <!-- to check user is logged in -->
+            {% if user.is_authenticated %}
+                <!-- to check user is the project manager for this project -->
+                {% if user == project.project_manager %}
+                    
+                    <!-- button links to 'update' and 'delete a project' -->
+                    <a href="{% url 'update_project' project.id %}"
+                    class="btn btn-outline-secondary btn-sm">Update a Project</a>
 
-                <a href="{% url 'delete_project' project.id %}" 
-                class="btn btn-outline-secondary btn-sm">Delete a Project</a>
-            </div>
+                    <a href="{% url 'delete_project' project.id %}" 
+                    class="btn btn-outline-secondary btn-sm">Delete a Project</a>
+                
+                <!-- endif: project manager -->
+                {% endif %}
+                </div>
+                
+            <!-- endif: logged in -->
+            {% endif %}
         </div>
         
 {% endblock content %}

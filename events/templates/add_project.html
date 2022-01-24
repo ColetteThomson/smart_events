@@ -15,10 +15,11 @@
         <div class="alert alert-success" role="alert">
             Your Project was submitted successfully
         </div>
-            
+
+                   
         {% else %}
 
-        <form action="" method=POST>
+        <form action="{% url 'add_project' %}" method=POST>
             <!-- csrf to prevent malicious attacks using user credentials -->
             {% csrf_token %}
 

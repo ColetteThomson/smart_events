@@ -7,8 +7,15 @@
 
 {% block content %}
 
+<!-- to check user is logged in -->
+{% if user.is_authenticated %}
+    <!-- to check user is the project manager for this project -->
+    {% if user == project.project_manager %}
     <center>
         <h1>Update Project</h1>
+        logged in user: {{ user }}
+        project manager: {{ project.project_manager }}
+
         <br>
         <form action="" method=POST>
             <!-- csrf to prevent malicious attacks using user credentials -->
@@ -21,6 +28,12 @@
             <button type="submit" class="btn btn-secondary btn-lg">Update</button>
         </form>
 
+    <!-- endif: project manager -->
+    {% endif %}
+
+        
+<!-- endif: logged in -->
+{% endif %}
     </center>
     
-    {% endblock content %}
+{% endblock content %}

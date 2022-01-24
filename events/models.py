@@ -28,7 +28,8 @@ class Project(models.Model):
     # to allow a new project to be added without people assigned
     # if one-to-many people relationship is deleted so will all related records
     people = models.ForeignKey(People, blank=True, null=True, on_delete=models.CASCADE)
-    # people = models.ManyToManyField(People, blank=True)
+        
+    ##job_title = models.ForeignKey(People, blank=True, null=True, on_delete=models.CASCADE)
     # sets manager field to null, should manager cease to be a user
     project_manager = models.ForeignKey(User, blank=True, null=True, on_delete=models.SET_NULL)
     # to allow an attendee to attend many events and

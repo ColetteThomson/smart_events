@@ -11,23 +11,36 @@
         <table class="table table-striped table-hover table-bordered"> 
             <!-- for loop: iterate through project_list displaying 2 projects per page-->
             {% for project in project_list %}
+            
                 <tr>
                     <td>
                         <a href="{% url 'show_project' project.id %}">{{ project.project_name }}</a>
                     </td>
 
-                    <!-- update a project link and button -->
-                    <td align="right">
-                        <a href="{% url 'update_project' project.id %}" 
-                        class="btn btn-outline-secondary btn-sm">Update Project</a>
-                    </td>
+                <!-- to check user is logged in -->
+                {% if user.is_authenticated %}
+                    <!-- to check user is the project manager for this project -->
+                    {% if user == project.project_manager %}
 
-                    <!-- delete a project link and button -->
-                    <td align="right">
-                        <a href="{% url 'delete_project' project.id %}"
-                        class="btn btn-outline-secondary btn-sm">Delete Project</a>
-                    </td>
-                </tr>
+                        <!-- update a project link and button -->
+                        <td align="right">
+                            <a href="{% url 'update_project' project.id %}" 
+                            class="btn btn-outline-secondary btn-sm">Update Project</a>
+                        </td>
+
+                        <!-- delete a project link and button -->
+                        <td align="right">
+                            <a href="{% url 'delete_project' project.id %}"
+                            class="btn btn-outline-secondary btn-sm">Delete Project</a>
+                        </td>
+                    </tr>
+
+                    <!-- endif: project manager -->
+                    {% endif %}
+
+                <!-- endif: logged in -->
+                {% endif %}
+
             <!-- end for loop: project_list -->
             {% endfor %}
         </table>
@@ -39,6 +52,7 @@
               
         <!-- if statement: pagination (previous page) -->
         {% if project_list.has_previous %}
+
             <!-- add and display: '<< first' page -->
             <li class="page-item"><a class="page-link" href="?page=1">&laquo First</a>
             </li>
@@ -46,8 +60,10 @@
             <li class="page-item"><a class="page-link"
                 href="?page={{ project_list.previous_page_number }}">Previous</a>
             </li>
+
         <!-- end if: for pagination (previous page) -->
         {% endif %}
+
             <!-- page 'number of number' display -->
             <li class="page-item disabled"><a class="page-link" href="#">
                 Page {{ project_list.number }} of {{ project_list.paginator.num_pages }}</a>
@@ -55,6 +71,7 @@
         
         <!-- if statement: pagination (next page) -->
         {% if project_list.has_next %}
+
             <!-- add and display: 'next >>' page -->
             <li class="page-item"><a class="page-link" 
                 href="?page={{ project_list.next_page_number }}">Next</a>
@@ -63,6 +80,7 @@
             <li class="page-item"><a class="page-link" 
                 href="?page={{ project_list.paginator.num_pages }}">Last &raquo</a>
             </li>
+
         <!-- end if: for pagination (next page) -->
         {% endif %}
 

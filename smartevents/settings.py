@@ -178,4 +178,4 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # csrf to show current workspace as trusted
-CSRF_TRUSTED_ORIGINS = ["https://8000-emerald-guppy-3j180nwg.ws-eu27.gitpod.io"]
+CSRF_TRUSTED_ORIGINS = ["https://8000-emerald-guppy-3j180nwg.ws-eu28.gitpod.io"]
