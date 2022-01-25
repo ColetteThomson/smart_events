@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'pages',
     'events.apps.EventsConfig',
+    'home',
 ]
 
 # site id number of '1' to allow handling of multiple sites

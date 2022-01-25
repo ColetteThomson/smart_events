@@ -75,9 +75,10 @@ class TechSupportForm(ModelForm):
 
 
 JobTitle = (
-    ("Tech_Support", "Tech Support"),
+    ("Technical Analyst", "Technical Analyst"),
     ("Project_Admin", "Project Admin"),
     ("UX_Design", "UX Design"),
+    ("Business_Analyst", "Business Analyst")
 )
 
 # class PeopleInfoForm(ModelForm):
