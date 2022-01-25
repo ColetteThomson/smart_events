@@ -219,7 +219,7 @@ def all_people(request):
 def add_people(request):
     # obtain all data posted from form
     people_form = PeopleForm(data=request.POST)
-
+    ##people_form = PeopleInfoForm(data=request.POST)
     # if people form is valid (required fields completed)
     if people_form.is_valid():
         # save to database
@@ -299,3 +299,5 @@ def event_calendar(request, todays_date=date.today()):
                                           "cal": cal,
                                           "current_year": current_year,
                                         })
+
+

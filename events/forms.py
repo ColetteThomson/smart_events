@@ -14,7 +14,7 @@ class ProjectForm(ModelForm):
             'project_name': '',
             'project_date': 'YYYY-MM-DD',
             #'job_title': 'job title',
-            'people': 'people',
+            'people': 'Resource: Project Admin',
             'resource_TS': 'Resource: Tech Support',
             'project_manager': 'Project Manager',
             'description': '',
@@ -70,3 +70,30 @@ class TechSupportForm(ModelForm):
             'contact_no': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Contact Number'}),
             'person_email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Person Email'}),
         }
+
+
+
+
+JobTitle = (
+    ("Tech_Support", "Tech Support"),
+    ("Project_Admin", "Project Admin"),
+    ("UX_Design", "UX Design"),
+)
+
+# class PeopleInfoForm(ModelForm):
+#     class Meta:
+#         model = People
+#         # fields to be imported from class People
+#         fields = ('person_name', 'job_title','contact_no', 'person_email')
+#         labels = {
+#             'person_name': '',
+#             'job_title': '',
+#             'contact_no': '',
+#             'person_email': '',
+#         }
+#         widgets = {
+#             'person_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Person Name'}),
+#             'job_title': forms.ChoiceField(choices = JobTitle, 'class': 'form-control', 'placeholder': 'Job Title'),
+#             'contact_no': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Contact Number'}),
+#             'person_email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Person Email'}),
+#         }

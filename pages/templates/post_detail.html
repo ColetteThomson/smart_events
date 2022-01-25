@@ -82,7 +82,7 @@
     </div>
     <div class="row">
         <div class="col-md-8 card mb-4  mt-3 ">
-            <h3>Comments:</h3>
+            <h3>Ideas or Suggestions:</h3>
             <div class="card-body">
                 <!-- for loop to iterate through each 'comment in comments' -->
                 {% for comment in comments %}
@@ -108,14 +108,14 @@
                 <!-- if commented (True) then display a message to user -->
                 {% if commented %}
                 <div class="alert alert-success" role="alert">
-                    Your comment is awaiting approval
+                    Your idea / suggestion is awaiting approval
                 </div>
                 {% else %}
 
                 <!-- if statement: comment box only appears if user is authenticated -->
                 {% if user.is_authenticated %}
 
-                <h3>Leave a comment:</h3>
+                <h3>Leave an Idea or Suggestion:</h3>
                 <p>Posting as:  {{ user.username }}</p>
                 <!-- create form with method of post -->
                 <form method="post" style="margin-top: 1.3em;">
