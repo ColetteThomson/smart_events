@@ -224,6 +224,8 @@ def add_people(request):
     if people_form.is_valid():
         # save to database
         new_people = people_form.save(commit=False)
+        # pass in logged in user.id as 'owner'
+        new_people.owner = request.user.id
         # then save the new people
         new_people.save()
 
@@ -274,8 +276,8 @@ def add_tech_support(request):
 
 
 
-# project calendar
-def event_calendar(request, todays_date=date.today()):
+# # project calendar
+def project_calendar(request, todays_date=date.today()):
     name = "Marty"
     year = todays_date.year
     month = todays_date.strftime('%B')
@@ -290,14 +292,20 @@ def event_calendar(request, todays_date=date.today()):
     now = datetime.now()
     current_year = now.year
 
+    # query Project modeo for dates
+    projects_list = Project.objects.filter(
+        project_date__year = year,
+        project_date__month = month_number,
+        )
+
     return render(request,
-                  'event_calendar.html', {
+                  'project_calendar.html', {
                                           "name": name,
                                           "year": year,
                                           "month": month,
-                                          "month_no": month_number,
+                                          "month_number": month_number,
                                           "cal": cal,
                                           "current_year": current_year,
+                                          "projects_list": projects_list,
                                         })
-
 

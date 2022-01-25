@@ -20,12 +20,12 @@
             <p class="card-text">Email: {{ person.person_email }}</p>
             <p class="card-text">Projects Assigned To: {{ person.projects }}</p>
         </div>
-        <div class="card-header">
+        <!-- <div class="card-header">
             {{ tech_support }}
             <p class="card-text">Name: {{ tech_support.person_name_TS }}</p>
             <p class="card-text">Contact Number {{ tech_support.contact_no  }}</p>
             <p class="card-text">Email: {{ tech_support.person_email }}</p>
-        </div>
+        </div> -->
         
             <!-- button links to 'update' and 'delete' a person from a project -->
             <a href="{% url 'update_people' person.id %}" 

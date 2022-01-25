@@ -8,8 +8,8 @@ urlpatterns = [
     # path converter if matched to return a string, if not a 404 message
 
     # urls paths for 'calendar'
-    path('event_calendar', views.event_calendar, name='event_calendar'),
-    path('<int:year>/<str:month>/', views.event_calendar, name='event_calendar'),
+    path('project_calendar', views.project_calendar, name='project_calendar'),
+    path('<int:year>/<str:month>/', views.project_calendar, name='project_calendar'),
     
     # urls paths for 'PROJECT'
     path('all_projects', views.all_projects, name='all_projects'),

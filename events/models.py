@@ -27,7 +27,10 @@ class People(models.Model):
     # projects = models.ManyToOneField(blank=True)
     # if one-to-many project relationship is deleted so will all related records
     ### projects = models.ForeignKey(Project, blank=True, null=True, on_delete=models.CASCADE)
-
+    
+    # add owner (using user.id), must be an owner so default value
+    owner = models.IntegerField("People Owner", blank=False, default=1)
+ 
     # helper method for class People:
     # returns a string representation of an object
     def __str__(self):
