@@ -1,18 +1,35 @@
 {% extends "base.html" %}
+{% load static %}
+
+<!-- {% block extra_css %}
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %} -->
+
 
 {% block title %}Displaying Model Data{% endblock title %}
 
+<!-- {% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %} -->
+
+
 {% block content %}
+
     <h1>heading</h1>
         <br/>
 
 <p>
-    Welcome to the SmartEvents Management System (SEMS)!
+    Welcome to SPMS - the SmartEvents Project Management System!
 </p>
-<p>SEMS will help you match available people resources to your projects.</p>
-<p>SEMS also offers a Project Chat which enables project staff to leave 
+<p>SPMS will help you match available people resources to your projects.</p>
+<p>SPMS also offers a Project Chat which enables project staff to leave 
     their Ideas or Suggestions on the various projects.</p>        
-    
+
+<!-- link to 'register' user -->
 <h3>Register for a SEMS account</h3>
 
 <p>As a project manager you will need to register, so that you can:</p>
@@ -45,5 +62,15 @@
 <p>Click Add Project</p>
 <p>Complete the form and submit (only project name and start date are mandatory fields)</p>
 
+
+<!-- {% block postloadjs %}
+{{ block.super }}
+{{ stripe_public_key|json_script:"id_stripe_public_key" }}
+{{ client_secret|json_script:"id_client_secret" }}
+<script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
+{% endblock %} -->
+
+
+    <!-- <script src="{% static 'checkout/js/stripe_elements.js' %}"></script> -->
 
 {% endblock content %}

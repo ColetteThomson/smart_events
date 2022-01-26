@@ -12,7 +12,7 @@ class PostList(generic.ListView):
     # filter contents of post table by '1' (published) by descending date
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     # to render html view
-    template_name = 'index.html'
+    template_name = 'post_list.html'
 
     # number of posts that appear on front page
     paginate_by = 6

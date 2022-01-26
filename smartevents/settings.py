@@ -57,7 +57,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'django_summernote',
     'crispy_forms',
-    'pages',
+    'chat',
     'events.apps.EventsConfig',
     'home',
 ]

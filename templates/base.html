@@ -38,6 +38,11 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                     </li>
+
+                    <!-- project chat page menu item -->
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'chat' %}">Project Chat</a>
+                    </li>
                     
                     <!-- display menu items only if user is logged in -->
                     {% if user.is_authenticated %}
@@ -139,6 +144,7 @@
             <i class="fab fa-youtube-square ms-3"></i></p>
     </footer>
     
+
     <!-- javascript timeout function to dismiss message alert after 3 secs-->
     <script>
         setTimeout(function () {
