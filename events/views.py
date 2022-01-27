@@ -5,8 +5,8 @@ from calendar import HTMLCalendar
 
 from django.shortcuts import render, redirect
 from django.views import generic, View
-from .models import Project, People, TechSupport
-from .forms import PeopleForm, ProjectForm, TechSupportForm
+from .models import Project, PeopleAdmin, PeopleTechSupport
+from .forms import AdminForm, ProjectForm, TechSupportForm
 # Pagination
 from django.core.paginator import Paginator
 
@@ -70,7 +70,6 @@ def add_project(request):
     project_form = ProjectForm(data=request.POST)
     # if project form is valid (required fields completed)
     if project_form.is_valid():
-        print("if block triggered") 
         # save to database
         new_project = project_form.save(commit=False)
         # then save the new project
@@ -83,7 +82,7 @@ def add_project(request):
                                     })
                               
     else:
-        print("else block triggered")
+        # display empty form
         project_form = ProjectForm()
         # check if user submitted form
         if 'submitted' in request.GET:
@@ -127,123 +126,199 @@ def show_project(request, project_id):
                                      })
 
 
-# --------------------------------------------------- Functions for 'PEOPLE'
+# --------------------------------------------------- Functions for 'ADMIN PEOPLE'
 
 # SEARCH for people
-def search_people(request):
+def search_admin_people(request):
     # if user clicks 'search' button
     if request.method == "POST":
         # variable to contain entered search request
         searched = request.POST['searched']
         # search for person_name that contains search request
-        persons = People.objects.filter(person_name__contains=searched)
+        persons = PeopleAdmin.objects.filter(person_name__contains=searched)
         # return search result
         return render(request,
-                      'search_people.html', {
+                      'search_admin_people.html', {
                                              'searched': searched,
                                              'persons': persons,
                                             })
     else:
         # return search result
         return render(request,
-                      'search_people.html', 
+                      'search_admin_people.html', 
                       {})
 
 
-# DELETE a person from 'people'
-def delete_people(request, people_id):
-    # get primary key people_id from People
-    people = People.objects.get(id=people_id)
+# DELETE a person from Admin People
+def delete_admin_people(request, people_id):
+    # get primary key people_id from PeopleAdmin
+    people = PeopleAdmin.objects.get(id=people_id)
     # delete the person
     people.delete()
-    # redirect back to 'all_people' page
-    return redirect('all_people')
+    # redirect back to 'all_admin_people' page
+    return redirect('all_admin_people')
 
 
-# UPDATE people
-def update_people(request, people_id):
-    # get primary key people_id from People
-    people = People.objects.get(id=people_id)
+# UPDATE Admin People
+def update_admin_people(request, people_id):
+    # get primary key people_id from PeopleAdmin
+    people = PeopleAdmin.objects.get(id=people_id)
     # if updating then pre-populate existing info (instance)
-    # if not then display empty PeopleForm
-    form = PeopleForm(request.POST or None, instance=people)
-    # if people form is valid (required fields completed)
+    # if not then display empty AdminForm
+    form = AdminForm(request.POST or None, instance=people)
+    # if admin form is valid (required fields completed)
     if form.is_valid():
-        # save and send to all_people page 
+        # save and send to all_admin_people page 
         form.save()
-        return redirect('all_people')
+        return redirect('all_admin_people')
         
     # update details of a person
     return render(request,
-                  'update_people.html', {
+                  'update_admin_people.html', {
                                      "people": people,
                                      "form": form,
                                     })
 
 
 # SHOW details of a person
-def show_people(request, people_id):
-    # get unique key people_id from People
-    person = People.objects.get(id=people_id)
-    #job_title = People.objects.get(job_title)
+def show_admin_person(request, people_id):
+    # get unique key people_id from PeopleAdmin
+    person = PeopleAdmin.objects.get(id=people_id)
     # show individual people
     return render(request,
-                  'show_people.html', {
+                  'show_admin_person.html', {
                                      "person": person,
-                                     #"job_title": job_title,
-                                    })
+                                     })
 
 
-# LIST all people
-def all_people(request):
-    # call all People objects from models.py
-    ###people = People.objects.all().order_by('person_name')
-    people = People.objects.all()
-    tech_support = TechSupport.objects.all()
+# LIST all Admin People
+def all_admin_people(request):
+    # call all PeopleAdmin objects from models.py
+    people = PeopleAdmin.objects.all()
     # set up pagination, show 2 people per page
-    p = Paginator(People.objects.all(), 2)
+    p = Paginator(PeopleAdmin.objects.all(), 2)
     # return the page
     page = request.GET.get('page')
     people_list = p.get_page(page)
 
-    # list all people 
+    # list all admin people 
     return render(request,
-                  'all_people.html', {
+                  'all_admin_people.html', {
                                      "people": people,
-                                     "tech_support": tech_support,
                                      "people_list": people_list,
                                     })
 
 
-# CREATE (add) new people
-def add_people(request):
-    # obtain all data posted from form
-    people_form = PeopleForm(data=request.POST)
-    ##people_form = PeopleInfoForm(data=request.POST)
-    # if people form is valid (required fields completed)
-    if people_form.is_valid():
+# CREATE (add) new Admin People
+def add_admin_people(request):
+    # obtain all data posted from admin form
+    admin_form = AdminForm(data=request.POST)
+    # if admin form is valid (required fields completed)
+    if admin_form.is_valid():
         # save to database
-        new_people = people_form.save(commit=False)
+        new_people = admin_form.save(commit=False)
         # pass in logged in user.id as 'owner'
         new_people.owner = request.user.id
         # then save the new people
         new_people.save()
 
         return render(request,
-                      'add_people.html', {
-                                    'people_form': people_form,
+                      'add_admin_people.html', {
+                                    'admin_form': admin_form,
                                     'submitted': True,
                                     })
     else:
-        people_form = PeopleForm()
+        admin_form = AdminForm()
         # check if user submitted form
         if 'submitted' in request.GET:
             submitted = True
 
         return render(request,
-                      'add_people.html', {
-                                       'people_form': people_form,
+                      'add_admin_people.html', {
+                                       'admin_form': admin_form,
                                         })
+
+# --------------------------------------------------- Functions for 'TECH SUPPORT PEOPLE'
+
+# SEARCH for Tech Support people
+def search_techsupport_people(request):
+    # if user clicks 'search' button
+    if request.method == "POST":
+        # variable to contain entered search request
+        searched = request.POST['searched']
+        # search for person_name that contains search request
+        persons = PeopleTechSupport.objects.filter(person_name__contains=searched)
+        # return search result
+        return render(request,
+                      'search_techsupport_people.html', {
+                                             'searched': searched,
+                                             'persons': persons,
+                                            })
+    else:
+        # return search result
+        return render(request,
+                      'search_techsupport_people.html', 
+                      {})
+
+
+# DELETE a person from Tech Support People
+def delete_techsupport_people(request, people_id):
+    # get primary key people_id from PeopleTechSupport
+    people = PeopleTechSupport.objects.get(id=people_id)
+    # delete the person
+    people.delete()
+    # redirect back to 'all_techsupport_people' page
+    return redirect('all_techsupport_people')
+
+
+# UPDATE Tech Support People
+def update_techsupport_people(request, people_id):
+    # get primary key people_id from PeopleTechSupport
+    people = PeopleTechSupport.objects.get(id=people_id)
+    # if updating then pre-populate existing info (instance)
+    # if not then display empty TechSupportForm
+    form = TechSupportForm(request.POST or None, instance=people)
+    # if tech support form is valid (required fields completed)
+    if form.is_valid():
+        # save and send to all_techsupport_people page 
+        form.save()
+        return redirect('all_techsupport_people')
+        
+    # update details of a tech support person
+    return render(request,
+                  'update_techsupport_people.html', {
+                                     "people": people,
+                                     "form": form,
+                                    })
+
+
+# SHOW details of an Tech Support person
+def show_techsupport_person(request, people_id):
+    # get unique key people_id from PeopleTechSupport
+    person = PeopleTechSupport.objects.get(id=people_id)
+    # show individual tech support person
+    return render(request,
+                  'show_techsupport_person.html', {
+                                     "person": person,
+                                     })
+
+
+# LIST all Tech Support people
+def all_techsupport_people(request):
+    # call all PeopleTechSupport objects from models.py
+    people = PeopleTechSupport.objects.all()
+    # set up pagination, show 2 people per page
+    p = Paginator(PeopleTechSupport.objects.all(), 2)
+    # return the page
+    page = request.GET.get('page')
+    people_list = p.get_page(page)
+
+    # list all admin people 
+    return render(request,
+                  'all_techsupport_people.html', {
+                                     "people": people,
+                                     "people_list": people_list,
+                                    })
 
 
 # CREATE (add) a Tech Support Resource
@@ -273,6 +348,10 @@ def add_tech_support(request):
                       'add_tech_support.html', {
                                        'tech_support_form': tech_support_form,
                                         })
+
+
+
+
 
 
 

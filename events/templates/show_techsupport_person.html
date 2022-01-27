@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+<!-- load crispy forms -->
+{% load crispy_forms_tags %}
+
+{% block title %}Displaying Model Data{% endblock title %}
+
+{% block content %}
+    <h1>Show Technical Support Person's Details</h1>   
+
+    <!-- person information card  -->
+    <div class="card" style="width: 50rem;">
+        <div class="card-header">
+            {{ tech_support }}
+            <p class="card-text">Name: {{ person.person_name_tech }}</p>
+            <p class="card-text">Contact Number {{ person.contact_no_tech  }}</p>
+            <p class="card-text">Email: {{ person.person_email_tech }}</p>
+        </div> 
+        
+            <!-- button links to 'update' and 'delete' a person from a project -->
+            <a href="{% url 'update_techsupport_people' person.id %}" 
+            class="btn btn-outline-secondary btn-sm">Update Person</a>
+
+            <a href="{% url 'delete_techsupport_people' person.id %}" 
+            class="btn btn-outline-secondary btn-sm">Delete Person from Project</a>
+       </div>
+</div>
+
+{% endblock content %}

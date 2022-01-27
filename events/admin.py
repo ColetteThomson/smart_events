@@ -1,17 +1,29 @@
 from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdmin
-from .models import Project, People, SiteUser
+from .models import Project, PeopleAdmin, PeopleTechSupport, SiteUser
 
 
-# decorator to register People admin class for admin site
-@admin.register(People)
-class PeopleAdmin(admin.ModelAdmin):
+# decorator to register PeopleAdmin admin class for admin site
+@admin.register(PeopleAdmin)
+class PeopleAdmin_Admin(admin.ModelAdmin):
     # customise list view of admin panel
-    list_display = ('person_name', 'job_title', 'contact_no', 'person_email')
+    list_display = ('person_name', 'contact_no', 'person_email')
     # order people alphabetically (ascending)
     ordering = ('person_name',)
     # add search fields for person name
     search_fields = ['person_name']
+
+
+# decorator to register TechSupport admin class for admin site
+@admin.register(PeopleTechSupport)
+class PeopleTechSupport_Admin(admin.ModelAdmin):
+    # customise list view of admin panel
+    list_display = ('person_name_tech', 'contact_no_tech', 'person_email_tech')
+    # order people alphabetically (ascending)
+    ordering = ('person_name_tech',)
+    # add search fields for person name
+    search_fields = ['person_name_tech']
+
 
 
 # decorator to register User admin class for admin site

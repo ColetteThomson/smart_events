@@ -8,14 +8,14 @@
 {% block content %}
     <center>
 
-    <h1>Update People</h1>
+    <h1>Update Project Administration People</h1>
         <br>
 
         <form action="" method=POST>
             <!-- csrf to prevent malicious attacks using user credentials -->
             {% csrf_token %}
 
-            <!-- render update_venue form using Crispy filter -->
+            <!-- render update admin people form using Crispy filter -->
             {{ form | crispy }}
         
             <!-- submit button for update_venue form -->

@@ -10,18 +10,18 @@
             {% if searched %}
                 You searched for ...  {{ searched }}
             {% else %}
-                Search People
+                Search Tech Support People
             {% endif %}
         </div>
         <div class="card-body">
    
     <!-- search box for 'people' -->
-    <form method="POST" action="{% url 'search_people' %}">
+    <form method="POST" action="{% url 'search_techsupport_people' %}">
 
         {% csrf_token %}
 
         <input class="form-control me-2" type="search" 
-        placeholder="enter search for people..." aria-label="Search" name="searched">
+        placeholder="enter search for tech support people..." aria-label="Search" name="searched">
         <br/>
         <button class="btn btn-outline-secondary" type="submit">Search</button>
         <br/>
@@ -29,7 +29,7 @@
             <!-- for loop: iterate through 'persons' (from views.py) -->
             {% for person in persons %}
             <!-- add link to search result/s -->
-            <a href="{% url 'show_people' person.id %}">{{ person }}</a> 
+            <a href="{% url 'show_techsupport_person' person.id %}">{{ person }}</a> 
             <br/>
             <!-- end for loop: person -->
             {% endfor %}

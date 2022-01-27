@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Displaying Model Data{% endblock title %}
+
+{% block content %}
+
+    <div class="card" style="width: 50rem;">
+        <div class="card-header">
+            <!-- if statement: search requested by user -->
+            {% if searched %}
+                You searched for ...  {{ searched }}
+            {% else %}
+                Search Project Administration People
+            {% endif %}
+        </div>
+        <div class="card-body">
+   
+    <!-- search box for 'people' -->
+    <form method="POST" action="{% url 'search_admin_people' %}">
+
+        {% csrf_token %}
+
+        <input class="form-control me-2" type="search" 
+        placeholder="enter search for project administration people..." aria-label="Search" name="searched">
+        <br/>
+        <button class="btn btn-outline-secondary" type="submit">Search</button>
+        <br/>
+
+            <!-- for loop: iterate through 'persons' (from views.py) -->
+            {% for person in persons %}
+            <!-- add link to search result/s -->
+            <a href="{% url 'show_admin_people' person.id %}">{{ person }}</a> 
+            <br/>
+            <!-- end for loop: person -->
+            {% endfor %}
+    </form>
+ 
+{% endblock content %}

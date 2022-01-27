@@ -65,23 +65,36 @@
                         </ul>
                     </li>
 
-                    <!-- bootstrap dropdown menu for people -->
+                    <!-- bootstrap dropdown menu for ADMIN people -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                           People
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" aria-current="page" href="{% url 'search_people' %}">Search People</a>
+                            <li><a class="dropdown-item" aria-current="page" href="{% url 'search_admin_people' %}">Search Admin People</a>
                             </li>
-                            <li><a class="dropdown-item" aria-current="page" href="{% url 'all_people' %}">All People</a>
+                            <li><a class="dropdown-item" aria-current="page" href="{% url 'all_admin_people' %}">All Admin People</a>
                             </li>
-                            <li><a class="dropdown-item" aria-current="page" href="{% url 'add_people' %}">Add People</a>
-                            </li>
-                            <li><a class="dropdown-item" aria-current="page" href="{% url 'add_tech_support' %}">Add Tech Support</a>
+                            <li><a class="dropdown-item" aria-current="page" href="{% url 'add_admin_people' %}">Add Admin People</a>
                             </li>
                         </ul>
                     </li>
                     
+                    <!-- bootstrap dropdown menu for TECH SUPPORT people -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          People
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" aria-current="page" href="{% url 'search_techsupport_people' %}">Search Tech Support People</a>
+                            </li>
+                            <li><a class="dropdown-item" aria-current="page" href="{% url 'all_techsupport_people' %}">All Tech Support People</a>
+                            </li>
+                            <li><a class="dropdown-item" aria-current="page" href="{% url 'add_tech_support' %}">Add Tech Support People</a>
+                            </li>
+                        </ul>
+                    </li>
+
                     <!-- logout: displayed only if user is logged in -->
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
