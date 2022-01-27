@@ -6,7 +6,7 @@ from django.http import HttpResponseRedirect
 # from .models import Post
 # from .forms import CommentForm
 
- # NEED TO CHANGE CLASS NAME!!!
+# NEED TO CHANGE CLASS NAME!!!
 # class PostList(generic.ListView):
 #      model = Post
 #      # filter contents of post table by '1' (published) by descending date
@@ -17,7 +17,8 @@ from django.http import HttpResponseRedirect
 # #     # number of posts that appear on front page
 # #     paginate_by = 6
 
-# # project calendar
+
+# # to display home page
 def welcome(request):
     name = "Marty"
     
@@ -25,3 +26,4 @@ def welcome(request):
                   'index.html', {
                                 "name": name,
                                 })
+

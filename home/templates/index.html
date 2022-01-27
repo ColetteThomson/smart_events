@@ -6,61 +6,32 @@
 {% block content %}
 
 <div class="container">
-    <!-- Content here -->
-  </div>
-  
-<h1>SPMS</h1>
-        <br/>
+    <!-- <div class="card bg-dark text-white">
+        <img src="..." class="card-img" alt="...">
+        <div class="card-img-overlay"> -->
+               
+            <h1>Welcome to SPMS - the SmartEvents Project Management System!</h1>
+            <p>SPMS will help you match available people resources to your projects.</p>
+            <p>SPMS also offers a Project Chat which enables project staff to leave 
+                their Ideas or Suggestions on the various projects.</p> 
 
-<p>
-    Welcome to SPMS - the SmartEvents Project Management System!
-</p>
-<p>SPMS will help you match available people resources to your projects.</p>
-<p>SPMS also offers a Project Chat which enables project staff to leave 
-    their Ideas or Suggestions on the various projects.</p>        
+            <h2>What can you do with SPMS?</h2>
+            <div class="row">
+            <div class="col">
+                As a Project Manager - you can create, read, update and delete information on your own projects
+            </div>
+            <div class="col">
+                As a People Owner - you can create, read, update and delete information on all project people resources in SPMS
+            </div>
+            <div class="col">
+                As a Site User - you can view and leave ideas/suggestions on the projects Chat
+        </div>
+    </div>
+</div>
+   
 
-<!-- link to 'register' user -->
-<h3>Register for a SPMS account</h3>
-
-<p>As a project manager you will need to register, so that you can:</p>
-    <ul>
-        <li>
-            create, read, update and delete information on your own projects
-        </li>
-        <li>
-            create, read, update and delete people resources on your own projects
-        </li>
-    </ul>    
-
-<p>As a people manager you will need to register, so that you can:</p>
-    <ul>
-        <li>
-            create, read, update and delete information on all project people resources in SEMS
-        </li>
-</ul>    
-
-<p>As a site user you will need to register so that you can:</p> 
-<ul>
-    <li>
-        view and leave ideas/suggestions on the project chats
-    </li>
-</ul>  
-
-
-<h3>How to use SPMS</h3>
-<p>Select Projects dropdown from the navigation menu</p>
-<p>Click Add Project</p>
-<p>Complete the form and submit (only project name and start date are mandatory fields)</p>
-
-
-<!-- {% block postloadjs %}
-{{ block.super }}
-{{ stripe_public_key|json_script:"id_stripe_public_key" }}
-{{ client_secret|json_script:"id_client_secret" }}
-<script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
-{% endblock %} -->
-
-
+        
+    
     <!-- <script src="{% static 'checkout/js/stripe_elements.js' %}"></script> -->
 
 {% endblock content %}
