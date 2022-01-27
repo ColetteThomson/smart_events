@@ -40,7 +40,7 @@ class Project(models.Model):
     project_date = models.DateTimeField()
     # to allow a new project to be added without people assigned
     # if one-to-many people relationship is deleted so will all related records
-    resource_admin = models.ForeignKey(PeopleAdmin, blank=True, null=True, on_delete=models.CASCADE)
+    resource_admin = models.ForeignKey(PeopleAdmin(), blank=True, null=True, on_delete=models.CASCADE)
     resource_tech = models.ForeignKey(PeopleTechSupport(), blank=True, null=True, on_delete=models.CASCADE)
         
     # sets manager field to null, should manager cease to be a user
