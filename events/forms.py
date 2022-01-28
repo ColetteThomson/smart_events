@@ -11,14 +11,16 @@ class AdminForm(ModelForm):
         # fields to be imported from class People
         fields = ('person_name', 'contact_no', 'person_email')
         labels = {
-            'person_name': '',
-            'contact_no': '',
-            'person_email': '',
+            'person_name': 'Person Name',
+            'contact_no': 'Person Contact Number',
+            'person_email': 'Person Email',
+            #'ad_owner': 'People Manager',
         }
         widgets = {
-            'person_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Person Name'}),
-            'contact_no': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Contact Number'}),
-            'person_email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Person Email'}),
+            'person_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'contact_no': forms.TextInput(attrs={'class': 'form-control'}),
+            'person_email': forms.EmailInput(attrs={'class': 'form-control'}),
+            #'ad_owner': forms.Select(attrs={'class': 'form-select'}),
         }
 
 
@@ -29,14 +31,16 @@ class TechSupportForm(ModelForm):
         # fields to be imported from class PeopleTechSupport
         fields = ('person_name_tech', 'contact_no_tech', 'person_email_tech')
         labels = {
-            'person_name_tech': '',
-            'contact_no_tech': '',
-            'person_email_tech': '',
+            'person_name_tech': 'Person Name',
+            'contact_no_tech': 'Person Contact Number',
+            'person_email_tech': 'Person Email',
+            #'ts_owner': 'People Manager'
         }
         widgets = {
-            'person_name_tech': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Person Name'}),
-            'contact_no_tech': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Contact Number'}),
-            'person_email_tech': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Person Email'}),
+            'person_name_tech': forms.TextInput(attrs={'class': 'form-control'}),
+            'contact_no_tech': forms.TextInput(attrs={'class': 'form-control'}),
+            'person_email_tech': forms.EmailInput(attrs={'class': 'form-control'}),
+            #'ts_owner': forms.Select(attrs={'class': 'form-select'}),
         }
 
 
@@ -44,55 +48,27 @@ class TechSupportForm(ModelForm):
 class ProjectForm(ModelForm):
     class Meta:
         model = Project
+        #
+        ##exclude = ['project_manager']
         # fields to be imported from class Project
         fields = ('project_name', 'project_date', 'resource_admin', 'resource_tech', 'project_manager', 'description')
         # set the label to none
         labels = {
-            'project_name': '',
+            'project_name': 'Project Name',
             'project_date': 'YYYY-MM-DD',
-            'resource_admin': '',
-            'resource_tech': '',
-            'project_manager': '',
-            'description': '',
+            'resource_admin': 'Resource: Project Administration',
+            'resource_tech': 'Resource: Tech Support',
+            'project_manager': 'Project Manager',
+            'description': 'Project Description',
         }
         
         widgets = {
-            'project_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Project Name'}),
+            'project_name': forms.TextInput(attrs={'class': 'form-control'}),
             
             #'project_date': forms.DateField(attrs={'class': 'form-control', 'placeholder': 'Project Date'}),
 
-            'resource_admin': forms.Select(attrs={'class': 'form-select', 'placeholder': 'Resource: Project Admin'}),
-            'resource_tech': forms.Select(attrs={'class': 'form-select', 'placeholder': 'Resource: Tech Support'}),
-            'project_manager': forms.Select(attrs={'class': 'form-select', 'placeholder': 'Project Manager'}),
-            'description': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Project Description'}),
+            'resource_admin': forms.Select(attrs={'class': 'form-select'}),
+            'resource_tech': forms.Select(attrs={'class': 'form-select'}),
+            'project_manager': forms.Select(attrs={'class': 'form-select'}),
+            'description': forms.Textarea(attrs={'class': 'form-control'}),
         }
-
-
-
-
-
-
-# JobTitle = (
-#     ("Technical Analyst", "Technical Analyst"),
-#     ("Project_Admin", "Project Admin"),
-#     ("UX_Design", "UX Design"),
-#     ("Business_Analyst", "Business Analyst")
-# )
-
-# class PeopleInfoForm(ModelForm):
-#     class Meta:
-#         model = People
-#         # fields to be imported from class People
-#         fields = ('person_name', 'job_title','contact_no', 'person_email')
-#         labels = {
-#             'person_name': '',
-#             'job_title': '',
-#             'contact_no': '',
-#             'person_email': '',
-#         }
-#         widgets = {
-#             'person_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Person Name'}),
-#             'job_title': forms.ChoiceField(choices = JobTitle, 'class': 'form-control', 'placeholder': 'Job Title'),
-#             'contact_no': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Contact Number'}),
-#             'person_email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Person Email'}),
-#         }

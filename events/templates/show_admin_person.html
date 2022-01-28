@@ -19,13 +19,25 @@
             <p class="card-text">Email: {{ person.person_email }}</p>
             <!-- <p class="card-text">Projects Assigned To: {{ person.projects }}</p> -->
         </div>
-               
-            <!-- button links to 'update' and 'delete' a person from a project -->
-            <a href="{% url 'update_admin_people' person.id %}" 
-            class="btn btn-outline-secondary btn-sm">Update Person</a>
+        
+        <!-- to check user is logged in -->
+        {% if user.is_authenticated %}
+            <!-- to check user is the people 'owner' for this person -->
+            {% if user == person.ad_owner%}
 
-            <a href="{% url 'delete_admin_people' person.id %}" 
-            class="btn btn-outline-secondary btn-sm">Delete Person from Project</a>
+                <!-- button links to 'update' and 'delete' a person from a project -->
+                <a href="{% url 'update_admin_people' person.id %}" 
+                class="btn btn-outline-secondary btn-sm">Update Person</a>
+
+                <a href="{% url 'delete_admin_people' person.id %}" 
+                class="btn btn-outline-secondary btn-sm">Delete Person from Project</a>
+
+            <!-- endif: people 'owner' -->
+            {% endif %}
+
+        <!-- endif: logged in -->
+        {% endif %}   
+
        </div>
 </div>
 

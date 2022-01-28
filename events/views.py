@@ -5,6 +5,7 @@ from calendar import HTMLCalendar
 
 from django.shortcuts import render, redirect
 from django.views import generic, View
+from django.contrib.auth.models import User
 from .models import Project, PeopleAdmin, PeopleTechSupport
 from .forms import AdminForm, ProjectForm, TechSupportForm
 # Pagination
@@ -72,12 +73,16 @@ def add_project(request):
     if project_form.is_valid():
         # save to database
         new_project = project_form.save(commit=False)
+        #
+        ###new_project.project_manager = User.objects.get(user=self.request.user)
+
         # then save the new project
         new_project.save()
 
         return render(request,
                       'add_project.html', {
                                     'project_form': project_form,
+                                    #'new_project.project_manager': new_project.project_manager,
                                     'submitted': True,
                                     })
                               
@@ -218,7 +223,7 @@ def add_admin_people(request):
         # save to database
         new_people = admin_form.save(commit=False)
         # pass in logged in user.id as 'owner'
-        new_people.owner = request.user.id
+        new_people.ad_owner = request.user.id
         # then save the new people
         new_people.save()
 
@@ -330,6 +335,8 @@ def add_tech_support(request):
     if tech_support_form.is_valid():
         # save to database
         new_tech_support = tech_support_form.save(commit=False)
+        # pass in logged in user.id as 'owner'
+        new_tech_support.ts_owner = request.user.id
         # then save the new tech support people
         new_tech_support.save()
 

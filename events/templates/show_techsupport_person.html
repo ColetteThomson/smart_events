@@ -17,13 +17,24 @@
             <p class="card-text">Email: {{ person.person_email_tech }}</p>
         </div> 
         
-            <!-- button links to 'update' and 'delete' a person from a project -->
-            <a href="{% url 'update_techsupport_people' person.id %}" 
-            class="btn btn-outline-secondary btn-sm">Update Person</a>
+        <!-- to check user is logged in -->
+        {% if user.is_authenticated %}
+            <!-- to check user is the tech support owner for this project -->
+            {% if user == person.ts_owner %}
+                <!-- button links to 'update' and 'delete' a person from a project -->
+                <a href="{% url 'update_techsupport_people' person.id %}" 
+                class="btn btn-outline-secondary btn-sm">Update Person</a>
 
-            <a href="{% url 'delete_techsupport_people' person.id %}" 
-            class="btn btn-outline-secondary btn-sm">Delete Person from Project</a>
-       </div>
+                <a href="{% url 'delete_techsupport_people' person.id %}" 
+                class="btn btn-outline-secondary btn-sm">Delete Person from Project</a>
+    </div>
+
+            <!-- endif: project manager -->
+            {% endif %}
+
+       <!-- endif: logged in -->
+       {% endif %}
+
 </div>
 
 {% endblock content %}

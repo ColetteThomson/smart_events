@@ -13,21 +13,33 @@
             {% for person in people_list %}
                 <tr>
                     <td>
-                        <a href="{% url 'show_techsupport_person' person.id %}">{{ tech_support.person_name_tech }}</a>
+                        <a href="{% url 'show_techsupport_person' person.id %}">{{ person.person_name_tech }}</a>
                     </td>
-                    
-                    <!-- update a person link and button -->
-                    <td align="right">
-                        <a href="{% url 'update_people' person.id %}" 
-                        class="btn btn-outline-secondary btn-sm">Update</a>
-                    </td>
+                
+                <!-- to check user is logged in -->
+                {% if user.is_authenticated %}
+                    <!-- to check user is the tech support owner for this project -->
+                    {% if user == person.ts_owner %}
 
-                    <!-- delete a person link and button -->
-                    <td align="right">
-                        <a href="{% url 'delete_people' person.id %}"
-                        class="btn btn-outline-secondary btn-sm">Delete</a>
-                    </td>
+                        !-- update a person link and button -->
+                        <td align="right">
+                            <a href="{% url 'update_techsupport_people' person.id %}" 
+                            class="btn btn-outline-secondary btn-sm">Update</a>
+                        </td>
+
+                        <!-- delete a person link and button -->
+                        <td align="right">
+                            <a href="{% url 'delete_techsupport_people' person.id %}"
+                            class="btn btn-outline-secondary btn-sm">Delete</a>
+                        </td>
+
+                        <!-- endif: project manager -->
+                    {% endif %}
+
+                <!-- endif: logged in -->
+                {% endif %}
                 </tr>
+                
             <!-- end for loop: people_list -->
             {% endfor %}
 

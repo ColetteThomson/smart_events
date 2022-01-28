@@ -16,6 +16,11 @@
                         <a href="{% url 'show_admin_person' person.id %}">{{ person.person_name }}</a>
                     </td>
                     
+                <!-- to check user is logged in -->
+                {% if user.is_authenticated %}
+                    <!-- to check user is the people 'owner' for this person -->
+                    {% if user == person.ad_owner%}
+
                     <!-- update a person link and button -->
                     <td align="right">
                         <a href="{% url 'update_admin_people' person.id %}" 
@@ -28,6 +33,14 @@
                         class="btn btn-outline-secondary btn-sm">Delete</a>
                     </td>
                 </tr>
+
+                    <!-- endif: people 'owner' -->
+                    {% endif %}
+
+                <!-- endif: logged in -->
+                {% endif %}                    
+
+
             <!-- end for loop: people_list -->
             {% endfor %}
 

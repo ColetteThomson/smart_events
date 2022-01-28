@@ -8,6 +8,10 @@ class PeopleTechSupport(models.Model):
     person_name_tech = models.CharField(max_length=120)
     contact_no_tech = models.CharField(max_length=20, blank=True)
     person_email_tech = models.EmailField(blank=True)
+    #add owner (using user.id), must be an owner so default value
+    ts_owner = models.IntegerField("Owner", blank=False, default=1)
+    # sets manager field to null, should manager cease to be a user
+    # ts_owner = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
 
     # helper method for class PeopleTechSupport:
     # returns a string representation of an object
@@ -26,7 +30,11 @@ class PeopleAdmin(models.Model):
     ### projects = models.ForeignKey(Project, blank=True, null=True, on_delete=models.CASCADE)
     
     # add owner (using user.id), must be an owner so default value
-    owner = models.IntegerField("People Owner", blank=False, default=1)
+    ad_owner = models.IntegerField("Owner", blank=False, default=1)
+    ###ad_owner = models.IntegerField("People Owner")
+
+    # sets manager field to null, should manager cease to be a user
+    #ad_owner = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
  
     # helper method for class People:
     # returns a string representation of an object
@@ -44,7 +52,8 @@ class Project(models.Model):
     resource_tech = models.ForeignKey(PeopleTechSupport, blank=True, null=True, on_delete=models.CASCADE)
         
     # sets manager field to null, should manager cease to be a user
-    project_manager = models.ForeignKey(User, blank=True, null=True, on_delete=models.SET_NULL)
+    project_manager = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
+    #project_manager = models.ForeignKey(User, blank=True, null=True, on_delete=models.SET_NULL)
     # to set description field to optional
     description = models.TextField(blank=True)
 
