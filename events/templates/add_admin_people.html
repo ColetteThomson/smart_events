@@ -12,13 +12,24 @@
 
         <!-- if submitted (True) then display a message to user -->
         {% if submitted %}
-        <div class="alert alert-success" role="alert">
-            Your Project Administration People Resource was submitted successfully
-        </div>
-            
+
+            <!-- to check user is logged in -->
+            {% if user.is_authenticated %}
+                <!-- to check user is the tech support owner for this project -->
+                {% if user == person.ad_owner %}
+
+                <div class="alert alert-success" role="alert">
+                    Your Project Administration People Resource was submitted successfully
+                </div>
+            {% else %}
+                <div class="alert alert-warning" role="alert">
+                    You are not authorised to create new People
+                </div>
+            {% endif %}
+
         {% else %}
 
-        <form action="" method=POST>
+            <form action="" method=POST>
             <!-- csrf to prevent malicious attacks using user credentials -->
             {% csrf_token %}
 
@@ -29,7 +40,7 @@
             <button type="submit" class="btn btn-signup btn-lg">Submit</button>
 
         </form>
-        <!-- end: if submitted statement  -->
+        <!-- endif: submitted statement  -->
         {% endif %}
 
     </center>
