@@ -11,39 +11,36 @@
         <br/><br/>
 
         <!-- if submitted (True) then display a message to user -->
-        {% if submitted %}
+        {% if submitted and user.is_authenticated and user == person.ad_owner %}
 
-            <!-- to check user is logged in -->
+            <!-- to check user is logged in
             {% if user.is_authenticated %}
-                <!-- to check user is the tech support owner for this project -->
-                {% if user == person.ad_owner %}
+                 to check user is the tech support owner for this project 
+                {% if user == person.ad_owner %} -->
 
                 <div class="alert alert-success" role="alert">
                     Your Project Administration People Resource was submitted successfully
                 </div>
-            {% else %}
+        
+        {% else %}
                 <div class="alert alert-warning" role="alert">
                     You are not authorised to create new People
                 </div>
-            {% endif %}
+        
+                <form action="" method=POST>
+                <!-- csrf to prevent malicious attacks using user credentials -->
+                {% csrf_token %}
 
-        {% else %}
+                <!-- render add_venue form using Crispy filter -->
+                {{ admin_form | crispy }}
 
-            <form action="" method=POST>
-            <!-- csrf to prevent malicious attacks using user credentials -->
-            {% csrf_token %}
-
-            <!-- render add_venue form using Crispy filter -->
-            {{ admin_form | crispy }}
-
-            <!-- submit button for add_venue form -->
-            <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+                <!-- submit button for add_venue form -->
+                <button type="submit" class="btn btn-signup btn-lg">Submit</button>
 
         </form>
         <!-- endif: submitted statement  -->
         {% endif %}
 
-    </center>
-    
+    </center>    
     
 {% endblock content %}
