@@ -19,19 +19,19 @@
                 <!-- to check user is logged in -->
                 {% if user.is_authenticated %}
                     <!-- to check user is the people 'owner' for this person -->
-                    {% if user == person.ad_owner%}
+                    {% if user == person.ad_owner %}
 
-                    <!-- update a person link and button -->
-                    <td align="right">
-                        <a href="{% url 'update_admin_people' person.id %}" 
-                        class="btn btn-outline-secondary btn-sm">Update</a>
-                    </td>
+                        <!-- update a person link and button -->
+                        <td align="right">
+                            <a href="{% url 'update_admin_people' person.id %}" 
+                            class="btn btn-outline-secondary btn-sm">Update Person</a>
+                        </td>
 
-                    <!-- delete a person link and button -->
-                    <td align="right">
-                        <a href="{% url 'delete_admin_people' person.id %}"
-                        class="btn btn-outline-secondary btn-sm">Delete</a>
-                    </td>
+                        <!-- delete a person link and button -->
+                        <td align="right">
+                            <a href="{% url 'delete_admin_people' person.id %}"
+                            class="btn btn-outline-secondary btn-sm">Delete Person</a>
+                        </td>
                 </tr>
 
                     <!-- endif: people 'owner' -->

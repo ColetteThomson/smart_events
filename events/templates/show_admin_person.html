@@ -18,8 +18,7 @@
             <p class="card-text">Contact Number {{ person.contact_no  }}</p>
             <p class="card-text">Email: {{ person.person_email }}</p>
             <!-- <p class="card-text">Projects Assigned To: {{ person.projects }}</p> -->
-        </div>
-        
+                
         <!-- to check user is logged in -->
         {% if user.is_authenticated %}
             <!-- to check user is the people 'owner' for this person -->
@@ -34,11 +33,10 @@
 
             <!-- endif: people 'owner' -->
             {% endif %}
-
+        </div>
         <!-- endif: logged in -->
         {% endif %}   
+    </div>
 
-       </div>
-</div>
 
 {% endblock content %}

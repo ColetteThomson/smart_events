@@ -2,12 +2,12 @@ from datetime import datetime
 from datetime import date
 import calendar
 from calendar import HTMLCalendar
-
 from django.shortcuts import render, redirect
 from django.views import generic, View
 from django.contrib.auth.models import User
 from .models import Project, PeopleAdmin, PeopleTechSupport
 from .forms import AdminForm, ProjectForm, TechSupportForm
+from django.contrib import messages
 # Pagination
 from django.core.paginator import Paginator
 
@@ -39,10 +39,20 @@ def search_projects(request):
 def delete_project(request, project_id):
     # get primary key project_id from Project
     project = Project.objects.get(id=project_id)
-    # delete the project
-    project.delete()
-    # redirect back to 'all_projects' page
-    return redirect('all_projects')
+    # if user is project manager (prevent deletion through url)
+    if request.user == project.project_manager:
+        # then delete the project
+        project.delete()
+        # display success message to user
+        messages.success(request, ("Project has been deleted"))
+        # redirect back to 'all_projects' page
+        return redirect('all_projects')
+    else: 
+        # display error message to user
+        messages.warning(request, ("You are not authorised to delete this project"))
+        # redirect back to 'all_projects' page
+        return redirect('all_projects')
+
 
 
 # UPDATE a project
@@ -158,10 +168,19 @@ def search_admin_people(request):
 def delete_admin_people(request, people_id):
     # get primary key people_id from PeopleAdmin
     people = PeopleAdmin.objects.get(id=people_id)
-    # delete the person
-    people.delete()
-    # redirect back to 'all_admin_people' page
-    return redirect('all_admin_people')
+    # if user is owner (prevent deletion through url)
+    if request.user == people.ad_owner:
+        # then delete the person
+        people.delete()
+        # display success message to user
+        messages.success(request, ("Person has been deleted"))
+        # redirect back to 'all_admin_people' page
+        return redirect('all_admin_people')
+    else: 
+        # display error message to user
+        messages.warning(request, ("You are not authorised to delete this person"))
+        # redirect back to 'all_admin_people' page
+        return redirect('all_admin_people')
 
 
 # UPDATE Admin People
@@ -180,9 +199,9 @@ def update_admin_people(request, people_id):
     # update details of a person
     return render(request,
                   'update_admin_people.html', {
-                                     "people": people,
-                                     "form": form,
-                                    })
+                                                "people": people,
+                                                "form": form,
+                                              })
 
 
 # SHOW details of a person
@@ -192,8 +211,8 @@ def show_admin_person(request, people_id):
     # show individual people
     return render(request,
                   'show_admin_person.html', {
-                                     "person": person,
-                                     })
+                                             "person": person,
+                                            })
 
 
 # LIST all Admin People
@@ -270,10 +289,19 @@ def search_techsupport_people(request):
 def delete_techsupport_people(request, people_id):
     # get primary key people_id from PeopleTechSupport
     people = PeopleTechSupport.objects.get(id=people_id)
-    # delete the person
-    people.delete()
-    # redirect back to 'all_techsupport_people' page
-    return redirect('all_techsupport_people')
+    # if user is owner (prevent deletion through url)
+    if request.user == people.ts_owner:
+        # then delete the person
+        people.delete()
+        # display success message to user
+        messages.success(request, ("Person has been deleted"))
+        # redirect back to 'all_techsupport_people' page
+        return redirect('all_techsupport_people')
+    else: 
+        # display error message to user
+        messages.warning(request, ("You are not authorised to delete this person"))
+        # redirect back to 'all_techsupport_people' page
+        return redirect('all_techsupport_people')
 
 
 # UPDATE Tech Support People
