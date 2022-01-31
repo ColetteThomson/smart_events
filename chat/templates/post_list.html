@@ -2,25 +2,25 @@
 
 {% block content %}
 
-<div class="container-fluid">
+<div class="container">
     <div class="row">
 
         <!-- Blog Entries Column -->
-        <div class="col-12 mt-3 left">
+        <div class="col">
             <div class="row">
             <!-- for loop to iterate through list of posts passed in from our view -->
             {% for post in post_list %}
                 <!-- column holding a card with content containing the post overview -->
-                <div class="col-md-4">
-                    <div class="card mb-4">
+                <div class="col sm-4">
+                    <div class="card" style="width: 18rem;">
                         <div class="card-body">
                             <div class="image-container">
                                 <!-- default image if no featured image supplied -->
                                 {% if "placeholder" in post.featured_image.url %}
                                 <img class="card-img-top"
-                                    src="/chat/templates/images/concert_audience.jpg">
+                                    src="https://res.cloudinary.com/drxo58fsj/image/upload/v1643633308/placeholder_post-list_typing-on-laptop_dc7lte.jpg">
                                 {% else %}
-                                <!-- inserts featured image for post into html -->
+                                <!-- inserts featured image for post -->
                                 <img class="card-img-top" src=" {{ post.featured_image.url }}">
                                 {% endif %}
                                 <div class="image-flash">
@@ -42,11 +42,12 @@
                         </div>
                     </div>
                 
-            <!-- display posts in rows of 3 -->
-            {% if forloop.counter|divisibleby:3 %}
-            </div>
-            <div class="row">
-            {% endif %}
+                    
+                <!-- display posts in rows of 2 -->
+                {% if forloop.counter|divisibleby:2 %}
+                </div>
+                <div class="col">
+                {% endif %}
             <!-- end 'post in post_list' for loop -->
             {% endfor %}
             </div>

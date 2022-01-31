@@ -11,8 +11,9 @@
         <br/><br/>
 
         <!-- if submitted (True) then display a message to user -->
-        {% if submitted and user.is_authenticated and user == person.ad_owner %}
-
+        {% if submitted and user == person.ad_owner%}
+            
+            
             <!-- to check user is logged in
             {% if user.is_authenticated %}
                  to check user is the tech support owner for this project 
@@ -21,7 +22,7 @@
                 <div class="alert alert-success" role="alert">
                     Your Project Administration People Resource was submitted successfully
                 </div>
-        
+            
         {% else %}
                 <div class="alert alert-warning" role="alert">
                     You are not authorised to create new People
@@ -37,10 +38,11 @@
                 <!-- submit button for add_venue form -->
                 <button type="submit" class="btn btn-signup btn-lg">Submit</button>
 
-        </form>
+          
+                </form>
         <!-- endif: submitted statement  -->
         {% endif %}
 
     </center>    
-    
-{% endblock content %}
+
+
