@@ -2,26 +2,26 @@
 
 {% block content %}
 
-<div class="container">
+<div class="container-fluid">
     <div class="row">
 
         <!-- Blog Entries Column -->
-        <div class="col">
+        <div class="col-12 mt-3 left">
             <div class="row">
             <!-- for loop to iterate through list of posts passed in from our view -->
             {% for post in post_list %}
                 <!-- column holding a card with content containing the post overview -->
-                <div class="col sm-4">
-                    <div class="card" style="width: 18rem;">
+                <div class="col-md-4">
+                    <div class="card mb-10">
                         <div class="card-body">
                             <div class="image-container">
                                 <!-- default image if no featured image supplied -->
                                 {% if "placeholder" in post.featured_image.url %}
-                                <img class="card-img-top"
-                                    src="https://res.cloudinary.com/drxo58fsj/image/upload/v1643633308/placeholder_post-list_typing-on-laptop_dc7lte.jpg">
-                                {% else %}
+                                <!--<img class="card-img-top"
+                                    src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg"> -->
+                                {% else %} 
                                 <!-- inserts featured image for post -->
-                                <img class="card-img-top" src=" {{ post.featured_image.url }}">
+                                <!-- <img class="card-img-top" src=" {{ post.featured_image.url }}"> -->
                                 {% endif %}
                                 <div class="image-flash">
                                     <!-- author of post -->
@@ -41,33 +41,28 @@
                                 <i class="far fa-heart"></i>{{ post.number_of_likes }}</p>
                         </div>
                     </div>
-                
-                    
-                <!-- display posts in rows of 2 -->
-                {% if forloop.counter|divisibleby:2 %}
                 </div>
-                <div class="col">
+                {% if forloop.counter|divisibleby:2 %}
+            </div>
+            <div class="row">
                 {% endif %}
-            <!-- end 'post in post_list' for loop -->
-            {% endfor %}
+                {% endfor %}
+
             </div>
         </div>
     </div>
-    <!-- displays navigation buttons (pagination) at bottom of page -->
     {% if is_paginated %}
-    <nav aria-label="page navigation">
+    <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">
             {% if page_obj.has_previous %}
-            <li><a href="?page={{ page_obj.previous_page_number }}"
-                class="page-link">&laquo; PREV </a></li>
+            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
             {% endif %}
             {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}"
-                class="page-link"> NEXT &raquo;</a></li>
+            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+
             {% endif %}
         </ul>
     </nav>
     {% endif %}
 </div>
-
 {%endblock%}

@@ -142,3 +142,18 @@ body {
     background: transparent;
     border: none;
 }
+/* ---------------------------------------------CUSTOM CSS for EVENTS app */
+
+/* all_projects.html */
+.table-striped {
+    background-color: #c75103;
+}
+
+.link-color {
+    color: black;
+}
+
+.button-color {
+    color: black;
+    background-color: gray;
+}
