@@ -1,25 +1,27 @@
 from django import forms
 from django.forms import ModelForm
-from .models import PeopleAdmin, Project, PeopleTechSupport
+from .models import PeopleAdministration, Project, PeopleTechSupport
 from datetime import date
 
 
-# create a people form
+# create a administration people form
 class AdminForm(ModelForm):
     class Meta:
-        model = PeopleAdmin
-        # fields to be imported from class People
-        fields = ('person_name', 'contact_no', 'person_email', 'ad_owner')
+        model = PeopleAdministration
+        # fields to be imported from class PeopleAdministration
+        fields = ('person_name', 'contact_no', 'person_email', 'project_experience', 'ad_owner')
         labels = {
             'person_name': 'Person Name',
             'contact_no': 'Person Contact Number',
             'person_email': 'Person Email',
+            'project experience': 'Project Experience',
             'ad_owner': 'People Manager',
         }
         widgets = {
             'person_name': forms.TextInput(attrs={'class': 'form-control'}),
             'contact_no': forms.TextInput(attrs={'class': 'form-control'}),
             'person_email': forms.EmailInput(attrs={'class': 'form-control'}),
+            'project_experience': forms.Textarea(attrs={'class': 'form-control'}),
             'ad_owner': forms.TextInput(attrs={'class': 'form-control'}),
         }
 
@@ -29,17 +31,19 @@ class TechSupportForm(ModelForm):
     class Meta:
         model = PeopleTechSupport
         # fields to be imported from class PeopleTechSupport
-        fields = ('person_name_tech', 'contact_no_tech', 'person_email_tech', 'ts_owner')
+        fields = ('person_name_tech', 'contact_no_tech', 'person_email_tech', 'project_experience', 'ts_owner')
         labels = {
             'person_name_tech': 'Person Name',
             'contact_no_tech': 'Person Contact Number',
             'person_email_tech': 'Person Email',
-            'ts_owner': 'People Manager'
+            'project_experience': 'Project Experience',
+            'ts_owner': 'People Manager',
         }
         widgets = {
             'person_name_tech': forms.TextInput(attrs={'class': 'form-control'}),
             'contact_no_tech': forms.TextInput(attrs={'class': 'form-control'}),
             'person_email_tech': forms.EmailInput(attrs={'class': 'form-control'}),
+            'project_experience': forms.Textarea(attrs={'class': 'form-control'}),
             'ts_owner': forms.TextInput(attrs={'class': 'form-control'}),
         }
 

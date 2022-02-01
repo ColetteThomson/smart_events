@@ -5,7 +5,7 @@ from calendar import HTMLCalendar
 from django.shortcuts import render, redirect
 from django.views import generic, View
 from django.contrib.auth.models import User
-from .models import Project, PeopleAdmin, PeopleTechSupport
+from .models import Project, PeopleAdministration, PeopleTechSupport
 from .forms import AdminForm, ProjectForm, TechSupportForm
 from django.contrib import messages
 # Pagination
@@ -150,7 +150,7 @@ def search_admin_people(request):
         # variable to contain entered search request
         searched = request.POST['searched']
         # search for person_name that contains search request
-        persons = PeopleAdmin.objects.filter(person_name__contains=searched)
+        persons = PeopleAdministration.objects.filter(person_name__contains=searched)
         # return search result
         return render(request,
                       'search_admin_people.html', {
@@ -167,7 +167,7 @@ def search_admin_people(request):
 # DELETE a person from Admin People
 def delete_admin_people(request, people_id):
     # get primary key people_id from PeopleAdmin
-    people = PeopleAdmin.objects.get(id=people_id)
+    people = PeopleAdministration.objects.get(id=people_id)
     # if user is owner (prevent deletion through url)
     if request.user == people.ad_owner:
         # then delete the person
@@ -186,7 +186,7 @@ def delete_admin_people(request, people_id):
 # UPDATE Admin People
 def update_admin_people(request, people_id):
     # get primary key people_id from PeopleAdmin
-    people = PeopleAdmin.objects.get(id=people_id)
+    people = PeopleAdministration.objects.get(id=people_id)
     # if updating then pre-populate existing info (instance)
     # if not then display empty AdminForm
     form = AdminForm(request.POST or None, instance=people)
@@ -207,7 +207,7 @@ def update_admin_people(request, people_id):
 # SHOW details of a person
 def show_admin_person(request, people_id):
     # get unique key people_id from PeopleAdmin
-    person = PeopleAdmin.objects.get(id=people_id)
+    person = PeopleAdministration.objects.get(id=people_id)
     # show individual people
     return render(request,
                   'show_admin_person.html', {
@@ -218,9 +218,9 @@ def show_admin_person(request, people_id):
 # LIST all Admin People
 def all_admin_people(request):
     # call all PeopleAdmin objects from models.py
-    people = PeopleAdmin.objects.all()
+    people = PeopleAdministration.objects.all()
     # set up pagination, show 2 people per page
-    p = Paginator(PeopleAdmin.objects.all(), 2)
+    p = Paginator(PeopleAdministration.objects.all(), 2)
     # return the page
     page = request.GET.get('page')
     people_list = p.get_page(page)
