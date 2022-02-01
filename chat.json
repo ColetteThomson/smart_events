@@ -1,0 +1,132 @@
+[{
+    "model": "chat.post",
+    "pk": 1,
+    "fields": {
+        "blog_title": "test blog",
+        "slug": "test-blog",
+        "author": 1,
+        "created_on": "2022-01-27T19:43:30.107Z",
+        "updated_on": "2022-01-27T19:45:01.352Z",
+        "blog_content": "<p>this is an example of a blog</p>",
+        "blog_image": "image/upload/placeholder",
+        "excerpt": "this is an excerpt",
+        "status": 1,
+        "likes": []
+    }
+}, {
+    "model": "chat.post",
+    "pk": 2,
+    "fields": {
+        "blog_title": "Project 1: Feasibility Study",
+        "slug": "project-1-feasibility-study",
+        "author": 1,
+        "created_on": "2022-01-31T08:44:32.825Z",
+        "updated_on": "2022-01-31T10:53:36.098Z",
+        "blog_content": "<h4 class=\"\"><b><font color=\"#ff00ff\"><span style=\"font-size: 14px;\">Overview:&nbsp;</span></font></b></h4><h4 class=\"\"><span style=\"font-size: 12px;\">﻿</span><span style=\"font-size: 12px;\">The MS&amp;E Department is scheduled to move into a newly\r\nconstructed School of Engineering Centre in 2009. The </span><span lang=\"EN-GB\" style=\"font-size: 12px; line-height: 107%; font-family: Arial, sans-serif;\">Edinburgh</span><span style=\"font-size: 12px; line-height: 107%; font-family: Arial, sans-serif;\"> Board of Trustees has set the\r\nproject in motion while most of the planning is still underway. This is a\r\ncritical time to design spaces that will serve the needs of the students,\r\nstaff, and faculty for years to come within tight budget and space constraints.\r\nThe project team will work with the School of Engineering and the MS&amp;E\r\nDepartment to develop plans that integrate the diverse needs and preferences of\r\nthe different members of the department community.</span></h4><h4 class=\"\"><span style=\"font-size: 14px; line-height: 107%; font-family: Arial, sans-serif;\"><font color=\"#ff00ff\"><b>Your ideas or Suggestions on:</b></font></span></h4><h4 class=\"\"><span style=\"font-size: 12px; line-height: 107%; font-family: Arial, sans-serif;\">How we can reach out to members of the community to ensure all demographics are represented</span></h4><h4 class=\"\"><b><font color=\"#ff00ff\"><br></font></b></h4><p class=\"MsoNormal\"><span style=\"font-size:12.0pt;\r\nline-height:107%;font-family:&quot;Arial&quot;,sans-serif\"><o:p></o:p></span></p>",
+        "blog_image": "image/upload/placeholder",
+        "excerpt": "Design of ergonomic workspaces and full demographic representation",
+        "status": 1,
+        "likes": []
+    }
+}, {
+    "model": "chat.post",
+    "pk": 3,
+    "fields": {
+        "blog_title": "Project 2: Water Quality",
+        "slug": "project-2-water-quality",
+        "author": 1,
+        "created_on": "2022-01-31T08:48:04.199Z",
+        "updated_on": "2022-01-31T09:43:21.361Z",
+        "blog_content": "<h4 class=\"\" style=\"font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(51, 51, 51);\"><span style=\"font-weight: 700;\"><font color=\"#ff00ff\"><span style=\"font-size: 14px;\">Overview:&nbsp;</span></font></span></h4><h4 class=\"\" style=\"font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(51, 51, 51);\"><span style=\"font-size: 12px;\">﻿</span><span style=\"font-size: 12px; font-family: Arial;\">Leachate from 2 landfills is discharged to the sewage\r\ntreatment plant adding salt and making it harder to reuse the treated\r\nwastewater for landscape irrigation. </span><span lang=\"EN-GB\" style=\"font-size: 12px; line-height: 107%; font-family: Arial;\">Improvements\r\nto include:</span></h4><span style=\"font-size: 12px; font-family: Arial;\">\r\n\r\n</span><span style=\"font-size: 12px; line-height: 107%; font-family: Arial;\">1) salinity goals for\r\nthe recycled water ( treated effluent ), 2) amounts added by the landfills ( by\r\nassembling existing data ), 3) options for reducing salinity contributions from\r\nthe landfills including rough cost estimates where possible, and 4)\r\nrecommendations for next steps. The report should be geared for upper\r\nmanagement, who must decide whether to proceed with recommendations and spend money.</span><h4 class=\"\" style=\"font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(51, 51, 51);\"><span style=\"font-size: 14px; line-height: 14.98px; font-family: Arial, sans-serif;\"><font color=\"#ff00ff\"><span style=\"font-weight: 700;\">Your ideas or Suggestions on:</span></font></span></h4><h4 class=\"\" style=\"font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(51, 51, 51);\"><span style=\"font-size: 12px; line-height: 12.84px; font-family: Arial, sans-serif;\">How we can obtain environmentally&nbsp; approved salinity options for treatment of recycled water</span></h4><p class=\"MsoNormal\"><span style=\"font-size:12.0pt;line-height:107%;font-family:\r\n&quot;Arial&quot;,sans-serif\"><o:p></o:p></span></p>",
+        "blog_image": "image/upload/placeholder",
+        "excerpt": "",
+        "status": 1,
+        "likes": []
+    }
+}, {
+    "model": "chat.post",
+    "pk": 4,
+    "fields": {
+        "blog_title": "Project 3: Sunflower",
+        "slug": "project-3-sunflower",
+        "author": 1,
+        "created_on": "2022-01-31T09:41:05.675Z",
+        "updated_on": "2022-01-31T09:43:04.254Z",
+        "blog_content": "<h4 class=\"\" style=\"font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(51, 51, 51);\"><span style=\"font-weight: 700;\"><font color=\"#ff00ff\"><span style=\"font-size: 14px;\">Overview:&nbsp;</span></font></span></h4><h4 class=\"\" style=\"font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(51, 51, 51);\"><span style=\"font-size: 12px;\">﻿</span><span style=\"font-family: Arial; font-size: 12px;\">New Tracking System Project Mayflower is a non-profit organisation that teaches youth skills for economic independence. In the fourth year of secondary school, our students (nearly 100% women) write business plans for small businesses that they would like to start when they leave school. If they present a good idea we fund them £1000 to start the business. One pressing problem that we have -- that, hopefully, you can help us solve -- is keeping track of and supporting our grantees' progress. Once a young woman is out of school and her business is underway, it is hard to locate her to check in and see how she is doing. She is no longer in the school and may live a considerable distance from the school, and the information we have gathered thus far is anecdotal and disorganized.</span></h4><h4 class=\"\" style=\"font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(51, 51, 51);\"><span style=\"font-size: 14px; line-height: 14.98px; font-family: Arial, sans-serif;\"><font color=\"#ff00ff\"><span style=\"font-weight: 700;\">Your ideas or Suggestions on:</span></font></span></h4><h4 class=\"\" style=\"font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(51, 51, 51);\"><span style=\"font-size: 12px; line-height: 12.84px; font-family: Arial, sans-serif;\">Tracking systems that work in remote areas</span></h4>",
+        "blog_image": "image/upload/placeholder",
+        "excerpt": "",
+        "status": 1,
+        "likes": []
+    }
+}, {
+    "model": "chat.post",
+    "pk": 5,
+    "fields": {
+        "blog_title": "Project 4: Road Impact Fee Study",
+        "slug": "project-4-road-impact-fee-study",
+        "author": 1,
+        "created_on": "2022-01-31T10:04:10.269Z",
+        "updated_on": "2022-01-31T10:04:10.269Z",
+        "blog_content": "<h4 class=\"\" style=\"font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(51, 51, 51);\"><span style=\"font-weight: 700; font-size: 14px;\"><font color=\"#ff00ff\">Overview:&nbsp;</font></span></h4><h4 class=\"\" style=\"font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(51, 51, 51);\"><span style=\"font-size: 12px;\">﻿</span><span style=\"font-family: Arial; font-size: 12px;\">The condition of the City's streets are deteriorating at a\r\nfaster rate than they can be repaired given limitations in existing resources.\r\nOne of the major sources of damage to the streets is heavy truck traffic\r\nassociated with construction projects in </span><span lang=\"EN-GB\" style=\"font-size: 12px; line-height: 107%; font-family: Arial;\">Liverpool Waters</span><span style=\"font-size: 12px; line-height: 107%; font-family: Arial;\">. Recently staff presented a\r\nrecommendation to the City Council to establish a new fee, </span><span lang=\"EN-GB\" style=\"font-size: 12px; line-height: 107%; font-family: Arial;\">to be</span><span style=\"font-size: 12px; line-height: 107%; font-family: Arial;\"> based on a percentage of the cost of\r\nconstruction projects approved in the city. The Council was concerned that such\r\na fee may not truly capture the street repair cost associated with construction\r\nor may not fairly allocate these costs to various construction projects.\r\nConsequently, the Council requested additional research to identify whether it\r\nwould be possible to: 1) specifically pinpoint those construction projects and\r\nactivities that have an actual impact on streets; 2) accurately set fees to\r\ncover actual costs; and 3) identify alternatives to fees, such as construction\r\nbonds.</span></h4><p class=\"MsoNormal\"><span style=\"font-size:12.0pt;line-height:\r\n107%;font-family:&quot;Arial&quot;,sans-serif\"><o:p></o:p></span></p><h4 class=\"\" style=\"font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(51, 51, 51);\"><span style=\"font-size: 14px; line-height: 14.98px; font-family: Arial, sans-serif;\"><font color=\"#ff00ff\"><span style=\"font-weight: 700;\">Your ideas or Suggestions on:</span></font></span></h4><h4 class=\"\" style=\"font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(51, 51, 51);\"><span style=\"font-size: 12px; line-height: 12.84px; font-family: Arial, sans-serif;\">Different fee structures that could be applied</span></h4>",
+        "blog_image": "image/upload/placeholder",
+        "excerpt": "",
+        "status": 1,
+        "likes": []
+    }
+}, {
+    "model": "chat.post",
+    "pk": 6,
+    "fields": {
+        "blog_title": "Project 5: School of Engineering",
+        "slug": "project-5-school-of-engineering",
+        "author": 1,
+        "created_on": "2022-01-31T10:06:57.072Z",
+        "updated_on": "2022-01-31T10:06:57.072Z",
+        "blog_content": "<h4 class=\"\" style=\"font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(51, 51, 51);\"><span style=\"font-weight: 700;\"><font color=\"#ff00ff\"><span style=\"font-size: 14px;\">Overview:&nbsp;</span></font></span></h4><h4 class=\"\" style=\"font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(51, 51, 51);\"><span style=\"font-size: 12px;\">﻿</span><span style=\"font-size: 12px;\">The MS&amp;E Department is scheduled to move into a newly\r\nconstructed School of Engineering Centre in 2009. The </span><span lang=\"EN-GB\" style=\"font-size: 12px; line-height: 107%; font-family: Arial, sans-serif;\">Edinburgh</span><span style=\"font-size: 12px; line-height: 107%; font-family: Arial, sans-serif;\"> Board of Trustees has set the\r\nproject in motion while most of the planning is still underway. This is a\r\ncritical time to design spaces that will serve the needs of the students,\r\nstaff, and faculty for years to come within tight budget and space constraints.\r\nThe project team will work with the School of Engineering and the MS&amp;E\r\nDepartment to develop plans that integrate the diverse needs and preferences of\r\nthe different members of the department community</span></h4><p class=\"MsoNormal\"><span style=\"font-size:12.0pt;\r\nline-height:107%;font-family:&quot;Arial&quot;,sans-serif\"><o:p></o:p></span></p><h4 class=\"\" style=\"font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(51, 51, 51);\"><span style=\"font-size: 14px; line-height: 14.98px; font-family: Arial, sans-serif;\"><font color=\"#ff00ff\"><span style=\"font-weight: 700;\">Your ideas or Suggestions on:</span></font></span></h4><h4 class=\"\" style=\"color: rgb(51, 51, 51);\"><font face=\"Arial, sans-serif\"><span style=\"font-size: 12px;\">Space utilisation and ergonomic design of workspaces</span></font></h4>",
+        "blog_image": "image/upload/placeholder",
+        "excerpt": "",
+        "status": 1,
+        "likes": []
+    }
+}, {
+    "model": "chat.post",
+    "pk": 7,
+    "fields": {
+        "blog_title": "test blog 2",
+        "slug": "test-blog-2",
+        "author": 1,
+        "created_on": "2022-01-31T14:20:28.240Z",
+        "updated_on": "2022-01-31T14:20:28.240Z",
+        "blog_content": "<p>test blog 2 description</p>",
+        "blog_image": "image/upload/placeholder",
+        "excerpt": "",
+        "status": 1,
+        "likes": []
+    }
+}, {
+    "model": "chat.post",
+    "pk": 8,
+    "fields": {
+        "blog_title": "test blog 3",
+        "slug": "test-blog-3",
+        "author": 1,
+        "created_on": "2022-01-31T14:20:56.710Z",
+        "updated_on": "2022-01-31T14:20:56.710Z",
+        "blog_content": "<p>test blog 3 description</p>",
+        "blog_image": "image/upload/placeholder",
+        "excerpt": "",
+        "status": 1,
+        "likes": []
+    }
+}, {
+    "model": "chat.comment",
+    "pk": 1,
+    "fields": {
+        "post": 1,
+        "name": "ProjMgr1",
+        "email": "test@example.com",
+        "body": "ProjMgr1 leaving a comment on 'test blog'",
+        "created_on": "2022-01-28T09:48:24.081Z",
+        "approved": false
+    }
+}]
