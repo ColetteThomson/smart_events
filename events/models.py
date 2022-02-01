@@ -9,7 +9,7 @@ class PeopleTechSupport(models.Model):
     contact_no_tech = models.CharField(max_length=20, blank=True)
     person_email_tech = models.EmailField(blank=True)
     #add owner (using user.id), must be an owner so default value
-    ts_owner = models.IntegerField("Owner", blank=False, default=1)
+    ts_owner = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
     # sets manager field to null, should manager cease to be a user
     # ts_owner = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
 
@@ -29,8 +29,8 @@ class PeopleAdmin(models.Model):
     # if one-to-many project relationship is deleted so will all related records
     ### projects = models.ForeignKey(Project, blank=True, null=True, on_delete=models.CASCADE)
     
-    # add owner (using user.id), must be an owner so default value
-    ad_owner = models.IntegerField("Owner", blank=False, default=1)
+    # sets owner field to null, should owner cease to be a user
+    ad_owner = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
     ###ad_owner = models.IntegerField("People Owner")
 
     # sets manager field to null, should manager cease to be a user

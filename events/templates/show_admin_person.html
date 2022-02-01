@@ -1,42 +1,40 @@
 {% extends "base.html" %}
 
-<!-- load crispy forms -->
-{% load crispy_forms_tags %}
-
 {% block title %}Displaying Model Data{% endblock title %}
 
 {% block content %}
+
+<div class="container"></div>
     <h1>Show Project Administration Person's Details</h1>   
-
+    
     <!-- person information card  -->
-    <div class="card" style="width: 50rem;">
+    <div class="card" style="width: 30rem;">
         <div class="card-header">
-            {{ person }}
+               {{ person }}
         </div>
-        <div class="card-body">
-            <p class="card-text">Name: {{ person.person_name }}</p>
-            <p class="card-text">Contact Number {{ person.contact_no  }}</p>
-            <p class="card-text">Email: {{ person.person_email }}</p>
-            <!-- <p class="card-text">Projects Assigned To: {{ person.projects }}</p> -->
+            <div class="card-body">
+                <p class="card-text">Contact Number {{ person.contact_no  }}</p>
+                <p class="card-text">Email: {{ person.person_email }}</p>
+                <!-- <p class="card-text">Projects Assigned To: {{ person.projects }}</p> -->
                 
-        <!-- to check user is logged in -->
-        {% if user.is_authenticated %}
-            <!-- to check user is the people 'owner' for this person -->
-            {% if user == person.ad_owner%}
-
+            <!-- to check user is logged in -->
+            {% if user.is_authenticated %}
+                <!-- to check user is the people 'owner' for this person -->
+                {% if user == person.ad_owner%}
+        
                 <!-- button links to 'update' and 'delete' a person from a project -->
-                <a href="{% url 'update_admin_people' person.id %}" 
-                class="btn btn-outline-secondary btn-sm">Update Person</a>
+                    <a href="{% url 'update_admin_people' person.id %}" 
+                    class="btn btn-outline-secondary btn-sm">Update a Person</a>
 
-                <a href="{% url 'delete_admin_people' person.id %}" 
-                class="btn btn-outline-secondary btn-sm">Delete Person from Project</a>
+                    <a href="{% url 'delete_admin_people' person.id %}" 
+                    class="btn btn-outline-secondary btn-sm">Delete a Person</a>
 
-            <!-- endif: people 'owner' -->
-            {% endif %}
+                <!-- endif: people 'owner' -->
+                {% endif %}
+            </div>
+            <!-- endif: logged in -->
+            {% endif %}   
         </div>
-        <!-- endif: logged in -->
-        {% endif %}   
-    </div>
-
+</div>
 
 {% endblock content %}

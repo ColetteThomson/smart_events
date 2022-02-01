@@ -9,18 +9,18 @@ class AdminForm(ModelForm):
     class Meta:
         model = PeopleAdmin
         # fields to be imported from class People
-        fields = ('person_name', 'contact_no', 'person_email')
+        fields = ('person_name', 'contact_no', 'person_email', 'ad_owner')
         labels = {
             'person_name': 'Person Name',
             'contact_no': 'Person Contact Number',
             'person_email': 'Person Email',
-            #'ad_owner': 'People Manager',
+            'ad_owner': 'People Manager',
         }
         widgets = {
             'person_name': forms.TextInput(attrs={'class': 'form-control'}),
             'contact_no': forms.TextInput(attrs={'class': 'form-control'}),
             'person_email': forms.EmailInput(attrs={'class': 'form-control'}),
-            #'ad_owner': forms.Select(attrs={'class': 'form-select'}),
+            'ad_owner': forms.TextInput(attrs={'class': 'form-control'}),
         }
 
 
@@ -29,18 +29,18 @@ class TechSupportForm(ModelForm):
     class Meta:
         model = PeopleTechSupport
         # fields to be imported from class PeopleTechSupport
-        fields = ('person_name_tech', 'contact_no_tech', 'person_email_tech')
+        fields = ('person_name_tech', 'contact_no_tech', 'person_email_tech', 'ts_owner')
         labels = {
             'person_name_tech': 'Person Name',
             'contact_no_tech': 'Person Contact Number',
             'person_email_tech': 'Person Email',
-            #'ts_owner': 'People Manager'
+            'ts_owner': 'People Manager'
         }
         widgets = {
             'person_name_tech': forms.TextInput(attrs={'class': 'form-control'}),
             'contact_no_tech': forms.TextInput(attrs={'class': 'form-control'}),
             'person_email_tech': forms.EmailInput(attrs={'class': 'form-control'}),
-            #'ts_owner': forms.Select(attrs={'class': 'form-select'}),
+            'ts_owner': forms.TextInput(attrs={'class': 'form-control'}),
         }
 
 
@@ -69,6 +69,6 @@ class ProjectForm(ModelForm):
 
             'resource_admin': forms.Select(attrs={'class': 'form-select'}),
             'resource_tech': forms.Select(attrs={'class': 'form-select'}),
-            'project_manager': forms.Select(attrs={'class': 'form-select'}),
+            'project_manager': forms.TextInput(attrs={'class': 'form-control'}),
             'description': forms.Textarea(attrs={'class': 'form-control'}),
         }

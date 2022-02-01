@@ -346,7 +346,7 @@ def all_techsupport_people(request):
     page = request.GET.get('page')
     people_list = p.get_page(page)
 
-    # list all admin people 
+    # list all tech support people 
     return render(request,
                   'all_techsupport_people.html', {
                                      "people": people,

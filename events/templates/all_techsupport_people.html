@@ -6,30 +6,33 @@
 {% block title %}Displaying Model Data{% endblock title %}
 
 {% block content %}
+
+    <div class="container-fluid">
     <h1>All Technical Support People</h1>
         <br/>
-        <table class="table table-striped table-hover table-bordered"> 
+        <div class="table-responsive">
+            <table class="table table-striped table-hover table-bordered"> 
             <!-- for loop: iterate through people_list displaying 2 people per page-->
-            {% for person in people_list %}
+            {% for people in people_list %}
                 <tr>
                     <td>
-                        <a href="{% url 'show_techsupport_person' person.id %}">{{ person.person_name_tech }}</a>
+                        <a class="link-color" href="{% url 'show_techsupport_person' people.id %}">{{ people.person_name_tech }}</a>
                     </td>
                 
                 <!-- to check user is logged in -->
                 {% if user.is_authenticated %}
                     <!-- to check user is the tech support owner for this project -->
-                    {% if user == person.ts_owner %}
+                    {% if user == people.ts_owner %}
 
-                        !-- update a person link and button -->
+                        <!-- update a person link and button -->
                         <td align="right">
-                            <a href="{% url 'update_techsupport_people' person.id %}" 
+                            <a class="link-color" href="{% url 'update_techsupport_people' people.id %}" 
                             class="btn btn-outline-secondary btn-sm">Update</a>
                         </td>
 
                         <!-- delete a person link and button -->
                         <td align="right">
-                            <a href="{% url 'delete_techsupport_people' person.id %}"
+                            <a class="link-color" href="{% url 'delete_techsupport_people' people.id %}"
                             class="btn btn-outline-secondary btn-sm">Delete</a>
                         </td>
 
@@ -42,11 +45,10 @@
                 
             <!-- end for loop: people_list -->
             {% endfor %}
-
-            
-
-        </table>
+            </table>
         <br/>
+        </div>
+    </div>   
     
     <!-- page navigation with bootstrap styling -->
     <nav aria-label="Page navigation">
