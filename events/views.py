@@ -81,22 +81,21 @@ def add_project(request):
     project_form = ProjectForm(data=request.POST)
     # if project form is valid (required fields completed)
     if project_form.is_valid():
+        print("form is valid")
         # save to database
         new_project = project_form.save(commit=False)
-        #
-        ###new_project.project_manager = User.objects.get(user=self.request.user)
-
+        # pass in logged in user.id as 'project_manager'
+        new_project.project_manager = User.objects.get(id=request.user.id)
         # then save the new project
         new_project.save()
 
         return render(request,
                       'add_project.html', {
                                     'project_form': project_form,
-                                    #'new_project.project_manager': new_project.project_manager,
                                     'submitted': True,
                                     })
-                              
     else:
+        print("form not valid")
         # display empty form
         project_form = ProjectForm()
         # check if user submitted form
@@ -236,31 +235,40 @@ def all_admin_people(request):
 # CREATE (add) new Admin People
 def add_admin_people(request):
     # obtain all data posted from admin form
-    admin_form = AdminForm(data=request.POST)
+    admin_form = AdminForm()
+    #admin_form = AdminForm(data=request.POST)
     # if admin form is valid (required fields completed)
-    if admin_form.is_valid():
-        # save to database
-        new_people = admin_form.save(commit=False)
-        # pass in logged in user.id as 'owner'
-        new_people.ad_owner = request.user.id
-        # then save the new people
-        new_people.save()
 
-        return render(request,
-                      'add_admin_people.html', {
-                                    'admin_form': admin_form,
-                                    'submitted': True,
-                                    })
+    if request.method == 'POST':
+        admin_form = AdminForm(data=request.POST)
+        if request.user.has_perm("events.add_peopleadministration"):
+            if admin_form.is_valid():
+                # save to database
+                new_people = admin_form.save(commit=False)
+                # pass in logged in user.id as 'owner'
+                new_people.ad_owner = User.objects.get(id=request.user.id)
+                ##new_people.ad_owner = request.user.id
+                # then save the new people
+                new_people.save()
+
+                return render(request,
+                              'add_admin_people.html', {
+                                                        'admin_form': admin_form,
+                                                        'submitted': True,
+                                                        })
     else:
-        admin_form = AdminForm()
-        # check if user submitted form
-        if 'submitted' in request.GET:
-            submitted = True
+        print("form not valid")
+        print("errors:", admin_form.errors)
 
-        return render(request,
-                      'add_admin_people.html', {
-                                       'admin_form': admin_form,
-                                        })
+        # check if user submitted form
+        # if 'submitted' in request.GET:
+        #     submitted = True
+
+        return redirect('all_admin_people')
+            # return render(request,
+            #               'add_admin_people.html', {
+            #                                         'admin_form': admin_form,
+            #                                         })
 
 # --------------------------------------------------- Functions for 'TECH SUPPORT PEOPLE'
 
@@ -361,10 +369,11 @@ def add_tech_support(request):
 
     # if tech support form is valid (required fields completed)
     if tech_support_form.is_valid():
+        print("form is valid")
         # save to database
         new_tech_support = tech_support_form.save(commit=False)
         # pass in logged in user.id as 'owner'
-        new_tech_support.ts_owner = request.user.id
+        new_tech_support.ts_owner = User.objects.get(id=request.user.id)
         # then save the new tech support people
         new_tech_support.save()
 
@@ -374,6 +383,7 @@ def add_tech_support(request):
                                     'submitted': True,
                                     })
     else:
+        print("form not valid")
         tech_support_form = TechSupportForm()
         # check if user submitted form
         if 'submitted' in request.GET:

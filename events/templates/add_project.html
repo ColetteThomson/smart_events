@@ -9,32 +9,43 @@
     <center>
         <h1>Add Project</h1>
         <br/>
-        
-        <!-- if submitted (True) then display a message to user -->
-        {% if submitted %}
-        <div class="alert alert-success" role="alert">
-            Your Project was submitted successfully
-        </div>
+        {% if user.is_authenticated %}
 
-                   
+            <form action="{% url 'add_project' %}" method=POST>
+                <!-- csrf to prevent malicious attacks using user credentials -->
+                {% csrf_token %}
+
+                <!-- render add_project form using Crispy filter -->
+                {{ project_form | crispy }}
+
+                <!-- submit button for add_project form -->
+                <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+
+            <!-- javascript to obtain logged in user's id (field hidden) -->
+            <script>
+                var name = "{{ user.id }}";
+                document.getElementById("user").value = name;
+            </script>
+
+            {% if submitted %}
+                <!-- if submitted (True) then display a message to user -->
+                <div class="alert alert-success" role="alert">
+                    Your new Project was submitted successfully
+                </div>                
+            </form>
+
+            <!-- endif: submitted statement  -->
+            {% endif %}
+
         {% else %}
+            <!-- display message to user if not authorised -->
+            <div class="alert alert-warning" role="alert">
+            You are not authorised to create new Projects
+            </div>
 
-        <form action="{% url 'add_project' %}" method=POST>
-            <!-- csrf to prevent malicious attacks using user credentials -->
-            {% csrf_token %}
-
-            <!-- render add_project form using Crispy filter -->
-            {{ project_form | crispy }}
-
-            <!-- submit button for add_project form -->
-            <button type="submit" class="btn btn-signup btn-lg">Submit</button>
-
-        </form>
-        <!-- end: if submitted statement  -->
+        <!-- endif: authenticated user statement  -->
         {% endif %}
 
-    
-
     </center>
-    
-    {% endblock content %}
+
+{% endblock content %}

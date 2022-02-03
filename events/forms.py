@@ -10,19 +10,21 @@ class AdminForm(ModelForm):
         model = PeopleAdministration
         # fields to be imported from class PeopleAdministration
         fields = ('person_name', 'contact_no', 'person_email', 'project_experience', 'ad_owner')
+
         labels = {
             'person_name': 'Person Name',
             'contact_no': 'Person Contact Number',
             'person_email': 'Person Email',
             'project experience': 'Project Experience',
-            'ad_owner': 'People Manager',
+            'ad_owner': 'Admin People Manager',
         }
         widgets = {
             'person_name': forms.TextInput(attrs={'class': 'form-control'}),
             'contact_no': forms.TextInput(attrs={'class': 'form-control'}),
             'person_email': forms.EmailInput(attrs={'class': 'form-control'}),
             'project_experience': forms.Textarea(attrs={'class': 'form-control'}),
-            'ad_owner': forms.TextInput(attrs={'class': 'form-control'}),
+            'ad_owner': forms.TextInput(attrs={'class': 'form-control', 'value': '', 'id': 'user', 'type': 'hidden'}),
+            #'ad_owner': forms.TextInput(attrs={'class': 'form-control'}),
         }
 
 
@@ -37,14 +39,14 @@ class TechSupportForm(ModelForm):
             'contact_no_tech': 'Person Contact Number',
             'person_email_tech': 'Person Email',
             'project_experience': 'Project Experience',
-            'ts_owner': 'People Manager',
+            'ts_owner': 'Tech Support People Manager',
         }
         widgets = {
             'person_name_tech': forms.TextInput(attrs={'class': 'form-control'}),
             'contact_no_tech': forms.TextInput(attrs={'class': 'form-control'}),
             'person_email_tech': forms.EmailInput(attrs={'class': 'form-control'}),
             'project_experience': forms.Textarea(attrs={'class': 'form-control'}),
-            'ts_owner': forms.TextInput(attrs={'class': 'form-control'}),
+            'ts_owner': forms.TextInput(attrs={'class': 'form-control', 'value': '', 'id': 'user', 'type': 'hidden'}),
         }
 
 
@@ -73,6 +75,6 @@ class ProjectForm(ModelForm):
 
             'resource_admin': forms.Select(attrs={'class': 'form-select'}),
             'resource_tech': forms.Select(attrs={'class': 'form-select'}),
-            'project_manager': forms.TextInput(attrs={'class': 'form-control'}),
+            'project_manager': forms.TextInput(attrs={'class': 'form-control', 'value': '', 'id': 'user', 'type': 'hidden'}),
             'description': forms.Textarea(attrs={'class': 'form-control'}),
         }

@@ -9,10 +9,9 @@
     <center>
         <h1>Add Project Administration People to Database</h1>
         <br/><br/>
+        {% if user.is_authenticated %}
 
-        <!-- if submitted (True) then display a message to user -->
-        {% if user == project.project_manager %}
-
+        <!-- form to add a new administration person -->
             <form action="" method=POST>
                 <!-- csrf to prevent malicious attacks using user credentials -->
                 {% csrf_token %}
@@ -22,21 +21,30 @@
 
                 <!-- submit button for add_venue form -->
                 <button type="submit" class="btn btn-signup btn-lg">Submit</button>
-        
                 
-                {% if submitted %}
+            <!-- javascript to obtain logged in user's id (field hidden) -->
+            <script>
+                var name = "{{ user.id }}";
+                document.getElementById("user").value = name;
+            </script>
+                
+            {% if submitted %}
+                    <!-- if submitted (True) then display a message to user -->
                     <div class="alert alert-success" role="alert">
                         Your Project Administration People Resource was submitted successfully
-                    </div>
-                {% endif %}
+                    </div>                
             </form>
+               
+            <!-- endif: submitted statement  -->
+            {% endif %}
+
         {% else %}
-                <div class="alert alert-warning" role="alert">
-                    You are not authorised to create new People
-                </div>
-        
-                
-        <!-- endif: submitted statement  -->
+            <!-- display message to user if not authorised -->
+            <div class="alert alert-warning" role="alert">
+                You are not authorised to create new Project Administration People Resources
+            </div>
+
+        <!-- endif: authenticated user statement  -->
         {% endif %}
 
     </center>    

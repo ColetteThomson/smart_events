@@ -52,3 +52,6 @@ class Project(models.Model):
     # returns a string representation of an object
     def __str__(self):
         return self.project_name
+
+
+

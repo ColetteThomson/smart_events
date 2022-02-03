@@ -9,15 +9,9 @@
     <center>
         <h1>Add Tech Support People to Database</h1>
         <br/><br/>
+        {% if user.is_authenticated %}
 
-        <!-- if submitted (True) then display a message to user -->
-        {% if submitted %}
-        <div class="alert alert-success" role="alert">
-            Your Tech Support Resource was submitted successfully
-        </div>
-            
-        {% else %}
-
+        <!-- form to add a new administration person -->
         <form action="" method=POST>
             <!-- csrf to prevent malicious attacks using user credentials -->
             {% csrf_token %}
@@ -27,12 +21,31 @@
 
             <!-- submit button for add_venue form -->
             <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+        
+        <!-- javascript to obtain logged in user's id (field hidden) -->
+        <script>
+            var name = "{{ user.id }}";
+            document.getElementById("user").value = name;
+        </script>
 
+        <!-- if submitted (True) then display a message to user -->
+            {% if submitted %}
+            <div class="alert alert-success" role="alert">
+                Your Tech Support People Resource was submitted successfully
+            </div>
         </form>
-        <!-- end: if submitted statement  -->
+            <!-- endif: submitted statement  -->
+            {% endif %}  
+
+        {% else %}
+            <!-- display message to user if not authorised -->
+            <div class="alert alert-warning" role="alert">
+                You are not authorised to create new Tech Support People Resources
+            </div>
+
+        <!-- endif: authenticated user statement  -->
         {% endif %}
 
     </center>
-    
     
 {% endblock content %}

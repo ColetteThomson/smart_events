@@ -38,3 +38,5 @@ class ProjectAdmin(SummernoteModelAdmin):
     list_filter = ('project_name', 'project_date')
     # summernote formatting to be applied to project's 'description' field
     summernote_fields = ('description')
+
+
