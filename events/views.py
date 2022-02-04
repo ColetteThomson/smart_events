@@ -116,7 +116,7 @@ def all_projects(request):
     project = Project.objects.all()
     # project_list = Project.objects.all().order_by('project_name', 'project_manager')
     # set up pagination, show 2 projects per page
-    p = Paginator(Project.objects.all(), 2)
+    p = Paginator(Project.objects.all(), 3)
     # return the page
     page = request.GET.get('page')
     project_list = p.get_page(page)
@@ -219,7 +219,7 @@ def all_admin_people(request):
     # call all PeopleAdmin objects from models.py
     people = PeopleAdministration.objects.all()
     # set up pagination, show 2 people per page
-    p = Paginator(PeopleAdministration.objects.all(), 2)
+    p = Paginator(PeopleAdministration.objects.all(), 3)
     # return the page
     page = request.GET.get('page')
     people_list = p.get_page(page)
@@ -234,41 +234,49 @@ def all_admin_people(request):
 
 # CREATE (add) new Admin People
 def add_admin_people(request):
-    # obtain all data posted from admin form
+    """ obtain all data posted from admin form """
     admin_form = AdminForm()
-    #admin_form = AdminForm(data=request.POST)
-    # if admin form is valid (required fields completed)
-
+    
     if request.method == 'POST':
         admin_form = AdminForm(data=request.POST)
         if request.user.has_perm("events.add_peopleadministration"):
+            print("you are authorised")
+            # if admin form is valid (required fields completed)
             if admin_form.is_valid():
                 # save to database
                 new_people = admin_form.save(commit=False)
                 # pass in logged in user.id as 'owner'
                 new_people.ad_owner = User.objects.get(id=request.user.id)
-                ##new_people.ad_owner = request.user.id
                 # then save the new people
                 new_people.save()
 
-                return render(request,
-                              'add_admin_people.html', {
-                                                        'admin_form': admin_form,
-                                                        'submitted': True,
-                                                        })
+                # check if user submitted form
+                if 'submitted' in request.POST:
+                    submitted = True
+
+                    return render(request,
+                                        'add_admin_people.html', {
+                                                                'admin_form': admin_form,
+                                                                'submitted': True,
+                                                                })
     else:
         print("form not valid")
         print("errors:", admin_form.errors)
 
-        # check if user submitted form
-        # if 'submitted' in request.GET:
-        #     submitted = True
+        # display error message to user
+        messages.warning(request, ("You are not authorised to add a person"))
+        # redirect back to 'all_techsupport_people' page
+        # return redirect('all_admin_people')
 
-        return redirect('all_admin_people')
-            # return render(request,
-            #               'add_admin_people.html', {
-            #                                         'admin_form': admin_form,
-            #                                         })
+        # check if user submitted form
+        #if 'submitted' in request.POST:
+            #submitted = True
+
+        # return redirect('all_admin_people')
+        return render(request,
+                            'add_admin_people.html', {
+                                                      'admin_form': admin_form,
+                                                     })
 
 # --------------------------------------------------- Functions for 'TECH SUPPORT PEOPLE'
 
@@ -349,7 +357,7 @@ def all_techsupport_people(request):
     # call all PeopleTechSupport objects from models.py
     people = PeopleTechSupport.objects.all()
     # set up pagination, show 2 people per page
-    p = Paginator(PeopleTechSupport.objects.all(), 2)
+    p = Paginator(PeopleTechSupport.objects.all(), 3)
     # return the page
     page = request.GET.get('page')
     people_list = p.get_page(page)

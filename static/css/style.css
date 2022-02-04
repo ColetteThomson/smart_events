@@ -6,15 +6,12 @@ body {
     font-family: Lato, sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
-    color: #4A4A4F;
-}
-
-.red-o {
-    color: #E84610;
+    color: #fa03fa;
 }
 
 .thin {
     font-weight: 300;
+    font-size: 10px;
 }
 
 .light-bg {
@@ -95,7 +92,11 @@ body {
 
 .post-link:hover,
 .page-link {
-    color: #E84610;
+    color: #1410e8;
+}
+
+.page-link-size {
+    font-size: small;
 }
 
 .post-title {
@@ -144,18 +145,33 @@ body {
 }
 /* ---------------------------------------------CUSTOM CSS for EVENTS app */
 
-/* all_projects.html */
-.table-striped {
-    background-color: #c75103;
+/* all_projects.html | all_admin_people | all_techsupport_people */
+h1.list-heading {
+    padding-top: 20px;
+    font-size: 30px;
+    text-align: center;
 }
 
 .link-color {
     color: black;
 }
 
+.link-update-color {
+    color: rgb(33, 4, 114);
+}
+
+.link-delete-color {
+    color: rgb(131, 2, 2);
+}
+
 .button-color {
     color: black;
     background-color: gray;
+}
+
+/* center pagination block */
+.pagination {
+    justify-content: center;
 }
 
 /* show_admin_people.html */

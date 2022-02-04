@@ -23,16 +23,21 @@
 <body class="d-flex flex-column h-100 main-bg">
 
     <!-- navigation menu -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">SPMS</span><span
-                        class="thin">smartevents project management system</span></a>
+            <!-- <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">SPMS</span></a> -->
+                
+                        
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
+
+                    <li>
+                        <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">SPMS</span></a>
+                    </li>
 
                     <!-- home page menu item -->
                     <li class="nav-item">
@@ -46,10 +51,7 @@
                     
                     <!-- display menu items only if user is logged in -->
                     {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'project_calendar' %}">Calendar</a>
-                    </li>
-
+                    
                     <!-- bootstrap dropdown menu for projects -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -115,14 +117,17 @@
                     <!-- endif: if user is authenticated -->
                     {% endif %}
 
-                <!-- site byline
+                <!-- site byline  
                 <span align="right" class="navbar-text text-muted">
-                    byline
+                    smartevents project management system
                 </span> -->
             </div>
+            
         </div>
+        <br/>
+        
     </nav>
-
+    
     <div class="container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
@@ -149,7 +154,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer mt-auto py-3 dark-bg">
+    <footer class="footer mt-auto py-3 bg-dark">
         <p class="m-0 text-center text-white">footer text</p>
         <p class="m-0 text-center text-white">Follow us: <i class="fab fa-facebook-square ms-3"></i>
             <i class="fab fa-twitter-square ms-3"></i>
