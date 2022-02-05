@@ -219,7 +219,7 @@ def all_admin_people(request):
     # call all PeopleAdmin objects from models.py
     people = PeopleAdministration.objects.all()
     # set up pagination, show 2 people per page
-    p = Paginator(PeopleAdministration.objects.all(), 3)
+    p = Paginator(PeopleAdministration.objects.all(), 4)
     # return the page
     page = request.GET.get('page')
     people_list = p.get_page(page)

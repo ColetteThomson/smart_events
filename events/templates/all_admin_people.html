@@ -31,13 +31,13 @@
                         <!-- update a person link and button -->
                         <td align="right">
                             <a href="{% url 'update_admin_people' people.id %}" 
-                            class="btn btn-outline-primary btn-sm">Update Person</a>
+                            class="btn btn-outline-success btn-sm">Update Person</a>
                         </td>
 
                         <!-- delete a person link and button -->
                         <td align="right">
                             <a href="{% url 'delete_admin_people' people.id %}"
-                            class="btn btn-outline-danger btn-sm">Delete Person</a>
+                            class="btn btn-outline-primary btn-sm">Delete Person</a>
                         </td>
                 </tr>
 
@@ -56,41 +56,41 @@
         </div>
     
         
-    <!-- page navigation with bootstrap styling -->
-    <nav aria-label="Page navigation">
-        <ul class="pagination pagination-sm">
+        <!-- page navigation with bootstrap styling -->
+        <nav aria-label="Page navigation">
+            <ul class="pagination pagination-sm">
               
-        <!-- if statement: pagination (previous page) -->
-        {% if people_list.has_previous %}
-            <!-- add and display: '<< first' page -->
-            <li class="page-item"><a class="page-link" href="?page=1">&laquo First</a>
-            </li>
-            <!-- add and display: 'previous' page -->
-            <li class="page-item"><a class="page-link"
-                href="?page={{ people_list.previous_page_number }}">Previous</a>
-            </li>
-        <!-- end if: for pagination (previous page) -->
-        {% endif %}
-            <!-- page 'number of number' display -->
-            <li class="page-item disabled"><a class="page-link" href="#">
-                Page {{ people_list.number }} of {{ people_list.paginator.num_pages }}</a>
-            </li>
+            <!-- if statement: pagination (previous page) -->
+            {% if people_list.has_previous %}
+                <!-- add and display: '<< first' page -->
+                <li class="page-item"><a class="page-link" href="?page=1">&laquo First</a>
+                </li>
+                <!-- add and display: 'previous' page -->
+                <li class="page-item"><a class="page-link"
+                    href="?page={{ people_list.previous_page_number }}">Previous</a>
+                </li>
+            <!-- end if: for pagination (previous page) -->
+            {% endif %}
+                <!-- page 'number of number' display -->
+                <li class="page-item disabled"><a class="page-link" href="#">
+                    Page {{ people_list.number }} of {{ people_list.paginator.num_pages }}</a>
+                </li>
         
-        <!-- if statement: pagination (next page) -->
-        {% if people_list.has_next %}
-            <!-- add and display: 'next' page-->
-            <li class="page-item"><a class="page-link" 
-                href="?page={{ people_list.next_page_number }}">Next</a>
-            </li>
-            <!-- add and display: ''>> last' page -->
-            <li class="page-item"><a class="page-link" 
-                href="?page={{ people_list.paginator.num_pages }}">Last &raquo</a>
-            </li>
-        <!-- end if: for pagination (next page) -->
-        {% endif %}
+            <!-- if statement: pagination (next page) -->
+            {% if people_list.has_next %}
+                <!-- add and display: 'next' page-->
+                <li class="page-item"><a class="page-link" 
+                    href="?page={{ people_list.next_page_number }}">Next</a>
+                </li>
+                <!-- add and display: ''>> last' page -->
+                <li class="page-item"><a class="page-link" 
+                    href="?page={{ people_list.paginator.num_pages }}">Last &raquo</a>
+                </li>
+            <!-- end if: for pagination (next page) -->
+            {% endif %}
 
-        </ul>
-    </nav>
+            </ul>
+        </nav>
     </div>   
         
 {% endblock content %}

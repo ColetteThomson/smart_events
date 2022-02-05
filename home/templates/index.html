@@ -6,39 +6,103 @@
 {% block content %}
 
 <div class="container">
-    <!-- <div class="card bg-dark text-white">
-        <img src="..." class="card-img" alt="...">
-        <div class="card-img-overlay"> -->
-               
-            <h1 class="main-heading">Welcome to SPMS - the SmartEvents Project Management System!</h1>
-            <p class="text">SPMS operates on your organisation's intranet, enabling personnel 
-                working on projects to match available People resources to the 
-                business's different Projects.</p>
-            <p class="text">SPMS also offers a Project Chat encouraging project members to add 
-                their Ideas or Suggestions on the organisation's active projects.</p> 
+                   
+    <h1 class="main-heading">Welcome to <span class="brand">SPMS</span> - the 
+        SmartEvents Project Management System !</h1>
+        <p class="text">SPMS operates on your organisation's intranet, enabling the matching 
+            of available People resources to the business's active Projects.</p>
+        <p class="text">SPMS also offers a Project Chat encouraging project members to add 
+            their Ideas or Suggestions on the organisation's different projects.</p> 
 
-            <h2 class="main-heading">What can you do with SPMS?</h2>
-            <div class="row">
-            <div class="col column-margin">
+        <h2 class="main-heading">What can you do with <span class="brand">SPMS</span> ?</h2>
+            <div id="accordion">
+                <div class="card">
+                  <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                      <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        As a registered Project Manager:
+                      </button> 
+                    </h5>
+                  </div>
+              
+                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body">
+                        you can create, read, update and delete information 
+                        on your own projects; view information on other projects; and view all 
+                        available Administration and Tech Support People project resources
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" id="headingTwo">
+                    <h5 class="mb-0">
+                      <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        As a registered Administration People Owner:
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                    <div class="card-body">
+                        you can create, read, update and delete information on all 
+                        Administration project resources in SPMS - and view information on all projects
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" id="headingThree">
+                    <h5 class="mb-0">
+                      <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        As a registered Tech Support People Owner:
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div class="card-body">
+                        you can create, read, update and delete information on all 
+                        Tech Support project resources in SPMS - and view information on all projects
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headFour">
+                      <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            All SPMS users (both registered and general project personnel):
+                        </button>
+                      </h5>
+                    </div>
+                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                      <div class="card-body">
+                        can view and add their ideas or suggestions on the projects' Chat
+                      </div>
+                    </div>
+                  </div>
+              </div>
+    
+
+
+    <!-- <h2 class="main-heading">What can you do with <span class="brand">SPMS</span> ?</h2>
+        <div class="row">
+            <div class="col col-margin col-text">
                 <strong>As a registered Project Manager:</strong> you can create, read, update and delete information 
                 on your own projects; view information on other projects; and view all 
                 available Administration and Tech Support People project resources
             </div>
-            <div class="col column-margin">
+            <div class="col col-margin">
                 <strong>As a registered Administration People Owner: </strong> you can create, read, update and delete information on all 
                 Administration project resources in SPMS - and view information on all projects
             </div>
-            <div class="col column-margin">
+            <div class="col col-margin">
                 <strong>As a registered Tech Support People Owner: </strong> you can create, read, update and delete information on all 
                 Tech Support project resources in SPMS - and view information on all projects
             </div>
 
-            <div class="col column-margin">
+            <div class="col col-margin">
                 <strong>All SPMS users (both registered and general project personnel): </strong> can view and add their ideas or suggestions 
                 on the projects' Chat
         </div>
     </div>
-</div>
+</div> -->
    
 
         
