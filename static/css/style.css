@@ -174,4 +174,20 @@ h1.list-heading {
     justify-content: center;
 }
 
-/* show_admin_people.html */
+/* ---------------------------------------------CUSTOM CSS for HOME app */
+
+/* index.html */
+.main-heading {
+    padding-top: 20px;
+    font-size: 22px;
+    text-align: center;
+    color:#fa03fa
+}
+
+.text {
+    text-align: center;
+}
+
+.column-margin {
+    margin-bottom: 20px;
+}
