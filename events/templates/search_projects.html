@@ -3,37 +3,40 @@
 {% block title %}Displaying Model Data{% endblock title %}
 
 {% block content %}
+<div class="background-search">
+    <div class="container">
+        <h1 class="list-heading">
 
-<div class="card" style="width: 50rem;">
-    <div class="card-header">
-        <!-- if statement: search requested by user -->
-        {% if searched %}
-            You searched for ...  {{ searched }}
-        {% else %}
-            Search Projects
-        {% endif %}
-    </div>
-    <div class="card-body">
+        <div class="card mx-auto">
+        <div >
+            <!-- if statement: search requested by user -->
+            {% if searched %}
+                You searched for ...  {{ searched }}
+            {% else %}
+                Search Projects
+            {% endif %}
+        </div>
+        <div class="card-body">
 
-<!-- search box for 'projects' -->
-<form method="POST" action="{% url 'search_projects' %}">
+        <!-- search box for 'projects' -->
+        <form method="POST" action="{% url 'search_projects' %}">
 
         {% csrf_token %}
 
-        <input class="form-control me-2" type="search" 
-        placeholder="enter search for project..." aria-label="Search" name="searched">
-        <br/>
-        <button class="btn btn-outline-secondary" type="submit">Search</button>
-        <br/>
-
-            <!-- for loop: iterate through 'projects' (from views.py) -->
-            {% for project in projects %}
-            <!-- add link to search result/s -->
-            <a href="{% url 'show_project' project.id %}">{{ project }}</a> 
+            <input class="form-control me-2" type="search" 
+            placeholder="enter search for project..." aria-label="Search" name="searched">
             <br/>
-            <!-- end for loop: projects -->
-            {% endfor %}
-</form>
+            <button class="btn btn-outline-secondary" type="submit">Search</button>
+            <br/>
+
+                <!-- for loop: iterate through 'projects' (from views.py) -->
+                {% for project in projects %}
+                <!-- add link to search result/s -->
+                <a href="{% url 'show_project' project.id %}">{{ project }}</a> 
+                <br/>
+                <!-- end for loop: projects -->
+                {% endfor %}
+        </form>
         
         
    

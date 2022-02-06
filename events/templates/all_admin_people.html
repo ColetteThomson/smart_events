@@ -6,8 +6,10 @@
 {% block title %}Displaying Model Data{% endblock title %}
 
 {% block content %}
-
+<div class="background-list">
     <div class="container">
+    
+
     <h1 class="list-heading">All Project Administration People</h1>
     
         <br/>
@@ -31,13 +33,13 @@
                         <!-- update a person link and button -->
                         <td align="right">
                             <a href="{% url 'update_admin_people' people.id %}" 
-                            class="btn btn-outline-success btn-sm">Update Person</a>
+                            class="btn button-color-update btn-sm">Update Person</a>
                         </td>
 
                         <!-- delete a person link and button -->
                         <td align="right">
                             <a href="{% url 'delete_admin_people' people.id %}"
-                            class="btn btn-outline-primary btn-sm">Delete Person</a>
+                            class="btn button-color-delete btn-sm">Delete Person</a>
                         </td>
                 </tr>
 
@@ -92,5 +94,5 @@
             </ul>
         </nav>
     </div>   
-        
+</div>       
 {% endblock content %}
