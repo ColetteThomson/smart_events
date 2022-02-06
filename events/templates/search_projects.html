@@ -5,28 +5,29 @@
 {% block content %}
 <div class="background-search">
     <div class="container">
-        <h1 class="list-heading">
-
         <div class="card mx-auto">
         <div >
             <!-- if statement: search requested by user -->
             {% if searched %}
                 You searched for ...  {{ searched }}
             {% else %}
-                Search Projects
+                <br/>
+                <center><h1>Search Projects</h1></center>
             {% endif %}
         </div>
-        <div class="card-body">
+        <!-- center table across all screen widths -->
+        <div class="row justify-content-center">
+            <div class="card-body card-size">
 
-        <!-- search box for 'projects' -->
-        <form method="POST" action="{% url 'search_projects' %}">
+            <!-- search box for 'projects' -->
+            <form method="POST" action="{% url 'search_projects' %}">
 
-        {% csrf_token %}
+            {% csrf_token %}
 
-            <input class="form-control me-2" type="search" 
-            placeholder="enter search for project..." aria-label="Search" name="searched">
+                <input class="form-control me-2" type="search" 
+                placeholder="enter search for project..." aria-label="Search" name="searched">
             <br/>
-            <button class="btn btn-outline-secondary" type="submit">Search</button>
+                <button type="submit" class="btn button">Search</button>
             <br/>
 
                 <!-- for loop: iterate through 'projects' (from views.py) -->

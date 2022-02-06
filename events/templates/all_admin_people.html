@@ -8,9 +8,9 @@
 {% block content %}
 <div class="background-list">
     <div class="container">
-    
+    <br/>
 
-    <h1 class="list-heading">All Project Administration People</h1>
+    <center><h1>All Project Administration People</h1></center>
     
         <br/>
         <!-- center table across all screen widths -->
@@ -33,13 +33,13 @@
                         <!-- update a person link and button -->
                         <td align="right">
                             <a href="{% url 'update_admin_people' people.id %}" 
-                            class="btn button-color-update btn-sm">Update Person</a>
+                            class="btn button-color-update btn-sm button-size">Update Person</a>
                         </td>
 
                         <!-- delete a person link and button -->
                         <td align="right">
                             <a href="{% url 'delete_admin_people' people.id %}"
-                            class="btn button-color-delete btn-sm">Delete Person</a>
+                            class="btn button-color-delete btn-sm button-size">Delete Person</a>
                         </td>
                 </tr>
 

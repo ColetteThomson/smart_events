@@ -8,7 +8,7 @@
 {% block content %}
 <div class="background-form">
     <div class="container">
-        <h1 class="list-heading">Add Project</h1>
+        <h1>Add Project</h1>
         <br/>
         {% if user.is_authenticated %}
 
@@ -21,7 +21,7 @@
                 {{ project_form | crispy }}
 
                 <!-- submit button for add_project form -->
-                <button type="submit" class="btn btn-success btn-lg button">Submit</button>
+                <button type="submit" class="btn btn-lg button">Submit</button>
                 
             <!-- javascript to obtain logged in user's id (field hidden) -->
             <script>

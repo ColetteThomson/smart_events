@@ -136,14 +136,13 @@ body {
 
 /* ---------------------------------------------EVENTS app */
 
-/* all_projects.html | all_admin_people | all_techsupport_people */
-h1.list-heading {
-    padding-top: 20px;
+.h1-size {
     font-size: 30px;
-    text-align: center;
-    margin-bottom: 0;
 }
 
+/* html files: all_projects | all_admin_people | all_techsupport_people */
+
+/* link to: html files: show_admin_person | show_project | show_techsupport_person */
 .link-color {
     color: rgb(8, 71, 243);
     text-decoration: none;
@@ -172,12 +171,31 @@ h1.list-heading {
     justify-content: center;
 }
 
-/* submit buttons */
+/* buttons: search | submit */
 .button {
     margin:0 auto;
     display:block;
-    
+    color: white;
+    background-color: grey;
+    padding: 4px 5px 4px 5px;
+    font-size: 16px;
 }
+/* card size: search_admin_people | search_projects | search_techsupport_people */
+.card-size {
+    padding-left: 0;
+    width: 30rem;
+}
+
+/* card: show_admin_person | show_project | show_techsupport_person */
+.card-header-text {
+    color: rgb(8, 71, 243);
+    font-size: 20px;
+}
+
+.button-position {
+    margin-right: 60px;
+}
+
 
 /* ---------------------------------------------end: EVENTS app */
 
@@ -224,3 +242,61 @@ h1.list-heading {
     /*background: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%);*/
     background: linear-gradient(140deg, #fccdfc 60%, #f8a4f8 60%);
 }
+
+/* ---------------------------------------------MEDIA QUERIES */
+
+/* TABLETS */
+@media screen and (max-width: 769px) {
+    /* headings */
+    h1 {
+        font-size: 1.625rem;
+      }
+
+}
+
+/* MOBILES */
+@media screen and (max-width: 426px) {
+    /* headings */
+    h1 {
+        font-size: 1.125rem;
+      }
+
+    
+    .link-color,
+    .button-color-update,
+    .button-color-delete {
+        font-size: small;
+    }
+
+    .button-size {
+        width: 50px;
+        padding: 2px;
+    }
+
+}
+
+
+
+/* 
+
+h1 {
+    font-size: 1rem;
+  }
+  
+  @include media-breakpoint-up(sm) {
+    h1 {
+      font-size: 1rem;
+    }
+  }
+  
+  @include media-breakpoint-up(md) {
+    h1 {
+      font-size: 1.125rem;
+    }
+  }
+  
+  @include media-breakpoint-up(lg) {
+    h1 {
+      font-size: 2rem;
+    }
+  } */

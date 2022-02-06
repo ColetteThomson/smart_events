@@ -3,38 +3,43 @@
 {% block title %}Displaying Model Data{% endblock title %}
 
 {% block content %}
-
-<div class="container"></div>
-    <h1>Show Project Administration Person's Details</h1>   
+<div class="background-list">
+    <div class="container">
+    <br/>
+    <center><h1>Personal Details</h1></center>   
     
-    <!-- person information card  -->
-    <div class="card" style="width: 30rem;">
-        <div class="card-header">
-               {{ person }}
-        </div>
-            <div class="card-body">
-                <p class="card-text">Contact Number {{ person.contact_no  }}</p>
-                <p class="card-text">Email: {{ person.person_email }}</p>
-                <!-- <p class="card-text">Projects Assigned To: {{ person.projects }}</p> -->
-                
-            <!-- to check user is logged in -->
-            {% if user.is_authenticated %}
-                <!-- to check user is the people 'owner' for this person -->
-                {% if user == person.ad_owner%}
-        
-                <!-- button links to 'update' and 'delete' a person from a project -->
-                    <a href="{% url 'update_admin_people' person.id %}" 
-                    class="btn btn-outline-secondary btn-sm">Update a Person</a>
-
-                    <a href="{% url 'delete_admin_people' person.id %}" 
-                    class="btn btn-outline-secondary btn-sm">Delete a Person</a>
-
-                <!-- endif: people 'owner' -->
-                {% endif %}
+    <!-- center table across all screen widths -->
+    <div class="row justify-content-center">
+        <!-- person information card  -->
+        <div class="card" style="width: 30rem;">
+            <div class="card-header card-header-text">
+                <strong>{{ person }}</strong>
             </div>
+                <div class="card-body">
+                    <p class="card-text">Contact Number: {{ person.contact_no }}</p>
+                    <p class="card-text">Email: {{ person.person_email }}</p>
+                    <p class="card-text">Project Experience: {{ person.project_experience }}</p>
+                                
+                <!-- to check user is logged in -->
+                {% if user.is_authenticated %}
+                    <!-- to check user is the people 'owner' for this person -->
+                    {% if user == person.ad_owner%}
+        
+                    <!-- button links to 'update' and 'delete' a person from a project -->
+                    <center>
+                        <a href="{% url 'update_admin_people' person.id %}" 
+                        class="btn button-color-update btn-sm  button-position">Update a Person</a>
+
+                        <a href="{% url 'delete_admin_people' person.id %}" 
+                        class="btn button-color-delete btn-sm  ">Delete a Person</a>
+                    </center>
+                    <!-- endif: people 'owner' -->
+                    {% endif %}
+                </div>
             <!-- endif: logged in -->
             {% endif %}   
         </div>
+    </div>
 </div>
 
 {% endblock content %}
