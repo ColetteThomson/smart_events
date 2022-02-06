@@ -3,33 +3,41 @@
 {% block title %}Displaying Model Data{% endblock title %}
 
 {% block content %}
-    <h1>Show Technical Support Person's Details</h1>   
+<div class="background-list">
+    <div class="container">
+    <br/>
+    <center><h1>Personal Details</h1></center>   
 
-    <!-- person information card  -->
-    <div class="card" style="width: 30rem;">
-        <div class="card-header">
+    <!-- center table across all screen widths -->
+    <div class="row justify-content-center">
+        <!-- person information card  -->
+        <div class="card" style="width: 30rem;">
+            <div class="card-header card-header-text card-padding-head">
             {{ person }}
         </div>
-            <div class="card-body">
-                <p class="card-text">Contact Number {{ person.contact_no_tech  }}</p>
+        <div class="card-body mobile-text">
+                <p class="card-text">Contact Number: {{ person.contact_no_tech  }}</p>
                 <p class="card-text">Email: {{ person.person_email_tech }}</p>
+                <p class="card-text">Project Experience: {{ person.project_experience }}</p>
                     
         <!-- to check user is logged in -->
             {% if user.is_authenticated %}
                 <!-- to check user is the tech support owner for this project -->
                 {% if user == person.ts_owner %}
                     <!-- button links to 'update' and 'delete' a person from a project -->
+                <center>
                     <a href="{% url 'update_techsupport_people' person.id %}" 
-                    class="btn btn-outline-secondary btn-sm">Update Person</a>
+                    class="btn button-color-update btn-sm button-position">Update Person</a>
 
                     <a href="{% url 'delete_techsupport_people' person.id %}" 
-                    class="btn btn-outline-secondary btn-sm">Delete Person from Project</a>
- 
+                    class="btn button-color-delete btn-sm">Delete Person from Project</a>
+                </center>
                 <!-- endif: people 'owner' -->
                 {% endif %}
             </div>
             <!-- endif: logged in -->
             {% endif %}   
+        </div>
     </div>
 </div>
 

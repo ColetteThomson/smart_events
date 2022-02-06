@@ -3,21 +3,24 @@
 {% block title %}Displaying Model Data{% endblock title %}
 
 {% block content %}
+
 <div class="background-search">
     <div class="container">
         <div class="card mx-auto">
-        <div >
-            <!-- if statement: search requested by user -->
-            {% if searched %}
-                You searched for ...  {{ searched }}
-            {% else %}
+        
+            <div>
+                <!-- if statement: search requested by user -->
+                {% if searched %}
+                    You searched for ...  {{ searched }}
+                {% else %}
                 <br/>
-                <center><h1>Search Projects</h1></center>
-            {% endif %}
-        </div>
-        <!-- center table across all screen widths -->
+                    <center><h1>Search Projects</h1></center>
+                {% endif %}
+            </div>
+
+        <!-- center row across all screen widths -->
         <div class="row justify-content-center">
-            <div class="card-body card-size">
+            <div class="card-body card-size mobile-text">
 
             <!-- search box for 'projects' -->
             <form method="POST" action="{% url 'search_projects' %}">
@@ -25,21 +28,18 @@
             {% csrf_token %}
 
                 <input class="form-control me-2" type="search" 
-                placeholder="enter search for project . . ." aria-label="Search" name="searched">
+                placeholder="enter search . . ." aria-label="Search" name="searched">
             <br/>
-                <button type="submit" class="btn button">Search</button>
+                <button type="submit" class="btn btn-lg button">Search</button>
             <br/>
 
                 <!-- for loop: iterate through 'projects' (from views.py) -->
                 {% for project in projects %}
-                <!-- add link to search result/s -->
-                <a href="{% url 'show_project' project.id %}">{{ project }}</a> 
+                    <!-- add link to search result/s -->
+                    <a href="{% url 'show_project' project.id %}">{{ project }}</a> 
                 <br/>
                 <!-- end for loop: projects -->
                 {% endfor %}
-        </form>
-        
-        
-   
-    
+            </form>
+  
 {% endblock content %}

@@ -4,35 +4,40 @@
 
 {% block content %}
 
-    <div class="card" style="width: 50rem;">
-        <div class="card-header">
+<div class="background-search">
+    <div class="container">
+        <div class="card mx-auto">
             <!-- if statement: search requested by user -->
             {% if searched %}
                 You searched for ...  {{ searched }}
             {% else %}
-                Search Project Administration People
+            <br/>
+                <center>Search Project Administration People</center>
             {% endif %}
         </div>
-        <div class="card-body">
+        
+        <!-- center row across all screen widths -->
+        <div class="row justify-content-center">
+            <div class="card-body card-size mobile-text">
    
-    <!-- search box for 'people' -->
-    <form method="POST" action="{% url 'search_admin_people' %}">
+            <!-- search box for 'people' -->
+            <form method="POST" action="{% url 'search_admin_people' %}">
 
-        {% csrf_token %}
+            {% csrf_token %}
 
-        <input class="form-control me-2" type="search" 
-        placeholder="enter search for project administration people..." aria-label="Search" name="searched">
-        <br/>
-        <button class="btn btn-outline-secondary" type="submit">Search</button>
-        <br/>
-
-            <!-- for loop: iterate through 'persons' (from views.py) -->
-            {% for person in persons %}
-            <!-- add link to search result/s -->
-            <a href="{% url 'show_admin_people' person.id %}">{{ person }}</a> 
+                <input class="form-control me-2" type="search" 
+                placeholder="enter search . . ." aria-label="Search" name="searched">
             <br/>
-            <!-- end for loop: person -->
-            {% endfor %}
-    </form>
+                <button class="btn btn-lg button" type="submit">Search</button>
+            <br/>
+
+                <!-- for loop: iterate through 'persons' (from views.py) -->
+                {% for person in persons %}
+                    <!-- add link to search result/s -->
+                    <a href="{% url 'show_admin_people' person.id %}">{{ person }}</a> 
+                <br/>
+                <!-- end for loop: person -->
+                {% endfor %}
+            </form>
  
 {% endblock content %}

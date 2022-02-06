@@ -4,27 +4,34 @@
 
 {% block content %}
 
-    <div class="card" style="width: 50rem;">
-        <div class="card-header">
-            <!-- if statement: search requested by user -->
-            {% if searched %}
-                You searched for ...  {{ searched }}
-            {% else %}
-                Search Tech Support People
-            {% endif %}
-        </div>
-        <div class="card-body">
+<div class="background-search">
+    <div class="container">
+        <div class="card mx-auto">
+
+            <div>
+                <!-- if statement: search requested by user -->
+                {% if searched %}
+                    You searched for ...  {{ searched }}
+                {% else %}
+                <br/>
+                    <center>Search Tech Support People</center>
+                {% endif %}
+            </div>
+
+        <!-- center row across all screen widths -->
+        <div class="row justify-content-center">
+            <div class="card-body card-size mobile-text">
    
-    <!-- search box for 'people' -->
-    <form method="POST" action="{% url 'search_techsupport_people' %}">
+            <!-- search box for 'people' -->
+            <form method="POST" action="{% url 'search_techsupport_people' %}">
 
-        {% csrf_token %}
+            {% csrf_token %}
 
-        <input class="form-control me-2" type="search" 
-        placeholder="enter search for tech support people..." aria-label="Search" name="searched">
-        <br/>
-        <button class="btn btn-outline-secondary" type="submit">Search</button>
-        <br/>
+                <input class="form-control me-2" type="search" 
+                placeholder="enter search . . ." aria-label="Search" name="searched">
+            <br/>
+                <button type="submit" class="btn btn-lg button">Search</button>
+            <br/>
 
             <!-- for loop: iterate through 'persons' (from views.py) -->
             {% for person in persons %}
@@ -33,6 +40,6 @@
             <br/>
             <!-- end for loop: person -->
             {% endfor %}
-    </form>
+            </form>
  
 {% endblock content %}
