@@ -182,8 +182,7 @@ body {
 }
 /* card size: search_admin_people | search_projects | search_techsupport_people */
 .card-size {
-    padding-left: 0;
-    width: 30rem;
+    width: 23.75rem;
 }
 
 /* card: show_admin_person | show_project | show_techsupport_person */
@@ -225,19 +224,19 @@ body {
 
 /* -----------------------------------------------BACKGROUNDS */
 
-/* html files: add_admin_people | add_project | add_tech_support */
+/* background: add_admin_people | add_project | add_tech_support */
 .background-form {
     /*background: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%);*/
     background: linear-gradient(140deg, #d3e062 60%, #b8c91f 60%);
 }
 
-/* html files: search_admin_people | search_projects | search_techsupport_people */
+/* background: search_admin_people | search_projects | search_techsupport_people */
 .background-search {
     /*background: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%);*/
     background: linear-gradient(140deg, #e4c072 60%, #e7af34 60%);
 }
 
-/* html files: all_admin_people | all_projects | all_techsupport_people */
+/* background: all_admin_people | all_projects | all_techsupport_people */
 .background-list{
     /*background: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%);*/
     background: linear-gradient(140deg, #fccdfc 60%, #f8a4f8 60%);
@@ -256,47 +255,44 @@ body {
 
 /* MOBILES */
 @media screen and (max-width: 426px) {
+        
     /* headings */
     h1 {
         font-size: 1.125rem;
       }
 
-    
+    /* link to: html files: show_admin_person | show_project | show_techsupport_person */
     .link-color,
     .button-color-update,
     .button-color-delete {
-        font-size: small;
+        font-size: 14px;
     }
 
+    /* html files: all_admin_people | all_projects | all_techsupport_people */
+    /* update and delete buttons */
     .button-size {
         width: 50px;
         padding: 2px;
     }
 
+    /* card: show_admin_person | show_project | show_techsupport_person */
+    .button-position {
+        margin-right: 38px;
+    }
+    
+    /* text: show_admin_person | show_project | show_techsupport_person */
+    .mobile-text {
+        font-size: 14px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    
+    .card-padding-head {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .form-font {
+        font-size: 14px;
+    }
 }
-
-
-
-/* 
-
-h1 {
-    font-size: 1rem;
-  }
-  
-  @include media-breakpoint-up(sm) {
-    h1 {
-      font-size: 1rem;
-    }
-  }
-  
-  @include media-breakpoint-up(md) {
-    h1 {
-      font-size: 1.125rem;
-    }
-  }
-  
-  @include media-breakpoint-up(lg) {
-    h1 {
-      font-size: 2rem;
-    }
-  } */

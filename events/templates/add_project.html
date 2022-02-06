@@ -1,19 +1,20 @@
 {% extends "base.html" %}
 
-<!-- load crispy forms -
-{% load crispy_forms_tags %}-->
+<!-- load crispy forms -->
+{% load crispy_forms_tags %}
 
 {% block title %}Displaying Model Data{% endblock title %}
 
 {% block content %}
 <div class="background-form">
     <div class="container">
-        <h1>Add Project</h1>
         <br/>
+        <center><h1>Add a New Project</h1></center>
+        <br/>
+
         {% if user.is_authenticated %}
 
-
-            <form action="{% url 'add_project' %}" method=POST>
+            <form action="{% url 'add_project' %}" method=POST class="mobile-text">
                 <!-- csrf to prevent malicious attacks using user credentials -->
                 {% csrf_token %}
 
@@ -47,8 +48,7 @@
 
         <!-- endif: authenticated user statement  -->
         {% endif %}
-        
+    </div>   
 </div>
     
-
 {% endblock content %}

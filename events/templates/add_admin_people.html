@@ -1,26 +1,29 @@
 {% extends "base.html" %}
 
-<!-- load crispy forms
-{% load crispy_forms_tags %}-->
+<!-- load crispy forms -->
+{% load crispy_forms_tags %}
 
 {% block title %}Displaying Model Data{% endblock title %}
 
 {% block content %}
-    <center>
-        <h1>Add Project Administration People to Database</h1>
-        <br/><br/>
+<div class="background-form">
+    <div class="container">
+        <br/>
+        <center><h1>Add a New Project Admin Person</h1></center>
+        <br/>
+
         {% if user.is_authenticated %}
 
         <!-- form to add a new administration person -->
-            <form action="" method=POST>
+            <form action="" method=POST class="mobile-text">
                 <!-- csrf to prevent malicious attacks using user credentials -->
                 {% csrf_token %}
 
                 <!-- render add_venue form using Crispy filter -->
                 {{ admin_form | crispy }}
 
-                <!-- submit button for add_venue form -->
-                <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+                <!-- submit button for add_admin_people form -->
+                <button type="submit" class="btn btn-lg button">Submit</button>
                 
             <!-- javascript to obtain logged in user's id (field hidden) -->
             <script>
@@ -46,8 +49,8 @@
 
         <!-- endif: authenticated user statement  -->
         {% endif %}
-
-    </center>    
-
-    {% endblock content %}
+    </div>   
+</div>
+       
+{% endblock content %}
 
