@@ -57,40 +57,42 @@
     <!-- page navigation with bootstrap styling -->
     <nav aria-label="Page navigation">
         <ul class="pagination pagination-sm">
-              
+          
         <!-- if statement: pagination (previous page) -->
         {% if project_list.has_previous %}
-
             <!-- add and display: '<< first' page -->
-            <li class="page-item"><a class="page-link" href="?page=1">&laquo First</a>
+            <li class="page-item"><a class="page-link" href="?page=1" aria-label="First">
+                <span aria-hidden="true">&laquo First</span></a>
             </li>
             <!-- add and display: 'previous' page -->
             <li class="page-item"><a class="page-link"
-                href="?page={{ project_list.previous_page_number }}">Previous</a>
+                href="?page={{ project_list.previous_page_number }}" aria-label="Previous">
+                <span aria-hidden="true">Previous</span></a>
             </li>
-
         <!-- end if: for pagination (previous page) -->
         {% endif %}
-
             <!-- page 'number of number' display -->
             <li class="page-item disabled"><a class="page-link" href="#">
                 Page {{ project_list.number }} of {{ project_list.paginator.num_pages }}</a>
             </li>
-        
+    
         <!-- if statement: pagination (next page) -->
         {% if project_list.has_next %}
-
-            <!-- add and display: 'next >>' page -->
+            <!-- add and display: 'next' page-->
             <li class="page-item"><a class="page-link" 
-                href="?page={{ project_list.next_page_number }}">Next</a>
+                href="?page={{ project_list.next_page_number }}" aria-label="Next">
+                <span aria-hidden="true">Next</span></a>
             </li>
             <!-- add and display: ''>> last' page -->
             <li class="page-item"><a class="page-link" 
-                href="?page={{ project_list.paginator.num_pages }}">Last &raquo</a>
+                href="?page={{ project_list.paginator.num_pages }}" aria-label="Last">
+                <span aria-hidden="true">Last &raquo</span></a>
             </li>
-
         <!-- end if: for pagination (next page) -->
         {% endif %}
+
+
+    
 
         </ul>
     </nav>
