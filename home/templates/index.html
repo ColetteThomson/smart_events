@@ -6,60 +6,79 @@
 {% block content %}
 
 <div class="container">
-                   
-    <h1 class="main-heading">Welcome to <span class="brand">SPMS</span> - the 
-        SmartEvents Project Management System !</h1>
-        <p class="text">SPMS operates on your organisation's intranet, enabling the matching 
-            of available People resources to the business's active Projects.</p>
-        <p class="text">SPMS also offers a Project Chat encouraging project members to add 
-            their Ideas or Suggestions on the organisation's different projects.</p> 
+    <!-- heading -->               
+    <h1 class="main-heading">Welcome to the <span class="thick">smart<span class="thin">events</span></span>
+        Workforce Management Platform ( <span class="brand">WMP</span>)</h1>
 
-        <h2 class="main-heading">What can you do with <span class="brand">SPMS</span> ?</h2>
- 
+        <p class="text"><span class="brand">WMP</span>operates on your organisation's intranet, and is a tool
+            used by smart project managers to select the right resource for the right task.</p>
+        <p class="text">Also available is a project Chat, encouraging project team members to add 
+            their ideas or suggestions on the organisation's active projects.</p> 
+
+        <h2 class="sub-heading">What are the different <span class="brand">WMP</span>roles ?</h2>
+    <center>
         <div class="row">
-            <div class="col col-margin col-text background-project">
-                <strong>As a Project Manager:</strong> 
-                <p>CRUD*: own projects</p>
-                <p>R: other projects; all People resources</p>
-
-                <!-- you can create, read, update and delete information 
-                on your own projects; view information on other projects; and view all 
-                available Administration and Tech Support People project resources -->
+            <div class="col">
+                <div class="div-pm">
+                    <strong>Project Managers</strong>
+                    <div class="div-pm-1">
+                        <ul class="perm-ul">
+                            <li><i>Permissions:</i></li>
+                            <li><strong>Create, Read, Update, Delete:</strong> for all your projects</li>
+                            <li><strong>Read-only:</strong> for other projects, and all people resources</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="col col-margin col-text background-admin">
-                <strong>As an Administration People Owner: </strong> 
-                <p>CRUD*: Project Administration People</p>
-                <p>R: all projects; all Tech Support People</p>
-
-                <!-- you can create, read, update and delete information on all 
-                Administration project resources in SPMS - and view information on all projects -->
+        
+            <div class="col">
+                <div class="div-ad">
+                    <strong>Administration People Owner</strong>
+                    <div class="div-ad-1">
+                        <ul class="perm-ul">
+                            <li><i>Permissions:</i></li>
+                            <li><strong>Create, Read, Update, Delete:</strong> for all Admin resources</li>
+                            <li><strong>Read-only:</strong> for all projects, and all Tech Support resources</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="col col-margin col-text background-tech">
-                <strong>As a Tech Support People Owner: </strong> 
-                <p>CRUD*: Tech Support People</p>
-                <p>R: all projects; all Project Admin People</p>
-
-                <!-- you can create, read, update and delete information on all 
-                Tech Support project resources in SPMS - and view information on all projects -->
-            </div>
-
-            <div class="col col-margin col-text background-general">
-                <strong>General SPMS users (project staff): </strong> 
-                <p>R: all Chat posts</p>
-                <p>C: add ideas or suggestions on all projects</p>
-                
-
-                <!-- can view and add their ideas or suggestions 
-                on the projects' Chat -->
         </div>
-        <p>* CRUD: Create, Read (view), Update, Delete</p>
-
-    <h6>Contact the SPMS Administrator on: 9785432102 to get set up as a user</h6>
+    </center>
+    </br>
+    <center>
+        <div class="row">
+            <div class="col">
+                <div class="div-tech">
+                    <strong>Tech Support People Owner</strong>
+                    <div class="div-tech-1">
+                        <ul class="perm-ul">
+                            <li><i>Permissions:</i></li>
+                            <li><strong>Create, Read, Update, Delete:</strong> for all Tech Support Resources</li>
+                            <li><strong>Read-only:</strong> for all projects, and all Administration resources</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="div-gen">
+                    <strong>General SPMS users (project staff)</strong>
+                    <div class="div-gen-1">
+                        <ul class="perm-ul">
+                            <li><i>Permissions:</i></li>
+                            <li><strong>Read-only:</strong> all Chat posts</li>
+                            <li><strong>Create:</strong> add ideas or suggestions on all projects</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </center>
+<center>
+    <h6 class="contact">Contact the Administrator on: 07755-321321 to get set up as a <span class="brand">WMP</span>user</h6>
+</center>
 </div> 
     
-
-        
-    
-    <!-- <script src="{% static 'checkout/js/stripe_elements.js' %}"></script> -->
-
 {% endblock content %}

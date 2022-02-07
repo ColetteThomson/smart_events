@@ -3,14 +3,34 @@ body {
     color: rgb(110, 110, 110);
 }
 
-/* logo */
+/* logo for 'WMP' */
 .brand {
     /* font-family: Lato, sans-serif; */
     font-family: 'Permanent Marker', cursive;
     font-size: 1.4rem;
     font-weight: 700;
-    color:#fa03fa;
+    color: #fa03fa;
     padding-right: 10px;
+}
+
+/* logo for 'smartevents' */
+.thick {
+    color: white;
+    color: #fa03fa;
+}
+
+.thin {
+    font-weight: 300;
+    color: #fa03fa;
+}
+
+.thick1 {
+    color: black;
+}
+
+.thin1 {
+    font-weight: 300;
+    color: black;
 }
 
 /* ---------------------------------------------CHAT app */
@@ -198,11 +218,30 @@ body {
 /* ---------------------------------------------HOME app */
 
 /* index.html */
+
 .main-heading {
     padding-top: 20px;
-    font-size: 22px;
+    font-size: 20px;
     text-align: center;
     color: rgb(44, 43, 43)
+}
+
+.sub-heading {
+    padding-top: 0;
+    font-size: 20px;
+    text-align: center;
+    color: rgb(44, 43, 43)
+}
+
+/* contact: admin */
+.contact {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 5px;
+    width: 70%;
+    text-align: center;
+    color: white;
+    background-color: rgb(44, 43, 43);
 }
 
 .text {
@@ -215,7 +254,109 @@ body {
 
 .col-text {
     font-size: 14px;
-    line-height: 10px;
+}
+
+.crud {
+    font-size: 12px;
+    font-style: italic;
+    text-align: center;
+}
+
+/* div hover: project manager */
+.div-pm {
+    color: #fa03fa;
+    font-size: 16px;
+}
+
+.div-pm-1 {
+    color: white;
+    font-size: 12px;
+}
+
+.div-pm:hover div.div-pm-1{
+    transform: scale(1.2);
+    margin-top: 15px;
+    width: 60%;
+    background-color: #fa03fa;
+    color: white;
+    padding: 5px;
+    padding-bottom: 0;
+    border: solid;
+}
+
+/* div hover: administration people owner */
+.div-ad {
+    color: #b8c91f;
+    font-size: 16px;
+}
+
+.div-ad-1 {
+    color: white;
+    font-size: 12px;
+}
+
+.div-ad:hover div.div-ad-1{
+    transform: scale(1.2);
+    margin-top: 15px;
+    width: 60%;
+    background-color: #b8c91f;
+    color: white;
+    padding: 5px;
+    padding-bottom: 0;
+    border: solid;
+}
+
+/* div hover: tech support people owner */
+.div-tech {
+    color: #e7af34;
+    font-size: 16px;
+}
+
+.div-tech-1 {
+    color: white;
+    font-size: 12px;
+}
+
+.div-tech:hover div.div-tech-1{
+    transform: scale(1.2);
+    margin-top: 15px;
+    width: 70%;
+    background-color: #e7af34;
+    color: white;
+    padding: 5px;
+    padding-bottom: 0;
+    border: solid;
+}
+
+/* div hover: general users*/
+.div-gen {
+    color: #999899;
+    font-size: 16px;
+}
+
+.div-gen-1 {
+    color: white;
+    font-size: 12px;
+}
+
+.div-gen:hover div.div-gen-1{
+    transform: scale(1.2);
+    margin-top: 15px;
+    width: 60%;
+    background-color: #999899;
+    color: white;
+    padding: 5px;
+    padding-bottom: 0;
+    border: solid;
+}
+
+/* div hover: ul settings */
+.perm-ul {
+    padding-left: 0;
+}
+
+.li-color {
+    color: black
 }
 
 /* ---------------------------------------------end: HOME app */
