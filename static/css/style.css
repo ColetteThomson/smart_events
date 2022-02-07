@@ -215,6 +215,7 @@ body {
 
 .col-text {
     font-size: 14px;
+    line-height: 10px;
 }
 
 /* ---------------------------------------------end: HOME app */
@@ -222,21 +223,27 @@ body {
 /* -----------------------------------------------BACKGROUNDS */
 
 /* background: add_admin_people | add_project | add_tech_support */
-.background-form {
+.background-admin {
     /*background: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%);*/
     background: linear-gradient(140deg, #d3e062 60%, #b8c91f 60%);
 }
 
 /* background: search_admin_people | search_projects | search_techsupport_people */
-.background-search {
+.background-tech {
     /*background: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%);*/
     background: linear-gradient(140deg, #e4c072 60%, #e7af34 60%);
 }
 
 /* background: all_admin_people | all_projects | all_techsupport_people */
-.background-list{
+.background-project{
     /*background: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%);*/
     background: linear-gradient(140deg, #fccdfc 60%, #f8a4f8 60%);
+}
+
+/* background: all_admin_people | all_projects | all_techsupport_people */
+.background-general{
+    /*background: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%);*/
+    background: linear-gradient(140deg, #c7c6c7 60%, #999899 60%);
 }
 
 /* ---------------------------------------------MEDIA QUERIES */
