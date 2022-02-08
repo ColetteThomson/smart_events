@@ -34,7 +34,7 @@
                 <!-- for loop: iterate through 'persons' (from views.py) -->
                 {% for person in persons %}
                     <!-- add link to search result/s -->
-                    <a href="{% url 'show_admin_people' person.id %}">{{ person }}</a> 
+                    <a href="{% url 'show_admin_person' person.id %}">{{ person }}</a> 
                 <br/>
                 <!-- end for loop: person -->
                 {% endfor %}

@@ -17,9 +17,7 @@ from django.core.paginator import Paginator
 
 # SEARCH for projects
 def search_projects(request):
-    """ pass """
-    """ pass """
-    # if user clicks 'search' button
+    """ if user clicks 'search' button """
     if request.method == "POST":
         # variable to contain entered search request
         searched = request.POST['searched']
@@ -40,8 +38,7 @@ def search_projects(request):
 
 # DELETE a project
 def delete_project(request, project_id):
-    """ pass """
-    # get primary key project_id from Project
+    """ get primary key project_id from Project """
     project = Project.objects.get(id=project_id)
     # if user is project manager (prevent deletion through url)
     if request.user == project.project_manager:
@@ -61,8 +58,7 @@ def delete_project(request, project_id):
 
 # UPDATE a project
 def update_project(request, project_id):
-    """ pass """
-    # get primary key project_id from Project
+    """ get primary key project_id from Project """
     project = Project.objects.get(id=project_id)
     # if form completed and submitted then Post, or
     # if not then display empty ProjectForm
@@ -114,8 +110,7 @@ def add_project(request):
 
 # LIST all projects
 def all_projects(request):
-    """ pass """
-    # call all Project objects from models.py
+    """ call all Project objects from models.py """
     project = Project.objects.all()
     # project_list = Project.objects.all().order_by('project_name', 'project_manager')
     # set up pagination, show 2 projects per page
@@ -134,8 +129,7 @@ def all_projects(request):
 
 # SHOW details of a project
 def show_project(request, project_id):
-    """ pass """
-    # get unique key project_id from Project
+    """ get unique key project_id from Project """
     project = Project.objects.get(id=project_id)
     # show individual people
     return render(request,
@@ -148,8 +142,7 @@ def show_project(request, project_id):
 
 # SEARCH for people
 def search_admin_people(request):
-    """ pass """
-    # if user clicks 'search' button
+    """ if user clicks 'search' button """
     if request.method == "POST":
         # variable to contain entered search request
         searched = request.POST['searched']
@@ -170,8 +163,7 @@ def search_admin_people(request):
 
 # DELETE a person from Admin People
 def delete_admin_people(request, people_id):
-    """ pass """
-    # get primary key people_id from PeopleAdmin
+    """ get primary key people_id from PeopleAdmin """
     people = PeopleAdministration.objects.get(id=people_id)
     # if user is owner (prevent deletion through url)
     if request.user == people.ad_owner:
@@ -190,8 +182,7 @@ def delete_admin_people(request, people_id):
 
 # UPDATE Admin People
 def update_admin_people(request, people_id):
-    """ pass """
-    # get primary key people_id from PeopleAdmin
+    """ get primary key people_id from PeopleAdmin """
     people = PeopleAdministration.objects.get(id=people_id)
     # if updating then pre-populate existing info (instance)
     # if not then display empty AdminForm
@@ -212,8 +203,7 @@ def update_admin_people(request, people_id):
 
 # SHOW details of a person
 def show_admin_person(request, people_id):
-    """ pass """
-    # get unique key people_id from PeopleAdmin
+    """ get unique key people_id from PeopleAdmin """
     person = PeopleAdministration.objects.get(id=people_id)
     # show individual people
     return render(request,
@@ -224,8 +214,7 @@ def show_admin_person(request, people_id):
 
 # LIST all Admin People
 def all_admin_people(request):
-    """ pass """
-    # call all PeopleAdmin objects from models.py
+    """ call all PeopleAdmin objects from models.py """
     people = PeopleAdministration.objects.all()
     # set up pagination, show 2 people per page
     p = Paginator(PeopleAdministration.objects.all(), 4)
@@ -287,13 +276,12 @@ def add_admin_people(request):
 
 # SEARCH for Tech Support people
 def search_techsupport_people(request):
-    """ pass """
-    # if user clicks 'search' button
+    """ if user clicks 'search' button """
     if request.method == "POST":
         # variable to contain entered search request
         searched = request.POST['searched']
         # search for person_name that contains search request
-        persons = PeopleTechSupport.objects.filter(person_name__contains=searched)
+        persons = PeopleTechSupport.objects.filter(person_name_tech__contains=searched)
         # return search result
         return render(request,
                       'search_techsupport_people.html', {
@@ -309,8 +297,7 @@ def search_techsupport_people(request):
 
 # DELETE a person from Tech Support People
 def delete_techsupport_people(request, people_id):
-    """ pass """
-    # get primary key people_id from PeopleTechSupport
+    """ get primary key people_id from PeopleTechSupport """
     people = PeopleTechSupport.objects.get(id=people_id)
     # if user is owner (prevent deletion through url)
     if request.user == people.ts_owner:
@@ -329,8 +316,7 @@ def delete_techsupport_people(request, people_id):
 
 # UPDATE Tech Support People
 def update_techsupport_people(request, people_id):
-    """ pass """
-    # get primary key people_id from PeopleTechSupport
+    """ get primary key people_id from PeopleTechSupport """
     people = PeopleTechSupport.objects.get(id=people_id)
     # if updating then pre-populate existing info (instance)
     # if not then display empty TechSupportForm
@@ -351,8 +337,7 @@ def update_techsupport_people(request, people_id):
 
 # SHOW details of an Tech Support person
 def show_techsupport_person(request, people_id):
-    """ pass """
-    # get unique key people_id from PeopleTechSupport
+    """ get unique key people_id from PeopleTechSupport """
     person = PeopleTechSupport.objects.get(id=people_id)
     # show individual tech support person
     return render(request,
@@ -363,8 +348,7 @@ def show_techsupport_person(request, people_id):
 
 # LIST all Tech Support people
 def all_techsupport_people(request):
-    """ pass """
-    # call all PeopleTechSupport objects from models.py
+    """ call all PeopleTechSupport objects from models.py """
     people = PeopleTechSupport.objects.all()
     # set up pagination, show 2 people per page
     p = Paginator(PeopleTechSupport.objects.all(), 3)
@@ -382,8 +366,7 @@ def all_techsupport_people(request):
 
 # CREATE (add) a Tech Support Resource
 def add_tech_support(request):
-    """ pass """
-    # obtain all data posted from form
+    """ obtain all data posted from form """
     tech_support_form = TechSupportForm(data=request.POST)
 
     # if tech support form is valid (required fields completed)
