@@ -2,8 +2,9 @@ from datetime import datetime
 from datetime import date
 import calendar
 from calendar import HTMLCalendar
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 from django.views import generic, View
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from .models import Project, PeopleAdministration, PeopleTechSupport
 from .forms import AdminForm, ProjectForm, TechSupportForm
@@ -16,6 +17,8 @@ from django.core.paginator import Paginator
 
 # SEARCH for projects
 def search_projects(request):
+    """ pass """
+    """ pass """
     # if user clicks 'search' button
     if request.method == "POST":
         # variable to contain entered search request
@@ -37,6 +40,7 @@ def search_projects(request):
 
 # DELETE a project
 def delete_project(request, project_id):
+    """ pass """
     # get primary key project_id from Project
     project = Project.objects.get(id=project_id)
     # if user is project manager (prevent deletion through url)
@@ -57,6 +61,7 @@ def delete_project(request, project_id):
 
 # UPDATE a project
 def update_project(request, project_id):
+    """ pass """
     # get primary key project_id from Project
     project = Project.objects.get(id=project_id)
     # if form completed and submitted then Post, or
@@ -77,7 +82,7 @@ def update_project(request, project_id):
 
 # CREATE (add) a new project
 def add_project(request):
-    # obtain all data posted from form
+    """ pass """
     project_form = ProjectForm(data=request.POST)
     # if project form is valid (required fields completed)
     if project_form.is_valid():
@@ -107,11 +112,9 @@ def add_project(request):
                                        'project_form': project_form,
                                         })
 
-
-
-
 # LIST all projects
 def all_projects(request):
+    """ pass """
     # call all Project objects from models.py
     project = Project.objects.all()
     # project_list = Project.objects.all().order_by('project_name', 'project_manager')
@@ -131,6 +134,7 @@ def all_projects(request):
 
 # SHOW details of a project
 def show_project(request, project_id):
+    """ pass """
     # get unique key project_id from Project
     project = Project.objects.get(id=project_id)
     # show individual people
@@ -144,6 +148,7 @@ def show_project(request, project_id):
 
 # SEARCH for people
 def search_admin_people(request):
+    """ pass """
     # if user clicks 'search' button
     if request.method == "POST":
         # variable to contain entered search request
@@ -165,6 +170,7 @@ def search_admin_people(request):
 
 # DELETE a person from Admin People
 def delete_admin_people(request, people_id):
+    """ pass """
     # get primary key people_id from PeopleAdmin
     people = PeopleAdministration.objects.get(id=people_id)
     # if user is owner (prevent deletion through url)
@@ -184,6 +190,7 @@ def delete_admin_people(request, people_id):
 
 # UPDATE Admin People
 def update_admin_people(request, people_id):
+    """ pass """
     # get primary key people_id from PeopleAdmin
     people = PeopleAdministration.objects.get(id=people_id)
     # if updating then pre-populate existing info (instance)
@@ -205,6 +212,7 @@ def update_admin_people(request, people_id):
 
 # SHOW details of a person
 def show_admin_person(request, people_id):
+    """ pass """
     # get unique key people_id from PeopleAdmin
     person = PeopleAdministration.objects.get(id=people_id)
     # show individual people
@@ -216,6 +224,7 @@ def show_admin_person(request, people_id):
 
 # LIST all Admin People
 def all_admin_people(request):
+    """ pass """
     # call all PeopleAdmin objects from models.py
     people = PeopleAdministration.objects.all()
     # set up pagination, show 2 people per page
@@ -234,7 +243,11 @@ def all_admin_people(request):
 
 # CREATE (add) new Admin People
 def add_admin_people(request):
-    """ obtain all data posted from admin form """
+    """ check if PeopleAdmin else redirect """
+    if request.user.username != 'PeopleAdmin':
+        return redirect('/')
+
+    # obtain all data posted from admin form
     admin_form = AdminForm()
     
     if request.method == 'POST':
@@ -245,43 +258,36 @@ def add_admin_people(request):
             if admin_form.is_valid():
                 # save to database
                 new_people = admin_form.save(commit=False)
-                # pass in logged in user.id as 'owner'
+                # pass in logged in user.id as 'owner' 
                 new_people.ad_owner = User.objects.get(id=request.user.id)
-                # then save the new people
+                # then save the new people 
                 new_people.save()
 
-                # check if user submitted form
+                # check if user submitted form 
                 if 'submitted' in request.POST:
                     submitted = True
+                    print('ready to redirect')
+                    
+                return redirect(reverse('all_admin_people'))
+                
+            else:
+                print("form not valid")
+                print("errors:", admin_form.errors)
+        else:
+            print('user has no permission')
 
-                    return render(request,
-                                        'add_admin_people.html', {
-                                                                'admin_form': admin_form,
-                                                                'submitted': True,
-                                                                })
+            # display error message to user
+            messages.warning(request, ("You are not authorised to add a person"))
+            
     else:
-        print("form not valid")
-        print("errors:", admin_form.errors)
-
-        # display error message to user
-        messages.warning(request, ("You are not authorised to add a person"))
-        # redirect back to 'all_techsupport_people' page
-        # return redirect('all_admin_people')
-
-        # check if user submitted form
-        #if 'submitted' in request.POST:
-            #submitted = True
-
-        # return redirect('all_admin_people')
-        return render(request,
-                            'add_admin_people.html', {
-                                                      'admin_form': admin_form,
-                                                     })
+        # return form for authorised user to complete
+        return render(request,  'add_admin_people.html', {'admin_form': admin_form})
 
 # --------------------------------------------------- Functions for 'TECH SUPPORT PEOPLE'
 
 # SEARCH for Tech Support people
 def search_techsupport_people(request):
+    """ pass """
     # if user clicks 'search' button
     if request.method == "POST":
         # variable to contain entered search request
@@ -303,6 +309,7 @@ def search_techsupport_people(request):
 
 # DELETE a person from Tech Support People
 def delete_techsupport_people(request, people_id):
+    """ pass """
     # get primary key people_id from PeopleTechSupport
     people = PeopleTechSupport.objects.get(id=people_id)
     # if user is owner (prevent deletion through url)
@@ -322,6 +329,7 @@ def delete_techsupport_people(request, people_id):
 
 # UPDATE Tech Support People
 def update_techsupport_people(request, people_id):
+    """ pass """
     # get primary key people_id from PeopleTechSupport
     people = PeopleTechSupport.objects.get(id=people_id)
     # if updating then pre-populate existing info (instance)
@@ -343,6 +351,7 @@ def update_techsupport_people(request, people_id):
 
 # SHOW details of an Tech Support person
 def show_techsupport_person(request, people_id):
+    """ pass """
     # get unique key people_id from PeopleTechSupport
     person = PeopleTechSupport.objects.get(id=people_id)
     # show individual tech support person
@@ -354,6 +363,7 @@ def show_techsupport_person(request, people_id):
 
 # LIST all Tech Support people
 def all_techsupport_people(request):
+    """ pass """
     # call all PeopleTechSupport objects from models.py
     people = PeopleTechSupport.objects.all()
     # set up pagination, show 2 people per page
@@ -372,6 +382,7 @@ def all_techsupport_people(request):
 
 # CREATE (add) a Tech Support Resource
 def add_tech_support(request):
+    """ pass """
     # obtain all data posted from form
     tech_support_form = TechSupportForm(data=request.POST)
 
@@ -410,6 +421,7 @@ def add_tech_support(request):
 
 # # project calendar
 def project_calendar(request, todays_date=date.today()):
+    """ pass """
     name = "Marty"
     year = todays_date.year
     month = todays_date.strftime('%B')
