@@ -62,8 +62,11 @@
                             </li>
                             <li><a class="dropdown-item" aria-current="page" href="{% url 'all_projects' %}">All Projects</a>
                             </li>
+                            <!-- display only if user is 'ProjMgr1' -->
+                            {% if request.user.username == 'ProjMgr1' %}
                             <li><a class="dropdown-item" aria-current="page" href="{% url 'add_project' %}">Add Project</a>
                             </li>
+                            {% endif %}
                         </ul>
                     </li>
 
@@ -78,6 +81,7 @@
                             </li>
                             <li><a class="dropdown-item" aria-current="page" href="{% url 'all_admin_people' %}">All Admin People</a>
                             </li>
+                            <!-- display only if user is 'PeopleAdmin' -->
                             {% if request.user.username == 'PeopleAdmin' %}
                             <li><a class="dropdown-item" aria-current="page" href="{% url 'add_admin_people' %}">Add Admin People</a>
                             </li>
@@ -95,8 +99,11 @@
                             </li>
                             <li><a class="dropdown-item" aria-current="page" href="{% url 'all_techsupport_people' %}">All Tech Support People</a>
                             </li>
+                            <!-- display only if user is 'PeopleTech' -->
+                            {% if request.user.username == 'PeopleTech' %}
                             <li><a class="dropdown-item" aria-current="page" href="{% url 'add_tech_support' %}">Add Tech Support People</a>
                             </li>
+                            {% endif %}
                         </ul>
                     </li>
 

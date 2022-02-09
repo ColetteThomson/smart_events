@@ -76,37 +76,47 @@ def update_project(request, project_id):
                                      "form": form,
                                     })
 
-# CREATE (add) a new project
+
+# CREATE (add) a new Project
 def add_project(request):
-    """ pass """
-    project_form = ProjectForm(data=request.POST)
-    # if project form is valid (required fields completed)
-    if project_form.is_valid():
-        print("form is valid")
-        # save to database
-        new_project = project_form.save(commit=False)
-        # pass in logged in user.id as 'project_manager'
-        new_project.project_manager = User.objects.get(id=request.user.id)
-        # then save the new project
-        new_project.save()
+    """ check if user is ProjMgr1 """
+    if request.user.username != 'ProjMgr1':
+        return redirect('/')
 
-        return render(request,
-                      'add_project.html', {
-                                    'project_form': project_form,
-                                    'submitted': True,
-                                    })
+    # obtain all data posted from project form
+    project_form = ProjectForm()
+    # if user has submitted form
+    if request.method == 'POST':
+        project_form = ProjectForm(data=request.POST)
+        # if user has permission to add a project
+        if request.user.has_perm("events.add_project"):
+            # if project form is valid (required fields completed)
+
+            if project_form.is_valid():
+                # save to database
+                new_project = project_form.save(commit=False)
+                # pass in logged in user.id as 'owner'
+                new_project.project_manager = User.objects.get(
+                    id=request.user.id)
+                # then save the new project
+                new_project.save()
+                # redirect authorised user back to 'all_projects' page
+                return redirect(reverse('all_projects'))
+
+            else:
+                # display error message to user
+                messages.warning(request,
+                                 ("Please complete all required fields"))
+        else:
+            # display error message to user
+            messages.warning(request,
+                             ("You are not authorised to add a project"))
+
     else:
-        print("form not valid")
-        # display empty form
-        project_form = ProjectForm()
-        # check if user submitted form
-        if 'submitted' in request.GET:
-            submitted = True
+        # return form for authorised user to complete
+        return render(request,  'add_project.html',
+                      {'project_form': project_form})
 
-        return render(request,
-                      'add_project.html', {
-                                       'project_form': project_form,
-                                        })
 
 # LIST all projects
 def all_projects(request):
@@ -232,45 +242,42 @@ def all_admin_people(request):
 
 # CREATE (add) new Admin People
 def add_admin_people(request):
-    """ check if PeopleAdmin else redirect """
+    """ check if user is PeopleAdmin """
     if request.user.username != 'PeopleAdmin':
         return redirect('/')
 
     # obtain all data posted from admin form
     admin_form = AdminForm()
-    
+    # if user has submitted form
     if request.method == 'POST':
         admin_form = AdminForm(data=request.POST)
+        # if user has permission to add a person
         if request.user.has_perm("events.add_peopleadministration"):
-            print("you are authorised")
             # if admin form is valid (required fields completed)
+
             if admin_form.is_valid():
                 # save to database
                 new_people = admin_form.save(commit=False)
-                # pass in logged in user.id as 'owner' 
+                # pass in logged in user.id as 'owner'
                 new_people.ad_owner = User.objects.get(id=request.user.id)
-                # then save the new people 
+                # then save the new person
                 new_people.save()
-
-                # check if user submitted form 
-                if 'submitted' in request.POST:
-                    submitted = True
-                    print('ready to redirect')
-                    
+                # redirect authorised user back to 'all_admin_people' page
                 return redirect(reverse('all_admin_people'))
-                
-            else:
-                print("form not valid")
-                print("errors:", admin_form.errors)
-        else:
-            print('user has no permission')
 
+            else:
+                # display error message to user
+                messages.warning(request,
+                                 ("Please complete all required fields"))
+        else:
             # display error message to user
-            messages.warning(request, ("You are not authorised to add a person"))
-            
+            messages.warning(request,
+                             ("You are not authorised to add a person"))
+
     else:
         # return form for authorised user to complete
-        return render(request,  'add_admin_people.html', {'admin_form': admin_form})
+        return render(request,  'add_admin_people.html',
+                      {'admin_form': admin_form})
 
 # --------------------------------------------------- Functions for 'TECH SUPPORT PEOPLE'
 
@@ -364,40 +371,45 @@ def all_techsupport_people(request):
                                     })
 
 
-# CREATE (add) a Tech Support Resource
+# CREATE (add) new Tech Support People
 def add_tech_support(request):
-    """ obtain all data posted from form """
-    tech_support_form = TechSupportForm(data=request.POST)
+    """ check if user is PeopleTech """
+    if request.user.username != 'PeopleTech':
+        return redirect('/')
 
-    # if tech support form is valid (required fields completed)
-    if tech_support_form.is_valid():
-        print("form is valid")
-        # save to database
-        new_tech_support = tech_support_form.save(commit=False)
-        # pass in logged in user.id as 'owner'
-        new_tech_support.ts_owner = User.objects.get(id=request.user.id)
-        # then save the new tech support people
-        new_tech_support.save()
+    # obtain all data posted from techsupport form
+    tech_support_form = TechSupportForm()
+    # if user has submitted form
+    if request.method == 'POST':
+        tech_support_form = TechSupportForm(data=request.POST)
+        # if user has permission to add a person
+        if request.user.has_perm("events.add_peopletechsupport"):
 
-        return render(request,
-                      'add_tech_support.html', {
-                                    'tech_support_form': tech_support_form,
-                                    'submitted': True,
-                                    })
+            # if tech support form is valid (required fields completed)
+            if tech_support_form.is_valid():
+                # save to database
+                new_tech_support = tech_support_form.save(commit=False)
+                # pass in logged in user.id as 'owner'
+                new_tech_support.ts_owner = User.objects.get(
+                    id=request.user.id)
+                # then save the new person
+                new_tech_support.save()
+                # redirect auth user back to 'all_techsupport_people' page
+                return redirect(reverse('all_techsupport_people'))
+
+            else:
+                # display error message to user
+                messages.warning(request,
+                                 ("Please complete all required fields"))
+        else:
+            # display error message to user
+            messages.warning(request,
+                             ("You are not authorised to add a person"))
+
     else:
-        print("form not valid")
-        tech_support_form = TechSupportForm()
-        # check if user submitted form
-        if 'submitted' in request.GET:
-            submitted = True
-
-        return render(request,
-                      'add_tech_support.html', {
-                                       'tech_support_form': tech_support_form,
-                                        })
-
-
-
+        # return form for authorised user to complete
+        return render(request, 'add_tech_support.html',
+                      {'tech_support_form': tech_support_form})
 
 
 
