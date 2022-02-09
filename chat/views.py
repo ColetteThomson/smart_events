@@ -6,23 +6,23 @@ from django.http import HttpResponseRedirect
 from .models import Post
 from .forms import CommentForm
 
-# (generic.ListView):
+# List of Posts on Chat
 class PostList(generic.ListView):
+    """ blog list """
     model = Post
-    # filter contents of post table by '1' (published) by descending date
-    queryset = Post.objects.filter(status=1).order_by('-created_on')
-    # print(queryset)
+    # filter contents of post table by '1' (published) by ascending date
+    queryset = Post.objects.filter(status=1).order_by('created_on')
     # to render html view
     template_name = 'post_list.html'
-
     # number of posts that appear on front page
-    paginate_by = 6
+    paginate_by = 2
 
 
+# Detail of Posts on Chat
 class PostDetail(View):
-
+    """ get details of post """
     def get(self, request, slug, *args, **kwargs):
-        # filter for active posts
+        """ filter for active posts """
         queryset = Post.objects.filter(status=1)
         # use unique slug to get published post
         post = get_object_or_404(queryset, slug=slug)
@@ -48,7 +48,7 @@ class PostDetail(View):
         )
 
     def post(self, request, slug, *args, **kwargs):
-        # filter for active posts
+        """ filter for active posts """
         queryset = Post.objects.filter(status=1)
         # use unique slug to get published post
         post = get_object_or_404(queryset, slug=slug)
@@ -90,11 +90,11 @@ class PostDetail(View):
             },
         )
 
-
+# post like feature
 class PostLike(View):
-
+    """ post request """
     def post(self, request, slug):
-        # get the relevant post
+        """ get the relevant post """
         post = get_object_or_404(Post, slug=slug)
         # toggle the state
         # filter on user id

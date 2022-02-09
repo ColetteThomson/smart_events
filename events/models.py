@@ -10,7 +10,7 @@ class PeopleTechSupport(models.Model):
     contact_no_tech = models.CharField(max_length=20, blank=True)
     person_email_tech = models.EmailField(blank=True)
     # sets project_experience field to mandatory
-    project_experience = models.TextField(max_length=300, blank=False,
+    project_experience = models.TextField(max_length=400, blank=False,
                                           default='experience')
     # sets ts_owner field to null, should ts_owner cease to be a user
     ts_owner = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
@@ -28,7 +28,7 @@ class PeopleAdministration(models.Model):
     contact_no = models.CharField(max_length=20, blank=True)
     person_email = models.EmailField(blank=True)
     # sets project_experience field to mandatory
-    project_experience = models.TextField(max_length=300, blank=False,
+    project_experience = models.TextField(max_length=400, blank=False,
                                           default='add experience')
     # sets ad_owner field to null, should owner cease to be a user
     ad_owner = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
@@ -42,7 +42,7 @@ class PeopleAdministration(models.Model):
 #  ERD model for class Project
 class Project(models.Model):
     """ model fields """
-    project_name = models.CharField(max_length=120)
+    project_name = models.CharField(max_length=150)
     project_date = models.DateTimeField()
     # to allow a new project to be added without people assigned
     # if one-to-many people relationship is deleted so will all related records
@@ -54,7 +54,7 @@ class Project(models.Model):
     project_manager = models.ForeignKey(User, null=True,
                                         on_delete=models.SET_NULL)
     # sets description field to mandatory
-    description = models.TextField(max_length=300)
+    description = models.TextField(max_length=1000)
 
     # helper method for class Project:
     # returns a string representation of an object

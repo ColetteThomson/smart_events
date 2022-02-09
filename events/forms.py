@@ -75,7 +75,7 @@ class ProjectForm(ModelForm):
         # labels for form fields
         labels = {
             'project_name': 'Project Name',
-            'project_date': 'Date (YYYY-MM-DD) and Time (HH-MM-SS)',
+            'project_date': 'Date and Time (YYYY-MM-DD) (HH:MM:SS)',
             'resource_admin': 'Resource: Project Administration',
             'resource_tech': 'Resource: Tech Support',
             'project_manager': 'Project Manager',

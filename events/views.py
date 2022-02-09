@@ -105,7 +105,7 @@ def add_project(request):
             else:
                 # display error message to user
                 messages.warning(request,
-                                 ("'Description' allows 300 characters only"))
+                                 ("'Description' allows 1000 characters only"))
         else:
             # display error message to user
             messages.warning(request,
@@ -122,7 +122,7 @@ def all_projects(request):
     """ call all Project objects from models.py """
     project = Project.objects.all()
     # set up pagination, show 2 projects per page
-    p = Paginator(Project.objects.all(), 3)
+    p = Paginator(Project.objects.all(), 4)
     # return the page
     page = request.GET.get('page')
     project_list = p.get_page(page)
@@ -268,7 +268,7 @@ def add_admin_people(request):
             else:
                 # display error message to user
                 messages.warning(request,
-                                 ("'Experience' allows 300 characters only"))
+                                 ("'Experience' allows 400 characters only"))
         else:
             # display error message to user
             messages.warning(request,
@@ -360,7 +360,7 @@ def all_techsupport_people(request):
     """ call all PeopleTechSupport objects from models.py """
     people = PeopleTechSupport.objects.all()
     # set up pagination, show 2 people per page
-    p = Paginator(PeopleTechSupport.objects.all(), 3)
+    p = Paginator(PeopleTechSupport.objects.all(), 4)
     # return the page
     page = request.GET.get('page')
     people_list = p.get_page(page)
@@ -402,7 +402,7 @@ def add_tech_support(request):
             else:
                 # display error message to user
                 messages.warning(request,
-                                 ("'Experience' allows 300 characters only"))
+                                 ("'Experience' allows 400 characters only"))
         else:
             # display error message to user
             messages.warning(request,
