@@ -240,8 +240,9 @@ body {
     padding: 5px;
     width: 70%;
     text-align: center;
-    color: white;
-    background-color: rgb(44, 43, 43);
+    color:rgb(8, 71, 243);
+    border-width: 3px;
+    border-color: rgb(8, 71, 243);
 }
 
 .text {
@@ -256,6 +257,10 @@ body {
     font-size: 14px;
 }
 
+.row-height {
+    height: 20px;
+}
+
 /* div hover: project manager */
 .div-pm {
     color: #fa03fa;
@@ -268,8 +273,10 @@ body {
 }
 
 .div-pm:hover div.div-pm-1{
-    transform: scale(1.2);
-    margin-top: 15px;
+    /*transform: scale(1.2);*/
+    display: inline-block;
+    position: relative;
+    z-index: 10;
     width: 60%;
     background-color: #fa03fa;
     color: white;
@@ -290,8 +297,10 @@ body {
 }
 
 .div-ad:hover div.div-ad-1{
-    transform: scale(1.2);
-    margin-top: 15px;
+    /* transform: scale(1.2);*/
+    display: inline-block;
+    position: relative;
+    z-index: 10;
     width: 60%;
     background-color: #b8c91f;
     color: white;
@@ -312,8 +321,10 @@ body {
 }
 
 .div-tech:hover div.div-tech-1{
-    transform: scale(1.2);
-    margin-top: 15px;
+    /* transform: scale(1.2); */
+    display: inline-block;
+    position: relative;
+    z-index: 10;
     width: 70%;
     background-color: #e7af34;
     color: white;
@@ -334,8 +345,10 @@ body {
 }
 
 .div-gen:hover div.div-gen-1{
-    transform: scale(1.2);
-    margin-top: 15px;
+    /* transform: scale(1.2); */
+    display: inline-block;
+    position: relative;
+    z-index: 10;
     width: 60%;
     background-color: #999899;
     color: white;
