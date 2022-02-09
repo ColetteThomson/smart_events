@@ -1,16 +1,15 @@
-from datetime import datetime
-from datetime import date
-import calendar
-from calendar import HTMLCalendar
+# from datetime import datetime
+# from datetime import date
 from django.shortcuts import render, redirect, reverse
-from django.views import generic, View
-from django.contrib.auth.decorators import login_required
+# from django.views import View
+# generic
+#from django.contrib.auth.decorators import login_required
+# Pagination
+from django.core.paginator import Paginator
+from django.contrib import messages
 from django.contrib.auth.models import User
 from .models import Project, PeopleAdministration, PeopleTechSupport
 from .forms import AdminForm, ProjectForm, TechSupportForm
-from django.contrib import messages
-# Pagination
-from django.core.paginator import Paginator
 
 
 # --------------------------------------------------- Functions for 'PROJECT'
@@ -68,7 +67,7 @@ def update_project(request, project_id):
         # save and return to all_projects (url)
         form.save()
         return redirect('all_projects')
-        
+    
     # update details of a project
     return render(request,
                   'update_project.html', {
@@ -410,41 +409,3 @@ def add_tech_support(request):
         # return form for authorised user to complete
         return render(request, 'add_tech_support.html',
                       {'tech_support_form': tech_support_form})
-
-
-
-
-# # project calendar
-def project_calendar(request, todays_date=date.today()):
-    """ pass """
-    name = "Marty"
-    year = todays_date.year
-    month = todays_date.strftime('%B')
-    month_number = todays_date.month
-
-    # create calendar
-    cal = HTMLCalendar().formatmonth(
-        year,
-        month_number)
-
-    # get current year
-    now = datetime.now()
-    current_year = now.year
-
-    # query Project modeo for dates
-    projects_list = Project.objects.filter(
-        project_date__year = year,
-        project_date__month = month_number,
-        )
-
-    return render(request,
-                  'project_calendar.html', {
-                                          "name": name,
-                                          "year": year,
-                                          "month": month,
-                                          "month_number": month_number,
-                                          "cal": cal,
-                                          "current_year": current_year,
-                                          "projects_list": projects_list,
-                                        })
-
