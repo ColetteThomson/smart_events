@@ -31,7 +31,7 @@ def search_projects(request):
     else:
         # return search result
         return render(request,
-                      'search_projects.html', 
+                      'search_projects.html',
                       {})
 
 
@@ -47,12 +47,12 @@ def delete_project(request, project_id):
         messages.success(request, ("Project has been deleted"))
         # redirect back to 'all_projects' page
         return redirect('all_projects')
-    else: 
+    else:
         # display error message to user
-        messages.warning(request, ("You are not authorised to delete this project"))
+        messages.warning(request,
+                         ("You are not authorised to delete this project"))
         # redirect back to 'all_projects' page
         return redirect('all_projects')
-
 
 
 # UPDATE a project
@@ -67,7 +67,7 @@ def update_project(request, project_id):
         # save and return to all_projects (url)
         form.save()
         return redirect('all_projects')
-    
+
     # update details of a project
     return render(request,
                   'update_project.html', {
@@ -105,7 +105,7 @@ def add_project(request):
             else:
                 # display error message to user
                 messages.warning(request,
-                                 ("Please complete all required fields"))
+                                 ("'Description' allows 300 characters only"))
         else:
             # display error message to user
             messages.warning(request,
@@ -121,7 +121,6 @@ def add_project(request):
 def all_projects(request):
     """ call all Project objects from models.py """
     project = Project.objects.all()
-    # project_list = Project.objects.all().order_by('project_name', 'project_manager')
     # set up pagination, show 2 projects per page
     p = Paginator(Project.objects.all(), 3)
     # return the page
@@ -147,7 +146,7 @@ def show_project(request, project_id):
                                      })
 
 
-# --------------------------------------------------- Functions for 'ADMIN PEOPLE'
+# ------------------------------------------------ Functions for 'ADMIN PEOPLE'
 
 # SEARCH for people
 def search_admin_people(request):
@@ -156,7 +155,8 @@ def search_admin_people(request):
         # variable to contain entered search request
         searched = request.POST['searched']
         # search for person_name that contains search request
-        persons = PeopleAdministration.objects.filter(person_name__contains=searched)
+        persons = PeopleAdministration.objects.filter(
+            person_name__contains=searched)
         # return search result
         return render(request,
                       'search_admin_people.html', {
@@ -166,7 +166,7 @@ def search_admin_people(request):
     else:
         # return search result
         return render(request,
-                      'search_admin_people.html', 
+                      'search_admin_people.html',
                       {})
 
 
@@ -184,7 +184,8 @@ def delete_admin_people(request, people_id):
         return redirect('all_admin_people')
     else: 
         # display error message to user
-        messages.warning(request, ("You are not authorised to delete this person"))
+        messages.warning(request,
+                         ("You are not authorised to delete this person"))
         # redirect back to 'all_admin_people' page
         return redirect('all_admin_people')
 
@@ -201,7 +202,7 @@ def update_admin_people(request, people_id):
         # save and send to all_admin_people page 
         form.save()
         return redirect('all_admin_people')
-        
+
     # update details of a person
     return render(request,
                   'update_admin_people.html', {
@@ -267,7 +268,7 @@ def add_admin_people(request):
             else:
                 # display error message to user
                 messages.warning(request,
-                                 ("Please complete all required fields"))
+                                 ("'Experience' allows 300 characters only"))
         else:
             # display error message to user
             messages.warning(request,
@@ -278,7 +279,7 @@ def add_admin_people(request):
         return render(request,  'add_admin_people.html',
                       {'admin_form': admin_form})
 
-# --------------------------------------------------- Functions for 'TECH SUPPORT PEOPLE'
+# ---------------------------------------- Functions for 'TECH SUPPORT PEOPLE'
 
 # SEARCH for Tech Support people
 def search_techsupport_people(request):
@@ -287,7 +288,8 @@ def search_techsupport_people(request):
         # variable to contain entered search request
         searched = request.POST['searched']
         # search for person_name that contains search request
-        persons = PeopleTechSupport.objects.filter(person_name_tech__contains=searched)
+        persons = PeopleTechSupport.objects.filter(
+            person_name_tech__contains=searched)
         # return search result
         return render(request,
                       'search_techsupport_people.html', {
@@ -297,7 +299,7 @@ def search_techsupport_people(request):
     else:
         # return search result
         return render(request,
-                      'search_techsupport_people.html', 
+                      'search_techsupport_people.html',
                       {})
 
 
@@ -313,9 +315,10 @@ def delete_techsupport_people(request, people_id):
         messages.success(request, ("Person has been deleted"))
         # redirect back to 'all_techsupport_people' page
         return redirect('all_techsupport_people')
-    else: 
+    else:
         # display error message to user
-        messages.warning(request, ("You are not authorised to delete this person"))
+        messages.warning(request,
+                         ("You are not authorised to delete this person"))
         # redirect back to 'all_techsupport_people' page
         return redirect('all_techsupport_people')
 
@@ -329,10 +332,10 @@ def update_techsupport_people(request, people_id):
     form = TechSupportForm(request.POST or None, instance=people)
     # if tech support form is valid (required fields completed)
     if form.is_valid():
-        # save and send to all_techsupport_people page 
+        # save and send to all_techsupport_people page
         form.save()
         return redirect('all_techsupport_people')
-        
+
     # update details of a tech support person
     return render(request,
                   'update_techsupport_people.html', {
@@ -362,7 +365,7 @@ def all_techsupport_people(request):
     page = request.GET.get('page')
     people_list = p.get_page(page)
 
-    # list all tech support people 
+    # list all tech support people
     return render(request,
                   'all_techsupport_people.html', {
                                      "people": people,
@@ -399,7 +402,7 @@ def add_tech_support(request):
             else:
                 # display error message to user
                 messages.warning(request,
-                                 ("Please complete all required fields"))
+                                 ("'Experience' allows 300 characters only"))
         else:
             # display error message to user
             messages.warning(request,
