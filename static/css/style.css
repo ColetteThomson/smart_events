@@ -34,37 +34,43 @@ body {
     color: black;
 }
 
- .container-height {
+/* height for containers for all apps */
+.container-height {
     height: 100%;
     min-height: 434px;
 } 
 
+/* footer */
 .footer-position {
     position: relative;
 }
 
 /* ---------------------------------------------CHAT app */
+
+/* post_list.html */
+.col-position {
+    margin: 0;
+}
+
 .card {
     border: none;
     background-color: transparent;
 }
 
-.image-container {
+/* .image-container {
     position: relative;
-}
+} */
 
-.image-flash {
+/* .image-flash {
     position: absolute;
     bottom: 5%;
     min-width: 30%;
     left: -2px;
     background-color: #23BBBB;
-}
+} */
 
 .author {
-    color: white;
-    margin: 4px;
-    text-transform: uppercase;
+    color: #fa03fa;
 }
 
 .masthead {
@@ -77,8 +83,8 @@ body {
 }
 
 .masthead-text {
-    background-color: #445261;
-    color: white;
+    background-color: #999899;
+    color: black;
     position: relative;
 }
 
@@ -94,25 +100,39 @@ body {
     right: 90%;
     height: 100%;
     width: 150%;
-    background: #445261;
-    -webkit-transform: skew(15deg);
-    -moz-transform: skew(15deg);
-    transform: skew(15deg);
+    background: #999899;
+    /* -webkit-transform: skew(20deg);
+    -moz-transform: skew(20deg); */
+    /* transform: skew(20deg); */
     z-index: 100;
 }
-
-.post-link {
-    text-decoration: none;
-    color: #445261;
+/*  title of chat post */
+.title {
+    font-size: 22px;
 }
 
-.post-link:hover,
+/*  excerpt of chat post*/
+.chat-post-link {
+    text-decoration: none;
+    color: #445261;
+    font-size: 16px;
+}
+
+/* chat post date and like (heart) */
+.chat-like {
+    color: #fa03fa;
+}
+
+/*  */
+.chat-post-link:hover,
 .page-link {
-    color: black;
+    color: rgb(8, 71, 243);
 }
 
 .page-link-size {
     font-size: small;
+    margin-bottom: 10px;
+    padding: 3px, 4px, 3px, 4px;
 }
 
 .post-title {
@@ -158,6 +178,14 @@ body {
     color: #E84610;
     background: transparent;
     border: none;
+}
+
+.chat-position {
+    justify-content: center;
+}
+
+.chat-list-size {
+    width: 40%;
 }
 /* ---------------------------------------------end: CHAT app */
 
@@ -395,9 +423,11 @@ body {
     background: linear-gradient(140deg, #fccdfc 60%, #f8a4f8 60%);
 }
 
-/* background: general user pages */
+/* background: general user pages (all 'chat' app pages)*/
 .background-general{
     background: linear-gradient(140deg, #c7c6c7 60%, #999899 60%);
+    margin-top: -17px;
+    margin-bottom: -16px;
 }
 
 /* ---------------------------------------------MEDIA QUERIES */

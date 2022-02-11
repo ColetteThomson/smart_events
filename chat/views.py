@@ -15,7 +15,7 @@ class PostList(generic.ListView):
     # to render html view
     template_name = 'post_list.html'
     # number of posts that appear on front page
-    paginate_by = 2
+    paginate_by = 4
 
 
 # Detail of Posts on Chat
