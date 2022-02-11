@@ -1,6 +1,7 @@
+/* ------------------------------------------- BASE.HTML */
 body {
     background-color: white;
-    color: rgb(110, 110, 110);
+    color: rgb(59, 59, 59);
 }
 
 /* logo for 'WMP' */
@@ -31,6 +32,15 @@ body {
 .thin1 {
     font-weight: 300;
     color: black;
+}
+
+ .container-height {
+    height: 100%;
+    min-height: 434px;
+} 
+
+.footer-position {
+    position: relative;
 }
 
 /* ---------------------------------------------CHAT app */

@@ -6,13 +6,16 @@
 {% block title %}Displaying Model Data{% endblock title %}
 
 {% block content %}
+<div class="background-project">
+    <div class="container container-height">
 
 <!-- to check user is logged in -->
 {% if user.is_authenticated %}
     <!-- to check user is the project manager for this project -->
     {% if user == project.project_manager %}
-    <center>
-        <h1>Update Project</h1>
+
+    <center><h1>Update Project</h1></center>
+
         logged in user: {{ user }}
         project manager: {{ project.project_manager }}
 
@@ -25,7 +28,7 @@
             {{ form | crispy }}
         
             <!-- submit button for update_venue form -->
-            <button type="submit" class="btn btn-secondary btn-lg">Update</button>
+            <button type="submit" class="btn btn-lg button">Update</button>
         </form>
 
     <!-- endif: project manager -->
@@ -34,6 +37,7 @@
         
 <!-- endif: logged in -->
 {% endif %}
-    </center>
+    </div>
+</div>
     
 {% endblock content %}

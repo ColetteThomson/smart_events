@@ -6,9 +6,10 @@
 {% block title %}Displaying Model Data{% endblock title %}
 
 {% block content %}
-    <center>
+<div class="background-tech">
+    <div class="container container-height">
 
-    <h1>Update Tech Support People</h1>
+    <center><h1>Update Tech Support People</h1></center>
         <br>
 
         <form action="" method=POST>
@@ -19,9 +20,10 @@
             {{ form | crispy }}
         
             <!-- submit button for update tech support people form -->
-            <button type="submit" class="btn btn-secondary btn-lg">Update</button>
+            <button type="submit" class="btn btn-lg button">Update</button>
         </form>
 
-    </center>
+    </div>
+</div>
     
-    {% endblock content %}
+{% endblock content %}
