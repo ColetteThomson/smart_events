@@ -6,20 +6,17 @@
 <div class="masthead">
     <div class="container">
         <div class="row g-0">
-            <div class="col-md-6 masthead-text">
-                <!-- post title -->
-                <h1 class="post-title">{{ post.blog_title }}</h1>
-                <!-- post author and post's created date -->
-                <p class="post-subtitle"> {{ post.author }} | {{ post.created_on }} </p>
-            </div>
-            <div class="d-none d-md-block col-md-6 masthead-image background-general">
+            <div class="masthead-image">
+                <span>
                 <!-- default image if no featured image supplied -->
-                {% if "placeholder" in post.blog_image.url %}
-                <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" width="100%">
-                {% else %}
-                <!-- inserts featured image for post into html -->
-                <img src="{{ post.blog_image.url }}" width="100%">
-                {% endif %}
+                <img src="https://res.cloudinary.com/drxo58fsj/image/upload/v1643633308/placeholder_post-list_typing-on-laptop_dc7lte.jpg" alt="Chania" width="460" height="345">
+                <!-- post title -->
+                <div class="masthead-text">
+                    <h1 class="post-title">{{ post.blog_title }}</h1>
+                    <!-- post author and post's created date -->
+                    <p class="post-subtitle"> {{ post.author }} | {{ post.created_on }} </p>
+                </div>
+                </span>              
             </div>
         </div>
     </div>

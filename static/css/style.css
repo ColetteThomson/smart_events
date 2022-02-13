@@ -77,23 +77,25 @@ body {
     margin-top: 10px;
     overflow: hidden;
     position: relative;
-    display: inline-block;
+    /* display: inline-block; */
     height: 33vh;
     width: 100%;
 }
 
 .masthead-text {
-    background-color: #999899;
+    background-color: blue;
     color: black;
     position: relative;
+    z-index: 3;
 }
 
 .masthead-image {
     position: relative;
     overflow: hidden;
+    width: 80%;
 }
 
-.masthead-image:after {
+/* .masthead-image:after {
     content: "";
     position: absolute;
     top: 0;
@@ -104,8 +106,8 @@ body {
     /* -webkit-transform: skew(20deg);
     -moz-transform: skew(20deg); */
     /* transform: skew(20deg); */
-    z-index: 100;
-}
+    /* z-index: 100; 
+} */
 /*  title of chat post */
 .title {
     font-size: 22px;
@@ -136,13 +138,18 @@ body {
 }
 
 .post-title {
-    margin-top: 20%;
+    /* margin-top: 20%; */
     margin-left: 5%;
+    position: relative;
+    color: red;
+    z-index: 3;
 }
 
 .post-subtitle {
     margin-left: 5%;
-    color: lightgray;
+    color: red;
+    position: relative;
+    z-index: 3;
 }
 
 .btn-signup {
@@ -256,6 +263,8 @@ body {
 /* ---------------------------------------------HOME app */
 
 /* index.html */
+
+
 
 .main-heading {
     padding-top: 20px;

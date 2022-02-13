@@ -5,7 +5,13 @@
 
 {% block content %}
 
-<div class="container container-height">
+<!-- <div class="container container-height"></div> -->
+<!-- <div class="has-bg-img">
+    <img class="bg-img" src="https://res.cloudinary.com/drxo58fsj/image/upload/v1644768480/keyboard_notepad_ombcdz.jpg" alt="meeting">
+    -->
+<div class="bg-img" 
+    style="background-image: url('https://res.cloudinary.com/drxo58fsj/image/upload/v1644768480/keyboard_notepad_ombcdz.jpg')>
+    <div class="container container-height">
 
     <!-- heading -->               
     <h1 class="main-heading">Welcome to the <span class="thick">smart<span class="thin">events</span></span>
@@ -18,70 +24,83 @@
 
         <h2 class="sub-heading">What are the different <span class="brand">WMP</span>roles ?</h2>
         <br/>
-    <center>
-        <div class="row row-height">
-            <div class="col">
-                <div class="div-pm">
-                    <strong>Project Manager</strong>
-                    <div class="div-pm-1">
-                        <ul class="perm-ul">
-                            <li><i>Permissions:</i></li>
-                            <li><strong>Create, Read, Update, Delete:</strong> for all your projects</li>
-                            <li><strong>Read-only:</strong> for other projects, and all people resources</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        
-            <div class="col">
-                <div class="div-ad">
-                    <strong>Admin People Owner</strong>
-                    <div class="div-ad-1">
-                        <ul class="perm-ul">
-                            <li><i>Permissions:</i></li>
-                            <li><strong>Create, Read, Update, Delete:</strong> for all Admin resources</li>
-                            <li><strong>Read-only:</strong> for all projects, and all Tech Support resources</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </center>
-    </br>
-    <center>
-        <div class="row">
-            <div class="col">
-                <div class="div-tech">
-                    <strong>Tech Support Owner</strong>
-                    <div class="div-tech-1">
-                        <ul class="perm-ul">
-                            <li><i>Permissions:</i></li>
-                            <li><strong>Create, Read, Update, Delete:</strong> for all Tech Support Resources</li>
-                            <li><strong>Read-only:</strong> for all projects, and all Administration resources</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col">
-                <div class="div-gen">
-                    <strong>General WMP users</strong>
-                    <div class="div-gen-1">
-                        <ul class="perm-ul">
-                            <li><i>Permissions:</i></li>
-                            <li><strong>Read-only:</strong> all Chat posts</li>
-                            <li><strong>Create:</strong> add ideas or suggestions on all projects</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-    </center>
-<center>
-    <h6 class="contact">Contact the Administrator on: 07755-321321 to get set up as a <span class="brand">WMP</span>user</h6>
-</center>
-</div> 
 
+    <section>
+               
+        <!-- <div class="image-home">
+            <img src="https://res.cloudinary.com/drxo58fsj/image/upload/v1643633308/placeholder_post-list_typing-on-laptop_dc7lte.jpg" alt="Chania" width="460" height="345">
+        </div>    -->
+        
+        
+        <center>
+            <div class="row row-height">
+                <div class="col">
+                    <div class="div-pm">
+                        <strong>Project Manager</strong>
+                        <div class="div-pm-1">
+                            <ul class="perm-ul">
+                                <li><i>Permissions:</i></li>
+                                <li><strong>Create, Read, Update, Delete:</strong> for all your projects</li>
+                                <li><strong>Read-only:</strong> for other projects, and all people resources</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col">
+                    <div class="div-ad">
+                        <strong>Admin People Owner</strong>
+                        <div class="div-ad-1">
+                            <ul class="perm-ul">
+                                <li><i>Permissions:</i></li>
+                                <li><strong>Create, Read, Update, Delete:</strong> for all Admin resources</li>
+                                <li><strong>Read-only:</strong> for all projects, and all Tech Support resources</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </center>
+        </br>
+        <center>
+            <div class="row">
+                <div class="col">
+                    <div class="div-tech">
+                        <strong>Tech Support Owner</strong>
+                        <div class="div-tech-1">
+                            <ul class="perm-ul">
+                                <li><i>Permissions:</i></li>
+                                <li><strong>Create, Read, Update, Delete:</strong> for all Tech Support Resources</li>
+                                <li><strong>Read-only:</strong> for all projects, and all Administration resources</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col">
+                    <div class="div-gen">
+                        <strong>General WMP users</strong>
+                        <div class="div-gen-1">
+                            <ul class="perm-ul">
+                                <li><i>Permissions:</i></li>
+                                <li><strong>Read-only:</strong> all Chat posts</li>
+                                <li><strong>Create:</strong> add ideas or suggestions on all projects</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </center>
+    <center>
+        <h6 class="contact">Contact the Administrator on: 07755-321321 to get set up as a <span class="brand">WMP</span>user</h6>
+    </center>
+    </div> 
+    
+</div>
+ 
+
+
+    
  
 {% endblock content %}
