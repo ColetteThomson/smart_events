@@ -35,11 +35,10 @@ body {
     color: black;
 }
 
-/* height for containers for all apps */
+/* height for containers for 'events' and 'chat' apps */
 .container-height {
     height: 100%;
-    /* min-height: 434px; */
-    min-height: 480px;
+    min-height: 426px;
 }  
 
 /* footer */
@@ -72,7 +71,7 @@ body {
 } */
 
 .author {
-    color: #fa03fa;
+    color: #038bfa;
 }
 
 .masthead {
@@ -85,7 +84,7 @@ body {
 }
 
 .masthead-text {
-    background-color: blue;
+    background-color: #038bfa;
     color: black;
     position: relative;
     z-index: 3;
@@ -124,16 +123,17 @@ body {
 
 /* chat post date and like (heart) */
 .chat-like {
-    color: #fa03fa;
+    color: #038bfa;
 }
 
 /*  */
 .chat-post-link:hover,
 .page-link {
-    color: rgb(8, 71, 243);
+    color: white;
 }
 
 .page-link-size {
+    color: #038bfa;
     font-size: small;
     margin-bottom: 10px;
     padding: 3px, 4px, 3px, 4px;
@@ -155,18 +155,18 @@ body {
 }
 
 .btn-signup {
-    background-color: #23BBBB;
+    background-color: #038bfa;
     color: #fff;
 }
 
 .btn-signup:hover,
 .btn-signup:active {
     background-color: #fff;
-    color: #23BBBB;
+    color: #038bfa;
 }
 
 .link {
-    color: #23BBBB;
+    color: #038bfa;
     text-decoration: none;
 }
 
@@ -208,7 +208,7 @@ body {
 
 /* link to: html files: show_admin_person | show_project | show_techsupport_person */
 .link-color {
-    color: rgb(8, 71, 243);
+    color: #038bfa;
     text-decoration: none;
     font-size: large;
 }
@@ -251,7 +251,7 @@ body {
 
 /* card: show_admin_person | show_project | show_techsupport_person */
 .card-header-text {
-    color: rgb(8, 71, 243);
+    color: #038bfa;
     font-size: 20px;
 }
 
@@ -265,9 +265,10 @@ body {
 /* ---------------------------------------------HOME app */
 /* index.html */
 
-.home-div {
-    background-color: #bcddf8;
-}
+/* height for home page container*/
+.container-height-home {
+    min-height: 500px;
+} 
 
 /* headings */
 .main-heading {
@@ -317,16 +318,11 @@ body {
 }
 
 .div-pm-1 {
-    margin-top: 8px;
-    width: 100%;
-    color: black;
-    font-size: 12px;
-    border: solid;
-    border-color: #fa03fa;
-    padding: 3px;
+    color: rgba(255, 255, 255, 0);
+    font-size: 16px;
 }
 
-/* .div-pm:hover div.div-pm-1{
+.div-pm:hover div.div-pm-1{
     display: inline-block;
     position: relative;
     z-index: 10;
@@ -336,26 +332,20 @@ body {
     padding: 5px;
     padding-bottom: 0;
     border: solid;
-} */
+} 
 
 /* administration people owner permissions */
 .div-ad {
-    color: #b8c91f;
+    color: #8c9b0c;
     font-size: 18px;
 }
 
 .div-ad-1 {
-    margin-top: 8px;
-    width: 100%;
-    color: black;
-    font-size: 12px;
-    border: solid;
-    border-color: #b8c91f;
-    padding: 3px;
+    color: rgba(255, 255, 255, 0);
+    font-size: 16px;
 }
 
-/* .div-ad:hover div.div-ad-1{
-    
+.div-ad:hover div.div-ad-1{
     display: inline-block;
     position: relative;
     z-index: 10;
@@ -365,59 +355,45 @@ body {
     padding: 5px;
     padding-bottom: 0;
     border: solid;
-} */
+}
 
 /* tech support people owner permissions */
 .div-tech {
     margin-top: 40px;
-    color: #e7af34;
+    color: #c48a0d;
     font-size: 18px;
-    margin-bottom: 15px;
 }
 
 .div-tech-1 {
-    margin-top: 8px;
-    width: 100%;
-    color: black;
-    font-size: 12px;
-    border: solid;
-    border-color: #e7af34;
-    padding: 3px;
+    color: rgba(255, 255, 255, 0);
+    font-size: 16px;
 }
 
-/* .div-tech:hover div.div-tech-1{
-    
+.div-tech:hover div.div-tech-1{
     display: inline-block;
     position: relative;
     z-index: 10;
-    width: 70%;
+    width: 60%;
     background-color: #e7af34;
     color: white;
     padding: 5px;
     padding-bottom: 0;
     border: solid;
-} */
+}
 
 /* general users permissions */
 .div-gen {
-    margin-top: 40px;
+    margin-top: 60px;
     color: #3d3d3d;
     font-size: 18px;
-    margin-bottom: 15px;
 }
 
 .div-gen-1 {
-    margin-top: 8px;
-    width: 100%;
-    color: black;
-    font-size: 12px;
-    border: solid;
-    border-color: #3d3d3d;
-    padding: 3px;
+    color: rgba(255, 255, 255, 0);
+    font-size: 16px;
 }
 
-/* .div-gen:hover div.div-gen-1{
-    
+.div-gen:hover div.div-gen-1 {
     display: inline-block;
     position: relative;
     z-index: 10;
@@ -427,7 +403,7 @@ body {
     padding: 5px;
     padding-bottom: 0;
     border: solid;
-}  */
+}  
 
 /* div hover: ul settings */
 .perm-ul {
@@ -468,27 +444,99 @@ body {
     margin-bottom: -16px;
 }
 
-/* background: general user pages (all 'chat' app pages)*/
+/* background: home page */
 .background-home{
-    background: linear-gradient(180deg, #c7c6c7 60%, #999899 60%);
+    background: linear-gradient(140deg, #c7c6c7 60%, #b8b6b8 60%);
     margin-top: -17px;
     margin-bottom: -16px;
 }
 
 /* ---------------------------------------------MEDIA QUERIES */
 
-/* TABLETS */
+/* T A B L E T S */
+
 @media screen and (max-width: 769px) {
+    
+    /* height for containers for all apps */
+        .container-height {
+        height: 100%;
+        /* min-height: 434px; */
+        min-height: 470px;
+    }  
+    
     /* headings */
     h1 {
         font-size: 1.625rem;
       }
 
+    /* project manager permissions */
+    .div-pm {
+        width: 100%
+    }
+
+    .div-pm-1 {
+        width: 100%;
+    } 
+
+    .div-pm:hover div.div-pm-1{
+        width: 100%;
+    } 
+
+    /* administration people owner permissions */
+    .div-ad {
+        width: 100%;
+    }
+
+    .div-ad-1 {
+        width: 100%;
+    } 
+
+    .div-ad:hover div.div-ad-1{
+        width: 100%;
+    }
+
+    /* tech support people owner permissions */
+    .div-tech {
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .div-tech-1 {
+        width: 100%;
+    }
+
+    .div-tech:hover div.div-tech-1{
+        width: 100%;
+    }
+
+    /* general users permissions */
+    .div-gen {
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .div-gen-1 {
+        width: 100%;
+    }
+
+    .div-gen:hover div.div-gen-1 {
+        width: 100%;
+    }  
+
+
 }
 
-/* MOBILES */
+/* M O B I L E S */
+
 @media screen and (max-width: 426px) {
-        
+      
+    /* height for containers for all apps */
+    .container-height {
+        height: 100%;
+        /* min-height: 434px; */
+        min-height: 760px;
+    }  
+
     /* headings */
     h1 {
         font-size: 1.125rem;
@@ -528,4 +576,130 @@ body {
     .form-font {
         font-size: 14px;
     }
+
+
+    /* ---------------------------------------------HOME app */
+    /* index.html */
+    .container-height-home {
+        min-height: 800px;
+    }
+    
+    /* headings */
+    .main-heading {
+        padding-top: 20px;
+        font-size: 16px;
+    }
+
+    .sub-heading {
+        margin-top: 10px;
+        font-size: 16px;
+    }
+
+
+    /* contact for admin */
+    .contact {
+        width: 80%;
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+
+    .text {
+        font-size: 14px;
+        width: 90%;
+    }
+
+
+    /* project manager permissions */
+    .div-pm {
+        width: 100%;
+        padding: 0;
+        font-size: 14px;
+        
+    }
+
+    .div-pm-1 {
+        width: 100%;
+        font-size: 14px;
+        background-color: #fa03fa;
+        color: white;
+        padding: 5px;
+        padding-bottom: 0;
+        border: solid;
+    }
+
+        .div-pm:hover div.div-pm-1{
+            display: none;
+        } 
+
+    /* administration people owner permissions */
+    .div-ad {
+        width: 100%;
+        padding: 0;
+        font-size: 14px;
+    }
+
+    .div-ad-1 {
+        width: 100%;
+        font-size: 14px;
+        background-color: #b8c91f;
+        color: white;
+        padding: 5px;
+        padding-bottom: 0;
+        border: solid;
+    }
+
+    .div-ad:hover div.div-ad-1{
+        display: none;
+    }
+
+    /* tech support people owner permissions */
+    .div-tech {
+        width: 100%;
+        margin-top: 122px;
+        font-size: 14px;
+    }
+
+    .div-tech-1 {
+        width: 100%;
+        font-size: 14px;
+        background-color: #e7af34;
+        color: white;
+        padding: 5px;
+        padding-bottom: 0;
+        border: solid;
+    }
+
+    .div-tech:hover div.div-tech-1{
+        display: none;
+    }
+
+    /* general users permissions */
+    .div-gen {
+        width: 100%;
+        margin-top: 165px;
+        font-size: 14px;
+    }
+
+    .div-gen-1 {
+        width: 100%;
+        font-size: 14px;
+        background-color: #999899;
+        color: white;
+        padding: 5px;
+        padding-bottom: 0;
+        border: solid;
+    }
+
+    .div-gen:hover div.div-gen-1 {
+        display: none;
+    }  
+
+    /* background: home page */
+    .background-home{
+        background: linear-gradient(100deg, #c7c6c7 60%, #b8b6b8 60%);
+        margin-top: -17px;
+        margin-bottom: -16px;
+}
+
+
 }
