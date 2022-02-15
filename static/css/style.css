@@ -107,7 +107,7 @@ body {
 /* pagination */
 .chat-post-link:hover,
 .page-link {
-    color: white;
+    color: black;
 }
 
 .page-link-size {
@@ -710,6 +710,10 @@ body {
     .form-font {
         font-size: 14px;
     }
+
+    .card-header-text {
+        font-size: 16px;
+}
 
     /* forms: update_admin_people | update_project | update_techsupport_people */
     .forms-mobile {

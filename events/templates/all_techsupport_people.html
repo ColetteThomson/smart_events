@@ -18,7 +18,7 @@
 
             <!-- for loop: iterate through people_list displaying 4 people per page-->
             {% for people in people_list %}
-                <tr>
+                <tr class="table-active">
                     <td>
                         <a class="link-color" href="{% url 'show_techsupport_person' people.id %}">{{ people.person_name_tech }}</a>
                     </td>
@@ -30,14 +30,14 @@
 
                         <!-- update a person link and button -->
                         <td align="right">
-                            <a class="link-color" href="{% url 'update_techsupport_people' people.id %}" 
-                            class="btn button-color-update btn-sm button-size">Update</a>
+                            <a href="{% url 'update_techsupport_people' people.id %}" 
+                            class="btn button-color-update btn-sm button-size">Update Person</a>
                         </td>
 
                         <!-- delete a person link and button -->
                         <td align="right">
-                            <a class="link-color" href="{% url 'delete_techsupport_people' people.id %}"
-                            class="btn button-color-delete btn-sm button-size">Delete</a>
+                            <a href="{% url 'delete_techsupport_people' people.id %}"
+                            class="btn button-color-delete btn-sm button-size">Delete Person</a>
                         </td>
 
                         <!-- endif: project manager -->

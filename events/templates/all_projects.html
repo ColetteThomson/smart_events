@@ -31,13 +31,13 @@
 
                         <!-- update a project link and button -->
                         <td align="right">
-                            <a class="link-color" href="{% url 'update_project' project.id %}" 
+                            <a href="{% url 'update_project' project.id %}" 
                             class="btn button-color-update btn-sm button-size">Update Project</a>
                         </td>
 
                         <!-- delete a project link and button -->
                         <td align="right">
-                            <a class="link-color" href="{% url 'delete_project' project.id %}"
+                            <a href="{% url 'delete_project' project.id %}"
                             class="btn button-color-delete btn-sm button-size">Delete Project</a>
                         </td>
                     </tr>
