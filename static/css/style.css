@@ -591,6 +591,12 @@ body {
     /* for 'chat' post_list.html */
     .post-list-mobile {
         height: 100%;
+        min-height: 420px;
+    }
+
+    /* for add_project; add_admin-people; add_tech_support */
+    .events-mobile {
+        height: 100%;
         min-height: 400px;
     }
 
