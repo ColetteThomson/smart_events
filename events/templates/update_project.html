@@ -7,20 +7,17 @@
 
 {% block content %}
 <div class="background-project">
-    <div class="container container-height">
+    <div class="container container-height events-mobile">
 
 <!-- to check user is logged in -->
 {% if user.is_authenticated %}
     <!-- to check user is the project manager for this project -->
     {% if user == project.project_manager %}
-
+    <br/>
     <center><h1>Update Project</h1></center>
 
-        logged in user: {{ user }}
-        project manager: {{ project.project_manager }}
-
-        <br>
-        <form action="" method=POST>
+    <!-- pre-populuated form to be updated -->
+    <form action="" method=POST class="forms-mobile">
             <!-- csrf to prevent malicious attacks using user credentials -->
             {% csrf_token %}
 

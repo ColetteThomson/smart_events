@@ -7,11 +7,12 @@
 
 {% block content %}
 <div class="background-admin">
-    <div class="container container-height">
-    <center><h1>Update Project Administration People</h1></center>
-        <br>
+    <div class="container container-height events-mobile">
+    <br/>
+    <center><h1>Update Administration Person</h1></center>
 
-        <form action="" method=POST>
+        <!-- pre-populuated form to be updated -->
+        <form action="" method=POST class="forms-mobile">
             <!-- csrf to prevent malicious attacks using user credentials -->
             {% csrf_token %}
 
