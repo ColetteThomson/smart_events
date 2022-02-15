@@ -299,10 +299,10 @@ body {
 
 /* headings */
 .main-heading {
-    padding-top: 20px;
+    padding-top: 30px;
     font-size: 20px;
     text-align: center;
-    color: rgb(44, 43, 43)
+    color: white;
 }
 
 .sub-heading {
@@ -310,7 +310,7 @@ body {
     padding-top: 0;
     font-size: 20px;
     text-align: center;
-    color: rgb(44, 43, 43)
+    color: white;
 }
 
 
@@ -322,7 +322,7 @@ body {
 }
 
 .text {
-    
+    color: white;
     width: 90%;
 }
 
@@ -338,111 +338,117 @@ body {
     height: 14px;
 }
 
-/* project manager permissions */
+/* project manager permissions block*/
 .div-pm {
     color: #fa03fa;
     font-size: 18px;
+    text-align: center;
+    width: 60%;
 }
 
 .div-pm-1 {
-    color: rgba(255, 255, 255, 0);
-    font-size: 16px;
+    font-size: 18px;
+    color: rgb(39, 38, 38);
+    margin-top: 7px;
+    padding-top: 5px;
+    padding-bottom: 1px;
+    border: none;
+    border-radius: 25px;
+}  
+
+.spectrum-background-pm {
+    background:
+        linear-gradient(#fa03fa, transparent),
+        linear-gradient(to top left, grey, transparent),
+        linear-gradient(to top right, white, transparent);
+    background-blend-mode: screen;
 }
 
-.div-pm:hover div.div-pm-1{
-    display: inline-block;
-    position: relative;
-    z-index: 10;
-    width: 60%;
-    background-color: #fa03fa;
-    color: white;
-    padding: 5px;
-    padding-bottom: 0;
-    border: solid;
-} 
-
-/* administration people owner permissions */
+/* administration people owner permissions block */
 .div-ad {
     color: #8c9b0c;
     font-size: 18px;
+    text-align: center;
+    width: 60%;
 }
 
 .div-ad-1 {
-    color: rgba(255, 255, 255, 0);
-    font-size: 16px;
+    font-size: 18px;
+    color: rgb(39, 38, 38);
+    margin-top: 7px;
+    padding-top: 5px;
+    padding-bottom: 1px;
+    border: none;
+    border-radius: 25px;
+}  
+
+.spectrum-background-ad {
+    background:
+        linear-gradient(#8c9b0c, transparent),
+        linear-gradient(to top left, grey, transparent),
+        linear-gradient(to top right, white, transparent);
+    background-blend-mode: screen;
 }
 
-.div-ad:hover div.div-ad-1{
-    display: inline-block;
-    position: relative;
-    z-index: 10;
-    width: 60%;
-    background-color: #b8c91f;
-    color: white;
-    padding: 5px;
-    padding-bottom: 0;
-    border: solid;
-}
-
-/* tech support people owner permissions */
+/* tech support people owner permissions block */
 .div-tech {
-    margin-top: 40px;
     color: #c48a0d;
     font-size: 18px;
+    text-align: center;
+    width: 60%;
 }
 
 .div-tech-1 {
-    color: rgba(255, 255, 255, 0);
-    font-size: 16px;
-}
-
-.div-tech:hover div.div-tech-1{
-    display: inline-block;
-    position: relative;
-    z-index: 10;
-    width: 60%;
-    background-color: #e7af34;
-    color: white;
-    padding: 5px;
-    padding-bottom: 0;
-    border: solid;
-}
-
-/* general users permissions */
-.div-gen {
-    margin-top: 60px;
-    color: #3d3d3d;
     font-size: 18px;
+    color: rgb(39, 38, 38);
+    margin-top: 7px;
+    padding-top: 5px;
+    padding-bottom: 1px;
+    border: none;
+    border-radius: 25px;
+}  
+
+.spectrum-background-tech {
+    background:
+        linear-gradient(#c48a0d, transparent),
+        linear-gradient(to top left, grey, transparent),
+        linear-gradient(to top right, white, transparent);
+    background-blend-mode: screen;
+}
+
+/* general users permissions block */
+.div-gen {
+    color: #999899;
+    font-size: 18px;
+    text-align: center;
+    width: 60%;
 }
 
 .div-gen-1 {
-    color: rgba(255, 255, 255, 0);
-    font-size: 16px;
-}
-
-.div-gen:hover div.div-gen-1 {
-    display: inline-block;
-    position: relative;
-    z-index: 10;
-    width: 60%;
-    background-color: #999899;
-    color: white;
-    padding: 5px;
-    padding-bottom: 0;
-    border: solid;
+    font-size: 18px;
+    color: rgb(39, 38, 38);
+    margin-top: 7px;
+    padding-top: 5px;
+    padding-bottom: 1px;
+    border: none;
+    border-radius: 25px;
 }  
 
-/* div hover: ul settings */
-.perm-ul {
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-bottom: 0;
-    text-align: left;
-    list-style-type: none;
+.spectrum-background-gen {
+    background:
+        linear-gradient(#585858, transparent),
+        linear-gradient(to top left, grey, transparent),
+        linear-gradient(to top right, white, transparent);
+    background-blend-mode: screen;
 }
 
-.li-color {
-    color: black
+/* applies to all permission blocks */
+.permissions {
+    line-height: 10px;
+}
+.permissions1 {
+    line-height: 10px;
+    padding-top: 7px;
 }
 /* ---------------------------------------------end: HOME app */
 
@@ -472,7 +478,7 @@ body {
 
 /* background: home page */
 .background-home{
-    background: linear-gradient(140deg, #c7c6c7 60%, #b8b6b8 60%);
+    background-color: black;
     margin-top: -17px;
     margin-bottom: -16px;
 }
@@ -727,7 +733,8 @@ body {
     /* ---------------------------------------------H O M E  app */
     /* index.html */
     .container-height-home {
-        min-height: 800px;
+        height: 100%;
+        min-height: 8000px;
     }
     
     /* headings */
@@ -754,96 +761,14 @@ body {
         width: 90%;
     }
 
-
-    /* project manager permissions */
+    /* project manager permissions block*/
     .div-pm {
+        font-size: 16px;
         width: 100%;
-        padding: 0;
-        font-size: 14px;
-    }
+}
 
     .div-pm-1 {
-        width: 100%;
-        font-size: 14px;
-        background-color: #fa03fa;
-        color: white;
-        padding: 5px;
-        padding-bottom: 0;
-        border: solid;
-    }
-
-    .div-pm:hover div.div-pm-1{
-        display: none;
-    } 
-
-    /* administration people owner permissions */
-    .div-ad {
-        width: 100%;
-        padding: 0;
-        font-size: 14px;
-    }
-
-    .div-ad-1 {
-        width: 100%;
-        font-size: 14px;
-        background-color: #b8c91f;
-        color: white;
-        padding: 5px;
-        padding-bottom: 0;
-        border: solid;
-    }
-
-    .div-ad:hover div.div-ad-1{
-        display: none;
-    }
-
-    /* tech support people owner permissions */
-    .div-tech {
-        width: 100%;
-        margin-top: 122px;
-        font-size: 14px;
-    }
-
-    .div-tech-1 {
-        width: 100%;
-        font-size: 14px;
-        background-color: #e7af34;
-        color: white;
-        padding: 5px;
-        padding-bottom: 0;
-        border: solid;
-    }
-
-    .div-tech:hover div.div-tech-1{
-        display: none;
-    }
-
-    /* general users permissions */
-    .div-gen {
-        width: 100%;
-        margin-top: 165px;
-        font-size: 14px;
-    }
-
-    .div-gen-1 {
-        width: 100%;
-        font-size: 14px;
-        background-color: #999899;
-        color: white;
-        padding: 5px;
-        padding-bottom: 0;
-        border: solid;
-    }
-
-    .div-gen:hover div.div-gen-1 {
-        display: none;
-    }  
-
-    /* background: home page */
-    .background-home{
-        background: linear-gradient(100deg, #c7c6c7 60%, #b8b6b8 60%);
-        margin-top: -17px;
-        margin-bottom: -16px;
+        font-size: 13px;
     }
     /* ----------------------------------------------end Home app */
 

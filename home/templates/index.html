@@ -21,7 +21,7 @@
         </p> 
     </center>
 
-        <h2 class="sub-heading">What are the different <span class="brand">WMP</span>roles ?</h2>
+        <h2 class="sub-heading">What are the different   <span class="brand">WMP</span>roles and permissions ?</h2>
 
         <center>
             <p class="contact">Contact the Administrator on: 07755-321321 to get set up as a user</p>
@@ -29,71 +29,54 @@
   
     
         <center>
-            <div class="row row-height">
-                <div class="col">
-                    <div class="div-pm">
-                        <strong>Project Manager</strong>
-                        <div class="div-pm-1">
-                            <ul class="perm-ul">
-                                <i>Permissions:</i>
-                                <li><strong>Create, Read, Update, Delete:</strong> all your projects</li>
-                                <li><strong>Read-only:</strong> all People resources</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            
-                <div class="col">
-                    <div class="div-ad">
-                        <strong>Admin People</strong>
-                        <div class="div-ad-1">
-                            <ul class="perm-ul">
-                                <li><i>Permissions:</i></li>
-                                <li><strong>Create, Read, Update, Delete:</strong> all Admin resources</li>
-                                <li><strong>Read-only:</strong> all projects and Tech Support resources</li>
-                            </ul>
-                        </div>
+            <div>
+                <div class="div-pm">
+                    <strong>Project Manager</strong>
+                    <div class="div-pm-1 spectrum-background-pm">
+                            <p class="permissions1"><strong>Create, Read, Update, Delete:</strong> all your projects</p>
+                            <p class="permissions"><strong>Read-only:</strong> all People resources</p>
                     </div>
                 </div>
             </div>
         </center>
-        </br>
-        <br/>
         <br/>
         <center>
-            <div class="row row-height"> 
-                <div class="col">
-                    <div class="div-tech">
-                        <strong>Tech People</strong>
-                        <div class="div-tech-1">
-                            <ul class="perm-ul">
-                                <li><i>Permissions:</i></li>
-                                <li><strong>Create, Read, Update, Delete:</strong> all Tech Support Resources</li>
-                                <li><strong>Read-only:</strong> all projects and Admin resources</li>
-                            </ul>
-                        </div>
+            <div>
+                <div class="div-ad">
+                    <strong>Administration People Owner</strong>
+                    <div class="div-ad-1 spectrum-background-ad">
+                            <p class="permissions1"><strong>Create, Read, Update, Delete:</strong> all Admin resources</p>
+                            <p class="permissions"><strong>Read-only:</strong> all projects and Tech Support resources</p>
                     </div>
                 </div>
-                
-                <div class="col">
-                    <div class="div-gen">
-                        <strong>General Users</strong>
-                        <div class="div-gen-1">
-                            <ul class="perm-ul">
-                                <li><i>Permissions:</i></li>
-                                <li><strong>Read-only:</strong> all Chat posts</li>
-                                <li><strong>Create:</strong> add ideas or suggestions on all projects</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
             </div>
         </center>
-        
+        <br/>
+        <center>
+            <div>
+                <div class="div-tech">
+                    <strong>Tech Support People Owner</strong>
+                    <div class="div-tech-1 spectrum-background-tech">
+                            <p class="permissions1"><strong>Create, Read, Update, Delete:</strong> all Tech Support Resources</p>
+                            <p class="permissions"><strong>Read-only:</strong> all projects and Admin resources</p>
+                    </div>
+                </div>
+            </div>
+        </center>
+        <br/>
+        <center>
+            <div>
+                <div class="div-gen">
+                    <strong>General Users</strong>
+                    <div class="div-gen-1 spectrum-background-gen">
+                            <p class="permissions1"><strong>Read-only:</strong> all Chat posts</p>
+                            <p class="permissions"><strong>Create:</strong> add ideas or suggestions on all projects</p>
+                    </div>
+                </div>
+            </div>
+        </center>
 
-        </div>
-     <br/>
+        
     </div>
 </div>
 {% endblock content %}
