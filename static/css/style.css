@@ -294,7 +294,8 @@ body {
 
 /* height for home page container*/
 .container-height-home {
-    min-height: 500px;
+    height: 100%;
+    min-height: 700px;
 } 
 
 /* headings */
@@ -341,17 +342,17 @@ body {
 /* project manager permissions block*/
 .div-pm {
     color: #fa03fa;
-    font-size: 18px;
+    font-size: 16px;
     text-align: center;
     width: 60%;
 }
 
 .div-pm-1 {
-    font-size: 18px;
+    font-size: 16px;
     color: rgb(39, 38, 38);
-    margin-top: 7px;
-    padding-top: 5px;
-    padding-bottom: 1px;
+    margin-top: 3px;
+    padding-top: 4px;
+    padding-bottom: 0.011px;
     border: none;
     border-radius: 25px;
 }  
@@ -367,17 +368,17 @@ body {
 /* administration people owner permissions block */
 .div-ad {
     color: #8c9b0c;
-    font-size: 18px;
+    font-size: 16px;
     text-align: center;
     width: 60%;
 }
 
 .div-ad-1 {
-    font-size: 18px;
+    font-size: 16px;
     color: rgb(39, 38, 38);
-    margin-top: 7px;
-    padding-top: 5px;
-    padding-bottom: 1px;
+    margin-top: 3px;
+    padding-top: 4px;
+    padding-bottom: 0.011px;
     border: none;
     border-radius: 25px;
 }  
@@ -393,17 +394,17 @@ body {
 /* tech support people owner permissions block */
 .div-tech {
     color: #c48a0d;
-    font-size: 18px;
+    font-size: 16px;
     text-align: center;
     width: 60%;
 }
 
 .div-tech-1 {
-    font-size: 18px;
+    font-size: 16px;
     color: rgb(39, 38, 38);
-    margin-top: 7px;
-    padding-top: 5px;
-    padding-bottom: 1px;
+    margin-top: 3px;
+    padding-top: 4px;
+    padding-bottom: 0.011px;
     border: none;
     border-radius: 25px;
 }  
@@ -419,24 +420,24 @@ body {
 /* general users permissions block */
 .div-gen {
     color: #999899;
-    font-size: 18px;
+    font-size: 16px;
     text-align: center;
     width: 60%;
 }
 
 .div-gen-1 {
-    font-size: 18px;
+    font-size: 16px;
     color: rgb(39, 38, 38);
-    margin-top: 7px;
-    padding-top: 5px;
-    padding-bottom: 1px;
+    margin-top: 3px;
+    padding-top: 4px;
+    padding-bottom: 0.011px;
     border: none;
     border-radius: 25px;
 }  
 
 .spectrum-background-gen {
     background:
-        linear-gradient(#585858, transparent),
+        linear-gradient(#3a3a3a, transparent),
         linear-gradient(to top left, grey, transparent),
         linear-gradient(to top right, white, transparent);
     background-blend-mode: screen;
@@ -733,8 +734,7 @@ body {
     /* ---------------------------------------------H O M E  app */
     /* index.html */
     .container-height-home {
-        height: 100%;
-        min-height: 8000px;
+        min-height: 800px;
     }
     
     /* headings */
