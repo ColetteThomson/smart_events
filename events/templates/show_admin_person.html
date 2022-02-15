@@ -4,7 +4,7 @@
 
 {% block content %}
 <div class="background-admin">
-    <div class="container container-height">
+    <div class="container container-height events-mobile">
     <br/>
     <center><h1>Personal Details</h1></center>   
     
@@ -28,10 +28,10 @@
                     <!-- button links to 'update' and 'delete' a person from a project -->
                     <center>
                         <a href="{% url 'update_admin_people' person.id %}" 
-                        class="btn button-color-update btn-sm button-position">Update a Person</a>
+                        class="btn button-color-update btn-sm button-position">Update Person</a>
 
                         <a href="{% url 'delete_admin_people' person.id %}" 
-                        class="btn button-color-delete btn-sm">Delete a Person</a>
+                        class="btn button-color-delete btn-sm">Delete Person</a>
                     </center>
                     <!-- endif: people 'owner' -->
                     {% endif %}

@@ -4,7 +4,7 @@
 
 {% block content %}
 <div class="background-tech">
-    <div class="container container-height">
+    <div class="container container-height events-mobile">
     <br/>
     <center><h1>Personal Details</h1></center>   
 
@@ -30,7 +30,7 @@
                     class="btn button-color-update btn-sm button-position">Update Person</a>
 
                     <a href="{% url 'delete_techsupport_people' person.id %}" 
-                    class="btn button-color-delete btn-sm">Delete Person from Project</a>
+                    class="btn button-color-delete btn-sm">Delete Person</a>
                 </center>
                 <!-- endif: people 'owner' -->
                 {% endif %}

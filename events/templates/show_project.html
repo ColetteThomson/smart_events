@@ -7,7 +7,7 @@
 
 {% block content %}
 <div class="background-project">
-    <div class="container container-height">
+    <div class="container container-height events-mobile">
     <br/>
     <center><h1>Project Details</h1></center>   
 
@@ -33,10 +33,10 @@
                     <!-- button links to 'update' and 'delete a project' -->
                 <center>
                     <a href="{% url 'update_project' project.id %}"
-                    class="btn button-color-update btn-sm button-position">Update a Project</a>
+                    class="btn button-color-update btn-sm button-position">Update Project</a>
 
                     <a href="{% url 'delete_project' project.id %}" 
-                    class="btn button-color-delete btn-sm">Delete a Project</a>
+                    class="btn button-color-delete btn-sm">Delete Project</a>
                 </center>
 
                 <!-- endif: project manager -->

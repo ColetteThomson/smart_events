@@ -692,7 +692,7 @@ body {
 
     /* card: show_admin_person | show_project | show_techsupport_person */
     .button-position {
-        margin-right: 38px;
+        margin-right: 40px;
     }
     
     /* text: show_admin_person | show_project | show_techsupport_person */
@@ -710,6 +710,10 @@ body {
     .form-font {
         font-size: 14px;
     }
+
+    
+    
+
     /* -------------------------------------------end Events app */
 
     /* ---------------------------------------------H O M E  app */
