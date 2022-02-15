@@ -2,18 +2,18 @@
 
 {% block content %}
 <div class="background-general">
-    <div class="container-fluid container-height">
+    <div class="container-fluid container-height post-list-mobile">
         <br/>
         
         <!-- Blog Entries Column -->
         <div class="col-12 col-position">
             <div class="row justify-content-center">
-            <!-- for loop to iterate through list of posts passed in from our view -->
+            <!-- for loop: to iterate through list of posts -->
             {% for post in post_list %}
                 <!-- column holding a card with content containing the post overview -->
                 <div class="col-md-4 chat-list-size">
                     <div class="card">
-                        <div class="card-body">
+                        <div class="card-body chat-list-mobile">
                             <!-- <div class="image-container"> -->
                                 <!-- default image if no featured image supplied -->
                                 <!-- {% if "placeholder" in post.featured_image.url %} -->
@@ -36,7 +36,7 @@
                             </a>
                             <hr />
                             <!-- date post created on -->
-                            <p class="card-text text-muted h6">{{ post.created_on }} 
+                            <p class="card-text text-muted h6 created-on">{{ post.created_on }} 
                                 <!-- Font Awesome heart with number of likes -->
                                 <i class="far fa-heart chat-like"></i>{{ post.number_of_likes }}</p>
                         </div>
@@ -54,6 +54,7 @@
         </div>
     </div>
     
+    <!-- pagination -->
     {% if is_paginated %}
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">

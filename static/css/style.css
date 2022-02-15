@@ -1,7 +1,7 @@
 /* ------------------------------------------- BASE.HTML */
 body {
     background-color: white;
-    color: rgb(59, 59, 59);
+    color: rgb(37, 37, 37);
 }
 
 /* logo for 'WMP' */
@@ -35,125 +35,13 @@ body {
     color: black;
 }
 
-/* height for containers for 'events' and 'chat' apps */
-.container-height {
-    height: 100%;
-    min-height: 426px;
-}  
-
 /* footer */
 .footer-position {
     position: relative;
 }
+/* ---------------------------------------- end base.html */
 
-/* ---------------------------------------------CHAT app */
-
-/* post_list.html */
-.col-position {
-    margin: 0;
-}
-
-.card {
-    border: none;
-    background-color: transparent;
-}
-
-/* .image-container {
-    position: relative;
-} */
-
-/* .image-flash {
-    position: absolute;
-    bottom: 5%;
-    min-width: 30%;
-    left: -2px;
-    background-color: #23BBBB;
-} */
-
-.author {
-    color: #038bfa;
-}
-
-.masthead {
-    margin-top: 10px;
-    overflow: hidden;
-    position: relative;
-    /* display: inline-block; */
-    height: 33vh;
-    width: 100%;
-}
-
-.masthead-text {
-    background-color: #038bfa;
-    color: black;
-    position: relative;
-    z-index: 3;
-}
-
-.masthead-image {
-    position: relative;
-    overflow: hidden;
-    width: 80%;
-}
-
-/* .masthead-image:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 90%;
-    height: 100%;
-    width: 150%;
-    background: #999899;
-    /* -webkit-transform: skew(20deg);
-    -moz-transform: skew(20deg); */
-    /* transform: skew(20deg); */
-    /* z-index: 100; 
-} */
-/*  title of chat post */
-.title {
-    font-size: 22px;
-}
-
-/*  excerpt of chat post*/
-.chat-post-link {
-    text-decoration: none;
-    color: #445261;
-    font-size: 16px;
-}
-
-/* chat post date and like (heart) */
-.chat-like {
-    color: #038bfa;
-}
-
-/*  */
-.chat-post-link:hover,
-.page-link {
-    color: white;
-}
-
-.page-link-size {
-    color: #038bfa;
-    font-size: small;
-    margin-bottom: 10px;
-    padding: 3px, 4px, 3px, 4px;
-}
-
-.post-title {
-    /* margin-top: 20%; */
-    margin-left: 5%;
-    position: relative;
-    color: red;
-    z-index: 3;
-}
-
-.post-subtitle {
-    margin-left: 5%;
-    color: red;
-    position: relative;
-    z-index: 3;
-}
-
+/* ------------------- E G I S T E R / L O G I N  screens */
 .btn-signup {
     background-color: #038bfa;
     color: #fff;
@@ -175,9 +63,154 @@ body {
     color: #445261;
     text-decoration: underline;
 }
+/* ----------------------------- end: Register/Login screens */
 
+/* ---------------------------------------------- CONTAINERS */
+/* for 'events' and 'chat' apps */
+.container-height {
+    height: 100%;
+    min-height: 426px;
+} 
+/* -------------------------------------------end Containers */
+
+/* ---------------------------------------------C H A T  app */
+
+/* ---------------------------------post_list.html */
+
+/* card positioning for each chat post */
+.col-position {
+    margin: 0;
+}
+
+.card {
+    border: none;
+    background-color: transparent;
+}
+
+/*  title of chat post */
+.title {
+    font-size: 22px;
+}
+
+/*  excerpt for chat post*/
+.chat-post-link {
+    text-decoration: none;
+    color: #445261;
+    font-size: 16px;
+}
+
+/* positioning of chat list */
+.chat-list-size {
+    width: 40%;
+} 
+
+/* pagination */
+.chat-post-link:hover,
+.page-link {
+    color: white;
+}
+
+.page-link-size {
+    color: #038bfa;
+    font-size: small;
+    margin-bottom: 10px;
+    padding: 3px, 4px, 3px, 4px;
+}
+
+/* chat post date and like (heart) */
+.chat-like {
+    color: #038bfa;
+}
+
+/* .image-container {
+    position: relative;
+} */
+
+/* .image-flash {
+    position: absolute;
+    bottom: 5%;
+    min-width: 30%;
+    left: -2px;
+    background-color: #23BBBB;
+} */
+
+/* author of chat post */
+.author {
+    color: #038bfa;
+}
+
+/* ---------------------------------post_detail.html */
+
+/* heading block at top of page */
+.masthead {
+    margin-top: 10px;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    height: 33vh;
+    width: 100%;
+}
+
+/* heading block background*/
+.masthead-background {
+    background-color: #c7c6c7;
+    position: relative;
+}
+
+/* heading block image */
+.masthead-image {
+    position: relative;
+    overflow: hidden;
+}
+
+/* heading block main title */
+.post-title {
+    margin-top: 10%;
+    margin-left: 5%;
+    position: relative;
+    color: #038bfa;
+    z-index: 3;
+}
+
+/* heading block sub title */
+.post-subtitle {
+    margin-left: 5%;
+    color: rgb(77, 75, 75);
+    position: relative;
+    z-index: 3;
+}
+
+/* ideas & suggestions block */
+.heading-ideas {
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+.heading-ideas1 {
+    font-size: 18px;
+    padding-left: 0;
+}
+
+.commenter {
+    color: #038bfa;
+}
+
+.card-position {
+    padding-left: 0;
+}
+
+.card-position1 {
+    padding-left: 6px;
+    padding-top: 0;
+}
+
+.posting-as {
+    color: #038bfa;
+}
+
+/* hearts (Font Awesome) and number of likes, comments */
 .btn-like {
-    color: #E84610;
+    color: #038bfa;
     border: none;
     background: transparent;
 }
@@ -189,16 +222,12 @@ body {
     border: none;
 }
 
-.chat-position {
-    justify-content: center;
+.total-comments {
+    min-width: 80px;
 }
+/* -------------------------------------------end: Chat app */
 
-.chat-list-size {
-    width: 40%;
-}
-/* ---------------------------------------------end: CHAT app */
-
-/* ---------------------------------------------EVENTS app */
+/* --------------------------------------------E V E N T S  app */
 
 .h1-size {
     font-size: 30px;
@@ -258,11 +287,9 @@ body {
 .button-position {
     margin-right: 60px;
 }
+/* ------------------------------------------end: Events app */
 
-
-/* ---------------------------------------------end: EVENTS app */
-
-/* ---------------------------------------------HOME app */
+/* ---------------------------------------------H O M E  app */
 /* index.html */
 
 /* height for home page container*/
@@ -417,10 +444,9 @@ body {
 .li-color {
     color: black
 }
-
 /* ---------------------------------------------end: HOME app */
 
-/* -----------------------------------------------BACKGROUNDS */
+/* -------------------------------------B A C K G R O U N D S */
 
 /* background: all admin people pages */
 .background-admin {
@@ -439,7 +465,7 @@ body {
 
 /* background: general user pages (all 'chat' app pages)*/
 .background-general{
-    background: linear-gradient(140deg, #c7c6c7 60%, #999899 60%);
+    background: linear-gradient(140deg, #c7c6c7 60%, #bebebe 60%);
     margin-top: -17px;
     margin-bottom: -16px;
 }
@@ -450,14 +476,17 @@ body {
     margin-top: -17px;
     margin-bottom: -16px;
 }
+/* ------------------------------------------- end Backgrounds */
 
-/* ---------------------------------------------MEDIA QUERIES */
+
+/* ------------------------------------M E D I A   Q U E R I E S */
 
 /* T A B L E T S */
 
 @media screen and (max-width: 769px) {
     
-    /* height for containers for all apps */
+    /* ---------------------------------------------- containers */
+    /* for 'events' and 'chat' apps */
         .container-height {
         height: 100%;
         /* min-height: 434px; */
@@ -468,6 +497,28 @@ body {
     h1 {
         font-size: 1.625rem;
       }
+    /* -------------------------------------------end Containers */
+
+    /* -------------------------------------------- C H A T  app */
+
+    /* ---------------------------------post_list.html */
+    /*  title of chat post */
+    .title {
+        font-size: 18px;
+    }
+    
+    /*  excerpt for chat post*/
+    .chat-post-link {
+        font-size: 14px;
+    }
+
+    .created-on {
+        font-size: 14px;
+    }
+    /* -------------------------------------------- end Chat app */
+
+    /* ---------------------------------------------H O M E  app */
+    /* index.html */
 
     /* project manager permissions */
     .div-pm {
@@ -530,17 +581,94 @@ body {
 
 @media screen and (max-width: 426px) {
       
-    /* height for containers for all apps */
+    /* ---------------------------------------------- C0NTAINERS */
+    /* for 'events' and 'chat' apps */
     .container-height {
         height: 100%;
-        /* min-height: 434px; */
         min-height: 760px;
     }  
+
+    /* for 'chat' post_list.html */
+    .post-list-mobile {
+        height: 100%;
+        min-height: 400px;
+    }
 
     /* headings */
     h1 {
         font-size: 1.125rem;
       }
+    /* -------------------------------------------end Containers*/
+
+    /* -------------------------------------------- C H A T  app */
+
+    /* ---------------------------------post_list.html */
+
+    /* positioning of chat list */
+    .chat-list-size {
+        padding-left: 0;
+        width: 42%;
+    } 
+
+    /* column width for chat list */
+    .chat-list-mobile {
+        padding: 0;
+    }
+
+    /* author of chat post */
+    .author {
+        margin-top: 15px;
+        font-size: 12px;
+    }
+
+    /*  title of chat post */
+    .title {
+        font-size: 14px;
+    }
+
+    /*  excerpt for chat post*/
+    .chat-post-link {
+        text-decoration: none;
+        color: #445261;
+        font-size: 12px;
+    }
+
+    .created-on {
+        font-size: 10px;
+    }
+
+    /* ---------------------------------post_detail.html */
+
+    /* heading block at top of page */
+    .masthead {
+        height: 15vh;
+        width: 100%;
+        overflow: none;
+    }
+
+    /* heading block image */
+    .masthead-image {
+        display: none;
+    }
+
+    /* heading block main title */
+    .post-title {
+        margin-top: 2%;
+        font-size: 16px;
+    }
+
+    /* heading block sub title */   
+    .post-subtitle {
+        font-size: 12px;
+    }
+
+    /* chat post */
+    .card-body {
+        padding-top: 0;
+    }
+    /* ------------------------------------------------ end Chat app */
+
+    /* -------------------------------------------- E V E N T S  app */
 
     /* link to: html files: show_admin_person | show_project | show_techsupport_person */
     .link-color,
@@ -576,9 +704,9 @@ body {
     .form-font {
         font-size: 14px;
     }
+    /* -------------------------------------------end Events app */
 
-
-    /* ---------------------------------------------HOME app */
+    /* ---------------------------------------------H O M E  app */
     /* index.html */
     .container-height-home {
         min-height: 800px;
@@ -614,7 +742,6 @@ body {
         width: 100%;
         padding: 0;
         font-size: 14px;
-        
     }
 
     .div-pm-1 {
@@ -627,9 +754,9 @@ body {
         border: solid;
     }
 
-        .div-pm:hover div.div-pm-1{
-            display: none;
-        } 
+    .div-pm:hover div.div-pm-1{
+        display: none;
+    } 
 
     /* administration people owner permissions */
     .div-ad {
@@ -699,7 +826,7 @@ body {
         background: linear-gradient(100deg, #c7c6c7 60%, #b8b6b8 60%);
         margin-top: -17px;
         margin-bottom: -16px;
-}
-
+    }
+    /* ----------------------------------------------end Home app */
 
 }
