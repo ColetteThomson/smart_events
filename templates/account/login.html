@@ -9,13 +9,13 @@
 
 {% block content %}
 
-<div class="container">
+<div class="container container-height events-mobile">
   <div class="row">
     <div class="col-md-8 mt-3 offset-md-2">
       <h3>{% trans "Log In" %}</h3>
 
       <!-- display welcome message with login or register options -->
-      <p>{% blocktrans %}Welcome back to the Smart Events Management System. 
+      <p>{% blocktrans %}Welcome back to the Smart Events Workforce Management Platform. 
         To leave a comment or like a chat, please log in. If you
         have not created an account yet, then 
         <!-- link for new user registration-->
@@ -30,6 +30,7 @@
         {% csrf_token %}
         {{ form.as_p }}
         {% if redirect_field_value %}
+        <br/>
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
         <!-- submit button for login form -->
