@@ -71,24 +71,24 @@ class ProjectForm(ModelForm):
         model = Project
         # fields to be imported from class Project
         fields = ('project_name', 'project_date', 'resource_admin',
-                  'resource_tech', 'project_manager', 'description')
+                  'resource_tech', 'description', 'project_manager')
         # labels for form fields
         labels = {
             'project_name': 'Project Name',
             'project_date': 'Date and Time (YYYY-MM-DD) (HH:MM:SS)',
             'resource_admin': 'Resource: Project Administration',
             'resource_tech': 'Resource: Tech Support',
-            'project_manager': 'Project Manager',
             'description': 'Project Description',
+            'project_manager': 'Project Manager',
         }
         # render html form input elements
         widgets = {
             'project_name': forms.TextInput(attrs={'class': 'form-control'}),
             'resource_admin': forms.Select(attrs={'class': 'form-select'}),
             'resource_tech': forms.Select(attrs={'class': 'form-select'}),
+            'description': forms.Textarea(attrs={'class': 'form-control'}),
             'project_manager': forms.TextInput(attrs={'class': 'form-control',
                                                       'value': '',
                                                       'id': 'user',
                                                       'type': 'hidden'}),
-            'description': forms.Textarea(attrs={'class': 'form-control'}),
         }
