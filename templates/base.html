@@ -14,7 +14,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
     </script>
@@ -25,7 +24,7 @@
 <body class="d-flex flex-column h-100">
 
     <!-- navigation menu -->
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -125,12 +124,10 @@
 
                     <!-- endif: if user is authenticated -->
                     {% endif %}
-
-            </div>
-            
+          
         </div>
         <br/>
-        
+    
     </nav>
     
     <div class="container">
@@ -159,25 +156,43 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer py-3 bg-dark footer-position">
-        <p class="m-0 text-center text-white">footer text</p>
-        <p class="m-0 text-center text-white">Follow us: <i class="fab fa-facebook-square ms-3"></i>
-            <i class="fab fa-twitter-square ms-3"></i>
-            <i class="fab fa-instagram-square ms-3"></i>
-            <i class="fab fa-youtube-square ms-3"></i></p>
+    <footer class="footer py-1 bg-light footer-position">
+        <p class="m-0 text-center text-dark text-size">
+            <!-- Copyright -->
+            <span>© 2022 copyright: 
+            <!-- logo and brand -->
+            <span class="thick1">smart<span class="thin1">events
+                <a class="navbar-brand" href="{% url 'home' %}"><span class="brand1">WMP
+                </span></span></span></span></a>
+        </p>
+        <p class="m-0 text-center text-dark text-size social-networks">follow us: 
+            <a href="https://facebook.com" target="_blank" rel="noopener"
+                aria-label="Visit our Facebook page (opens in a new tab)">
+                <i class="fab fa-facebook-square ms-4"></i></a>
+
+            <a href="https://twitter.com" target="_blank" rel="noopener"
+                aria-label="Visit our Twitter page (opens in a new tab)">
+                <i class="fab fa-twitter-square ms-4"></i></a>
+
+            <a href="https://instagram.com" target="_blank" rel="noopener"
+                aria-label="Visit our Instagram page (opens in a new tab)">
+                <i class="fab fa-instagram-square ms-4"></i></a>
+
+            <a href="https://youtube.com" target="_blank" rel="noopener"
+                aria-label="Visit our YouTube page (opens in a new tab)">
+                <i class="fab fa-youtube-square ms-4"></i></a>
+
+        </p>
     </footer>
     
 
-    <!-- javascript timeout function to dismiss message alert after 3 secs-->
+    <!-- javascript timeout function to dismiss flash message alerts after 3 secs-->
     <script>
         setTimeout(function () {
             let messages = document.getElementById("msg");
             let alert = new bootstrap.Alert(messages);
             alert.close();
         }, 3000);
-    </script>
-    
-
     </script>
 
 </body> 

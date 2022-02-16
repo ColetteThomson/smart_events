@@ -6,7 +6,6 @@ body {
 
 /* logo for 'WMP' */
 .brand {
-    /* font-family: Lato, sans-serif; */
     font-family: 'Permanent Marker', cursive;
     font-size: 1.4rem;
     font-weight: 700;
@@ -16,14 +15,21 @@ body {
 
 /* logo for 'smartevents' */
 .thick {
-    color: white;
-    /* color: #fa03fa; */
     color: #038bfa;
 }
 
 .thin {
     font-weight: 300;
     color: #038bfa;
+}
+
+/* footer */
+.footer-position {
+    position: relative;
+}
+
+.text-size {
+    font-size: 12px;
 }
 
 .thick1 {
@@ -35,10 +41,19 @@ body {
     color: black;
 }
 
-/* footer */
-.footer-position {
-    position: relative;
+.brand1 {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 12px;
+    font-weight: 700;
+    color: black;
+    padding-right: 10px;
 }
+
+.social-networks i {
+    font-size: 120%;
+    color: black;
+}
+
 /* ---------------------------------------- end base.html */
 
 /* ----------------- R E G I S T E R / L O G I N  screens */
@@ -131,7 +146,7 @@ body {
 
 /* heading block at top of page */
 .masthead {
-    margin-top: 10px;
+    margin-top: 30px;
     overflow: hidden;
     position: relative;
     display: inline-block;
@@ -141,7 +156,7 @@ body {
 
 /* heading block background*/
 .masthead-background {
-    background-color: #c7c6c7;
+    background-color: #2b2a2b;
     position: relative;
 }
 
@@ -163,7 +178,7 @@ body {
 /* heading block sub title */
 .post-subtitle {
     margin-left: 5%;
-    color: rgb(77, 75, 75);
+    color: rgb(192, 190, 190);
     position: relative;
     z-index: 3;
 }
@@ -190,6 +205,10 @@ body {
 .card-position1 {
     padding-left: 6px;
     padding-top: 0;
+}
+
+.card-font {
+    font-size: 14px;
 }
 
 .posting-as {
@@ -224,7 +243,7 @@ body {
 /* ---- html files: show_admin_person | show_project | show_techsupport_person */
 /* hyper link */
 .link-color {
-    color: #038bfa;
+    color: black;
     text-decoration: none;
     font-size: large;
 }
@@ -291,7 +310,7 @@ body {
     padding-top: 30px;
     font-size: 20px;
     text-align: center;
-    color: white;
+    color: rgb(32, 32, 32);
 }
 
 .sub-heading {
@@ -299,7 +318,7 @@ body {
     padding-top: 0;
     font-size: 20px;
     text-align: center;
-    color: white;
+    color: rgb(32, 32, 32);
 }
 
 /* contact for admin */
@@ -311,7 +330,7 @@ body {
 
 /* body text */
 .text {
-    color: rgb(219, 217, 217);
+    color: rgb(53, 52, 52);;
     width: 90%;
 }
 
@@ -476,18 +495,11 @@ body {
     margin-top: -17px;
     margin-bottom: -16px;
 }
-
-/* background: home page */
-.background-home{
-    background-color: black;
-    margin-top: -17px;
-    margin-bottom: -16px;
-}
 /* ------------------------------------------- end Backgrounds */
 
 /* ----------------------------------- M E D I A   Q U E R I E S */
 
-/* ----------------------------------- T A B L E T S */
+/* ----------------------------------------------- T A B L E T S */
 
 @media screen and (max-width: 769px) {
     
@@ -525,60 +537,56 @@ body {
 
     /* ---------------------------------------------H O M E  app */
     /* ---- index.html ---- */
+    
+    /* home page container */
+    .container-height-home {
+        height: 100%;
+        min-height: 700px;
+    } 
+
+    /* headings */
+    .main-heading {
+        padding-top: 25px;
+        font-size: 18px;
+    }
+
+    .sub-heading {
+        margin-top: 15px;
+        font-size: 18px;
+    }
+
+    /* contact for admin */
+    .contact {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    /* body text */
+    .text {
+        font-size: 14px;
+    }
+
+
 
     /* project manager permissions block */
     .div-pm {
-        width: 100%
+        width: 70%
     }
-
-    .div-pm-1 {
-        width: 100%;
-    } 
-
-    .div-pm:hover div.div-pm-1{
-        width: 100%;
-    } 
 
     /* administration people permissions block */
     .div-ad {
-        width: 100%;
-    }
-
-    .div-ad-1 {
-        width: 100%;
-    } 
-
-    .div-ad:hover div.div-ad-1{
-        width: 100%;
+        width: 70%;
     }
 
     /* tech support people permissions block */
     .div-tech {
-        margin-top: 20px;
-        width: 100%;
-    }
-
-    .div-tech-1 {
-        width: 100%;
-    }
-
-    .div-tech:hover div.div-tech-1{
-        width: 100%;
+        width: 70%;
     }
 
     /* general users permissions block */
     .div-gen {
-        margin-top: 20px;
-        width: 100%;
+        width: 70%;
     }
-
-    .div-gen-1 {
-        width: 100%;
-    }
-
-    .div-gen:hover div.div-gen-1 {
-        width: 100%;
-    }  
 }
 
 /* ----------------------------------------------- M O B I L E S */
@@ -600,7 +608,7 @@ body {
 
     /* for add_project; add_admin-people; add_tech_support */
     .events-mobile {
-        height: 100%;
+        height: 100%; 
         min-height: 400px;
     }
 
@@ -649,7 +657,6 @@ body {
     }
 
     /* ---- post_detail.html ---- */
-
     /* heading block at top of page */
     .masthead {
         height: 15vh;
@@ -727,9 +734,9 @@ body {
     .forms-mobile {
         font-size: 14px;
     }
-    /* -------------------------------------------end Events app */
+    /* ----------------------------------------------- end Events app */
 
-    /* ---------------------------------------------H O M E  app */
+    /* ----------------------------------------------- H O M E  app */
     /* ---- index.html ---- */
     /* home page container */
     .container-height-home {
@@ -738,13 +745,13 @@ body {
     
     /* headings */
     .main-heading {
-        padding-top: 20px;
-        font-size: 16px;
+        padding-top: 25px;
+        font-size: 14px;
     }
 
     .sub-heading {
         margin-top: 10px;
-        font-size: 16px;
+        font-size: 14px;
     }
 
     /* contact for admin */
@@ -756,21 +763,80 @@ body {
 
     /* body text */
     .text {
-        font-size: 14px;
-        width: 90%;
+        font-size: 12px;
+        width: 95%;
     }
 
     /* project manager permissions block*/
     /* heading */
     .div-pm {
-        font-size: 16px;
+        margin-top: 0;
+        font-size: 14px;
         width: 100%;
     }
 
     /* text */
     .div-pm-1 {
-        font-size: 13px;
+        font-size: 12px;
+        margin-top: 3px;
+        padding-top: 2px;
+        padding-bottom: 0.011px;
     }
-    /* ----------------------------------------------end Home app */
+
+    /* admin people permissions block*/
+    /* heading */
+    .div-ad {
+        margin-top: 0;
+        font-size: 14px;
+        width: 100%;
+    }
+
+    /* text */
+    .div-ad-1 {
+        font-size: 12px;
+        margin-top: 3px;
+        padding-top: 2px;
+        padding-bottom: 0.011px;
+    }
+
+    /* tech support people permissions block*/
+    /* heading */
+    .div-tech {
+        margin-top: 0;
+        font-size: 14px;
+        width: 100%;
+    }
+
+    /* text */
+    .div-tech-1 {
+        font-size: 12px;
+        margin-top: 3px;
+        padding-top: 2px;
+        padding-bottom: 0.011px;
+    }
+
+    /* general users permissions block*/
+    /* heading */
+    .div-gen {
+        margin-top: 0;
+        font-size: 14px;
+        width: 100%;
+    }
+
+    /* text */
+    .div-gen-1 {
+        font-size: 12px;
+        margin-top: 3px;
+        padding-top: 2px;
+        padding-bottom: 0.011px;
+    }
+    /* ----------------------------------------------------end Home app */
+
+    /* background: general user pages (all 'chat' app pages / home page)*/
+    .background-general{
+        background: linear-gradient(100deg, #c7c6c7 60%, #bebebe 60%);
+        margin-top: -17px;
+        margin-bottom: -16px;
+    }
 
 }

@@ -2,8 +2,8 @@
 
 <!-- load crispy forms -->
 {% load crispy_forms_tags %}
-
-<div class="masthead">
+<div class="background-general">
+    <div class="masthead">
     <div class="container">
         <div class="row g-0">
             <div class="col-md-6 masthead-background">
@@ -17,9 +17,9 @@
             </div>
         </div>
     </div>
-</div>
+    </div>
 
-<div class="container">
+    <div class="container">
     <div class="row">
         <div class="col card mb-0  mt-0 left top">
             <div class="card-body">
@@ -75,9 +75,9 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-7 card mb-4 mt-0 ">
+        <div class="col-md-7 card mb-0 mt-0 ">
             <h3 class="heading-ideas">Ideas or Suggestions:</h3>
-            <div class="card-body card-position">
+            <div class="card-body card-position card-font">
                 <!-- for loop to iterate through each 'comment in comments' -->
                 {% for comment in comments %}
                 <div class="comments" style="padding: 10px;">
@@ -128,6 +128,7 @@
                 {% endif %}
             </div>
         </div>
+    </div>
     </div>
 </div>
 

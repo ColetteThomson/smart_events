@@ -122,7 +122,7 @@ def all_projects(request):
     """ call all Project objects from models.py """
     project = Project.objects.all()
     # set up pagination, show 2 projects per page
-    p = Paginator(Project.objects.all(), 4)
+    p = Paginator(Project.objects.all(), 6)
     # return the page
     page = request.GET.get('page')
     project_list = p.get_page(page)
@@ -227,7 +227,7 @@ def all_admin_people(request):
     """ call all PeopleAdmin objects from models.py """
     people = PeopleAdministration.objects.all()
     # set up pagination, show 2 people per page
-    p = Paginator(PeopleAdministration.objects.all(), 4)
+    p = Paginator(PeopleAdministration.objects.all(), 6)
     # return the page
     page = request.GET.get('page')
     people_list = p.get_page(page)
@@ -360,7 +360,7 @@ def all_techsupport_people(request):
     """ call all PeopleTechSupport objects from models.py """
     people = PeopleTechSupport.objects.all()
     # set up pagination, show 2 people per page
-    p = Paginator(PeopleTechSupport.objects.all(), 4)
+    p = Paginator(PeopleTechSupport.objects.all(), 6)
     # return the page
     page = request.GET.get('page')
     people_list = p.get_page(page)
