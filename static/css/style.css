@@ -41,7 +41,7 @@ body {
 }
 /* ---------------------------------------- end base.html */
 
-/* ------------------- E G I S T E R / L O G I N  screens */
+/* ----------------- R E G I S T E R / L O G I N  screens */
 .btn-signup {
     background-color: #038bfa;
     color: #fff;
@@ -63,7 +63,7 @@ body {
     color: #445261;
     text-decoration: underline;
 }
-/* ----------------------------- end: Register/Login screens */
+/* ----------------------------- end: register/login screens */
 
 /* ---------------------------------------------- CONTAINERS */
 /* for 'events' and 'chat' apps */
@@ -75,7 +75,7 @@ body {
 
 /* ---------------------------------------------C H A T  app */
 
-/* ---------------------------------post_list.html */
+/* ---- post_list.html ---- */
 
 /* card positioning for each chat post */
 .col-position {
@@ -122,24 +122,12 @@ body {
     color: #038bfa;
 }
 
-/* .image-container {
-    position: relative;
-} */
-
-/* .image-flash {
-    position: absolute;
-    bottom: 5%;
-    min-width: 30%;
-    left: -2px;
-    background-color: #23BBBB;
-} */
-
 /* author of chat post */
 .author {
     color: #038bfa;
 }
 
-/* ---------------------------------post_detail.html */
+/* ---- post_detail.html ---- */
 
 /* heading block at top of page */
 .masthead {
@@ -225,7 +213,7 @@ body {
 .total-comments {
     min-width: 80px;
 }
-/* -------------------------------------------end: Chat app */
+/* -----------------------------------------------end: Chat app */
 
 /* --------------------------------------------E V E N T S  app */
 
@@ -233,9 +221,8 @@ body {
     font-size: 30px;
 }
 
-/* html files: all_projects | all_admin_people | all_techsupport_people */
-
-/* link to: html files: show_admin_person | show_project | show_techsupport_person */
+/* ---- html files: show_admin_person | show_project | show_techsupport_person */
+/* hyper link */
 .link-color {
     color: #038bfa;
     text-decoration: none;
@@ -247,19 +234,20 @@ body {
     color: white;
 }
 
-/* update button: html files: all_admin_people | all_projects | all_techsupport_people */
+/* ---- html files: all_admin_people | all_projects | all_techsupport_people */
+/* update button */
 .button-color-update {
     color: black;
     background-color: rgba(247, 244, 244, 0.856);
 }
 
-/* delete button: html files: all_admin_people | all_projects | all_techsupport_people */
+/* delete button */
 .button-color-delete {
     color: white;
     background-color: rgb(94, 93, 93);
 }
 
-/* center pagination block */
+/* pagination block */
 .pagination {
     justify-content: center;
 }
@@ -287,12 +275,12 @@ body {
 .button-position {
     margin-right: 60px;
 }
-/* ------------------------------------------end: Events app */
+/* --------------------------------------------- end: Events app */
 
-/* ---------------------------------------------H O M E  app */
-/* index.html */
+/* ------------------------------------------------ H O M E  app */
+/* ---- index.html ---- */
 
-/* height for home page container*/
+/* home page container */
 .container-height-home {
     height: 100%;
     min-height: 700px;
@@ -314,7 +302,6 @@ body {
     color: white;
 }
 
-
 /* contact for admin */
 .contact {
     font-size: 15px;
@@ -322,8 +309,9 @@ body {
     margin-bottom: 20px;
 }
 
+/* body text */
 .text {
-    color: white;
+    color: rgb(219, 217, 217);
     width: 90%;
 }
 
@@ -340,6 +328,7 @@ body {
 }
 
 /* project manager permissions block*/
+/* heading */
 .div-pm {
     color: #fa03fa;
     font-size: 16px;
@@ -347,6 +336,7 @@ body {
     width: 60%;
 }
 
+/* text */
 .div-pm-1 {
     font-size: 16px;
     color: rgb(39, 38, 38);
@@ -357,6 +347,7 @@ body {
     border-radius: 25px;
 }  
 
+/* background for project manager block */
 .spectrum-background-pm {
     background:
         linear-gradient(#fa03fa, transparent),
@@ -366,6 +357,7 @@ body {
 }
 
 /* administration people owner permissions block */
+/* heading */
 .div-ad {
     color: #8c9b0c;
     font-size: 16px;
@@ -373,6 +365,7 @@ body {
     width: 60%;
 }
 
+/* text */
 .div-ad-1 {
     font-size: 16px;
     color: rgb(39, 38, 38);
@@ -383,6 +376,7 @@ body {
     border-radius: 25px;
 }  
 
+/* background for administration people block */
 .spectrum-background-ad {
     background:
         linear-gradient(#8c9b0c, transparent),
@@ -392,6 +386,7 @@ body {
 }
 
 /* tech support people owner permissions block */
+/* heading */
 .div-tech {
     color: #c48a0d;
     font-size: 16px;
@@ -399,6 +394,7 @@ body {
     width: 60%;
 }
 
+/* text */
 .div-tech-1 {
     font-size: 16px;
     color: rgb(39, 38, 38);
@@ -409,6 +405,7 @@ body {
     border-radius: 25px;
 }  
 
+/* background for tech support people block */
 .spectrum-background-tech {
     background:
         linear-gradient(#c48a0d, transparent),
@@ -418,6 +415,7 @@ body {
 }
 
 /* general users permissions block */
+/* heading */
 .div-gen {
     color: #999899;
     font-size: 16px;
@@ -425,6 +423,7 @@ body {
     width: 60%;
 }
 
+/* text */
 .div-gen-1 {
     font-size: 16px;
     color: rgb(39, 38, 38);
@@ -435,6 +434,7 @@ body {
     border-radius: 25px;
 }  
 
+/* background for general users block */
 .spectrum-background-gen {
     background:
         linear-gradient(#3a3a3a, transparent),
@@ -485,14 +485,13 @@ body {
 }
 /* ------------------------------------------- end Backgrounds */
 
+/* ----------------------------------- M E D I A   Q U E R I E S */
 
-/* ------------------------------------M E D I A   Q U E R I E S */
-
-/* T A B L E T S */
+/* ----------------------------------- T A B L E T S */
 
 @media screen and (max-width: 769px) {
     
-    /* ---------------------------------------------- containers */
+    /* --------------------------------------------- CONTAINERS */
     /* for 'events' and 'chat' apps */
         .container-height {
         height: 100%;
@@ -504,11 +503,11 @@ body {
     h1 {
         font-size: 1.625rem;
       }
-    /* -------------------------------------------end Containers */
+    /* ------------------------------------------ end Containers */
 
     /* -------------------------------------------- C H A T  app */
 
-    /* ---------------------------------post_list.html */
+    /* ---- post_list.html ---- */
     /*  title of chat post */
     .title {
         font-size: 18px;
@@ -525,9 +524,9 @@ body {
     /* -------------------------------------------- end Chat app */
 
     /* ---------------------------------------------H O M E  app */
-    /* index.html */
+    /* ---- index.html ---- */
 
-    /* project manager permissions */
+    /* project manager permissions block */
     .div-pm {
         width: 100%
     }
@@ -540,7 +539,7 @@ body {
         width: 100%;
     } 
 
-    /* administration people owner permissions */
+    /* administration people permissions block */
     .div-ad {
         width: 100%;
     }
@@ -553,7 +552,7 @@ body {
         width: 100%;
     }
 
-    /* tech support people owner permissions */
+    /* tech support people permissions block */
     .div-tech {
         margin-top: 20px;
         width: 100%;
@@ -567,7 +566,7 @@ body {
         width: 100%;
     }
 
-    /* general users permissions */
+    /* general users permissions block */
     .div-gen {
         margin-top: 20px;
         width: 100%;
@@ -580,11 +579,9 @@ body {
     .div-gen:hover div.div-gen-1 {
         width: 100%;
     }  
-
-
 }
 
-/* M O B I L E S */
+/* ----------------------------------------------- M O B I L E S */
 
 @media screen and (max-width: 426px) {
       
@@ -615,7 +612,7 @@ body {
 
     /* -------------------------------------------- C H A T  app */
 
-    /* ---------------------------------post_list.html */
+    /* ---- post_list.html ---- */
 
     /* positioning of chat list */
     .chat-list-size {
@@ -646,11 +643,12 @@ body {
         font-size: 12px;
     }
 
+    /* date post created on */
     .created-on {
         font-size: 10px;
     }
 
-    /* ---------------------------------post_detail.html */
+    /* ---- post_detail.html ---- */
 
     /* heading block at top of page */
     .masthead {
@@ -679,30 +677,32 @@ body {
     .card-body {
         padding-top: 0;
     }
-    /* ------------------------------------------------ end Chat app */
+    /* -------------------------------------------------------------- end Chat app */
 
-    /* -------------------------------------------- E V E N T S  app */
+    /* ---------------------------------------------------------- E V E N T S  app */
 
-    /* link to: html files: show_admin_person | show_project | show_techsupport_person */
+    /* ---- html files: show_admin_person | show_project | show_techsupport_person */
+    /* hyperlink and buttons */
     .link-color,
     .button-color-update,
     .button-color-delete {
         font-size: 14px;
     }
 
-    /* html files: all_admin_people | all_projects | all_techsupport_people */
+    /* ---- html files: all_admin_people | all_projects | all_techsupport_people */
     /* update and delete buttons */
     .button-size {
         width: 50px;
         padding: 2px;
     }
 
-    /* card: show_admin_person | show_project | show_techsupport_person */
+    /* ---- html files: show_admin_person | show_project | show_techsupport_person */
+    /* card button */
     .button-position {
         margin-right: 40px;
     }
     
-    /* text: show_admin_person | show_project | show_techsupport_person */
+    /* card text */
     .mobile-text {
         font-size: 14px;
         padding-left: 5px;
@@ -722,17 +722,16 @@ body {
         font-size: 16px;
 }
 
-    /* forms: update_admin_people | update_project | update_techsupport_people */
+    /* ---- html files: update_admin_people | update_project | update_techsupport_people */
+    /* form */
     .forms-mobile {
         font-size: 14px;
     }
-    
-    
-
     /* -------------------------------------------end Events app */
 
     /* ---------------------------------------------H O M E  app */
-    /* index.html */
+    /* ---- index.html ---- */
+    /* home page container */
     .container-height-home {
         min-height: 800px;
     }
@@ -748,7 +747,6 @@ body {
         font-size: 16px;
     }
 
-
     /* contact for admin */
     .contact {
         width: 80%;
@@ -756,17 +754,20 @@ body {
         margin-bottom: 20px;
     }
 
+    /* body text */
     .text {
         font-size: 14px;
         width: 90%;
     }
 
     /* project manager permissions block*/
+    /* heading */
     .div-pm {
         font-size: 16px;
         width: 100%;
-}
+    }
 
+    /* text */
     .div-pm-1 {
         font-size: 13px;
     }
