@@ -334,6 +334,15 @@ body {
     width: 90%;
 }
 
+/* brand within home page text */
+.brand2 {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 14px;
+    font-weight: 700;
+    color: #038bfa;
+    padding-right: 10px;
+}
+
 .col-margin {
     margin-bottom: 20px;
 }
@@ -436,7 +445,7 @@ body {
 /* general users permissions block */
 /* heading */
 .div-gen {
-    color: #999899;
+    color: #6b6b6b;
     font-size: 16px;
     text-align: center;
     width: 60%;
