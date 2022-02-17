@@ -8,16 +8,11 @@
 {% block content %}
 <div class="background-project">
     <div class="container container-height-home events-mobile">
-
-<!-- to check user is logged in -->
-{% if user.is_authenticated %}
-    <!-- to check user is the project manager for this project -->
-    {% if user == project.project_manager %}
     <br/>
     <center><h1>Update Project</h1></center>
 
-    <!-- pre-populuated form to be updated -->
-    <form action="" method=POST class="forms-mobile">
+        <!-- pre-populuated form to be updated -->
+        <form action="" method=POST class="forms-mobile">
             <!-- csrf to prevent malicious attacks using user credentials -->
             {% csrf_token %}
 
@@ -26,18 +21,8 @@
         
             <!-- submit button for update_venue form -->
             <button type="submit" class="btn btn-lg button">Update</button>
-      
-            <!-- endif: submitted statement  -->
-            {% endif %}
+        </form>
 
-    </form>
-
-    <!-- endif: project manager -->
-    {% endif %}
-
-        
-<!-- endif: logged in -->
-{% endif %}
     </div>
 </div>
     

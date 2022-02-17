@@ -59,7 +59,7 @@ def delete_project(request, project_id):
 def update_project(request, project_id):
     """ get primary key project_id from Project """
     project = Project.objects.get(id=project_id)
-    # if form completed and submitted then Post, or
+    # if updating then pre-populate existing info (instance)
     # if not then display empty ProjectForm
     form = ProjectForm(request.POST or None, instance=project)
     # if project form is valid (required fields completed)
