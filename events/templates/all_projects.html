@@ -20,7 +20,7 @@
             <!-- for loop: iterate through project_list displaying 4 projects per page-->
             {% for project in project_list %}
                 <tr class="table-active">
-                    <td>
+                    <td> 
                         <a class="link-color" href="{% url 'show_project' project.id %}">{{ project.project_name }}</a>
                     </td>
 

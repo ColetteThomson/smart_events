@@ -18,9 +18,9 @@
             <div class="col-md-8">
                 <table class="table table-hover table-striped table-bordered">
             
-            <!-- for loop: iterate through people_list displaying 4 people per page-->
+            <!-- for loop: iterate through people_list displaying 6 people per page-->
             {% for people in people_list %}
-                <tr class="table-active">
+                <tr class="table-active table-row">
                     <td>
                         <a class="link-color" href="{% url 'show_admin_person' people.id %}">{{ people.person_name }}</a>
                     </td>

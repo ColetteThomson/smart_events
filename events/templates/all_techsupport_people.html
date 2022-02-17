@@ -18,7 +18,7 @@
 
             <!-- for loop: iterate through people_list displaying 4 people per page-->
             {% for people in people_list %}
-                <tr class="table-active">
+                <tr class="table-active table-row">
                     <td>
                         <a class="link-color" href="{% url 'show_techsupport_person' people.id %}">{{ people.person_name_tech }}</a>
                     </td>

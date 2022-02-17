@@ -254,6 +254,10 @@ body {
 }
 
 /* ---- html files: all_admin_people | all_projects | all_techsupport_people */
+.table-row {
+    line-height: 50px;
+}
+
 /* update button */
 .button-color-update {
     color: black;
