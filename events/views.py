@@ -66,6 +66,8 @@ def update_project(request, project_id):
     if form.is_valid():
         # save and return to all_projects (url)
         form.save()
+        # display success message to user
+        messages.success(request, ("Project has been updated"))
         return redirect('all_projects')
 
     # update details of a project
@@ -201,6 +203,8 @@ def update_admin_people(request, people_id):
     if form.is_valid():
         # save and send to all_admin_people page 
         form.save()
+        # display success message to user
+        messages.success(request, ("Admin Person has been updated"))
         return redirect('all_admin_people')
 
     # update details of a person
@@ -334,6 +338,8 @@ def update_techsupport_people(request, people_id):
     if form.is_valid():
         # save and send to all_techsupport_people page
         form.save()
+        # display success message to user
+        messages.success(request, ("Tech Support Person has been updated"))
         return redirect('all_techsupport_people')
 
     # update details of a tech support person
