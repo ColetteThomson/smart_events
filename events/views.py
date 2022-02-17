@@ -102,6 +102,8 @@ def add_project(request):
                 # then save the new project
                 new_project.save()
                 # redirect authorised user back to 'all_projects' page
+                # display success message to user
+                messages.success(request, ("New Project has been added"))
                 return redirect(reverse('all_projects'))
 
             else:
@@ -267,6 +269,9 @@ def add_admin_people(request):
                 # then save the new person
                 new_people.save()
                 # redirect authorised user back to 'all_admin_people' page
+                # display success message to user
+                messages.success(request,
+                                 ("New Administration Person has been added"))
                 return redirect(reverse('all_admin_people'))
 
             else:
@@ -403,6 +408,9 @@ def add_tech_support(request):
                 # then save the new person
                 new_tech_support.save()
                 # redirect auth user back to 'all_techsupport_people' page
+                # display success message to user
+                messages.success(request,
+                                 ("New Tech Support Person has been added"))
                 return redirect(reverse('all_techsupport_people'))
 
             else:

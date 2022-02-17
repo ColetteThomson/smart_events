@@ -99,13 +99,6 @@
         <div class="col-md-5 card mb-4  mt-0 ">
             <div class="card-body card-position1">
 
-                <!-- if commented (True) then display a message to user -->
-                {% if commented %}
-                <div class="alert alert-success" role="alert">
-                    Your idea / suggestion is awaiting approval
-                </div>
-                {% else %}
-
                 <!-- if statement: comment box only appears if user is authenticated -->
                 {% if user.is_authenticated %}
 
@@ -120,9 +113,6 @@
                     <!-- submit button for comment form -->
                     <button type="submit" class="btn btn-lg button">Submit</button>
                 </form>
-
-                <!-- end: if statement: if commented -->
-                {% endif %}
 
                 <!-- end: if statement: user.is_authenticated -->
                 {% endif %}

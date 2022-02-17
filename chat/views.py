@@ -3,6 +3,7 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 # 'httpResponseRedirect' allows reloading of a template (post_detail)
 from django.http import HttpResponseRedirect
+from django.contrib import messages
 from .models import Post
 from .forms import CommentForm
 
@@ -73,6 +74,10 @@ class PostDetail(View):
             comment.post = post
             # then save the comment
             comment.save()
+            # display success message to user
+            messages.success(request,
+                             ("Your idea / suggestion is awaiting approval"))
+
         # if comment form not valid return empty form
         else:
             comment_form = CommentForm()
