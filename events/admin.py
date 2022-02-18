@@ -4,7 +4,7 @@ from .models import Project, PeopleAdministration, PeopleTechSupport
 
 
 @admin.register(PeopleAdministration)
-class PeopleAdministration_Admin(admin.ModelAdmin):
+class PeopleAdministrationAdmin(admin.ModelAdmin):
     """ decorator to register PeopleAdmin admin class for admin site """
     # customise list view of admin panel
     list_display = ('person_name', 'contact_no', 'person_email')
@@ -15,7 +15,7 @@ class PeopleAdministration_Admin(admin.ModelAdmin):
 
 
 @admin.register(PeopleTechSupport)
-class PeopleTechSupport_Admin(admin.ModelAdmin):
+class PeopleTechSupportAdmin(admin.ModelAdmin):
     """ decorator to register TechSupport admin class for admin site """
     # customise list view of admin panel
     list_display = ('person_name_tech', 'contact_no_tech', 'person_email_tech')
