@@ -2,9 +2,10 @@ from django.contrib import admin
 from .models import Post, Comment
 from django_summernote.admin import SummernoteModelAdmin
 
-# decorator to register both post model & post admin class for admin site
+
 @admin.register(Post)
 class PostAdmin(SummernoteModelAdmin):
+    """ register decorator: post model; post admin classes for admin panel """
     # customise list view of admin panel
     list_display = ('blog_title', 'slug', 'status', 'created_on')
     # add search fields for either title or content
@@ -19,7 +20,7 @@ class PostAdmin(SummernoteModelAdmin):
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
-
+    """ register decorator: comment class for admin panel """
     list_display = ('name', 'body', 'post', 'created_on', 'approved')
     list_filter = ('approved', 'created_on')
     search_fields = ('name', 'email', 'body')
@@ -29,4 +30,3 @@ class CommentAdmin(admin.ModelAdmin):
     # set boolean field to True (to approve comment)
     def approve_comments(self, request, queryset):
         queryset.update(approved=True)
-        

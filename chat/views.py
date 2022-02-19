@@ -7,9 +7,10 @@ from django.contrib import messages
 from .models import Post
 from .forms import CommentForm
 
-# List of Posts on Chat
+
 class PostList(generic.ListView):
-    """ blog list """
+    """ list of posts on Chat """
+    # blog list
     model = Post
     # filter contents of post table by '1' (published) by ascending date
     queryset = Post.objects.filter(status=1).order_by('created_on')
@@ -19,9 +20,10 @@ class PostList(generic.ListView):
     paginate_by = 6
 
 
-# Detail of Posts on Chat
 class PostDetail(View):
-    """ get details of post """
+    """ detail of individual posts on Chat """
+    # get details of post
+
     def get(self, request, slug, *args, **kwargs):
         """ filter for active posts """
         queryset = Post.objects.filter(status=1)
@@ -95,9 +97,10 @@ class PostDetail(View):
             },
         )
 
-# post like feature
+
 class PostLike(View):
-    """ post request """
+    """ post like feature """
+    # post request
     def post(self, request, slug):
         """ get the relevant post """
         post = get_object_or_404(Post, slug=slug)

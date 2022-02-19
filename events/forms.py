@@ -3,9 +3,9 @@ from django.forms import ModelForm
 from .models import PeopleAdministration, Project, PeopleTechSupport
 
 
-# create a administration people form
 class AdminForm(ModelForm):
-    """ form fields """
+    """ create (add) administration people form """
+    # form fields
     class Meta:
         model = PeopleAdministration
         # fields to be imported from class PeopleAdministration
@@ -32,9 +32,9 @@ class AdminForm(ModelForm):
         }
 
 
-# create a 'Resource: Tech Support' form
 class TechSupportForm(ModelForm):
-    """ form fields """
+    """ create (add) Tech Support form """
+    # form fields
     class Meta:
         model = PeopleTechSupport
         # fields to be imported from class PeopleTechSupport
@@ -64,9 +64,9 @@ class TechSupportForm(ModelForm):
         }
 
 
-# create (add) a project form
 class ProjectForm(ModelForm):
-    """ form fields """
+    """ create (add) a project form """
+    # form fields
     class Meta:
         model = Project
         # fields to be imported from class Project

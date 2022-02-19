@@ -6,9 +6,9 @@ from cloudinary.models import CloudinaryField
 STATUS = ((0, "Draft"), (1, "Published"))
 
 
-# ERD model for class Post
 class Post(models.Model):
-
+    """ ERD model for class Post """
+    # model fields
     blog_title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     # if one-to-many author relationship is deleted so will all related records
@@ -37,8 +37,9 @@ class Post(models.Model):
         return self.likes.count()
 
 
-# ERD model for class Comment
 class Comment(models.Model):
+    """ ERD model for class Comment """
+    # model fields
     # if one-to-many author relationship is deleted so will all related records
     post = models.ForeignKey(Post, on_delete=models.CASCADE,
                              related_name='comments')

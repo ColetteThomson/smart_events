@@ -1,11 +1,11 @@
 from django.contrib.auth.models import User
 from django.db import models
-from cloudinary.models import CloudinaryField
+# from cloudinary.models import CloudinaryField
 
 
-# ERD model for class Tech Support
 class PeopleTechSupport(models.Model):
-    """ model fields """
+    """ ERD model for class Tech Support """
+    # model fields
     person_name_tech = models.CharField(max_length=120)
     contact_no_tech = models.CharField(max_length=20, blank=True)
     person_email_tech = models.EmailField(blank=True)
@@ -21,9 +21,9 @@ class PeopleTechSupport(models.Model):
         return self.person_name_tech
 
 
-# ERD model for class People
 class PeopleAdministration(models.Model):
-    """ model fields """
+    """ ERD model for class People """
+    # model fields
     person_name = models.CharField(max_length=120)
     contact_no = models.CharField(max_length=20, blank=True)
     person_email = models.EmailField(blank=True)
@@ -32,16 +32,16 @@ class PeopleAdministration(models.Model):
                                           default='add experience')
     # sets ad_owner field to null, should owner cease to be a user
     ad_owner = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
- 
+
     # helper method for class People:
     # returns a string representation of an object
     def __str__(self):
         return self.person_name
 
 
-#  ERD model for class Project
 class Project(models.Model):
-    """ model fields """
+    """ ERD model for class Project """
+    # model fields
     project_name = models.CharField(max_length=150)
     project_date = models.DateTimeField()
     # to allow a new project to be added without people assigned
