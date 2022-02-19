@@ -186,4 +186,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # csrf to show current workspace as trusted
 CSRF_TRUSTED_ORIGINS = \
-    ["https://8000-emerald-guppy-3j180nwg.ws-eu30.gitpod.io"]
+    ["https://8000-emerald-guppy-3j180nwg.ws-eu33.gitpod.io"]
