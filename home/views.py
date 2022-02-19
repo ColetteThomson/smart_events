@@ -11,5 +11,5 @@ def welcome(request):
 
     return render(request,
                   'index.html', {
-                                "name": name,
-                                })
+                      "name": name,
+                  })

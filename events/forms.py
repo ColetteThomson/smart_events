@@ -25,7 +25,7 @@ class AdminForm(ModelForm):
             'contact_no': forms.TextInput(attrs={'class': 'form-control'}),
             'person_email': forms.EmailInput(attrs={'class': 'form-control'}),
             'project_experience': forms.Textarea(attrs={
-                                                    'class': 'form-control'}),
+                'class': 'form-control'}),
             'ad_owner': forms.TextInput(attrs={'class': 'form-control',
                                         'value': '', 'id': 'user',
                                                'type': 'hidden'}),

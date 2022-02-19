@@ -3,97 +3,124 @@
 <!-- load crispy forms -->
 {% load crispy_forms_tags %}
 
-{% block title %}Displaying Model Data{% endblock title %}
+{% block title %}Displaying Model Data{% endblock %}
 
 {% block content %}
+
 <div class="background-project">
-    <div class="container container-height-home events-mobile">
-    <br/>
+  <div class="container container-height-home events-mobile">
+    <br />
 
     <center><h1>All Projects</h1></center>
-    <br>
+    <br />
     <!-- center table across all screen widths -->
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <table class="table table-hover table-striped table-bordered">
+      <div class="col-md-8">
+        <table class="table table-hover table-striped table-bordered">
+          <!-- for loop: iterate through project_list displaying 4 projects per page-->
+          {% for project in project_list %}
+          <tr class="table-active">
+            <td>
+              <a class="link-color" href="{% url 'show_project' project.id %}"
+                >{{ project.project_name }}</a
+              >
+            </td>
 
-            <!-- for loop: iterate through project_list displaying 4 projects per page-->
-            {% for project in project_list %}
-                <tr class="table-active">
-                    <td> 
-                        <a class="link-color" href="{% url 'show_project' project.id %}">{{ project.project_name }}</a>
-                    </td>
+            <!-- to check user is logged in -->
+            {% if user.is_authenticated %}
+            <!-- to check user is the project manager for this project -->
+            {% if user == project.project_manager %}
 
-                <!-- to check user is logged in -->
-                {% if user.is_authenticated %}
-                    <!-- to check user is the project manager for this project -->
-                    {% if user == project.project_manager %}
+            <!-- update a project link and button -->
+            <td align="right">
+              <a
+                href="{% url 'update_project' project.id %}"
+                class="btn button-color-update btn-sm button-size"
+                >Update Project</a
+              >
+            </td>
 
-                        <!-- update a project link and button -->
-                        <td align="right">
-                            <a href="{% url 'update_project' project.id %}" 
-                            class="btn button-color-update btn-sm button-size">Update Project</a>
-                        </td>
+            <!-- delete a project link and button -->
+            <td align="right">
+              <a
+                href="{% url 'delete_project' project.id %}"
+                class="btn button-color-delete btn-sm button-size"
+                >Delete Project</a
+              >
+            </td>
+          </tr>
 
-                        <!-- delete a project link and button -->
-                        <td align="right">
-                            <a href="{% url 'delete_project' project.id %}"
-                            class="btn button-color-delete btn-sm button-size">Delete Project</a>
-                        </td>
-                    </tr>
+          <!-- endif: project manager -->
+          {% endif %}
 
-                    <!-- endif: project manager -->
-                    {% endif %}
+          <!-- endif: logged in -->
+          {% endif %}
 
-                <!-- endif: logged in -->
-                {% endif %}
-
-            <!-- end for loop: project_list -->
-            {% endfor %}
+          <!-- end for loop: project_list -->
+          {% endfor %}
         </table>
-        <br/>
-    </div>
+        <br />
+      </div>
 
-    <!-- page navigation with bootstrap styling -->
-    <nav aria-label="Page navigation">
+      <!-- page navigation with bootstrap styling -->
+      <nav aria-label="Page navigation">
         <ul class="pagination pagination-sm">
-          
-        <!-- if statement: pagination (previous page) -->
-        {% if project_list.has_previous %}
-            <!-- add and display: '<< first' page -->
-            <li class="page-item"><a class="page-link" href="?page=1" aria-label="First">
-                <span aria-hidden="true">&laquo First</span></a>
-            </li>
-            <!-- add and display: 'previous' page -->
-            <li class="page-item"><a class="page-link"
-                href="?page={{ project_list.previous_page_number }}" aria-label="Previous">
-                <span aria-hidden="true">Previous</span></a>
-            </li>
-        <!-- end if: for pagination (previous page) -->
-        {% endif %}
-            <!-- page 'number of number' display -->
-            <li class="page-item disabled"><a class="page-link" href="#">
-                Page {{ project_list.number }} of {{ project_list.paginator.num_pages }}</a>
-            </li>
-    
-        <!-- if statement: pagination (next page) -->
-        {% if project_list.has_next %}
-            <!-- add and display: 'next' page-->
-            <li class="page-item"><a class="page-link" 
-                href="?page={{ project_list.next_page_number }}" aria-label="Next">
-                <span aria-hidden="true">Next</span></a>
-            </li>
-            <!-- add and display: ''>> last' page -->
-            <li class="page-item"><a class="page-link" 
-                href="?page={{ project_list.paginator.num_pages }}" aria-label="Last">
-                <span aria-hidden="true">Last &raquo</span></a>
-            </li>
-        <!-- end if: for pagination (next page) -->
-        {% endif %}
+          <!-- if statement: pagination (previous page) -->
+          {% if project_list.has_previous %}
+          <!-- add and display: '<< first' page -->
+          <li class="page-item">
+            <a class="page-link" href="?page=1" aria-label="First">
+              <span aria-hidden="true">&laquo First</span></a
+            >
+          </li>
+          <!-- add and display: 'previous' page -->
+          <li class="page-item">
+            <a
+              class="page-link"
+              href="?page={{ project_list.previous_page_number }}"
+              aria-label="Previous"
+            >
+              <span aria-hidden="true">Previous</span></a
+            >
+          </li>
+          <!-- end if: for pagination (previous page) -->
+          {% endif %}
+          <!-- page 'number of number' display -->
+          <li class="page-item disabled">
+            <a class="page-link" href="#">
+              Page {{ project_list.number }} of {{
+              project_list.paginator.num_pages }}</a
+            >
+          </li>
 
+          <!-- if statement: pagination (next page) -->
+          {% if project_list.has_next %}
+          <!-- add and display: 'next' page-->
+          <li class="page-item">
+            <a
+              class="page-link"
+              href="?page={{ project_list.next_page_number }}"
+              aria-label="Next"
+            >
+              <span aria-hidden="true">Next</span></a
+            >
+          </li>
+          <!-- add and display: ''>> last' page -->
+          <li class="page-item">
+            <a
+              class="page-link"
+              href="?page={{ project_list.paginator.num_pages }}"
+              aria-label="Last"
+            >
+              <span aria-hidden="true">Last &raquo</span></a
+            >
+          </li>
+          <!-- end if: for pagination (next page) -->
+          {% endif %}
         </ul>
-    </nav>
-    </div>   
-</div>     
+      </nav>
+    </div>
+  </div>
 
-{% endblock content %}
+  {% endblock content %}
+</div>
