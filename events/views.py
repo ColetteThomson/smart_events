@@ -1,9 +1,4 @@
-# from datetime import datetime
-# from datetime import date
 from django.shortcuts import render, redirect, reverse
-# from django.views import View
-# generic
-#from django.contrib.auth.decorators import login_required
 # Pagination
 from django.core.paginator import Paginator
 from django.contrib import messages
@@ -14,9 +9,9 @@ from .forms import AdminForm, ProjectForm, TechSupportForm
 
 # --------------------------------------------------- Functions for 'PROJECT'
 
-# SEARCH for projects
 def search_projects(request):
-    """ if user clicks 'search' button """
+    """ SEARCH for projects """
+    # if user clicks 'search' button
     if request.method == "POST":
         # variable to contain entered search request
         searched = request.POST['searched']
@@ -25,9 +20,9 @@ def search_projects(request):
         # return search result
         return render(request,
                       'search_projects.html', {
-                                             'searched': searched,
-                                             'projects': projects,
-                                            })
+                          'searched': searched,
+                          'projects': projects,
+                      })
     else:
         # return search result
         return render(request,
@@ -35,9 +30,9 @@ def search_projects(request):
                       {})
 
 
-# DELETE a project
 def delete_project(request, project_id):
-    """ get primary key project_id from Project """
+    """ DELETE a project """
+    # get primary key project_id from Project
     project = Project.objects.get(id=project_id)
     # if user is project manager (prevent deletion through url)
     if request.user == project.project_manager:
@@ -55,9 +50,9 @@ def delete_project(request, project_id):
         return redirect('all_projects')
 
 
-# UPDATE a project
 def update_project(request, project_id):
-    """ get primary key project_id from Project """
+    """ UPDATE a project """
+    # get primary key project_id from Project
     project = Project.objects.get(id=project_id)
     # if updating then pre-populate existing info (instance)
     # if not then display empty ProjectForm
@@ -73,14 +68,14 @@ def update_project(request, project_id):
     # update details of a project
     return render(request,
                   'update_project.html', {
-                                     "project": project,
-                                     "form": form,
-                                    })
+                      "project": project,
+                      "form": form,
+                  })
 
 
-# CREATE (add) a new Project
 def add_project(request):
-    """ check if user is ProjMgr1 """
+    """ CREATE (add) a new Project """
+    # check if user is ProjMgr1
     if request.user.username != 'ProjMgr1':
         return redirect('/')
 
@@ -121,9 +116,9 @@ def add_project(request):
                       {'project_form': project_form})
 
 
-# LIST all projects
 def all_projects(request):
-    """ call all Project objects from models.py """
+    """ LIST all projects """
+    # call all Project objects from models.py
     project = Project.objects.all()
     # set up pagination, show 2 projects per page
     p = Paginator(Project.objects.all(), 6)
@@ -134,27 +129,27 @@ def all_projects(request):
     # list all projects on one page
     return render(request,
                   'all_projects.html', {
-                                     "project": project,
-                                     "project_list": project_list,
-                                    })
+                      "project": project,
+                      "project_list": project_list,
+                  })
 
 
-# SHOW details of a project
 def show_project(request, project_id):
-    """ get unique key project_id from Project """
+    """ SHOW details of a project """
+    # get unique key project_id from Project
     project = Project.objects.get(id=project_id)
     # show individual people
     return render(request,
                   'show_project.html', {
-                                     "project": project,
-                                     })
+                      "project": project,
+                  })
 
 
 # ------------------------------------------------ Functions for 'ADMIN PEOPLE'
 
-# SEARCH for people
 def search_admin_people(request):
-    """ if user clicks 'search' button """
+    """ SEARCH for people """
+    # if user clicks 'search' button
     if request.method == "POST":
         # variable to contain entered search request
         searched = request.POST['searched']
@@ -164,9 +159,9 @@ def search_admin_people(request):
         # return search result
         return render(request,
                       'search_admin_people.html', {
-                                             'searched': searched,
-                                             'persons': persons,
-                                            })
+                          'searched': searched,
+                          'persons': persons,
+                      })
     else:
         # return search result
         return render(request,
@@ -174,9 +169,9 @@ def search_admin_people(request):
                       {})
 
 
-# DELETE a person from Admin People
 def delete_admin_people(request, people_id):
-    """ get primary key people_id from PeopleAdmin """
+    """ DELETE a person from Admin People """
+    # get primary key people_id from PeopleAdmin
     people = PeopleAdministration.objects.get(id=people_id)
     # if user is owner (prevent deletion through url)
     if request.user == people.ad_owner:
@@ -186,7 +181,7 @@ def delete_admin_people(request, people_id):
         messages.success(request, ("Person has been deleted"))
         # redirect back to 'all_admin_people' page
         return redirect('all_admin_people')
-    else: 
+    else:
         # display error message to user
         messages.warning(request,
                          ("You are not authorised to delete this person"))
@@ -194,16 +189,16 @@ def delete_admin_people(request, people_id):
         return redirect('all_admin_people')
 
 
-# UPDATE Admin People
 def update_admin_people(request, people_id):
-    """ get primary key people_id from PeopleAdmin """
+    """ UPDATE Admin People """
+    # get primary key people_id from PeopleAdmin
     people = PeopleAdministration.objects.get(id=people_id)
     # if updating then pre-populate existing info (instance)
     # if not then display empty AdminForm
     form = AdminForm(request.POST or None, instance=people)
     # if admin form is valid (required fields completed)
     if form.is_valid():
-        # save and send to all_admin_people page 
+        # save and send to all_admin_people page
         form.save()
         # display success message to user
         messages.success(request, ("Admin Person has been updated"))
@@ -212,25 +207,25 @@ def update_admin_people(request, people_id):
     # update details of a person
     return render(request,
                   'update_admin_people.html', {
-                                                "people": people,
-                                                "form": form,
-                                              })
+                      "people": people,
+                      "form": form,
+                  })
 
 
-# SHOW details of a person
 def show_admin_person(request, people_id):
-    """ get unique key people_id from PeopleAdmin """
+    """ SHOW details of a person """
+    # get unique key people_id from PeopleAdmin
     person = PeopleAdministration.objects.get(id=people_id)
     # show individual people
     return render(request,
                   'show_admin_person.html', {
-                                             "person": person,
-                                            })
+                      "person": person,
+                  })
 
 
-# LIST all Admin People
 def all_admin_people(request):
-    """ call all PeopleAdmin objects from models.py """
+    """ LIST all Admin People """
+    # call all PeopleAdmin objects from models.py
     people = PeopleAdministration.objects.all()
     # set up pagination, show 2 people per page
     p = Paginator(PeopleAdministration.objects.all(), 6)
@@ -238,17 +233,17 @@ def all_admin_people(request):
     page = request.GET.get('page')
     people_list = p.get_page(page)
 
-    # list all admin people 
+    # list all admin people
     return render(request,
                   'all_admin_people.html', {
-                                     "people": people,
-                                     "people_list": people_list,
-                                    })
+                      "people": people,
+                      "people_list": people_list,
+                  })
 
 
-# CREATE (add) new Admin People
 def add_admin_people(request):
-    """ check if user is PeopleAdmin """
+    """ CREATE (add) new Admin People """
+    # check if user is PeopleAdmin
     if request.user.username != 'PeopleAdmin':
         return redirect('/')
 
@@ -290,9 +285,10 @@ def add_admin_people(request):
 
 # ---------------------------------------- Functions for 'TECH SUPPORT PEOPLE'
 
-# SEARCH for Tech Support people
+
 def search_techsupport_people(request):
-    """ if user clicks 'search' button """
+    """ SEARCH for Tech Support people """
+    # if user clicks 'search' button
     if request.method == "POST":
         # variable to contain entered search request
         searched = request.POST['searched']
@@ -302,9 +298,9 @@ def search_techsupport_people(request):
         # return search result
         return render(request,
                       'search_techsupport_people.html', {
-                                             'searched': searched,
-                                             'persons': persons,
-                                            })
+                          'searched': searched,
+                          'persons': persons,
+                      })
     else:
         # return search result
         return render(request,
@@ -312,9 +308,9 @@ def search_techsupport_people(request):
                       {})
 
 
-# DELETE a person from Tech Support People
 def delete_techsupport_people(request, people_id):
-    """ get primary key people_id from PeopleTechSupport """
+    """ DELETE a person from Tech Support People """
+    # get primary key people_id from PeopleTechSupport
     people = PeopleTechSupport.objects.get(id=people_id)
     # if user is owner (prevent deletion through url)
     if request.user == people.ts_owner:
@@ -332,9 +328,9 @@ def delete_techsupport_people(request, people_id):
         return redirect('all_techsupport_people')
 
 
-# UPDATE Tech Support People
 def update_techsupport_people(request, people_id):
-    """ get primary key people_id from PeopleTechSupport """
+    """ UPDATE Tech Support People """
+    # get primary key people_id from PeopleTechSupport
     people = PeopleTechSupport.objects.get(id=people_id)
     # if updating then pre-populate existing info (instance)
     # if not then display empty TechSupportForm
@@ -350,25 +346,25 @@ def update_techsupport_people(request, people_id):
     # update details of a tech support person
     return render(request,
                   'update_techsupport_people.html', {
-                                     "people": people,
-                                     "form": form,
-                                    })
+                      "people": people,
+                      "form": form,
+                  })
 
 
-# SHOW details of an Tech Support person
 def show_techsupport_person(request, people_id):
-    """ get unique key people_id from PeopleTechSupport """
+    """ SHOW details of a Tech Support person """
+    # get unique key people_id from PeopleTechSupport
     person = PeopleTechSupport.objects.get(id=people_id)
     # show individual tech support person
     return render(request,
                   'show_techsupport_person.html', {
-                                     "person": person,
-                                     })
+                      "person": person,
+                  })
 
 
-# LIST all Tech Support people
 def all_techsupport_people(request):
-    """ call all PeopleTechSupport objects from models.py """
+    """ LIST all Tech Support people """
+    # call all PeopleTechSupport objects from models.py
     people = PeopleTechSupport.objects.all()
     # set up pagination, show 2 people per page
     p = Paginator(PeopleTechSupport.objects.all(), 6)
@@ -379,14 +375,14 @@ def all_techsupport_people(request):
     # list all tech support people
     return render(request,
                   'all_techsupport_people.html', {
-                                     "people": people,
-                                     "people_list": people_list,
-                                    })
+                      "people": people,
+                      "people_list": people_list,
+                  })
 
 
-# CREATE (add) new Tech Support People
 def add_tech_support(request):
-    """ check if user is PeopleTech """
+    """ CREATE (add) new Tech Support People """
+    # check if user is PeopleTech
     if request.user.username != 'PeopleTech':
         return redirect('/')
 
