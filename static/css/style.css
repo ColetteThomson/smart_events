@@ -129,7 +129,7 @@ body {
     color: #038bfa;
     font-size: small;
     margin-bottom: 10px;
-    padding: 3px, 4px, 3px, 4px;
+    padding: 3px 4px 3px 4px;
 }
 
 /* chat post date and like (heart) */
@@ -674,7 +674,6 @@ body {
     .masthead {
         height: 15vh;
         width: 100%;
-        overflow: none;
     }
 
     /* heading block image */
