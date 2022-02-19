@@ -1,45 +1,54 @@
 {% extends "base.html" %}
 
-{% block title %}Displaying Model Data{% endblock title %}
+{% block title %}Displaying Model Data{% endblock %}
 
 {% block content %}
+
 <div class="background-admin">
-    <div class="container container-height-home events-mobile">
-    <br/>
-    <center><h1>Personal Details</h1></center>   
-    
+  <div class="container container-height-home events-mobile">
+    <br />
+    <center><h1>Personal Details</h1></center>
+
     <!-- center table across all screen widths -->
     <div class="row justify-content-center">
-        <!-- person information card  -->
-        <div class="card" style="width: 30rem;">
-            <div class="card-header card-header-text card-padding-head">
-                <strong>{{ person }}</strong>
-            </div>
-                <div class="card-body mobile-text">
-                    <p class="card-text">Contact Number: {{ person.contact_no }}</p>
-                    <p class="card-text">Email: {{ person.person_email }}</p>
-                    <p class="card-text">Project Experience: {{ person.project_experience }}</p>
-                                
-                <!-- to check user is logged in -->
-                {% if user.is_authenticated %}
-                    <!-- to check user is the people 'owner' for this person -->
-                    {% if user == person.ad_owner%}
-        
-                    <!-- button links to 'update' and 'delete' a person from a project -->
-                    <center>
-                        <a href="{% url 'update_admin_people' person.id %}" 
-                        class="btn button-color-update btn-sm button-position">Update Person</a>
-
-                        <a href="{% url 'delete_admin_people' person.id %}" 
-                        class="btn button-color-delete btn-sm">Delete Person</a>
-                    </center>
-                    <!-- endif: people 'owner' -->
-                    {% endif %}
-                </div>
-            <!-- endif: logged in -->
-            {% endif %}   
+      <!-- person information card  -->
+      <div class="card" style="width: 30rem">
+        <div class="card-header card-header-text card-padding-head">
+          <strong>{{ person }}</strong>
         </div>
-    </div>
-</div>
+        <div class="card-body mobile-text">
+          <p class="card-text">Contact Number: {{ person.contact_no }}</p>
+          <p class="card-text">Email: {{ person.person_email }}</p>
+          <p class="card-text">
+            Project Experience: {{ person.project_experience }}
+          </p>
 
+          <!-- to check user is logged in -->
+          {% if user.is_authenticated %}
+          <!-- to check user is the people 'owner' for this person -->
+          {% if user == person.ad_owner%}
+
+          <!-- button links to 'update' and 'delete' a person from a project -->
+          <center>
+            <a
+              href="{% url 'update_admin_people' person.id %}"
+              class="btn button-color-update btn-sm button-position"
+              >Update Person</a
+            >
+
+            <a
+              href="{% url 'delete_admin_people' person.id %}"
+              class="btn button-color-delete btn-sm"
+              >Delete Person</a
+            >
+          </center>
+          <!-- endif: people 'owner' -->
+          {% endif %}
+        </div>
+        <!-- endif: logged in -->
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock content %}
