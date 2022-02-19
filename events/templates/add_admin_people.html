@@ -1,56 +1,51 @@
 {% extends "base.html" %}
 
 <!-- load crispy forms -->
-{% load crispy_forms_tags %}
-
-{% block title %}Displaying Model Data{% endblock title %}
-
-{% block content %}
+{% load crispy_forms_tags %} {% block title %}Displaying Model Data{% endblock
+title %} {% block content %}
 <div class="background-admin">
-    <div class="container container-height-home events-mobile">
-        <br/>
-        <center><h1>Add a New Administration Person</h1></center>
-        <br/>
+  <div class="container container-height-home events-mobile">
+    <br />
+    <center><h1>Add a New Administration Person</h1></center>
+    <br />
 
-        {% if user.is_authenticated %}
+    {% if user.is_authenticated %}
 
-        <!-- form to add a new administration person -->
-            <form action="" method=POST class="mobile-text">
-                <!-- csrf to prevent malicious attacks using user credentials -->
-                {% csrf_token %}
+    <!-- form to add a new administration person -->
+    <form action="" method="POST" class="mobile-text">
+      <!-- csrf to prevent malicious attacks using user credentials -->
+      {% csrf_token %}
 
-                <!-- render add_venue form using Crispy filter -->
-                {{ admin_form | crispy }}
+      <!-- render add_venue form using Crispy filter -->
+      {{ admin_form | crispy }}
 
-                <!-- submit button for add_admin_people form -->
-                <button type="submit" class="btn btn-lg button">Submit</button>
-                
-            <!-- javascript to obtain logged in user's id (field hidden) -->
-            <script>
-                var name = "{{ user.id }}";
-                document.getElementById("user").value = name;
-            </script>
-                
-            {% if submitted %}
-                    <!-- if submitted (True) then display a message to user -->
-                    <div class="alert alert-success" role="alert">
-                        Your Project Administration People Resource was submitted successfully
-                    </div>                
-            </form>
-               
-            <!-- endif: submitted statement  -->
-            {% endif %}
+      <!-- submit button for add_admin_people form -->
+      <button type="submit" class="btn btn-lg button">Submit</button>
 
-        {% else %}
-            <!-- display message to user if not authorised -->
-            <div class="alert alert-warning" role="alert">
-                You are not authorised to create new Project Administration People Resources
-            </div>
+      <!-- javascript to obtain logged in user's id (field hidden) -->
+      <script>
+        var name = "{{ user.id }}";
+        document.getElementById("user").value = name;
+      </script>
 
-        <!-- endif: authenticated user statement  -->
-        {% endif %}
-    </div>   
+      {% if submitted %}
+      <!-- if submitted (True) then display a message to user -->
+      <div class="alert alert-success" role="alert">
+        Your Project Administration People Resource was submitted successfully
+      </div>
+    </form>
+
+    <!-- endif: submitted statement  -->
+    {% endif %} {% else %}
+    <!-- display message to user if not authorised -->
+    <div class="alert alert-warning" role="alert">
+      You are not authorised to create new Project Administration People
+      Resources
+    </div>
+
+    <!-- endif: authenticated user statement  -->
+    {% endif %}
+  </div>
 </div>
-       
-{% endblock content %}
 
+{% endblock content %}
