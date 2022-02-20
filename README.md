@@ -298,7 +298,26 @@ post_detail.html can be found [here](...).
 'login' page can be found [here](...).<br>
 'register' page can be found [here](...).
 
+## Deployment
+### Project Creation
+The project was created using GitHub and choosing a new repository.<br>
+The following terminal commands were used during this project:
+* git add . - this command adds a change in the working directory to the staging area.
+* git commit -m "*message*" - this command details the change/s made in the 'message' section and then commits the changes to the local repository.
+* git push - this command is used to push all changes to the GitHub repository.
 
-* The lighthouse report for the Actor Quotes Quiz page can be found [here](assets/images/lighthouse_report_actor-quotes-quiz_comp.jpg).
-* The lighthouse report for the Contact Us page can be found [here](assets/images/lighthouse_report_contact-us_comp.jpg).
-* The lighthouse report for the Terms of Service page can be found [here](assets/images/lighthouse_report_tos_comp.jpg).
+### Using GitHub Pages
+* Navigate to the GitHub repository [smartevents WMP](https://colettethomson.github.io/quizz-pro/).
+* Select 'Settings'.
+* Scroll down to 'GitHub Pages'.
+* Select 'Main' branch as the source and click 'Save' button.
+* Select link to go to live published page.
+
+## Credits
+### Code
+* The private collaboration and knowledge sharing SaaS platform [Stack Overflow](https://stackoverflow.com/) was an invaluable resource for general coding queries.
+* Use was made of Code Institute tutor support for help with persistent coding issues.
+
+### Content
+* Inspiration was taken from the need for a simple workforce management tool.
+* Ideas for project content were taken from the website [Springboard Worldwide](http://springboardww.com/index.php/demand-generation/previous-project-examples) and [Stanford Education](http://web.stanford.edu/class/msande108/handouts/PastServe.pdf).
