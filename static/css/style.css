@@ -570,6 +570,7 @@ body {
 
     /* contact for admin */
     .contact {
+        width: 60%;
         font-size: 14px;
         margin-bottom: 15px;
     }
