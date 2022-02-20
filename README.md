@@ -272,22 +272,31 @@ No known limitations.
 * text
 
 ### Code Validation
-* All 21 HTML pages were run through the [W3C Markup Validation Service](https://validator.w3.org/) and showed no errors. The following web pages were checked: home page | 3 x search... pages | 3 x all... pages | 3 x add... pages | 3 x 'update....' pages | 3 x 'delete...' buttons | 2 x 'personal details pages | 'project detail page | 'log in page | 'log out' page | 'register' page.
+* All 21 HTML pages were run through the [W3C Markup Validation Service](https://validator.w3.org/) and showed no errors. The following web pages were checked: 
+Home app: index.html page<br>
+Chat app: 'post_list' | 'post_detail<br>
+Events app: 3 x search... pages | 3 x all... pages | 3 x add... pages | 3 x 'update....' pages | 3 x 'delete...' buttons | 2 x 'personal details' pages | 'project detail' page <br> 
+User account pages: 'log in' page | 'log out' page | 'register' page.
 * The CSS stylesheet was run through the [CSS Validation Service-Jigsaw](https://jigsaw.w3.org/css-validator/) and showed no errors. [CSS screenshot](...).
 * The Javascript file was run through the [JSHint Validation Service](https://jshint.com) and showed no errors.
 [JS screenshot](...).<br>
 
 ### Lighthouse Reports
-* The lighthouse report for the Home page (index.html) can be found [here](...).
-* The lighthouse report for the 3 x 'search...' pages can be found [here](...).
-* The lighthouse report for the 3 x 'all...' pages can be found [here](...).
-* The lighthouse report for the 3 x 'add...' pages can be found [here](...).
-* The lighthouse report for the 3 x 'update...' pages can be found [here](...).
-* The lighthouse report for the 2 x 'personal details' pages can be found [here](...).
-* The lighthouse report for the 'project details' page can be found [here](...).
-* The lighthouse report for the 'logout' page can be found [here](...).
-* The lighthouse report for the 'login' page can be found [here](...).
-* The lighthouse report for the 'register' page can be found [here](...).
+* The lighthouse report for the Home app: index.html can be found [here](...).
+* The lighthouse reports for the Chat app:<br>
+post_list.html can be found [here](...).<br>
+post_detail.html can be found [here](...).
+* The various lighthouse reports for the Events app:<br>
+3 x 'search...' pages can be found [here](...).<br>
+3 x 'all...' pages can be found [here](...).<br>
+3 x 'add...' pages can be found [here](...).<br>
+3 x 'update...' pages can be found [here](...).<br>
+2 x 'personal details' pages can be found [here](...).<br>
+'project details' page can be found [here](...).
+* The lighthouse report for the User Account pages: <br>
+'logout' page can be found [here](...).<br>
+'login' page can be found [here](...).<br>
+'register' page can be found [here](...).
 
 
 * The lighthouse report for the Actor Quotes Quiz page can be found [here](assets/images/lighthouse_report_actor-quotes-quiz_comp.jpg).
