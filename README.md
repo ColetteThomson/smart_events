@@ -129,6 +129,10 @@ The three **All...** pages are intended to provide:
 A mockup of the 'Add Project' page can be found [here](..). <br>
 A mockup of the 'Add Admin People' page can be found [here](..). <br>
 A mockup of the 'Add Tech Support People' page can be found [here](..). <br>
+and with permissions:
+A mockup of the 'Add Project' page can be found [here](..). <br>
+A mockup of the 'Add Admin People' page can be found [here](..). <br>
+A mockup of the 'Add Tech Support People' page can be found [here](..). <br>
 
 The three **Add...** pages are intended to provide:
 * depending on user permissions: the display of an empty form for the user to: 'add a new administration person' OR 'add a new technical support person' OR 'add a new project'.
@@ -139,6 +143,9 @@ The three **Add...** pages are intended to provide:
 ### 'Personal Details' pages for 'Admin People' and 'Tech People'
 Note: these pages become accessible when clicking the 'person name...' from either the 'All Admin People' page OR the 'All Tech Support People' page.
 
+A mockup of the 'Personal Details' page (from 'All Admin People') can be found [here](..). <br>
+A mockup of the 'Personal Details' page (from 'All Tech Support People') can be found [here](..). <br>
+and with permissions:
 A mockup of the 'Personal Details' page (from 'All Admin People') can be found [here](..). <br>
 A mockup of the 'Personal Details' page (from 'All Tech Support People') can be found [here](..). <br>
 
@@ -152,6 +159,8 @@ The two **Personal Details** pages are intended to provide:
 Note: this page becomes accessible when clicking the 'project name...' from the 'All Projects' page.
 
 A mockup of the 'Project Details' page (from 'All Projects') can be found [here](..). <br>
+and with permissions:
+A mockup of the 'Project Details' page (from 'All Projects') can be found [here](..). <br>
 
 The **Project Details** page is intended to provide:
 * an overview of an active project's details. 
@@ -163,9 +172,9 @@ The **Project Details** page is intended to provide:
 Note: this page is permission-based and becomes accessible when clicking the 'project name...' from the 'All Projects' page OR the 'person name...' from the 'All Admin People' OR 'All Tech Support People' pages.
 This page is also accessible from the 'Personal Details' and 'Project Details' pages.
 
-A mockup of the 'Update Project' page (from 'Projects') can be found [here](..). <br>
-A mockup of the 'Update Person' page (from 'Admin People') can be found [here](..). <br>
-A mockup of the 'Update Person' page (from 'Tech People') can be found [here](..). <br>
+A mockup of the 'Update Project' page with 'delete' button (from 'Projects') can be found [here](..). <br>
+A mockup of the 'Update Person' page with 'delete' button (from 'Admin People') can be found [here](..). <br>
+A mockup of the 'Update Person' page with 'delete' button (from 'Tech People') can be found [here](..). <br>
 
 The **Update...** pages are intended to provide:
 * a pre-populated form with existing information on: 'Projects' OR 'Admin People' OR 'Tech Support People'.
@@ -179,5 +188,108 @@ Note: this button is permission-based and is accessible from the 'All Projects' 
 * user messaging: confirmation of the 'deleting' of a project's details OR a person's details.
 * This feature fulfills the user stories: *'As a returning user, I want to be able to find (read/view) the information I'm looking for'* and '*As a returning user, I want to be able to delete existing content, as per my permissions'* and *'As a returning user, I want to have appropriate access to website content as per my permissions'* and *'As a returning user, I want confirmation of actions I have performed on the WMP website'*.
 
+### 'Logout' 'Login' and 'Register' pages
+
+A mockup of the 'Logout' page can be found [here](..). <br>
+A mockup of the 'Login' page can be found [here](..). <br>
+A mockup of the 'Register' page can be found [here](..). <br>
+
+These pages are intended to provide:
+* Logout - confirmation to a registered user that they want to logout
+* Login - request of login information (username and password) from registered users
+* Register - request of user information (username, password, re-type password, optional email) from new users
+
+### Design of the smartevents WMP website
+
+#### Colour Scheme
+
+logo and branding: black;
+Body Text: #445261 (medium grey); rgb(37, 37, 37) (dark grey); rgb(53, 52, 52) (dark grey)
+Headings; button text: #038bfa (blue); rgb(32, 32, 32)
+button text: #fff; #038bfa;
+like hover: #E84610 (orange)
+links: white; black
+update button: rgba(247, 244, 244, 0.856) grey; black
+delete button: rgb(94, 93, 93) grey; white
+project manager: #fa03fa (pink)
+admin people owner: #8c9b0c (lime green)
+tech people owner: #c48a0d (orange)
+general user: #3a3a3a (grey)
+
+#### Fonts
+The 'smartevents' logo uses **Lato**; the 'WMP' brand uses **Permanent Marker**; and body text and headings use **Roboto**.  The back-up font is **sans-serif** for Lato and Roboto and **cursive** for Permanent Marker.  Fonts were downloaded from **Google Fonts**.
+
+#### Imagery
+Images for the website have been downloaded from **Pexels** and are stored in **Cloudinary**.
+
+#### Limitations
+No known limitations.
+
+## Features
+* Login, Logout and Register user account functionality
+* Blog capability (Chat) - users are able to add comments and like project posts. Superuser (Administrator) is able to create posts
+* Full CRUD (create, read, update, delete) functionality that is permissions- and role-based
+* Similar 'look-and-feel' across different user roles (example: all search screens have the same basic appearance) - this is to enhance the user experience and allow for quick familiarisation of the WMP system
+* Colour-coded user roles - for ease of use and to enhance the user experience
+* Messaging system confirming user actions on the website
+* Different page views depending on a user's role and permissions
+* Home page provides at at-a-glance reminder of the different user roles
+
+## Technologies
+* Django - a framework that follows the model–template–views architectural pattern and upon which this website is built
+* Python - website functionality enhanced by custom written Python
+* HTML - the structure of this website project uses custom written HTML as the main language
+* Bootstrap - utilised mostly for website responsiveness
+* CSS - the styling of this website encompasses custom written CSS
+* Javascript - website interaction provided by custom written Javascript
+* [Google Fonts](https://fonts.google.com/) - utilised for the logo, brand and body text
+* [GitHub](https://github.com/) - hosting site for storage of source code for the website and [Git Pages](https://pages.github.com/) for the deployment of the website
+* [Git](https://git-scm.com/) - used as version control software to commit and push code to a GitHub repository where all source code is located
+* [Google Chrome Developer Tools](https://developer.chrome.com/docs/devtools/) - these are built in developer tools used to inspect page elements (eg. responsive design; debug issues; testing of different CSS styling options; and the Lighthouse Reports
+* [Pexels](https://www.pexels.com/) - Chat image for smartevents WMP website
+* [Cloudinary](https://cloudinary.com/) - cloud storage of Chat image for smartevents WMP website
+* [ami.responsivedesign](http://ami.responsivedesign.is/) - used to generate Mockups of smartevents WMP Website
+
+## Testing
+* Manual testing will be performed to check for back-end functionality (Django, Python, Javascript), as well as visual effects and website layout (HTML, Bootstrap, CSS).
+* Testing will be performed to check for compatibility across three web browsers (Google Chrome, Firefox, Opera).
+* Responsive design will be tested across the different screen sizes: desktops/laptops (1024px); tablets (max-width 769px); mobiles (to a max-width of 426px); and large laptops (min-width 1025px to max-width 1441px).
+* All navigational links should direct to the correct html web page as per their names.  The exception here is the 'Home' page, as it will redirect to 'index.html'.
+
+### Test Cases
+* Test cases can be found here for the **index.html** (home) and base.html: <br> 
+[homepage](..)
+* Test cases can be found here for the **Chat** app pages (post_list.html | post_detail.html) : <br> 
+[part1](..)<br>
+[part2](..)<br>
+[part3](..)
+* Test cases can be found here for the various **Events** app pages (add... | update... | delete... | view... ): <br>
+[tos_contact-us](..).
+* Test cases can be found here for the **Logout, Login, Register and un-registered users** pages: <br>
+[tos_contact-us](..).
+
+#### Testing Issues and Resolutions
+* text
+
+### Code Validation
+* All 21 HTML pages were run through the [W3C Markup Validation Service](https://validator.w3.org/) and showed no errors. The following web pages were checked: home page | 3 x search... pages | 3 x all... pages | 3 x add... pages | 3 x 'update....' pages | 3 x 'delete...' buttons | 2 x 'personal details pages | 'project detail page | 'log in page | 'log out' page | 'register' page.
+* The CSS stylesheet was run through the [CSS Validation Service-Jigsaw](https://jigsaw.w3.org/css-validator/) and showed no errors. [CSS screenshot](...).
+* The Javascript file was run through the [JSHint Validation Service](https://jshint.com) and showed no errors.
+[JS screenshot](...).<br>
+
+### Lighthouse Reports
+* The lighthouse report for the Home page (index.html) can be found [here](...).
+* The lighthouse report for the 3 x 'search...' pages can be found [here](...).
+* The lighthouse report for the 3 x 'all...' pages can be found [here](...).
+* The lighthouse report for the 3 x 'add...' pages can be found [here](...).
+* The lighthouse report for the 3 x 'update...' pages can be found [here](...).
+* The lighthouse report for the 2 x 'personal details' pages can be found [here](...).
+* The lighthouse report for the 'project details' page can be found [here](...).
+* The lighthouse report for the 'logout' page can be found [here](...).
+* The lighthouse report for the 'login' page can be found [here](...).
+* The lighthouse report for the 'register' page can be found [here](...).
 
 
+* The lighthouse report for the Actor Quotes Quiz page can be found [here](assets/images/lighthouse_report_actor-quotes-quiz_comp.jpg).
+* The lighthouse report for the Contact Us page can be found [here](assets/images/lighthouse_report_contact-us_comp.jpg).
+* The lighthouse report for the Terms of Service page can be found [here](assets/images/lighthouse_report_tos_comp.jpg).
