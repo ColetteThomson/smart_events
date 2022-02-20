@@ -17,7 +17,7 @@ This website has been developed to run within an organisation's intranet and is 
 
 ## The smartevents WMP website pages are as follows:
 * Home (index.html): opening page
-* Chat: opens the All Project Posts page.  Individual Post detail (i.e. Project Name) can then be accessed via required selection
+* Chat: opens the 'All Project Posts' page.  Individual post detail (i.e. 'Project Name...') can then be accessed via the chosen post from the 'All Project Posts' page
 * Projects: dropdown reveals:  Search Projects; All Projects; Add Project
 * Admin People: dropdown reveals:  Search Admin People; All Admin People; Add Admin People
 * Tech People: dropdown reveals:  Search Tech Support People; All Tech Support People; Add Tech Support People
@@ -132,7 +132,7 @@ A mockup of the 'Add Tech Support People' page can be found [here](..). <br>
 
 The three **Add...** pages are intended to provide:
 * depending on user permissions: the display of an empty form for the user to: 'add a new administration person' OR 'add a new technical support person' OR 'add a new project'.
-* a 'submit' button to confirm their entry of the completed form.
+* a 'submit' button to confirm the user's entry of the completed form.
 * user messaging: confirmation that the user has: 'added a new administration person' OR 'added a new technical support person' OR 'added a new project'.
 * This feature fulfills the user stories: *' As a returning user, I want to be able to create (add) new content, as per my permissions'* and *'As a returning user, I want to have appropriate access to website content as per my permissions'* and *'As a returning user, I want confirmation of actions I have performed on the WMP website'*.
 
@@ -149,7 +149,7 @@ The two **Personal Details** pages are intended to provide:
 * This feature fulfills the user stories: *'As a returning user, I want to be able to find (read/view) the information I'm looking for'* and *'As a returning user, I want to be able to edit (update) existing content, as per my permissions'* and *'*As a returning user, I want to be able to delete existing content, as per my permissions'* and *'As a returning user, I want to have appropriate access to website content as per my permissions'* and *'As a returning user, I want confirmation of actions I have performed on the WMP website'*.
 
 ### 'Project Details' pages for 'Projects'
-Note: this page become accessible when clicking the 'project name...' from the 'All Projects' page.
+Note: this page becomes accessible when clicking the 'project name...' from the 'All Projects' page.
 
 A mockup of the 'Project Details' page (from 'All Projects') can be found [here](..). <br>
 
@@ -159,11 +159,25 @@ The **Project Details** page is intended to provide:
 * user messaging: confirmation of 'updating' or 'deleting' of a project.
 * This feature fulfills the user stories: *'As a returning user, I want to be able to find (read/view) the information I'm looking for'* and *'As a returning user, I want to be able to edit (update) existing content, as per my permissions'* and *'*As a returning user, I want to be able to delete existing content, as per my permissions'* and *'As a returning user, I want to have appropriate access to website content as per my permissions'* and *'As a returning user, I want confirmation of actions I have performed on the WMP website'*.
 
+### 'Update...' pages and 'Delete...' button for 'Projects', 'Admin People' and 'Tech Support People'
+Note: this page is permission-based and becomes accessible when clicking the 'project name...' from the 'All Projects' page OR the 'person name...' from the 'All Admin People' OR 'All Tech Support People' pages.
+This page is also accessible from the 'Personal Details' and 'Project Details' pages.
 
+A mockup of the 'Update Project' page (from 'Projects') can be found [here](..). <br>
+A mockup of the 'Update Person' page (from 'Admin People') can be found [here](..). <br>
+A mockup of the 'Update Person' page (from 'Tech People') can be found [here](..). <br>
 
+The **Update...** pages are intended to provide:
+* a pre-populated form with existing information on: 'Projects' OR 'Admin People' OR 'Tech Support People'.
+* an 'update...' button to confirm the user's changes to the existing form information.
+* user messaging: confirmation of the 'updating' of a project's details OR a person's details.
+* This feature fulfills the user stories: *'As a returning user, I want to be able to find (read/view) the information I'm looking for'* and *'As a returning user, I want to be able to edit (update) existing content, as per my permissions'* and *'As a returning user, I want to have appropriate access to website content as per my permissions'* and *'As a returning user, I want confirmation of actions I have performed on the WMP website'*.
 
-
-
+The **Delete...** button (next to the 'update' button)
+Note: this button is permission-based and is accessible from the 'All Projects' page OR the 'All Admin People' page OR the 'All Tech Support People' page. This button is also accessible from the 'Personal Details' and 'Project Details' pages.
+* an 'delete...' button to confirm the user's decision to delete: a 'project' from 'All Projects' OR a 'person' from 'All Admin People' OR 'All Tech Support People' pages.
+* user messaging: confirmation of the 'deleting' of a project's details OR a person's details.
+* This feature fulfills the user stories: *'As a returning user, I want to be able to find (read/view) the information I'm looking for'* and '*As a returning user, I want to be able to delete existing content, as per my permissions'* and *'As a returning user, I want to have appropriate access to website content as per my permissions'* and *'As a returning user, I want confirmation of actions I have performed on the WMP website'*.
 
 
 
