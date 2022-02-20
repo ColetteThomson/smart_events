@@ -42,8 +42,13 @@ The live project can be found [here](https://)
 
 #### Returning User Functionality Goals
 * As a returning user, I want to have appropriate access to website content as per my permissions
+* As a returning user, I want to be able to find (read/view) the information I'm looking for
+* As a returning user, I want to be able to create (add) new content, as per my permissions
+* As a returning user, I want to be able to edit (update) existing content, as per my permissions
+* As a returning user, I want to be able to delete existing content, as per my permissions
 * As a returning user, I want to be able to view all the organisation's active projects in the Chat
 * As a returning user, I want to be able to add my ideas or suggestions on the different Project Posts
+* As a returning user, I want confirmation of actions I have performed on the WMP website
 
 ### Structural Features of the smartevents WMP website
 
@@ -90,8 +95,7 @@ The **Project Name...** page is intended to provide:
 * a 'body' box (bottom right of page) for registered users to add their idea/suggestion, and an accompanying submit button.
 * approved (published) ideas/suggestions (bottom left of page) detailing: the author, date and time of creation and content of submitted post.
 * user messaging: should a user submit an idea/suggestion, a flash message will appear informing the user their submission is awaiting approval.  All Chat post submissions will need to be authorised (published) by the Administrator.
-* This feature fulfills the user stories: *'As a returning user, I want to be able to view all the organisation's active projects in the Chat'* and *'As a returning user, I want to be able to add my ideas or suggestions on the different Project Posts'*.
-
+* This feature fulfills the user stories: *'As a returning user, I want to be able to view all the organisation's active projects in the Chat'* and *'As a returning user, I want to be able to add my ideas or suggestions on the different Project Posts'* and *'As a returning user, I want confirmation of actions I have performed on the WMP website'*.
 
 ### Dropdowns for 'Projects'; 'Admin People' and 'Tech People' 
 **Projects dropdown: 'Search Projects'; 'All Projects'; 'Add Project' pages**
@@ -100,11 +104,24 @@ The **Project Name...** page is intended to provide:
 
 The three **Search...** pages are intended to provide:
 * a search bar for users to enter their criteria (this field is case sensitive).
-* a search button to submit their criteria.
+* a 'search' button to submit their criteria.
 * a confirmation of the user's submitted search (i.e. you searched for ...).
 * a listing of linked matches to the user's criteria should their search be successful.
+* This feature fulfills the user stories: *'As a returning user, I want to be able to find (read/view) the information I'm looking for'* and *'As a returning user, I want to have appropriate access to website content as per my permissions'*.
 
 The three **All...** pages are intended to provide:
+* depending on the chosen page, a listing of: 'all projects' OR 'all admin people' OR 'all tech support people' - that are present in the WMP database.
+* depending on user permissions: the inclusion of 'update...' and 'delete...' buttons. If no permissions user will just see a listing of: 'all projects' OR 'all admin people' OR 'all tech support people'.
+* pagination showing page number and number of pages.
+* This feature fulfills the user stories: *'As a returning user, I want to be able to find (read/view) the information I'm looking for'* and *'As a returning user, I want to have appropriate access to website content as per my permissions'*.
+
+The three **Add...** pages are intended to provide:
+* depending on user permissions: the display of an empty form for the user to: 'add a new administration person' OR 'add a new technical support person' OR 'add a new project'.
+* a 'submit' button to confirm their entry of the completed form.
+* user messaging: a confirmation message that the user has: 'added a new administration person' OR 'added a new technical support person' OR 'added a new project'.
+* This feature fulfills the user stories: *' As a returning user, I want to be able to create (add) new content, as per my permissions'* and *'As a returning user, I want to have appropriate access to website content as per my permissions'* and *'As a returning user, I want confirmation of actions I have performed on the WMP website'*.
+
+
 
 
 
