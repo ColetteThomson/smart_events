@@ -1,7 +1,7 @@
 /* ------------------------------------------- BASE.HTML */
 body {
-    background-color: white;
-    color: rgb(37, 37, 37);
+    background-color: whitesmoke;
+    color: #202020;
 }
 
 /* logo for 'WMP' */
@@ -40,25 +40,26 @@ body {
 }
 
 .thick1 {
-    color: black;
+    color: #445261;
 }
 
 .thin1 {
     font-weight: 300;
-    color: black;
+    color: #445261;
 }
 
 .brand1 {
     font-family: 'Permanent Marker', cursive;
     font-size: 12px;
     font-weight: 700;
-    color: black;
+    color: #445261;
     padding-right: 10px;
 }
 
 .social-networks i {
     font-size: 120%;
-    color: black;
+    /* color: black; */
+    color: #445261;
 }
 
 .center {
@@ -73,12 +74,12 @@ body {
 /* ----------------- R E G I S T E R / L O G I N  screens */
 .btn-signup {
     background-color: #038bfa;
-    color: #fff;
+    color: whitesmoke;
 }
 
 .btn-signup:hover,
 .btn-signup:active {
-    background-color: #fff;
+    background-color: whitesmoke;
     color: #038bfa;
 }
 
@@ -136,7 +137,7 @@ body {
 /* pagination */
 .chat-post-link:hover,
 .page-link {
-    color: black;
+    color: #202020;
 }
 
 .page-link-size {
@@ -170,7 +171,7 @@ body {
 
 /* heading block background*/
 .masthead-background {
-    background-color: #2b2a2b;
+    background-color: #202020;
     position: relative;
 }
 
@@ -192,9 +193,15 @@ body {
 /* heading block sub title */
 .post-subtitle {
     margin-left: 5%;
-    color: rgb(192, 190, 190);
+    color: whitesmoke;
     position: relative;
     z-index: 3;
+}
+
+.card-format {
+    font-family: Arial, sans-serif;
+    color: #3a3a3a;
+    font-size: 14px;
 }
 
 /* ideas & suggestions block */
@@ -238,7 +245,7 @@ body {
 
 .btn-like:hover,
 .btn-like:active {
-    color: #E84610;
+    color: #445261;
     background: transparent;
     border: none;
 }
@@ -249,39 +256,47 @@ body {
 /* -----------------------------------------------end: Chat app */
 
 /* --------------------------------------------E V E N T S  app */
-
-.h1-size {
+/* heading on top of all events pages */
+.heading_1 {
+    text-align: center;
     font-size: 30px;
+    color: #202020;
 }
 
 /* ---- html files: show_admin_person | show_project | show_techsupport_person */
 /* hyper link */
 .link-color {
-    color: black;
+    color: #202020;
     text-decoration: none;
     font-size: large;
 }
 
 .link-color:hover,
 .link:active {
-    color: white;
+    color: whitesmoke;
 }
 
 /* ---- html files: all_admin_people | all_projects | all_techsupport_people */
+.heading_1 {
+    text-align: center;
+    font-size: 30px;
+    color: #202020;
+}
+
 .table-row {
     line-height: 50px;
 }
 
 /* update button */
 .button-color-update {
-    color: black;
-    background-color: rgba(247, 244, 244, 0.856);
+    color: #445261;
+    background-color: whitesmoke;
 }
 
 /* delete button */
 .button-color-delete {
-    color: white;
-    background-color: rgb(94, 93, 93);
+    color: whitesmoke;
+    background-color: #445261;
 }
 
 /* pagination block */
@@ -293,8 +308,8 @@ body {
 .button {
     margin:0 auto;
     display:block;
-    color: white;
-    background-color: grey;
+    color: whitesmoke;
+    background-color:#445261;
     padding: 4px 5px 4px 5px;
     font-size: 16px;
 }
@@ -348,7 +363,7 @@ body {
     padding-top: 30px;
     font-size: 20px;
     text-align: center;
-    color: rgb(32, 32, 32);
+    color: #202020;
 }
 
 .sub-heading {
@@ -356,7 +371,7 @@ body {
     padding-top: 0;
     font-size: 20px;
     text-align: center;
-    color: rgb(32, 32, 32);
+    color: #202020;
 }
 
 /* contact for admin */
@@ -369,7 +384,7 @@ body {
 
 /* body text */
 .text {
-    color: rgb(53, 52, 52);;
+    color: #445261;
     text-align: center;
     width: 90%;
 }
@@ -407,7 +422,7 @@ body {
 /* text */
 .div-pm-1 {
     font-size: 16px;
-    color: rgb(39, 38, 38);
+    color: #445261;
     margin-top: 3px;
     padding-top: 4px;
     padding-bottom: 0.011px;
@@ -436,7 +451,7 @@ body {
 /* text */
 .div-ad-1 {
     font-size: 16px;
-    color: rgb(39, 38, 38);
+    color: #445261;
     margin-top: 3px;
     padding-top: 4px;
     padding-bottom: 0.011px;
@@ -465,7 +480,7 @@ body {
 /* text */
 .div-tech-1 {
     font-size: 16px;
-    color: rgb(39, 38, 38);
+    color: #445261;
     margin-top: 3px;
     padding-top: 4px;
     padding-bottom: 0.011px;
@@ -485,7 +500,7 @@ body {
 /* general users permissions block */
 /* heading */
 .div-gen {
-    color: #6b6b6b;
+    color: #445261;
     font-size: 16px;
     text-align: center;
     width: 60%;
@@ -494,7 +509,7 @@ body {
 /* text */
 .div-gen-1 {
     font-size: 16px;
-    color: rgb(39, 38, 38);
+    color: #445261;
     margin-top: 3px;
     padding-top: 4px;
     padding-bottom: 0.011px;
@@ -583,6 +598,14 @@ body {
         font-size: 14px;
     }
     /* -------------------------------------------- end Chat app */
+
+    /* ---------------------------------------- E V E N T S  app */
+    /* heading on top of all events pages */
+    .heading_1 {
+        font-size: 25px;
+    }
+
+    /* ------------------------------------------ end Events app */
 
     /* ---------------------------------------------H O M E  app */
     /* ---- index.html ---- */
@@ -736,6 +759,11 @@ body {
     /* -------------------------------------------------------------- end Chat app */
 
     /* ---------------------------------------------------------- E V E N T S  app */
+
+    /* heading on top of all events pages */
+    .heading_1 {
+        font-size: 20px;
+    }
 
     /* ---- html files: show_admin_person | show_project | show_techsupport_person */
     /* hyperlink and buttons */

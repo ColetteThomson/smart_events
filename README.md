@@ -203,14 +203,10 @@ These pages are intended to provide:
 
 #### Colour Scheme
 
-logo and branding: black;
-Body Text: #445261 (medium grey); rgb(37, 37, 37) (dark grey); rgb(53, 52, 52) (dark grey)
-Headings; button text: #038bfa (blue); rgb(32, 32, 32)
-button text: #fff; #038bfa;
-like hover: #E84610 (orange)
-links: white; black
-update button: rgba(247, 244, 244, 0.856) grey; black
-delete button: rgb(94, 93, 93) grey; white
+Body text; footer: #445261 (medium grey)
+logo and branding; headings; button text: #038bfa (blue);
+body text; update button text: #202020 (dark grey)
+update and delete buttons; button background; delete button text; links: whitesmoke; 
 project manager: #fa03fa (pink)
 admin people owner: #8c9b0c (lime green)
 tech people owner: #c48a0d (orange)

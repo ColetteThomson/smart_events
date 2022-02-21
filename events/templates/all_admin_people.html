@@ -11,7 +11,7 @@
   <div class="container container-height-home events-mobile">
     <br />
 
-    <center><h1>All Administration People</h1></center>
+    <h1 class="heading_1">All Administration People</h1>
 
     <br />
     <!-- center table across all screen widths -->
@@ -35,21 +35,15 @@
             {% if user == people.ad_owner %}
 
             <!-- update a person link and button -->
-            <td align="right">
-              <a
-                href="{% url 'update_admin_people' people.id %}"
-                class="btn button-color-update btn-sm button-size"
-                >Update Person</a
-              >
+            <td>
+              <a href="{% url 'update_admin_people' people.id %}"
+                class="btn button-color-update btn-sm button-size">Update Person</a>
             </td>
 
             <!-- delete a person link and button -->
-            <td align="right">
-              <a
-                href="{% url 'delete_admin_people' people.id %}"
-                class="btn button-color-delete btn-sm button-size"
-                >Delete Person</a
-              >
+            <td>
+              <a href="{% url 'delete_admin_people' people.id %}"
+                class="btn button-color-delete btn-sm button-size">Delete Person</a>
             </td>
           </tr>
 

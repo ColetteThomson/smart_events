@@ -10,7 +10,7 @@
 <div class="background-tech">
   <div class="container container-height-home events-mobile">
     <br />
-    <center><h1>All Technical Support People</h1></center>
+    <h1 class="heading_1">All Technical Support People</h1>
     <br />
     <!-- center table across all screen widths -->
     <div class="row justify-content-center">
@@ -33,21 +33,15 @@
             {% if user == people.ts_owner %}
 
             <!-- update a person link and button -->
-            <td align="right">
-              <a
-                href="{% url 'update_techsupport_people' people.id %}"
-                class="btn button-color-update btn-sm button-size"
-                >Update Person</a
-              >
+            <td>
+              <a href="{% url 'update_techsupport_people' people.id %}"
+                class="btn button-color-update btn-sm button-size">Update Person</a>
             </td>
 
             <!-- delete a person link and button -->
-            <td align="right">
-              <a
-                href="{% url 'delete_techsupport_people' people.id %}"
-                class="btn button-color-delete btn-sm button-size"
-                >Delete Person</a
-              >
+            <td>
+              <a href="{% url 'delete_techsupport_people' people.id %}"
+                class="btn button-color-delete btn-sm button-size">Delete Person</a>
             </td>
 
             <!-- endif: project manager -->

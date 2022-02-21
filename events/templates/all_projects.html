@@ -11,7 +11,7 @@
   <div class="container container-height-home events-mobile">
     <br />
 
-    <center><h1>All Projects</h1></center>
+    <h1 class="heading_1">All Projects</h1>
     <br />
     <!-- center table across all screen widths -->
     <div class="row justify-content-center">
@@ -32,21 +32,15 @@
             {% if user == project.project_manager %}
 
             <!-- update a project link and button -->
-            <td align="right">
-              <a
-                href="{% url 'update_project' project.id %}"
-                class="btn button-color-update btn-sm button-size"
-                >Update Project</a
-              >
+            <td>
+              <a href="{% url 'update_project' project.id %}"
+                class="btn button-color-update btn-sm button-size">Update Project</a>
             </td>
 
             <!-- delete a project link and button -->
-            <td align="right">
-              <a
-                href="{% url 'delete_project' project.id %}"
-                class="btn button-color-delete btn-sm button-size"
-                >Delete Project</a
-              >
+            <td>
+              <a href="{% url 'delete_project' project.id %}"
+                class="btn button-color-delete btn-sm button-size">Delete Project</a>
             </td>
           </tr>
 
