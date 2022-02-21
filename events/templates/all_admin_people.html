@@ -6,14 +6,14 @@
 {% block title %}Displaying Model Data{% endblock %}
 
 {% block content %}
-
+<!-- background for admin people pages -->
 <div class="background-admin">
   <div class="container container-height-home events-mobile">
     <br />
-
+    <!-- main heading -->
     <h1 class="heading_1">All Administration People</h1>
-
     <br />
+
     <!-- center table across all screen widths -->
     <div class="row justify-content-center">
       <div class="col-md-8">
@@ -22,16 +22,13 @@
           {% for people in people_list %}
           <tr class="table-active table-row">
             <td>
-              <a
-                class="link-color"
-                href="{% url 'show_admin_person' people.id %}"
-                >{{ people.person_name }}</a
-              >
+              <!-- list of all administration people -->
+              <a class="link-color" href="{% url 'show_admin_person' people.id %}">{{ people.person_name }}</a>
             </td>
 
-            <!-- to check user is logged in -->
+            <!-- if statement: check user is logged in -->
             {% if user.is_authenticated %}
-            <!-- to check user is the people 'owner' for this person -->
+            <!-- if statement: check user is the people 'owner' for this person -->
             {% if user == people.ad_owner %}
 
             <!-- update a person link and button -->
@@ -47,7 +44,7 @@
             </td>
           </tr>
 
-          <!-- endif: people 'owner' -->
+          <!-- endif: admin people owner -->
           {% endif %}
 
           <!-- endif: logged in -->
@@ -66,51 +63,31 @@
           {% if people_list.has_previous %}
           <!-- add and display: '<< first' page -->
           <li class="page-item">
-            <a class="page-link" href="?page=1" aria-label="First">
-              <span aria-hidden="true">&laquo First</span></a
-            >
+            <a class="page-link" href="?page=1" aria-label="First"><span aria-hidden="true">&laquo First</span></a>
           </li>
           <!-- add and display: 'previous' page -->
           <li class="page-item">
-            <a
-              class="page-link"
-              href="?page={{ people_list.previous_page_number }}"
-              aria-label="Previous"
-            >
-              <span aria-hidden="true">Previous</span></a
-            >
+            <a class="page-link" href="?page={{ people_list.previous_page_number }}" aria-label="Previous">
+              <span aria-hidden="true">Previous</span></a>
           </li>
           <!-- end if: for pagination (previous page) -->
           {% endif %}
           <!-- page 'number of number' display -->
           <li class="page-item disabled">
-            <a class="page-link" href="#">
-              Page {{ people_list.number }} of 
-              {{ people_list.paginator.num_pages }}</a
-            >
+            <a class="page-link" href="#">Page {{ people_list.number }} of {{ people_list.paginator.num_pages }}</a>
           </li>
 
           <!-- if statement: pagination (next page) -->
           {% if people_list.has_next %}
           <!-- add and display: 'next' page-->
           <li class="page-item">
-            <a
-              class="page-link"
-              href="?page={{ people_list.next_page_number }}"
-              aria-label="Next"
-            >
-              <span aria-hidden="true">Next</span></a
-            >
+            <a class="page-link" href="?page={{ people_list.next_page_number }}" aria-label="Next">
+              <span aria-hidden="true">Next</span></a>
           </li>
           <!-- add and display: ''>> last' page -->
           <li class="page-item">
-            <a
-              class="page-link"
-              href="?page={{ people_list.paginator.num_pages }}"
-              aria-label="Last"
-            >
-              <span aria-hidden="true">Last &raquo</span></a
-            >
+            <a class="page-link" href="?page={{ people_list.paginator.num_pages }}" aria-label="Last">
+              <span aria-hidden="true">Last &raquo</span></a>
           </li>
           <!-- end if: for pagination (next page) -->
           {% endif %}
@@ -118,5 +95,6 @@
       </nav>
     </div>
   </div>
+</div>
   {% endblock content %}
 </div>
