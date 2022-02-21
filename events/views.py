@@ -204,12 +204,18 @@ def update_admin_people(request, people_id):
         messages.success(request, ("Admin Person has been updated"))
         return redirect('all_admin_people')
 
+    # else:
+    #     # return form for authorised user to complete
+    #     return render(request,  'update_admin_people.html',
+    #                   {'admin_form': admin_form})
+        
+        
     # update details of a person
     return render(request,
                   'update_admin_people.html', {
-                      "people": people,
-                      "form": form,
-                  })
+                                                  "people": people,
+                                                  "form": form,
+                                    })
 
 
 def show_admin_person(request, people_id):

@@ -6,14 +6,15 @@
 {% block title %}Displaying Model Data{% endblock %}
 
 {% block content %}
-
+<!-- background for all admin people pages -->
 <div class="background-admin">
   <div class="container container-height-home events-mobile">
     <br />
-    <center><h1>Update Administration Person</h1></center>
+    <!-- main heading -->
+    <h1 class="heading_1">Update Administration Person</h1>
 
     <!-- pre-populuated form to be updated -->
-    <form action="" method="POST" class="forms-mobile">
+    <form action="{% url 'update_admin_people' %}" method="POST" class="forms-mobile">
       <!-- csrf to prevent malicious attacks using user credentials -->
       {% csrf_token %}
 
