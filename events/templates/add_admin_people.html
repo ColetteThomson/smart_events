@@ -6,16 +6,18 @@
 {% block title %}Displaying Model Data{% endblock %} 
 
 {% block content %}
+<!-- background for all admin people pages -->
 <div class="background-admin">
   <div class="container container-height-home events-mobile">
     <br />
-    <center><h1>Add a New Administration Person</h1></center>
+    <!-- main heading -->
+    <h1 class="heading_1">Add a New Administration Person</h1>
     <br />
-
+    <!-- if statement: check user is logged in -->
     {% if user.is_authenticated %}
 
     <!-- form to add a new administration person -->
-    <form action="" method="POST" class="mobile-text">
+    <form action="{% url 'add_admin_people' %}" method="POST" class="mobile-text">
       <!-- csrf to prevent malicious attacks using user credentials -->
       {% csrf_token %}
 
@@ -36,18 +38,19 @@
       <div class="alert alert-success" role="alert">
         Your Project Administration People Resource was submitted successfully
       </div>
+    
+
+      <!-- endif: submitted statement  -->
+      {% endif %} {% else %}
+      <!-- display message to user if not authorised -->
+      <div class="alert alert-warning" role="alert">
+        You are not authorised to create new Project Administration People
+        Resources
+      </div>
+
+      <!-- endif: authenticated user statement  -->
+      {% endif %}
     </form>
-
-    <!-- endif: submitted statement  -->
-    {% endif %} {% else %}
-    <!-- display message to user if not authorised -->
-    <div class="alert alert-warning" role="alert">
-      You are not authorised to create new Project Administration People
-      Resources
-    </div>
-
-    <!-- endif: authenticated user statement  -->
-    {% endif %}
   </div>
 </div>
 

@@ -6,14 +6,17 @@
 {% block title %}Displaying Model Data{% endblock %}
 
 {% block content %}
+<!-- background for all project pages -->
 <div class="background-project">
   <div class="container container-height-home events-mobile">
     <br />
-    <center><h1>Add a New Project</h1></center>
+    <!-- main heading -->
+    <h1 class="heading_1">Add a New Project</h1>
     <br />
-
+    <!-- if statement: check user is logged in -->
     {% if user.is_authenticated %}
 
+    <!-- form to add a new project -->
     <form action="{% url 'add_project' %}" method="POST" class="mobile-text">
       <!-- csrf to prevent malicious attacks using user credentials -->
       {% csrf_token %}
@@ -35,17 +38,19 @@
       <div class="alert alert-success" role="alert">
         Your new Project was submitted successfully
       </div>
-    </form>
-
-    <!-- endif: submitted statement  -->
-    {% endif %} {% else %}
-    <!-- display message to user if not authorised -->
-    <div class="alert alert-warning" role="alert">
-      You are not authorised to create new Projects
-    </div>
+    
+      <!-- endif: submitted statement  -->
+      {% endif %}
+    
+      {% else %}
+      <!-- display message to user if not authorised -->
+      <div class="alert alert-warning" role="alert">
+        You are not authorised to create new Projects
+      </div>
 
     <!-- endif: authenticated user statement  -->
     {% endif %}
+  </form>
   </div>
 </div>
 
