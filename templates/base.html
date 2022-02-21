@@ -1,7 +1,7 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html class="h-100">
+<html class="h-100" lang="en">
 
 <head>
     <title>WMP</title>
@@ -40,12 +40,12 @@
                 
 
                     <!-- home page menu item -->
-                    <li class="nav-item collapse navbar-collapse" id="navbarText" >
+                    <li class="nav-item collapse navbar-collapse" id="navbarText">
                         <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                     </li>
 
                     <!-- project chat page menu item -->
-                    <li class="nav-item collapse navbar-collapse" id="navbarText">
+                    <li class="nav-item collapse navbar-collapse navbarText">
                         <a class="nav-link active" aria-current="page" href="{% url 'post_list' %}">Chat</a>
                     </li>
                     
@@ -53,11 +53,11 @@
                     {% if user.is_authenticated %}
                     
                     <!-- bootstrap dropdown menu for projects -->
-                    <li class="nav-item dropdown collapse navbar-collapse" id="navbarText" >
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <li class="nav-item dropdown collapse navbar-collapse navbarText">
+                        <a class="nav-link dropdown-toggle navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                           Projects
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <ul class="dropdown-menu" aria-label="navbarDropdown">
                             <li><a class="dropdown-item" aria-current="page" href="{% url 'search_projects' %}">Search Projects</a>
                             </li>
                             <li><a class="dropdown-item" aria-current="page" href="{% url 'all_projects' %}">All Projects</a>
@@ -72,11 +72,11 @@
 
                     <!-- bootstrap dropdown menu for ADMINISTRATION people -->
                     
-                    <li class="nav-item dropdown collapse navbar-collapse" id="navbarText" >
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <li class="nav-item dropdown collapse navbar-collapse navbarText">
+                        <a class="nav-link dropdown-toggle navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                           Admin People
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <ul class="dropdown-menu" aria-label="navbarDropdown">
                             <li><a class="dropdown-item" aria-current="page" href="{% url 'search_admin_people' %}">Search Admin People</a>
                             </li>
                             <li><a class="dropdown-item" aria-current="page" href="{% url 'all_admin_people' %}">All Admin People</a>
@@ -90,11 +90,11 @@
                     </li>
                     
                     <!-- bootstrap dropdown menu for TECH SUPPORT people -->
-                    <li class="nav-item dropdown collapse navbar-collapse" id="navbarText" >
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <li class="nav-item dropdown collapse navbar-collapse navbarText">
+                        <a class="nav-link dropdown-toggle navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                           Tech People
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <ul class="dropdown-menu" aria-label="navbarDropdown">
                             <li><a class="dropdown-item" aria-current="page" href="{% url 'search_techsupport_people' %}">Search Tech Support People</a>
                             </li>
                             <li><a class="dropdown-item" aria-current="page" href="{% url 'all_techsupport_people' %}">All Tech Support People</a>
@@ -108,16 +108,16 @@
                     </li>
 
                     <!-- logout: displayed only if user is logged in -->
-                    <li class="nav-item collapse navbar-collapse" id="navbarText">
+                    <li class="nav-item collapse navbar-collapse navbarText">
                         <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                     </li>
 
                     <!-- if user not authenticated: displays 'register' and 'login' -->
                     {% else %}
-                    <li class="nav-item collapse navbar-collapse" id="navbarText">
+                    <li class="nav-item collapse navbar-collapse navbarText">
                         <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
                     </li>
-                    <li class="nav-item collapse navbar-collapse" id="navbarText">
+                    <li class="nav-item collapse navbar-collapse navbarText">
                         <a class="nav-link" href="{% url 'account_login' %}">Login</a>
                     </li>
                 </ul> 
