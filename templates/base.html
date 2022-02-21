@@ -30,14 +30,14 @@
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <!-- navigation menu items -->
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
-                    
-                    <!-- logo in navbar -->
-                <div class="thick">smart<span class="thin">events
-                    <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">WMP
-                    </span></span></div></a>
+                                
+            <!-- logo in navbar -->
+            <div class="thick-menu">smart<span class="thin-menu">events</span>
+                    <a class="navbar-brand" href="{% url 'home' %}"><span class="brand-menu">WMP
+                    </span></a></div>
                 
+                <!-- navigation menu items -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto navbar-position">
 
                     <!-- home page menu item -->
                     <li class="nav-item collapse navbar-collapse" id="navbarText">
@@ -120,11 +120,11 @@
                     <li class="nav-item collapse navbar-collapse navbarText">
                         <a class="nav-link" href="{% url 'account_login' %}">Login</a>
                     </li>
-                </ul> 
+                 
 
                     <!-- endif: if user is authenticated -->
                     {% endif %}
-          
+                </ul>
         </div>
         <br/>
     
@@ -159,11 +159,11 @@
     <footer class="footer py-1 bg-light footer-position">
         <p class="m-0 text-center text-dark text-size">
             <!-- Copyright -->
-            <span>© 2022 copyright: 
+            <span>© 2022 copyright:</span>
             <!-- logo and brand -->
-            <span class="thick1">smart<span class="thin1">events
+            <span class="thick1">smart<span class="thin1">events</span>
                 <a class="navbar-brand" href="{% url 'home' %}"><span class="brand1">WMP
-                </span></span></span></span></a>
+                </span></a></span>
         </p>
         <p class="m-0 text-center text-dark text-size social-networks">follow us: 
             <a href="https://facebook.com" target="_blank" rel="noopener"

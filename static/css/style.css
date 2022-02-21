@@ -5,7 +5,7 @@ body {
 }
 
 /* logo for 'WMP' */
-.brand {
+.brand-menu {
     font-family: 'Permanent Marker', cursive;
     font-size: 1.4rem;
     font-weight: 700;
@@ -14,11 +14,18 @@ body {
 }
 
 /* logo for 'smartevents' */
-.thick {
+.thick-menu {
+    color: #038bfa;
+    margin-left: 20px;
+}
+
+.navbar-brand {
+    padding: 0;
+    margin-right: 0;
     color: #038bfa;
 }
 
-.thin {
+.thin-menu {
     font-weight: 300;
     color: #038bfa;
 }
@@ -315,6 +322,26 @@ body {
     height: 100%;
     min-height: 700px;
 } 
+
+/* logo for 'WMP' */
+.brand {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #038bfa;
+    padding-right: 10px;
+}
+
+/* logo for 'smartevents' */
+.thick {
+    color: #038bfa;
+}
+
+.thin {
+    font-weight: 300;
+    color: #038bfa;
+}
+
 
 /* headings */
 .main-heading {
