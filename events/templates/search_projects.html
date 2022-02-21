@@ -3,7 +3,7 @@
 {% block title %}Displaying Model Data{% endblock %}
 
 {% block content %}
-
+<!-- background for all project pages -->
 <div class="background-project">
   <div class="container container-height-home events-mobile">
     <div class="card mx-auto">
@@ -11,9 +11,11 @@
         <!-- if statement: search requested by user -->
         {% if searched %}
         <br />
+        <!-- confirmation of user's search criteria -->
         You searched for ... {{ searched }} {% else %}
         <br />
-        <center><h1>Search Projects</h1></center>
+        <!-- main heading -->
+        <h1 class="heading_1">Search Projects</h1>
         {% endif %}
       </div>
 
@@ -23,21 +25,17 @@
           <!-- search box for 'projects' -->
           <form method="POST" action="{% url 'search_projects' %}">
             {% csrf_token %}
-
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="enter search . . ."
-              aria-label="Search"
-              name="searched"
-            />
+            <!-- search box for user to enter search criteria -->
+            <input class="form-control me-2" type="search" placeholder="enter search . . ."
+              aria-label="Search" name="searched"/>
             <br />
+            <!-- search button -->
             <button type="submit" class="btn btn-lg button">Search</button>
             <br />
 
             <!-- for loop: iterate through 'projects' (from views.py) -->
             {% for project in projects %}
-            <!-- add link to search result/s -->
+            <!-- display search result/s as links -->
             <a href="{% url 'show_project' project.id %}">{{ project }}</a>
             <br />
             <!-- end for loop: projects -->

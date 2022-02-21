@@ -3,46 +3,46 @@
 {% block title %}Displaying Model Data{% endblock %}
 
 {% block content %}
-
+<!-- background for all tech support people pages -->
 <div class="background-admin">
   <div class="container container-height-home events-mobile">
     <div class="card mx-auto">
       <!-- if statement: search requested by user -->
       {% if searched %}
       <br />
-      You searched for ... {{ searched }} {% else %}
+      <!-- confirmation of user's search criteria -->
+      You searched for ... {{ searched }}
+      
+      {% else %}
       <br />
-      <center><h1>Search Administration People</h1></center>
+      <!-- main heading -->
+      <h1 class="heading_1">Search Administration People</h1>
       {% endif %}
     </div>
 
     <!-- center row across all screen widths -->
     <div class="row justify-content-center">
       <div class="card-body card-size mobile-text">
-        <!-- search box for 'people' -->
+        <!-- search box for admin people -->
         <form method="POST" action="{% url 'search_admin_people' %}">
           {% csrf_token %}
-
-          <input
-            class="form-control me-2"
-            type="search"
-            placeholder="enter search . . ."
-            aria-label="Search"
-            name="searched"
-          />
+          <!-- search box for user to enter search criteria -->
+          <input class="form-control me-2" type="search" placeholder="enter search . . ."
+            aria-label="Search" name="searched"/>
           <br />
+          <!-- search button -->
           <button class="btn btn-lg button" type="submit">Search</button>
           <br />
 
           <!-- for loop: iterate through 'persons' (from views.py) -->
           {% for person in persons %}
-          <!-- add link to search result/s -->
+          <!-- display search result/s as links -->
           <a href="{% url 'show_admin_person' person.id %}">{{ person }}</a>
           <br />
           <!-- end for loop: person -->
           {% endfor %}
         </form>
-
+      
       </div>
     </div>
   </div>
