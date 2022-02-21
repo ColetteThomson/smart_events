@@ -54,6 +54,13 @@ body {
     color: black;
 }
 
+.center {
+    /*margin-left: auto;
+    margin-right: auto;*/
+    margin: auto;
+    width: 90%;
+}
+
 /* ---------------------------------------- end base.html */
 
 /* ----------------- R E G I S T E R / L O G I N  screens */
@@ -329,12 +336,14 @@ body {
 .contact {
     font-size: 15px;
     color: #038bfa;
+    text-align: center;
     margin-bottom: 20px;
 }
 
 /* body text */
 .text {
     color: rgb(53, 52, 52);;
+    text-align: center;
     width: 90%;
 }
 

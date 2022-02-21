@@ -5,102 +5,96 @@
 {% block title %}Displaying Model Data{% endblock %}
 
 {% block content %}
-
+<!-- background for home page -->
 <div class="background-general">
   <div class="container container-height-home">
+    
     <!-- heading -->
-
     <h1 class="main-heading">
       Welcome to the
       <span class="thick">smart<span class="thin">events</span></span> Workforce
       Management Platform ( <span class="brand">WMP</span>)
     </h1>
 
-    <center>
-      <p class="text">
+      <!-- WMP information block -->
+      <p class="text center">
         <span class="brand2">WMP</span>operates on your organisation's intranet,
         and is a tool used by smart project managers and their teams to select the right
         resource for the right task. Also available is a project Chat,
         encouraging project team members to add their ideas or suggestions on
         the organisation's active projects.
       </p>
-    </center>
-
+    
+    <!-- sub-heading -->
     <h2 class="sub-heading">
       What are the different <span class="brand">WMP</span>roles and permissions?
     </h2>
 
-    <center>
-      <p class="contact">
+      <!-- contact info -->
+      <p class="contact center">
         <strong>CONTACT the Administrator to get set up as a WMP user (email: admin@wmp.com or call: 07557-345345)</strong>
       </p>
-    </center>
-
-    <center>
-      <div>
-        <div class="div-pm">
-          <strong>Project Manager</strong>
-          <div class="div-pm-1 spectrum-background-pm">
-            <p class="permissions1">
-              <strong>Create, Read, Update, Delete:</strong> all your Projects
-            </p>
-            <p class="permissions">
-              <strong>Read-only:</strong> all People resources
-            </p>
-          </div>
+    
+      <!-- permissions block for PM -->
+      <div class="div-pm center">
+        <strong>Project Manager</strong>
+        <div class="div-pm-1 spectrum-background-pm">
+          <p class="permissions1">
+            <strong>Create, Read, Update, Delete:</strong> all your Projects
+          </p>
+          <p class="permissions">
+            <strong>Read-only:</strong> all People resources
+          </p>
         </div>
       </div>
-    </center>
+        
     <br />
-    <center>
-      <div>
-        <div class="div-ad">
-          <strong>Administration People Owner</strong>
-          <div class="div-ad-1 spectrum-background-ad">
-            <p class="permissions1">
-              <strong>Create, Read, Update, Delete:</strong> all Admin resources
-            </p>
-            <p class="permissions">
-              <strong>Read-only:</strong> all Projects and Tech Support
-              resources
-            </p>
-          </div>
+    
+      <!-- permissions block for APO -->
+      <div class="div-ad center">
+        <strong>Administration People Owner</strong>
+        <div class="div-ad-1 spectrum-background-ad">
+          <p class="permissions1">
+            <strong>Create, Read, Update, Delete:</strong> all Admin resources
+          </p>
+          <p class="permissions">
+            <strong>Read-only:</strong> all Projects and Tech Support
+            resources
+          </p>
         </div>
       </div>
-    </center>
+      
     <br />
-    <center>
-      <div>
-        <div class="div-tech">
-          <strong>Tech Support People Owner</strong>
-          <div class="div-tech-1 spectrum-background-tech">
-            <p class="permissions1">
-              <strong>Create, Read, Update, Delete:</strong> all Tech Support
-              Resources
-            </p>
-            <p class="permissions">
-              <strong>Read-only:</strong> all Projects and Admin resources
-            </p>
-          </div>
+    
+      <!-- permissions block for TSPO -->
+      <div class="div-tech center">
+        <strong>Tech Support People Owner</strong>
+        <div class="div-tech-1 spectrum-background-tech">
+          <p class="permissions1">
+            <strong>Create, Read, Update, Delete:</strong> all Tech Support
+            Resources
+          </p>
+          <p class="permissions">
+            <strong>Read-only:</strong> all Projects and Admin resources
+          </p>
         </div>
       </div>
-    </center>
+    
     <br />
-    <center>
-      <div>
-        <div class="div-gen">
-          <strong>General Users</strong>
-          <div class="div-gen-1 spectrum-background-gen">
-            <p class="permissions1">
-              <strong>Read-only:</strong> all Chat posts
-            </p>
-            <p class="permissions">
-              <strong>Create:</strong> add ideas or suggestions on all Projects
-            </p>
-          </div>
+    
+      <!-- permissions block for general users -->
+      <div class="div-gen center">
+        <strong>General Users</strong>
+        <div class="div-gen-1 spectrum-background-gen">
+          <p class="permissions1">
+            <strong>Read-only:</strong> all Chat posts
+          </p>
+          <p class="permissions">
+            <strong>Create:</strong> add ideas or suggestions on all Projects
+          </p>
         </div>
       </div>
-    </center>
+    
   </div>
 </div>
 {% endblock content %}
