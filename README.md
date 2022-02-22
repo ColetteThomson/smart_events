@@ -202,15 +202,17 @@ These pages are intended to provide:
 ### Design of the smartevents WMP website
 
 #### Colour Scheme
+The colour palette for general body content comprises four basic colours: 
+* #445261 (medium grey) - body text; footer elements
+* #038bfa (blue) - logo and branding; headings; button text
+* #202020 (dark grey) - body text; update button text
+* whitesmoke - update and delete buttons; button background; delete button text; links
 
-Body text; footer: #445261 (medium grey)
-logo and branding; headings; button text: #038bfa (blue);
-body text; update button text: #202020 (dark grey)
-update and delete buttons; button background; delete button text; links: whitesmoke; 
-project manager: #fa03fa (pink)
-admin people owner: #8c9b0c (lime green)
-tech people owner: #c48a0d (orange)
-general user: #3a3a3a (grey)
+The colour palette for the four user-type roles comprise four basic colours:
+* project manager: #fa03fa (pink)
+* admin people owner: #8c9b0c (lime green)
+* tech people owner: #c48a0d (orange)
+* general user: #3a3a3a (grey)
 
 #### Fonts
 The 'smartevents' logo uses **Lato**; the 'WMP' brand uses **Permanent Marker**; and body text and headings use **Roboto**.  The back-up font is **sans-serif** for Lato and Roboto and **cursive** for Permanent Marker.  Fonts were downloaded from **Google Fonts**.
