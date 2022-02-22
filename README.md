@@ -267,14 +267,19 @@ No known limitations.
 [tos_contact-us](..).
 
 #### Testing Issues and Resolutions
-* text
+The following issue arose during HTML validation with the 'Chat' app's 'post_detail.html' page:
+* the code for the page works as expected and the page is responsive
+* the page however failed the html validation (due to unexplained <o:p></o:p> tags). Through extensive research and some consultation with Tutor Support - I have been able to resolve this code validation issue (through the removal of 'Summernote') - so that it eventually passed the HTML validation.
 
 ### Code Validation
-* All 21 HTML pages were run through the [W3C Markup Validation Service](https://validator.w3.org/) and showed no errors. The following web pages were checked: 
-Home app: index.html page<br>
-Chat app: 'post_list' | 'post_detail<br>
-Events app: 3 x search... pages | 3 x all... pages | 3 x add... pages | 3 x 'update....' pages | 3 x 'delete...' buttons | 2 x 'personal details' pages | 'project detail' page <br> 
-User account pages: 'log in' page | 'log out' page | 'register' page.
+All 21 HTML pages were run through the [W3C Markup Validation Service](https://validator.w3.org/) and showed no errors. The following web pages were checked: 
+* Home app: index.html page
+* Chat app: 'post_list' | 'post_detail<br>
+[HTML: Home and Chat app pages](...).<br>
+
+* Events app: 3 x search... pages | 3 x all... pages | 3 x add... pages | 3 x 'update....' pages | 3 x 'delete...' buttons | 2 x 'personal details' pages | 'project detail' page <br> 
+[HTML: Events app pages](...).<br>
+
 * The CSS stylesheet was run through the [CSS Validation Service-Jigsaw](https://jigsaw.w3.org/css-validator/) and showed no errors. [CSS screenshot](...).
 * The Javascript file was run through the [JSHint Validation Service](https://jshint.com) and showed no errors.
 [JS screenshot](...).<br>

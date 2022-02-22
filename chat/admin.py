@@ -4,7 +4,7 @@ from django_summernote.admin import SummernoteModelAdmin
 
 
 @admin.register(Post)
-class PostAdmin(SummernoteModelAdmin):
+class PostAdmin(admin.ModelAdmin):
     """ register decorator: post model; post admin classes for admin panel """
     # customise list view of admin panel
     list_display = ('blog_title', 'slug', 'status', 'created_on')
