@@ -6,14 +6,15 @@
 {% block title %}Displaying Model Data{% endblock %}
 
 {% block content %}
-
+<!-- background for all tech support people pages -->
 <div class="background-tech">
   <div class="container container-height-home events-mobile">
     <br />
-    <center><h1>Update Tech Support Person</h1></center>
+    <!-- main heading -->
+    <h1 class="heading_1">Update Tech Support Person</h1>
 
-    <!-- pre-populuated form to be updated -->
-    <form action="" method="POST" class="forms-mobile">
+    <!-- views.py function called and passed 'people_id' (displays pre-populuated form) -->
+    <form action="{% url 'update_techsupport_people' people.id %}" method="POST" class="forms-mobile">
       <!-- csrf to prevent malicious attacks using user credentials -->
       {% csrf_token %}
 

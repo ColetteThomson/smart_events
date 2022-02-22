@@ -13,13 +13,13 @@
     <!-- main heading -->
     <h1 class="heading_1">Update Administration Person</h1>
 
-    <!-- pre-populuated form to be updated -->
-    <form action="{% url 'update_admin_people' %}" method="POST" class="forms-mobile">
+    <!-- views.py function called and passed 'people_id' (displays pre-populuated form) -->
+    <form action="{% url 'update_admin_people' people.id %}" method="POST" class="forms-mobile">
       <!-- csrf to prevent malicious attacks using user credentials -->
       {% csrf_token %}
 
       <!-- render update admin people form using Crispy filter -->
-      {{ admin_form | crispy }}
+      {{ form | crispy }}
 
       <!-- submit button for update_admin_people form -->
       <button type="submit" class="btn btn-lg button">Update</button>

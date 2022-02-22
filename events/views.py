@@ -68,19 +68,20 @@ def update_project(request, project_id):
             return redirect('all_projects')
 
         else:
+            # if form not valid then render empty ProjectForm
             form = ProjectForm()
             return render(request,
-                     'update_project.html', {
-                           "project": project,
-                           "form": form,
-                         })
+                          'update_project.html', {
+                                    "project": project,
+                                    "form": form,
+                                })
 
     # update details of a project
     return render(request,
                   'update_project.html', {
-                            "project": project,
-                           "form": form,
-                         })
+                                "project": project,
+                                "form": form,
+                                })
 
 
 def add_project(request):
@@ -205,44 +206,33 @@ def update_admin_people(request, people_id):
     people = PeopleAdministration.objects.get(id=people_id)
     # if updating then pre-populate existing info (instance)
     # if not then display empty AdminForm
-    admin_form = AdminForm(request.POST or None, instance=people)
+    form = AdminForm(request.POST or None, instance=people)
     # if admin form is valid (required fields completed)
-    if admin_form.is_valid():
-        # save to database
-        update_people = admin_form.save(commit=False)
-        # then save the new person
-        update_people.save()
-        # display success message to user
-        messages.success(request,
-                         ("Administration Person has been updated"))
-        # redirect authorised user back to 'all_admin_people' page
-        return redirect(reverse('all_admin_people'))
+    if request.method == "POST":
 
-    else:
-        # return form for authorised user to complete
-        return render(request,  'update_admin_people.html',
-                      {'admin_form': admin_form})
+        if form.is_valid():
+            # save and return to all_admin_people
+            form.save()
+            # display success message to user
+            messages.success(request,
+                             ("Administration Person has been updated"))
+            # redirect user back to 'all_admin_people' page
+            return redirect('all_admin_people')
 
-        
-        
-        # # save and send to all_admin_people page
-        # admin_form.save()
-        # # display success message to user
-        # messages.success(request, ("Admin Person has been updated"))
-        # return redirect('all_admin_people')
+        else:
+            # if form not valid then render empty AdminForm
+            return render(request,
+                          'update_admin_people.html', {
+                                                  "people": people,
+                                                  "form": form,
+                                                })
 
-    # else:
-    #     # return form for authorised user to complete
-    #     return render(request,  'update_admin_people.html',
-    #                   {'admin_form': admin_form})
-        
-        
-    # update details of a person
-    # return render(request,
-    #               'update_admin_people.html', {
-    #                                               "people": people,
-    #                                               "form": form,
-    #                                 })
+    # update details of person
+    return render(request,
+                  'update_admin_people.html', {
+                                        "people": people,
+                                        "form": form,
+                                        })
 
 
 def show_admin_person(request, people_id):
@@ -369,12 +359,23 @@ def update_techsupport_people(request, people_id):
     # if not then display empty TechSupportForm
     form = TechSupportForm(request.POST or None, instance=people)
     # if tech support form is valid (required fields completed)
-    if form.is_valid():
-        # save and send to all_techsupport_people page
-        form.save()
-        # display success message to user
-        messages.success(request, ("Tech Support Person has been updated"))
-        return redirect('all_techsupport_people')
+    if request.method == "POST":
+
+        if form.is_valid():
+            # save and send to all_techsupport_people page
+            form.save()
+            # display success message to user
+            messages.success(request, ("Tech Support Person has been updated"))
+            return redirect('all_techsupport_people')
+
+        else:
+            # if form not valid then render empty TechSupportForm
+            form = TechSupportForm()
+            return render(request,
+                          'update_techsupport_people.html', {
+                                            "people": people,
+                                            "form": form,
+                                            })
 
     # update details of a tech support person
     return render(request,

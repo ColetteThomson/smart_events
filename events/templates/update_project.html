@@ -6,13 +6,14 @@
 {% block title %}Displaying Model Data{% endblock %}
 
 {% block content %}
-
+<!-- background for all project pages -->
 <div class="background-project">
   <div class="container container-height-home events-mobile">
     <br />
+    <!-- main heading -->
     <h1 class="heading_1">Update Project</h1>
 
-    <!-- pre-populuated form to be updated -->
+    <!-- views.py function called and passed 'project_id' (displays pre-populuated form) -->
     <form action="{% url 'update_project' project.id %}" method="POST" class="forms-mobile">
       <!-- csrf to prevent malicious attacks using user credentials -->
       {% csrf_token %}

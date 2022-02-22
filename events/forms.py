@@ -27,7 +27,7 @@ class AdminForm(ModelForm):
             'project_experience': forms.Textarea(attrs={
                 'class': 'form-control'}),
             'ad_owner': forms.TextInput(attrs={'class': 'form-control',
-                                        'value': '', 'id': 'user',
+                                               'id': 'user',
                                                'type': 'hidden'}),
         }
 
@@ -59,7 +59,7 @@ class TechSupportForm(ModelForm):
             'project_experience': forms.Textarea(attrs={'class':
                                                         'form-control'}),
             'ts_owner': forms.TextInput(attrs={'class': 'form-control',
-                                               'value': '', 'id': 'user',
+                                               'id': 'user',
                                                'type': 'hidden'}),
         }
 
