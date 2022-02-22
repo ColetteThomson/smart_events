@@ -88,7 +88,6 @@ class ProjectForm(ModelForm):
             'resource_tech': forms.Select(attrs={'class': 'form-select'}),
             'description': forms.Textarea(attrs={'class': 'form-control'}),
             'project_manager': forms.TextInput(attrs={'class': 'form-control',
-                                                      'value': '',
                                                       'id': 'user',
                                                       'type': 'hidden'}),
         }

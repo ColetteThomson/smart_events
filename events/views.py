@@ -58,19 +58,29 @@ def update_project(request, project_id):
     # if not then display empty ProjectForm
     form = ProjectForm(request.POST or None, instance=project)
     # if project form is valid (required fields completed)
-    if form.is_valid():
-        # save and return to all_projects (url)
-        form.save()
-        # display success message to user
-        messages.success(request, ("Project has been updated"))
-        return redirect('all_projects')
+    if request.method == "POST":
+
+        if form.is_valid():
+            # save and return to all_projects (url)
+            form.save()
+            # display success message to user
+            messages.success(request, ("Project has been updated"))
+            return redirect('all_projects')
+
+        else:
+            form = ProjectForm()
+            return render(request,
+                     'update_project.html', {
+                           "project": project,
+                           "form": form,
+                         })
 
     # update details of a project
     return render(request,
                   'update_project.html', {
-                      "project": project,
-                      "form": form,
-                  })
+                            "project": project,
+                           "form": form,
+                         })
 
 
 def add_project(request):
@@ -195,14 +205,31 @@ def update_admin_people(request, people_id):
     people = PeopleAdministration.objects.get(id=people_id)
     # if updating then pre-populate existing info (instance)
     # if not then display empty AdminForm
-    form = AdminForm(request.POST or None, instance=people)
+    admin_form = AdminForm(request.POST or None, instance=people)
     # if admin form is valid (required fields completed)
-    if form.is_valid():
-        # save and send to all_admin_people page
-        form.save()
+    if admin_form.is_valid():
+        # save to database
+        update_people = admin_form.save(commit=False)
+        # then save the new person
+        update_people.save()
         # display success message to user
-        messages.success(request, ("Admin Person has been updated"))
-        return redirect('all_admin_people')
+        messages.success(request,
+                         ("Administration Person has been updated"))
+        # redirect authorised user back to 'all_admin_people' page
+        return redirect(reverse('all_admin_people'))
+
+    else:
+        # return form for authorised user to complete
+        return render(request,  'update_admin_people.html',
+                      {'admin_form': admin_form})
+
+        
+        
+        # # save and send to all_admin_people page
+        # admin_form.save()
+        # # display success message to user
+        # messages.success(request, ("Admin Person has been updated"))
+        # return redirect('all_admin_people')
 
     # else:
     #     # return form for authorised user to complete
@@ -211,11 +238,11 @@ def update_admin_people(request, people_id):
         
         
     # update details of a person
-    return render(request,
-                  'update_admin_people.html', {
-                                                  "people": people,
-                                                  "form": form,
-                                    })
+    # return render(request,
+    #               'update_admin_people.html', {
+    #                                               "people": people,
+    #                                               "form": form,
+    #                                 })
 
 
 def show_admin_person(request, people_id):

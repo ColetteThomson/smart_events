@@ -19,7 +19,7 @@
       {% csrf_token %}
 
       <!-- render update admin people form using Crispy filter -->
-      {{ form | crispy }}
+      {{ admin_form | crispy }}
 
       <!-- submit button for update_admin_people form -->
       <button type="submit" class="btn btn-lg button">Update</button>

@@ -10,10 +10,10 @@
 <div class="background-project">
   <div class="container container-height-home events-mobile">
     <br />
-    <center><h1>Update Project</h1></center>
+    <h1 class="heading_1">Update Project</h1>
 
     <!-- pre-populuated form to be updated -->
-    <form action="" method="POST" class="forms-mobile">
+    <form action="{% url 'update_project' project.id %}" method="POST" class="forms-mobile">
       <!-- csrf to prevent malicious attacks using user credentials -->
       {% csrf_token %}
 
