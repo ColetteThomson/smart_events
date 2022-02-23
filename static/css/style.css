@@ -607,7 +607,7 @@ body {
     /* ---- index.html ---- */
     
     /* home page container */
-    .container-height-home {
+    .container-height-home-tablet {
         height: 100%;
         min-height: 760px;
     } 
