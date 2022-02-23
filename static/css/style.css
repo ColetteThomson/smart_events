@@ -332,7 +332,7 @@ body {
 /* home page container */
 .container-height-home {
     height: 100%;
-    min-height: 700px;
+    min-height: 740px;
 } 
 
 /* logo for 'WMP' */
@@ -574,7 +574,7 @@ body {
     /* headings */
     h1 {
         font-size: 1.625rem;
-      }
+    }
     /* ------------------------------------------ end Containers */
 
     /* -------------------------------------------- C H A T  app */
@@ -606,12 +606,6 @@ body {
     /* ---------------------------------------------H O M E  app */
     /* ---- index.html ---- */
     
-    /* home page container */
-    .container-height-home-tablet {
-        height: 100%;
-        min-height: 760px;
-    } 
-
     /* headings */
     .main-heading {
         padding-top: 25px;
