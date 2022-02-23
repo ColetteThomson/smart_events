@@ -36,7 +36,7 @@ There are six models within the smartevents WMP website:<br>
 * PeopleAdministration
 * PeopleTechSupport
 
-The ERD showing the relationship between models on the smartevents WMP website can be found [here](..). <br>
+The ERD showing the relationship between models on the smartevents WMP website can be found [here](/smartevents/images/smartevents-WMP_ERD.jpg). <br>
 
 ## User Experience Design
 
@@ -260,7 +260,7 @@ No known limitations.
 * [Git](https://git-scm.com/) - used as version control software to commit and push code to a GitHub repository where all source code is located
 * [Google Chrome Developer Tools](https://developer.chrome.com/docs/devtools/) - these are built in developer tools used to inspect page elements (eg. responsive design; debug issues; testing of different CSS styling options; and the Lighthouse Reports
 * [Pexels](https://www.pexels.com/) - Chat image for smartevents WMP website
-* [Cloudinary](https://cloudinary.com/) - cloud storage of Chat image for smartevents WMP website
+* [Cloudinary](https://cloudinary.com/) - cloud storage of Chat image for smartevents WMP website; serve static files
 * [ami.responsivedesign](http://ami.responsivedesign.is/) - used to generate Mockups of smartevents WMP Website
 * [Heroku](https://www.heroku.com/) - final project (website) stored on Heroku
 
@@ -273,9 +273,9 @@ Exceptions: the 'Home' page, will direct to 'index.html'; the 'show_admin_person
 
 ### Test Cases
 * Test cases can be found here for the **index.html** (home) and base.html: <br> 
-[Home app and base.html](..)
+[Home app and base.html](/smartevents/images/testcases_home_base.jpg)
 * Test cases can be found here for the **Chat** app pages (post_list.html | post_detail.html) : <br> 
-[Chat app](..)<br>
+[Chat app](/smartevents/images/testcases_chat-app.jpg)<br>
 * Test cases can be found here for the various **Events** app pages (add... | update... | delete... | view... ): <br>
 [Events app](..).
 * Test cases can be found here for the **Logout, Login, Register and un-registered users** pages: <br>
