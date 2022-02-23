@@ -277,9 +277,9 @@ Exceptions: the 'Home' page, will direct to 'index.html'; the 'show_admin_person
 * Test cases can be found here for the **Chat** app pages (post_list.html | post_detail.html) : <br> 
 [Chat app](/smartevents/images/testcases_chat-app.jpg)<br>
 * Test cases can be found here for the various **Events** app pages (add... | update... | delete... | view... ): <br>
-[Events app](..).
+[Events app](/smartevents/images/testcases_events-app.jpg).
 * Test cases can be found here for the **Logout, Login, Register and un-registered users** pages: <br>
-[Accounts pages](..).
+[Accounts pages](/smartevents/images/testcases_accs-pages.jpg).
 
 ### Testing Issues and Resolutions
 The following issue arose during HTML validation with the 'Chat' app's 'post_detail.html' page:
@@ -290,24 +290,24 @@ The following issue arose during HTML validation with the 'Chat' app's 'post_det
 All 21 HTML pages were run through the [W3C Markup Validation Service](https://validator.w3.org/) and showed no errors. The following web pages were checked: 
 * Home app: index.html page
 * Chat app: 'post_list' | 'post_detail<br>
-[HTML: Home and Chat app pages](...).<br>
+[HTML: Home and Chat app pages](/smartevents/images/html_validation_home-app_chat-app.jpg).<br>
 
 * Events app: 3 x search... pages | 3 x all... pages | 3 x add... pages | 3 x 'update....' pages | 3 x 'delete...' buttons | 2 x 'personal details' pages | 'project detail' page <br> 
-[HTML: Events app pages](...).<br>
+[HTML: Events app pages](/smartevents/images/html_validation_events-app.jpg).<br>
 
 * The CSS stylesheet was run through the [CSS Validation Service-Jigsaw](https://jigsaw.w3.org/css-validator/) and showed no errors. <br>
-[CSS screenshot](...).<br>
+[CSS validation](/smartevents/images/css_validation.jpg).<br>
 
 * The Javascript file was run through the [JSHint Validation Service](https://jshint.com) and showed no errors.<br>
-[JS screenshot](...).<br>
+[JS validation](/smartevents/images/JSHint_code-validation.jpg).<br>
 
 ## Lighthouse Reports
 * Home app: index.html page
 * Chat app: 'post_list' | 'post_detail<br>
-[Lighthouse: Home and Chat apps](...).<br>
+[Lighthouse: Home and Chat apps](/smartevents/images/lighthouse_home-app_chat-app.jpg).<br>
 
 * Events app: 3 x search... pages | 3 x all... pages | 3 x add... pages | 3 x 'update....' pages | 3 x 'delete...' buttons | 2 x 'personal details' pages | 'project detail' page <br> 
-[Lighthouse: Events app pages](...).<br>
+[Lighthouse: Events app pages](/smartevents/images/lighthouse_events-app.jpg).<br>
 
 ## Deployment
 ### Project Creation
