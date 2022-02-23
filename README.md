@@ -1,9 +1,9 @@
 # smartevents Workforce Management Platform (WMP)
 
 ## Purpose
-This website has been developed to run within an organisation's intranet and is therefore intended for internal company use and not intended to be an interface to the business's customers.  The smartevents' Workforce Management Platform (WMP) helps organisations to plan, manage and track their project teams, allowing best optimisation of the business' human capital. WMP is a permissions based system, ensuring that the correct person has access to relevant features within WMP.  WMP also offer a Chat service, encouraging all project team members to add their ideas or suggestions on the different projects.
+This website has been developed to run within an organisation's intranet and is therefore intended for internal company use and not intended to be an interface to the business's customers.  The smartevents' Workforce Management Platform (WMP) helps organisations to plan, manage and track their project teams, allowing best optimisation of the business' human capital. WMP is a permissions based system, ensuring that the correct person has access to relevant features within WMP.  WMP also offers a Chat service, encouraging all project team members to add their ideas or suggestions on the different projects.
 
-### High level overview of registered user roles and permissions within WMP:
+## High level overview of registered user roles and permissions within WMP:
 *Note:  All users (with the exception of general users) will need to be set up with appropriate permissions by the superuser Admin.  All users will have read-only access to the Home page (landing page).*
 
 * Superuser (Admin) - has full CRUD from the admin panel (and read-only from the website), across all Projects, Project Administration and Project Technical Support resources.  Admin is the only user able to create Posts (via the admin panel) on the WMP Chat, and approve (publish) project team member's posted ideas and suggestions.
@@ -12,7 +12,7 @@ This website has been developed to run within an organisation's intranet and is 
 * Technical Support People Owner (TSPO) - will have full CRUD capability on all project technical support resources and are therefore responsible for keeping WMP up to date as regards employee availability and updating of current project experience.  In addition, the TSPO will have read-only access to all projects and all project administration resources, to enable them to provide accurate recommendations of appropriate team members should the PM or APO require their input or advice.  For the Chat Posts - they will have read-only access to the content of the Post, and will be able to add (create) any ideas or suggestions they may have to individual posts.
 * General Users - these will be project team members who have read only access to all projects and all project human resources (Administration staff and Technical Support staff). For the Chat Posts - they will have read-only access to the content of the Post, and will be able to add (create) any ideas or suggestions they may have to individual posts.
 
-### Unregistered Users
+#### Unregistered Users
 * Will have read-only access to the Home Page and the different Chat Posts with any already published ideas or suggestions.  They are unable to add any ideas or suggestions to Posts and do not have any access to projects or people resources present on the WMP.
 
 ## The smartevents WMP website pages are as follows:
@@ -26,6 +26,17 @@ This website has been developed to run within an organisation's intranet and is 
 * Register: visible when users are logged out
 
 The live project can be found [here](https://)
+
+## Entity Relationship Diagram (ERD) for smartevents WMP
+There are six models within the smartevents WMP website:<br>
+* django.contrib.auth User model
+* Post
+* Comment
+* Project
+* PeopleAdministration
+* PeopleTechSupport
+
+The ERD showing the relationship between models on the smartevents WMP website can be found [here](..). <br>
 
 ## User Experience Design
 
@@ -50,27 +61,26 @@ The live project can be found [here](https://)
 * As a returning user, I want to be able to add my ideas or suggestions on the different Project Posts
 * As a returning user, I want confirmation of actions I have performed on the WMP website
 
-### Structural Features of the smartevents WMP website
+## Structural Features of the smartevents WMP website
 
-#### Website Responsiveness
+### Website Responsiveness
 * Bootstrap and CSS @media queries have been used to ensure the website is viewable across laptops/desktops, tablets and mobile phones. The size and layout of both text content and images will adapt according to the viewing device to ensure readability and quality.
 * All features on each web page are fully accessible and responsive across all viewing devices (laptops/desktops, tablets and mobile phones). 
 * This feature fulfills the user story: *'As a new user, I want to be able to view the website on all device types'*. 
 
-#### Navigation Options
+### Navigation Options
 * This feature is intended to enable the user to quickly and easily navigate between web pages without having to utilise the browser 'back' button.
 * Present on all 21 pages of the website, the fully navigational links - on the top of each page (menu links) and/or in the body of the page (hyperlinks or buttons) - will provide access to other pages in the website.
 * Clicking on the 'WMP' in the navigation bar (at the top of each page) will return the user to the home page.
 * This feature fulfills the user stories: *'As a new user, the navigational layout must be easy to understand and follow'* and *'As a new user, I want information on what services they offer'*.
 
-#### Footer Element
+### Footer Element
 * Present on all 21 pages of the website, the footer contains copyright information and navigational links to the social media accounts of smartevents WMP.
 * This feature fulfills the user stories: *'As a new user, I want information on what services they offer'*.
 
-### Details of smartevents WMP Web Pages
-#### The 'Home' Page or Landing Page
+## Details of smartevents WMP Web Pages
 
-A mockup of the 'Home' page (index.html) can be found [here](..). <br>
+### The 'Home' app: index.html (Home page or Landing page)
 
 This page is intended to provide:
 * an at-a-glance view of the main purpose of the website, i.e. a Workforce Management Platform (WMP) to help project managers and their teams select the right resource for the right task - and - the availability of a project Chat to encourage project team member interaction and participation.
@@ -78,10 +88,9 @@ This page is intended to provide:
 * contact details (email and phone) for the website Administrator, so that users can request to be set up as a registered website user
 * This feature fulfills the user stories: *'As a new user, I want to immediately understand the main purpose of the website'* and *'As a new user, I want information on what services they offer* and *'As a new user, I want to be able to easily contact the organisation'* and *'As a new user, I want to register for an account, so that I can access appropriate website content'* and *'* As a new user, I want to understand what access I have to what website content'* and *'As a new user, the navigational layout must be easy to understand and follow'*.
 
-#### The Chat pages: 'All Project Posts' page and 'Project Name...' page
+A mockup of the 'Home' page (index.html) can be found [here](..). <br>
 
-A mockup of the 'All Projects Posts' page can be found [here](..). <br>
-A mockup of the 'Project Name...' page can be found [here](..). <br>
+### The Chat app pages: 'All Project Posts' page and 'Project Name...' page
 
 The **All Project Posts** page is intended to provide:
 * a list of all the organisation's active projects.
@@ -89,6 +98,8 @@ The **All Project Posts** page is intended to provide:
 * the author (i.e. the Administator) is displayed above the project name.
 * the date and time the Post was created and the current amount of 'likes' for that particular project.
 * This feature fulfills the user stories: *'As a returning user, I want to have appropriate access to website content as per my permissions'* and *'As a returning user, I want to be able to view all the organisation's active projects in the Chat'*
+
+A mockup of the 'All Projects Posts' page can be found [here](..). <br>
 
 The **Project Name...** page is intended to provide:
 * the active project's name, its author and created date and time of the post.
@@ -100,7 +111,10 @@ The **Project Name...** page is intended to provide:
 * user messaging: should a user submit an idea/suggestion, a flash message will appear informing the user their submission is awaiting approval.  All Chat post submissions will need to be authorised (published) by the Administrator.
 * This feature fulfills the user stories: *'As a returning user, I want to be able to view all the organisation's active projects in the Chat'* and *'As a returning user, I want to be able to add my ideas or suggestions on the different Project Posts'* and *'As a returning user, I want confirmation of actions I have performed on the WMP website'*.
 
-### Dropdowns for 'Projects'; 'Admin People' and 'Tech People' 
+A mockup of the 'Project Name...' page can be found [here](..). <br>
+
+### Dropdowns for 'Projects'; 'Admin People' and 'Tech People'
+
 **Projects dropdown: 'Search Projects'; 'All Projects'; 'Add Project' pages**
 **Admin People dropdown: 'Search Admin People'; 'All Admin People'; 'Add Admin People' pages**
 **Tech People dropdown: 'Search Tech Support People'; 'All Tech Support People'; 'Add Tech Support People' pages**
@@ -149,20 +163,20 @@ and with permissions:
 A mockup of the 'Personal Details' page (from 'All Admin People') can be found [here](..). <br>
 A mockup of the 'Personal Details' page (from 'All Tech Support People') can be found [here](..). <br>
 
-The two **Personal Details** pages are intended to provide:
+The two **Personal Details** (**show_admin_person** and **show_techsupport_person**) pages are intended to provide:
 * an overview of an individual person's details. 
 * depending on user permissions: the inclusion of 'update...' and 'delete...' buttons. If no permissions user will only be able to view the personal details overview of: 'Admin person' OR 'Tech Support person'.
 * user messaging: confirmation of 'updating' or 'deleting' of a person.
 * This feature fulfills the user stories: *'As a returning user, I want to be able to find (read/view) the information I'm looking for'* and *'As a returning user, I want to be able to edit (update) existing content, as per my permissions'* and *'*As a returning user, I want to be able to delete existing content, as per my permissions'* and *'As a returning user, I want to have appropriate access to website content as per my permissions'* and *'As a returning user, I want confirmation of actions I have performed on the WMP website'*.
 
-### 'Project Details' pages for 'Projects'
+### 'Project Details' page for 'Projects'
 Note: this page becomes accessible when clicking the 'project name...' from the 'All Projects' page.
 
 A mockup of the 'Project Details' page (from 'All Projects') can be found [here](..). <br>
 and with permissions:
 A mockup of the 'Project Details' page (from 'All Projects') can be found [here](..). <br>
 
-The **Project Details** page is intended to provide:
+The **Project Details** (**show_project**) page for 'Projects' is intended to provide:
 * an overview of an active project's details. 
 * depending on user permissions: the inclusion of 'update...' and 'delete...' buttons. If no permissions user will only be able to view the project details overview of: 'Project Name....
 * user messaging: confirmation of 'updating' or 'deleting' of a project.
@@ -199,28 +213,28 @@ These pages are intended to provide:
 * Login - request of login information (username and password) from registered users
 * Register - request of user information (username, password, re-type password, optional email) from new users
 
-### Design of the smartevents WMP website
+## Design of the smartevents WMP website
 
-#### Colour Scheme
+### Colour Scheme
 The colour palette for general body content comprises four basic colours: 
 * #445261 (medium grey) - body text; footer elements
 * #038bfa (blue) - logo and branding; headings; button text
 * #202020 (dark grey) - body text; update button text
 * whitesmoke - update and delete buttons; button background; delete button text; links
 
-The colour palette for the four user-type roles comprise four basic colours:
+The colour palette for the four user-type roles comprises four basic colours:
 * project manager: #fa03fa (pink)
 * admin people owner: #8c9b0c (lime green)
 * tech people owner: #c48a0d (orange)
 * general user: #3a3a3a (grey)
 
-#### Fonts
+### Fonts
 The 'smartevents' logo uses **Lato**; the 'WMP' brand uses **Permanent Marker**; and body text and headings use **Roboto**.  The back-up font is **sans-serif** for Lato and Roboto and **cursive** for Permanent Marker.  Fonts were downloaded from **Google Fonts**.
 
-#### Imagery
+### Imagery
 Images for the website have been downloaded from **Pexels** and are stored in **Cloudinary**.
 
-#### Limitations
+### Limitations
 No known limitations.
 
 ## Features
@@ -241,37 +255,38 @@ No known limitations.
 * CSS - the styling of this website encompasses custom written CSS
 * Javascript - website interaction provided by custom written Javascript
 * [Google Fonts](https://fonts.google.com/) - utilised for the logo, brand and body text
+* [FontAwesome](https://fontawesome.com/) - utilised for Chat app icons
 * [GitHub](https://github.com/) - hosting site for storage of source code for the website and [Git Pages](https://pages.github.com/) for the deployment of the website
 * [Git](https://git-scm.com/) - used as version control software to commit and push code to a GitHub repository where all source code is located
 * [Google Chrome Developer Tools](https://developer.chrome.com/docs/devtools/) - these are built in developer tools used to inspect page elements (eg. responsive design; debug issues; testing of different CSS styling options; and the Lighthouse Reports
 * [Pexels](https://www.pexels.com/) - Chat image for smartevents WMP website
 * [Cloudinary](https://cloudinary.com/) - cloud storage of Chat image for smartevents WMP website
 * [ami.responsivedesign](http://ami.responsivedesign.is/) - used to generate Mockups of smartevents WMP Website
+* [Heroku](https://www.heroku.com/) - final project (website) stored on Heroku
 
 ## Testing
 * Manual testing will be performed to check for back-end functionality (Django, Python, Javascript), as well as visual effects and website layout (HTML, Bootstrap, CSS).
 * Testing will be performed to check for compatibility across three web browsers (Google Chrome, Firefox, Opera).
 * Responsive design will be tested across the different screen sizes: desktops/laptops (1024px); tablets (max-width 769px); mobiles (to a max-width of 426px); and large laptops (min-width 1025px to max-width 1441px).
-* All navigational links should direct to the correct html web page as per their names.  The exception here is the 'Home' page, as it will redirect to 'index.html'.
+* All navigational links should direct to the correct html web page as per their names.<br>
+Exceptions: the 'Home' page, will direct to 'index.html'; the 'show_admin_person.html' and 'show_techsupport_person.html' will direct to 'Personal Details'; the 'show_project' will direct to 'Project Details'. 
 
 ### Test Cases
 * Test cases can be found here for the **index.html** (home) and base.html: <br> 
-[homepage](..)
+[Home app and base.html](..)
 * Test cases can be found here for the **Chat** app pages (post_list.html | post_detail.html) : <br> 
-[part1](..)<br>
-[part2](..)<br>
-[part3](..)
+[Chat app](..)<br>
 * Test cases can be found here for the various **Events** app pages (add... | update... | delete... | view... ): <br>
-[tos_contact-us](..).
+[Events app](..).
 * Test cases can be found here for the **Logout, Login, Register and un-registered users** pages: <br>
-[tos_contact-us](..).
+[Accounts pages](..).
 
-#### Testing Issues and Resolutions
+### Testing Issues and Resolutions
 The following issue arose during HTML validation with the 'Chat' app's 'post_detail.html' page:
 * the code for the page works as expected and the page is responsive
 * the page however failed the html validation (due to unexplained <o:p></o:p> tags). Through extensive research and some consultation with Tutor Support - I have been able to resolve this code validation issue (through the removal of 'Summernote') - so that it eventually passed the HTML validation.
 
-### Code Validation
+## Code Validation
 All 21 HTML pages were run through the [W3C Markup Validation Service](https://validator.w3.org/) and showed no errors. The following web pages were checked: 
 * Home app: index.html page
 * Chat app: 'post_list' | 'post_detail<br>
@@ -280,26 +295,19 @@ All 21 HTML pages were run through the [W3C Markup Validation Service](https://v
 * Events app: 3 x search... pages | 3 x all... pages | 3 x add... pages | 3 x 'update....' pages | 3 x 'delete...' buttons | 2 x 'personal details' pages | 'project detail' page <br> 
 [HTML: Events app pages](...).<br>
 
-* The CSS stylesheet was run through the [CSS Validation Service-Jigsaw](https://jigsaw.w3.org/css-validator/) and showed no errors. [CSS screenshot](...).
-* The Javascript file was run through the [JSHint Validation Service](https://jshint.com) and showed no errors.
+* The CSS stylesheet was run through the [CSS Validation Service-Jigsaw](https://jigsaw.w3.org/css-validator/) and showed no errors. <br>
+[CSS screenshot](...).<br>
+
+* The Javascript file was run through the [JSHint Validation Service](https://jshint.com) and showed no errors.<br>
 [JS screenshot](...).<br>
 
-### Lighthouse Reports
-* The lighthouse report for the Home app: index.html can be found [here](...).
-* The lighthouse reports for the Chat app:<br>
-post_list.html can be found [here](...).<br>
-post_detail.html can be found [here](...).
-* The various lighthouse reports for the Events app:<br>
-3 x 'search...' pages can be found [here](...).<br>
-3 x 'all...' pages can be found [here](...).<br>
-3 x 'add...' pages can be found [here](...).<br>
-3 x 'update...' pages can be found [here](...).<br>
-2 x 'personal details' pages can be found [here](...).<br>
-'project details' page can be found [here](...).
-* The lighthouse report for the User Account pages: <br>
-'logout' page can be found [here](...).<br>
-'login' page can be found [here](...).<br>
-'register' page can be found [here](...).
+## Lighthouse Reports
+* Home app: index.html page
+* Chat app: 'post_list' | 'post_detail<br>
+[Lighthouse: Home and Chat apps](...).<br>
+
+* Events app: 3 x search... pages | 3 x all... pages | 3 x add... pages | 3 x 'update....' pages | 3 x 'delete...' buttons | 2 x 'personal details' pages | 'project detail' page <br> 
+[Lighthouse: Events app pages](...).<br>
 
 ## Deployment
 ### Project Creation
@@ -308,6 +316,7 @@ The following terminal commands were used during this project:
 * git add . - this command adds a change in the working directory to the staging area.
 * git commit -m "*message*" - this command details the change/s made in the 'message' section and then commits the changes to the local repository.
 * git push - this command is used to push all changes to the GitHub repository.
+* Final deployment of the website is on [Heroku](...)
 
 ### Using GitHub Pages
 * Navigate to the GitHub repository [smartevents WMP](https://colettethomson.github.io/quizz-pro/).
