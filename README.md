@@ -38,6 +38,11 @@ There are six models within the smartevents WMP website:<br>
 
 The ERD showing the relationship between models on the smartevents WMP website can be found [here](/smartevents/images/smartevents-WMP_ERD.jpg). <br>
 
+## Wireframes for smartevents WMP
+
+[here](..). <br>
+
+
 ## User Experience Design
 
 ### User Stories
@@ -79,6 +84,7 @@ The ERD showing the relationship between models on the smartevents WMP website c
 * This feature fulfills the user stories: *'As a new user, I want information on what services they offer'*.
 
 ## Details of smartevents WMP Web Pages
+**NB**: *For the mockups of each website page - the 'amiresponsivedesign.is' website will not do responsive design on screens that have permission-based views (it either shows the screen view as if for a user without permissions - or it redirects to the home page). Therefore, where this is occurring, a screenshot to show how a permissions-based view would look has been provided instead. Note: all website pages have been tested for responsive design as per the test cases.*<br>
 
 ### The 'Home' app: index.html (Home page or Landing page)
 
@@ -88,7 +94,7 @@ This page is intended to provide:
 * contact details (email and phone) for the website Administrator, so that users can request to be set up as a registered website user
 * This feature fulfills the user stories: *'As a new user, I want to immediately understand the main purpose of the website'* and *'As a new user, I want information on what services they offer* and *'As a new user, I want to be able to easily contact the organisation'* and *'As a new user, I want to register for an account, so that I can access appropriate website content'* and *'* As a new user, I want to understand what access I have to what website content'* and *'As a new user, the navigational layout must be easy to understand and follow'*.
 
-A mockup of the 'Home' page (index.html) can be found [here](..). <br>
+A mockup of the 'Home' page (index.html) can be found [here](/smartevents/images/mu_home.jpg). <br>
 
 ### The Chat app pages: 'All Project Posts' page and 'Project Name...' page
 
@@ -113,15 +119,11 @@ The **Project Name...** page is intended to provide:
 
 A mockup of the 'Project Name...' page can be found [here](..). <br>
 
-### Dropdowns for 'Projects'; 'Admin People' and 'Tech People'
+## Dropdowns for 'Projects'; 'Admin People' and 'Tech People'
 
-**Projects dropdown: 'Search Projects'; 'All Projects'; 'Add Project' pages**
-**Admin People dropdown: 'Search Admin People'; 'All Admin People'; 'Add Admin People' pages**
-**Tech People dropdown: 'Search Tech Support People'; 'All Tech Support People'; 'Add Tech Support People' pages**
-
-A mockup of the 'Search Projects' page can be found [here](..). <br>
-A mockup of the 'Search Admin People' page can be found [here](..). <br>
-A mockup of the 'Search Tech Support People' page can be found [here](..). <br>
+* **Projects dropdown**: 'Search Projects'; 'All Projects'; 'Add Project' pages
+* **Admin People dropdown**: 'Search Admin People'; 'All Admin People'; 'Add Admin People' pages
+* **Tech People dropdown**: 'Search Tech Support People'; 'All Tech Support People'; 'Add Tech Support People' pages
 
 The three **Search...** pages are intended to provide:
 * a search bar for users to enter their criteria (this field is case sensitive).
@@ -130,9 +132,9 @@ The three **Search...** pages are intended to provide:
 * a listing of linked matches to the user's criteria should their search be successful.
 * This feature fulfills the user stories: *'As a returning user, I want to be able to find (read/view) the information I'm looking for'* and *'As a returning user, I want to have appropriate access to website content as per my permissions'*.
 
-A mockup of the 'All Projects' page can be found [here](..). <br>
-A mockup of the 'All Admin People' page can be found [here](..). <br>
-A mockup of the 'All Tech Support People' page can be found [here](..). <br>
+A mockup of the 'Search Projects' page can be found [here](/smartevents/images/mu_search-projects.jpg). <br>
+A mockup of the 'Search Admin People' page can be found [here](/smartevents/images/mu_search-admin-people.jpg). <br>
+A mockup of the 'Search Tech Support People' page can be found [here](/smartevents/images/mu_search-tech-people.jpg). <br>
 
 The three **All...** pages are intended to provide:
 * depending on the chosen page, a listing of: 'all projects' OR 'all admin people' OR 'all tech support people' - that are present in the WMP database.
@@ -140,13 +142,13 @@ The three **All...** pages are intended to provide:
 * pagination showing page number and number of pages.
 * This feature fulfills the user stories: *'As a returning user, I want to be able to find (read/view) the information I'm looking for'* and *'As a returning user, I want to have appropriate access to website content as per my permissions'*.
 
-A mockup of the 'Add Project' page can be found [here](..). <br>
-A mockup of the 'Add Admin People' page can be found [here](..). <br>
-A mockup of the 'Add Tech Support People' page can be found [here](..). <br>
-and with permissions:
-A mockup of the 'Add Project' page can be found [here](..). <br>
-A mockup of the 'Add Admin People' page can be found [here](..). <br>
-A mockup of the 'Add Tech Support People' page can be found [here](..). <br>
+A mockup of the 'All Projects' page can be found [here](/smartevents/images/mu_all-projects.jpg). <br>
+A mockup of the 'All Admin People' page can be found [here](/smartevents/images/mu_all-admin-people.jpg). <br>
+A mockup of the 'All Tech Support People' page can be found [here](..). <br>
+and with permissions (screenshot views only):<br>
+A screenshot of the 'All Projects' page can be found [here](/smartevents/images/mu_all-projects_perm.jpg). <br>
+A screenshot of the 'All Admin People' page can be found [here](..). <br>
+A screenshot of the 'All Tech Support People' page can be found [here](..). <br>
 
 The three **Add...** pages are intended to provide:
 * depending on user permissions: the display of an empty form for the user to: 'add a new administration person' OR 'add a new technical support person' OR 'add a new project'.
@@ -154,14 +156,12 @@ The three **Add...** pages are intended to provide:
 * user messaging: confirmation that the user has: 'added a new administration person' OR 'added a new technical support person' OR 'added a new project'.
 * This feature fulfills the user stories: *' As a returning user, I want to be able to create (add) new content, as per my permissions'* and *'As a returning user, I want to have appropriate access to website content as per my permissions'* and *'As a returning user, I want confirmation of actions I have performed on the WMP website'*.
 
+A screenshot of the 'Add Project' page can be found [here](/smartevents/images/mu_add-new-project.jpg). <br>
+A mockup of the 'Add Admin People' page can be found [here](..). <br>
+A mockup of the 'Add Tech Support People' page can be found [here](..). <br>
+
 ### 'Personal Details' pages for 'Admin People' and 'Tech People'
 Note: these pages become accessible when clicking the 'person name...' from either the 'All Admin People' page OR the 'All Tech Support People' page.
-
-A mockup of the 'Personal Details' page (from 'All Admin People') can be found [here](..). <br>
-A mockup of the 'Personal Details' page (from 'All Tech Support People') can be found [here](..). <br>
-and with permissions:
-A mockup of the 'Personal Details' page (from 'All Admin People') can be found [here](..). <br>
-A mockup of the 'Personal Details' page (from 'All Tech Support People') can be found [here](..). <br>
 
 The two **Personal Details** (**show_admin_person** and **show_techsupport_person**) pages are intended to provide:
 * an overview of an individual person's details. 
@@ -169,12 +169,14 @@ The two **Personal Details** (**show_admin_person** and **show_techsupport_perso
 * user messaging: confirmation of 'updating' or 'deleting' of a person.
 * This feature fulfills the user stories: *'As a returning user, I want to be able to find (read/view) the information I'm looking for'* and *'As a returning user, I want to be able to edit (update) existing content, as per my permissions'* and *'*As a returning user, I want to be able to delete existing content, as per my permissions'* and *'As a returning user, I want to have appropriate access to website content as per my permissions'* and *'As a returning user, I want confirmation of actions I have performed on the WMP website'*.
 
+A mockup of the 'Personal Details' page (from 'All Admin People') can be found [here](..). <br>
+A mockup of the 'Personal Details' page (from 'All Tech Support People') can be found [here](..). <br>
+and with permissions:
+A mockup of the 'Personal Details' page (from 'All Admin People') can be found [here](..). <br>
+A mockup of the 'Personal Details' page (from 'All Tech Support People') can be found [here](..). <br>
+
 ### 'Project Details' page for 'Projects'
 Note: this page becomes accessible when clicking the 'project name...' from the 'All Projects' page.
-
-A mockup of the 'Project Details' page (from 'All Projects') can be found [here](..). <br>
-and with permissions:
-A mockup of the 'Project Details' page (from 'All Projects') can be found [here](..). <br>
 
 The **Project Details** (**show_project**) page for 'Projects' is intended to provide:
 * an overview of an active project's details. 
@@ -182,13 +184,13 @@ The **Project Details** (**show_project**) page for 'Projects' is intended to pr
 * user messaging: confirmation of 'updating' or 'deleting' of a project.
 * This feature fulfills the user stories: *'As a returning user, I want to be able to find (read/view) the information I'm looking for'* and *'As a returning user, I want to be able to edit (update) existing content, as per my permissions'* and *'*As a returning user, I want to be able to delete existing content, as per my permissions'* and *'As a returning user, I want to have appropriate access to website content as per my permissions'* and *'As a returning user, I want confirmation of actions I have performed on the WMP website'*.
 
+A mockup of the 'Project Details' page (from 'All Projects') can be found [here](/smartevents/images/mu_project-details.jpg). <br>
+and with permissions (screenshot views only):<br>
+A screenshot of the 'Project Details' page (from 'All Projects') can be found [here](/smartevents/images/mu_project-details_perm.jpg). <br>
+
 ### 'Update...' pages and 'Delete...' button for 'Projects', 'Admin People' and 'Tech Support People'
 Note: this page is permission-based and becomes accessible when clicking the 'project name...' from the 'All Projects' page OR the 'person name...' from the 'All Admin People' OR 'All Tech Support People' pages.
 This page is also accessible from the 'Personal Details' and 'Project Details' pages.
-
-A mockup of the 'Update Project' page with 'delete' button (from 'Projects') can be found [here](..). <br>
-A mockup of the 'Update Person' page with 'delete' button (from 'Admin People') can be found [here](..). <br>
-A mockup of the 'Update Person' page with 'delete' button (from 'Tech People') can be found [here](..). <br>
 
 The **Update...** pages are intended to provide:
 * a pre-populated form with existing information on: 'Projects' OR 'Admin People' OR 'Tech Support People'.
@@ -202,10 +204,14 @@ Note: this button is permission-based and is accessible from the 'All Projects' 
 * user messaging: confirmation of the 'deleting' of a project's details OR a person's details.
 * This feature fulfills the user stories: *'As a returning user, I want to be able to find (read/view) the information I'm looking for'* and '*As a returning user, I want to be able to delete existing content, as per my permissions'* and *'As a returning user, I want to have appropriate access to website content as per my permissions'* and *'As a returning user, I want confirmation of actions I have performed on the WMP website'*.
 
+A mockup of the 'Update Project' page (from 'Projects') can be found [here](/smartevents/images/mu_update-project.jpg). <br>
+A mockup of the 'Update Person' page with 'delete' button (from 'Admin People') can be found [here](..). <br>
+A mockup of the 'Update Person' page with 'delete' button (from 'Tech People') can be found [here](..). <br>
+
 ### 'Logout' 'Login' and 'Register' pages
 
 A mockup of the 'Logout' page can be found [here](..). <br>
-A mockup of the 'Login' page can be found [here](..). <br>
+A mockup of the 'Login' page can be found [here](/smartevents/images/mu_login.jpg). <br>
 A mockup of the 'Register' page can be found [here](..). <br>
 
 These pages are intended to provide:
