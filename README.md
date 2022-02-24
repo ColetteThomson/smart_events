@@ -4,26 +4,29 @@
 This website has been developed to run within an organisation's intranet and is therefore intended for internal company use and not intended to be an interface to the business's customers.  The smartevents' Workforce Management Platform (WMP) helps organisations to plan, manage and track their project teams, allowing best optimisation of the business' human capital. WMP is a permissions based system, ensuring that the correct person has access to relevant features within WMP.  WMP also offers a Chat service, encouraging all project team members to add their ideas or suggestions on the different projects.
 
 ## High level overview of registered user roles and permissions within WMP:
-*Note:  All users (with the exception of general users) will need to be set up with appropriate permissions by the superuser Admin.  All users will have read-only access to the Home page (landing page).*
+*Note:  All users (with the exception of unregistered users) will need to be set up with appropriate permissions by the superuser Admin.  All users will have read-only access to the Home page (landing page).*
 
-* Superuser (Admin) - has full CRUD from the admin panel (and read-only from the website), across all Projects, Project Administration and Project Technical Support resources.  Admin is the only user able to create Posts (via the admin panel) on the WMP Chat, and approve (publish) project team member's posted ideas and suggestions.
-* Project Manager (PM) - will have full CRUD (create, read (view), update, delete) capability on all projects created by themselves. In addition, they will have read-only access to all project human resources (Administration staff and Technical Support staff), so that they may select appropriate team members for their project based on market experience and employee availability.  For the Chat Posts - they will have read-only access to the content of the Post, and will be able to add (create) any ideas or suggestions they may have to individual posts.
-* Administration People Owner (APO)- will have full CRUD capability on all project administration resources and are therefore responsible for keeping WMP up to date as regards employee availability and updating of current project experience.  In addition, the APO will have read-only access to all projects and all technical support resources, to enable them to provide accurate recommendations of appropriate team members should the PM or Technical Support People Owner (TSPO) require their input or advice.  For the Chat Posts - they will have read-only access to the content of the Post, and will be able to add (create) any ideas or suggestions they may have to individual posts.
-* Technical Support People Owner (TSPO) - will have full CRUD capability on all project technical support resources and are therefore responsible for keeping WMP up to date as regards employee availability and updating of current project experience.  In addition, the TSPO will have read-only access to all projects and all project administration resources, to enable them to provide accurate recommendations of appropriate team members should the PM or APO require their input or advice.  For the Chat Posts - they will have read-only access to the content of the Post, and will be able to add (create) any ideas or suggestions they may have to individual posts.
-* General Users - these will be project team members who have read only access to all projects and all project human resources (Administration staff and Technical Support staff). For the Chat Posts - they will have read-only access to the content of the Post, and will be able to add (create) any ideas or suggestions they may have to individual posts.
+* **Superuser (Admin)** - has full CRUD from the admin panel (and read-only from the website), across all Projects, Project Administration and Project Technical Support resources.  Admin is the only user able to create Posts (via the admin panel) on the WMP Chat, and approve (publish) project team member's posted ideas and suggestions.
+* **Project Manager** (PM) - will have full CRUD (create, read (view), update, delete) capability on all projects created by themselves. In addition, they will have read-only access to all project human resources (Administration staff and Technical Support staff), so that they may select appropriate team members for their project based on market experience and employee availability.  For the Chat Posts - they will have read-only access to the content of the Post, and will be able to add (create) any ideas or suggestions they may have to individual posts.
+* **Administration People Owner** (APO)- will have full CRUD capability on all project administration resources and are therefore responsible for keeping WMP up to date as regards employee availability and updating of current project experience.  In addition, the APO will have read-only access to all projects and all technical support resources, to enable them to provide accurate recommendations of appropriate team members should the PM or Technical Support People Owner (TSPO) require their input or advice.  For the Chat Posts - they will have read-only access to the content of the Post, and will be able to add (create) any ideas or suggestions they may have to individual posts.
+* **Technical Support People Owner** (TSPO) - will have full CRUD capability on all project technical support resources and are therefore responsible for keeping WMP up to date as regards employee availability and updating of current project experience.  In addition, the TSPO will have read-only access to all projects and all project administration resources, to enable them to provide accurate recommendations of appropriate team members should the PM or APO require their input or advice.  For the Chat Posts - they will have read-only access to the content of the Post, and will be able to add (create) any ideas or suggestions they may have to individual posts.
+* **General Users** - these will be project team members who have read only access to all projects and all project human resources (Administration staff and Technical Support staff). For the Chat Posts - they will have read-only access to the content of the Post, and will be able to add (create) any ideas or suggestions they may have to individual posts.
 
 #### Unregistered Users
 * Will have read-only access to the Home Page and the different Chat Posts with any already published ideas or suggestions.  They are unable to add any ideas or suggestions to Posts and do not have any access to projects or people resources present on the WMP.
 
 ## The smartevents WMP website pages are as follows:
-* Home (index.html): opening page
-* Chat: opens the 'All Project Posts' page.  Individual post detail (i.e. 'Project Name...') can then be accessed via the chosen post from the 'All Project Posts' page
-* Projects: dropdown reveals:  Search Projects; All Projects; Add Project
-* Admin People: dropdown reveals:  Search Admin People; All Admin People; Add Admin People
-* Tech People: dropdown reveals:  Search Tech Support People; All Tech Support People; Add Tech Support People
-* Logout: visible when users are logged in
-* Login: visible when users are logged out
-* Register: visible when users are logged out
+* **Home** (index.html): landing page
+* **Chat**: opens the 'All Project Posts' page. <br>
+The page: Individual post detail (i.e. 'Project Name...') can then be accessed via the chosen post from 'All Project Posts' page.
+* **Projects**: dropdown reveals:  'Search Projects'; 'All Projects'; 'Add Project'. <br>
+The pages: 'Project Details'; 'Update Project' and the 'Delete Project button' can be accessed from 'All Projects' (permission-based).
+* **Admin People**: dropdown reveals:  'Search Admin People'; 'All Admin People'; 'Add Admin People'.<br> 
+The pages: 'Personal Details'; 'Update Administration Person' and the 'Delete Person button' can be accessed from 'All Administration People' (permission-based).
+* **Tech People**: dropdown reveals:  'Search Tech Support People'; 'All Tech Support People'; 'Add Tech Support People'.<br> The pages: 'Personal Details'; 'Update Tech Support Person' and the 'Delete Person button' can be accessed from 'All Tech Support People' (permission-based). 
+* **Logout**: visible when users are logged in
+* **Login**: visible when users are logged out
+* **Register**: visible when users are logged out
 
 The live project can be found [here](https://)
 
@@ -40,8 +43,21 @@ The ERD showing the relationship between models on the smartevents WMP website c
 
 ## Wireframes for smartevents WMP
 
-[here](..). <br>
+**EVENTS** app <br>
+[Search Admin People](/smartevents/images/wf_events_search-admin-person.jpg). <br>
+[All Admin People](/smartevents/images/wf_events_all-admin-people_np.jpg). <br>
+[Personal Details - Admin](/smartevents/images/wf_events_personal-details-admin_np.png). <br>
 
+With permissions:<br>
+[All Admin People (with permissions)](/smartevents/images/wf_events_all-admin-people.jpg). <br>
+[Add Admin People (with permissions)](/smartevents/images/wf_events_add-admin-person.png). <br>
+[Personal Details - Admin (with permissions}](/smartevents/images/wf_events_personal-details-admin.jpg). <br>
+[Update/Delete Admin Person (with permissions)](/smartevents/images/wf_events_update-admin-person.jpg). <br>
+
+**ACCOUNT** pages:<br>
+[Log In](/smartevents/images/wf_account-login.jpg). <br>
+[Log Out](/smartevents/images/wf_log-out.jpg). <br>
+[Register](/smartevents/images/wf_account-register.jpg). <br>
 
 ## User Experience Design
 
@@ -83,10 +99,10 @@ The ERD showing the relationship between models on the smartevents WMP website c
 * Present on all 21 pages of the website, the footer contains copyright information and navigational links to the social media accounts of smartevents WMP.
 * This feature fulfills the user stories: *'As a new user, I want information on what services they offer'*.
 
-## Details of smartevents WMP Web Pages
+# Details of smartevents WMP Web Pages
 **NB**: *For the mockups of each website page - the 'amiresponsivedesign.is' website will not do responsive design on screens that have permission-based views (it either shows the screen view as if for a user without permissions - or it redirects to the home page). Therefore, where this is occurring, a screenshot to show how a permissions-based view would look has been provided instead. Note: all website pages have been tested for responsive design as per the test cases.*<br>
 
-### The 'Home' app: index.html (Home page or Landing page)
+## 1.  The 'Home' app: index.html (Home page or Landing page)
 
 This page is intended to provide:
 * an at-a-glance view of the main purpose of the website, i.e. a Workforce Management Platform (WMP) to help project managers and their teams select the right resource for the right task - and - the availability of a project Chat to encourage project team member interaction and participation.
@@ -96,7 +112,7 @@ This page is intended to provide:
 
 A mockup of the 'Home' page (index.html) can be found [here](/smartevents/images/mu_home.jpg). <br>
 
-### The Chat app pages: 'All Project Posts' page and 'Project Name...' page
+## 2.  The Chat app pages: 'All Project Posts' page and 'Project Name...' page
 
 The **All Project Posts** page is intended to provide:
 * a list of all the organisation's active projects.
@@ -119,7 +135,7 @@ The **Project Name...** page is intended to provide:
 
 A mockup of the 'Project Name...' page can be found [here](..). <br>
 
-## Dropdowns for 'Projects'; 'Admin People' and 'Tech People'
+## 3.  Dropdowns for 'Projects'; 'Admin People' and 'Tech People'
 
 * **Projects dropdown**: 'Search Projects'; 'All Projects'; 'Add Project' pages
 * **Admin People dropdown**: 'Search Admin People'; 'All Admin People'; 'Add Admin People' pages
@@ -142,8 +158,8 @@ The three **All...** pages are intended to provide:
 * pagination showing page number and number of pages.
 * This feature fulfills the user stories: *'As a returning user, I want to be able to find (read/view) the information I'm looking for'* and *'As a returning user, I want to have appropriate access to website content as per my permissions'*.
 
-A mockup of the 'All Projects' page can be found [here](/smartevents/images/mu_all-projects.jpg). <br>
-A mockup of the 'All Admin People' page can be found [here](/smartevents/images/mu_all-admin-people.jpg). <br>
+A mockup of the 'All Projects' page can be found [here](). <br>
+A mockup of the 'All Admin People' page can be found [here](). <br>
 A mockup of the 'All Tech Support People' page can be found [here](). <br>
 and with permissions (screenshot views only):<br>
 A screenshot of the 'All Projects' page can be found [here](/smartevents/images/mu_all-projects_perm.jpg). <br>
@@ -207,7 +223,7 @@ A screenshot of the 'Update Project' page (from 'Projects') can be found [here](
 A screenshot of the 'Update Person' page (from 'Admin People') can be found [here](/smartevents/images/mu_update-admin-person_perm.jpg). <br>
 A screenshot of the 'Update Person' page (from 'Tech People') can be found [here](/smartevents/images/mu_update-tech-person_perm.jpg). <br>
 
-### 'Logout' 'Login' and 'Register' pages
+## 4.  'Logout' 'Login' and 'Register' pages
 
 A mockup of the 'Logout' page can be found [here](..). <br>
 A mockup of the 'Login' page can be found [here](/smartevents/images/mu_login.jpg). <br>
