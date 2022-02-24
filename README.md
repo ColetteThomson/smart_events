@@ -147,7 +147,7 @@ A mockup of the 'All Admin People' page can be found [here](/smartevents/images/
 A mockup of the 'All Tech Support People' page can be found [here](..). <br>
 and with permissions (screenshot views only):<br>
 A screenshot of the 'All Projects' page can be found [here](/smartevents/images/mu_all-projects_perm.jpg). <br>
-A screenshot of the 'All Admin People' page can be found [here](..). <br>
+A screenshot of the 'All Admin People' page can be found [here](/smartevents/images/mu_all-admin-people_perm.jpg). <br>
 A screenshot of the 'All Tech Support People' page can be found [here](..). <br>
 
 The three **Add...** pages are intended to provide:
@@ -157,7 +157,7 @@ The three **Add...** pages are intended to provide:
 * This feature fulfills the user stories: *' As a returning user, I want to be able to create (add) new content, as per my permissions'* and *'As a returning user, I want to have appropriate access to website content as per my permissions'* and *'As a returning user, I want confirmation of actions I have performed on the WMP website'*.
 
 A screenshot of the 'Add Project' page can be found [here](/smartevents/images/mu_add-new-project.jpg). <br>
-A mockup of the 'Add Admin People' page can be found [here](..). <br>
+A screenshot of the 'Add Admin People' page can be found [here](/smartevents/images/mu_add-admin-person.jpg). <br>
 A mockup of the 'Add Tech Support People' page can be found [here](..). <br>
 
 ### 'Personal Details' pages for 'Admin People' and 'Tech People'
@@ -169,11 +169,8 @@ The two **Personal Details** (**show_admin_person** and **show_techsupport_perso
 * user messaging: confirmation of 'updating' or 'deleting' of a person.
 * This feature fulfills the user stories: *'As a returning user, I want to be able to find (read/view) the information I'm looking for'* and *'As a returning user, I want to be able to edit (update) existing content, as per my permissions'* and *'*As a returning user, I want to be able to delete existing content, as per my permissions'* and *'As a returning user, I want to have appropriate access to website content as per my permissions'* and *'As a returning user, I want confirmation of actions I have performed on the WMP website'*.
 
-A mockup of the 'Personal Details' page (from 'All Admin People') can be found [here](..). <br>
-A mockup of the 'Personal Details' page (from 'All Tech Support People') can be found [here](..). <br>
-and with permissions:
-A mockup of the 'Personal Details' page (from 'All Admin People') can be found [here](..). <br>
-A mockup of the 'Personal Details' page (from 'All Tech Support People') can be found [here](..). <br>
+A screenshot of the 'Personal Details' page (from 'All Admin People') can be found [here](/smartevents/images/mu_personal-details_admin_perm.jpg). <br>
+A screenshot of the 'Personal Details' page (from 'All Tech Support People') can be found [here](..). <br>
 
 ### 'Project Details' page for 'Projects'
 Note: this page becomes accessible when clicking the 'project name...' from the 'All Projects' page.
@@ -184,8 +181,7 @@ The **Project Details** (**show_project**) page for 'Projects' is intended to pr
 * user messaging: confirmation of 'updating' or 'deleting' of a project.
 * This feature fulfills the user stories: *'As a returning user, I want to be able to find (read/view) the information I'm looking for'* and *'As a returning user, I want to be able to edit (update) existing content, as per my permissions'* and *'*As a returning user, I want to be able to delete existing content, as per my permissions'* and *'As a returning user, I want to have appropriate access to website content as per my permissions'* and *'As a returning user, I want confirmation of actions I have performed on the WMP website'*.
 
-A mockup of the 'Project Details' page (from 'All Projects') can be found [here](/smartevents/images/mu_project-details.jpg). <br>
-and with permissions (screenshot views only):<br>
+With permissions (screenshot views only):<br>
 A screenshot of the 'Project Details' page (from 'All Projects') can be found [here](/smartevents/images/mu_project-details_perm.jpg). <br>
 
 ### 'Update...' pages and 'Delete...' button for 'Projects', 'Admin People' and 'Tech Support People'
@@ -204,8 +200,8 @@ Note: this button is permission-based and is accessible from the 'All Projects' 
 * user messaging: confirmation of the 'deleting' of a project's details OR a person's details.
 * This feature fulfills the user stories: *'As a returning user, I want to be able to find (read/view) the information I'm looking for'* and '*As a returning user, I want to be able to delete existing content, as per my permissions'* and *'As a returning user, I want to have appropriate access to website content as per my permissions'* and *'As a returning user, I want confirmation of actions I have performed on the WMP website'*.
 
-A mockup of the 'Update Project' page (from 'Projects') can be found [here](/smartevents/images/mu_update-project.jpg). <br>
-A mockup of the 'Update Person' page with 'delete' button (from 'Admin People') can be found [here](..). <br>
+A mockup of the 'Update Project' page (from 'Projects') can be found [here](..). <br>
+A screenshot of the 'Update Person' page with 'delete' button (from 'Admin People') can be found [here](/smartevents/images/mu_update-admin-person_perm.jpg). <br>
 A mockup of the 'Update Person' page with 'delete' button (from 'Tech People') can be found [here](..). <br>
 
 ### 'Logout' 'Login' and 'Register' pages
