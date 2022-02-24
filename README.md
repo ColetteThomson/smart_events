@@ -43,21 +43,56 @@ The ERD showing the relationship between models on the smartevents WMP website c
 
 ## Wireframes for smartevents WMP
 
-**EVENTS** app <br>
+### HOME app
+[Home page](/smartevents/images/wf_home_homepage.jpg). <br>
+
+### CHAT app
+[All Project Posts](/smartevents/images/wf_chat_all-project-posts.jpg). <br>
+[Project Name... (post detail page)](/smartevents/images/wf_chat_individual-post.jpg). <br>
+
+### EVENTS app
+**Projects :**<br>
+[Search Projects](/smartevents/images/wf_events_search-projects.jpg). <br>
+[All Projects](/smartevents/images/wf_events_all-projects_np.jpg). <br>
+[Project Details](/smartevents/images/wf_events_project-details_np.png). <br>
+
+*with permissions :*<br>
+[All Projects (with permissions)](/smartevents/images/wf_events_all-projects.jpg). <br>
+[Add Project (with permissions)](/smartevents/images/wf_events_add-project.jpg). <br>
+[Project Details (with permissions}](/smartevents/images/wf_events_project-details.jpg). <br>
+[Update/Delete Project (with permissions)](/smartevents/images/wf_events_update-project.jpg). <br>
+
+**Administration People :**<br>
 [Search Admin People](/smartevents/images/wf_events_search-admin-person.jpg). <br>
 [All Admin People](/smartevents/images/wf_events_all-admin-people_np.jpg). <br>
 [Personal Details - Admin](/smartevents/images/wf_events_personal-details-admin_np.png). <br>
 
-With permissions:<br>
+*with permissions :*<br>
 [All Admin People (with permissions)](/smartevents/images/wf_events_all-admin-people.jpg). <br>
 [Add Admin People (with permissions)](/smartevents/images/wf_events_add-admin-person.png). <br>
 [Personal Details - Admin (with permissions}](/smartevents/images/wf_events_personal-details-admin.jpg). <br>
 [Update/Delete Admin Person (with permissions)](/smartevents/images/wf_events_update-admin-person.jpg). <br>
 
-**ACCOUNT** pages:<br>
+**Technical Support People :**<br>
+[Search Tech Support People](/smartevents/images/wf_events_search-tech-people.jpg). <br>
+[All Tech Support People](/smartevents/images/wf_events_all-tech-people_np.jpg). <br>
+[Personal Details - Tech Support](/smartevents/images/wf_events_personal-details-tech_np.jpg). <br>
+
+*with permissions :*<br>
+[All Tech Support People (with permissions)](/smartevents/images/wf_events_all-tech-people.jpg). <br>
+[Add Tech Support People (with permissions)](/smartevents/images/wf_events_add-tech-person.jpg). <br>
+[Personal Details - Tech Support (with permissions}](/smartevents/images/wf_events_personal-details-tech.jpg). <br>
+[Update/Delete Tech Support Person (with permissions)](/smartevents/images/wf_events_update-tech-person.jpg). <br>
+
+### ACCOUNT pages:<br>
 [Log In](/smartevents/images/wf_account-login.jpg). <br>
 [Log Out](/smartevents/images/wf_log-out.jpg). <br>
 [Register](/smartevents/images/wf_account-register.jpg). <br>
+
+### Unregistered Users:<br>
+[Home Page](/smartevents/images/wf_non-registered-user_home.jpg). <br>
+[All Project Posts](/smartevents/images/wf_non-registered-user_all-project-posts.jpg). <br>
+[Project Name... (post detail page)](/smartevents/images/wf_non-registered-user_individual-post.jpg). <br>
 
 ## User Experience Design
 
