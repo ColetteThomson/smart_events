@@ -403,6 +403,7 @@ The following terminal commands were used during this project:
 ### Code
 * The private collaboration and knowledge sharing SaaS platform [Stack Overflow](https://stackoverflow.com/) was an invaluable resource for general coding queries.
 * Use was made of Code Institute tutor support for help with persistent coding issues.
+* Ideas for the Chat app was taken from Code Institute's Blog videos.
 
 ### Content
 * Inspiration was taken from the need for a simple workforce management tool.
