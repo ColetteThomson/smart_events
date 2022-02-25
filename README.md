@@ -28,7 +28,7 @@ The pages: 'Personal Details'; 'Update Administration Person' and the 'Delete Pe
 * **Login**: visible when users are logged out
 * **Register**: visible when users are logged out
 
-The live project can be found [here](https://)
+The live project can be found [here](https://smart-events.herokuapp.com/)
 
 ## Entity Relationship Diagram (ERD) for smartevents WMP
 There are six models within the smartevents WMP website:<br>
@@ -283,9 +283,9 @@ These pages are intended to provide:
 * Login - request of login information (username and password) from registered users
 * Register - request of user information (username, password, re-type password, optional email) from new users
 
-A mockup of the 'Logout' page can be found [here](/smartevents/images/mu_logout_np.jpg). <br>
-A mockup of the 'Login' page can be found [here](/smartevents/images/mu_login_np.jpg). <br>
-A mockup of the 'Register' page can be found [here](/smartevents/images/mu_register_np.jpg). <br>
+A screenshot of the 'Logout' page can be found [here](/smartevents/images/mu_logout_np.jpg). <br>
+A screenshot of the 'Login' page can be found [here](/smartevents/images/mu_login_np.jpg). <br>
+A screenshot of the 'Register' page can be found [here](/smartevents/images/mu_register_np.jpg). <br>
 
 ## Design of the smartevents WMP website
 
@@ -390,7 +390,7 @@ The following terminal commands were used during this project:
 * git add . - this command adds a change in the working directory to the staging area.
 * git commit -m "*message*" - this command details the change/s made in the 'message' section and then commits the changes to the local repository.
 * git push - this command is used to push all changes to the GitHub repository.
-* Final deployment of the website is on [Heroku](...)
+* Final deployment of the website is on [Heroku](https://smart-events.herokuapp.com/)
 
 ### Using GitHub Pages
 * Navigate to the GitHub repository [smartevents WMP](https://github.com/ColetteThomson/smartevents_WMP).
